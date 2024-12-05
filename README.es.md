@@ -4,9 +4,9 @@ tablero de mensajes
 
 > línea de bala
 
--   [Glossary](./GLOSSARY.md)
+-   [Glosario](./GLOSSARY.md)
 -   [Referencias](./REFERENCES.md)
--   [Documentation](./DOCUMENTATION.md)
+-   [Documentación](./DOCUMENTATION.md)
 -   [Telemetria](./TELEMETRY.md)
 
 **Resumen ejecutivo**
@@ -57,4 +57,4 @@ Ver[README.md](./300/README.md)
 
 ## 400 - Conclusión
 
-See [README.md](./400/README.md)
+Ver[README.md](./400/README.md)
