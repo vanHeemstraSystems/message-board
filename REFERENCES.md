@@ -8,3 +8,4 @@
 - [SvelteKit](https://svelte.dev/tutorial/kit/introducing-sveltekit)
 - [SvelteKit Tutorial: Build a Website From Scratch](https://prismic.io/blog/svelte-sveltekit-tutorial)
 - [Dockerizing Your SvelteKit Applications: A Practical Guide](https://khromov.se/dockerizing-your-sveltekit-applications-a-practical-guide/)
+- [build-push-action](https://github.com/docker/build-push-action)
