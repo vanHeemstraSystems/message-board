@@ -1,4 +1,4 @@
-tablero de mensajes
+message-board
 
 # Tablero de mensajes
 
@@ -43,7 +43,7 @@ Próximos pasos:
 
 ## 100 - Introducción
 
-Ver[README.md](./100/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - Requisitos
 
