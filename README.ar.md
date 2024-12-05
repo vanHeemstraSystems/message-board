@@ -1,15 +1,15 @@
 لوحة الرسائل
 
-# لوحة الرسائل
+# Message Board
 
 > سلوجلاين
 
--   [مسرد](./GLOSSARY.md)
+-   [Glossary](./GLOSSARY.md)
 -   [مراجع](./REFERENCES.md)
 -   [التوثيق](./DOCUMENTATION.md)
 -   [القياس عن بعد](./TELEMETRY.md)
 
-**Executive Summary**
+**ملخص تنفيذي**
 
 1) قم بإنشاء تطبيق SvelteKit:
 
