@@ -12,7 +12,7 @@ COPY ./containers/app/frontend/pnpm-lock.yaml /app
 WORKDIR /usr/src/app
 RUN pnpm fetch --prod
 
-COPY . /usr/src/app
+COPY ./containers/app/frontend/ /usr/src/app
 RUN pnpm run build
 
 FROM base
