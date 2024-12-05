@@ -2,7 +2,7 @@ tablero de mensajes
 
 # Tablero de mensajes
 
-> línea de bala
+> Slugline
 
 -   [Glosario](./GLOSSARY.md)
 -   [Referencias](./REFERENCES.md)
