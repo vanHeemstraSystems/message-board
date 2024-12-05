@@ -1,6 +1,6 @@
 留言板
 
-# 留言板
+# Message Board
 
 > 斯拉格莱恩
 
@@ -41,7 +41,7 @@
     |  6: pnpm run build # creates a new build folder with production version  |
     |  7: pnpm run preview # creates a preview of the production version       |
 
-## 100 - 简介
+## 100 - Introduction
 
 看[README.md](./100/README.md)
 
@@ -55,4 +55,4 @@
 
 ## 400 - 结论
 
-看[README.md](./400/README.md)
+See [README.md](./400/README.md)
