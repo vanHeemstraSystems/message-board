@@ -21,7 +21,7 @@
     Choose typography, forms, container-queries
     Choose pnpm
 
-अगले कदम:
+Next steps:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
@@ -49,7 +49,7 @@
 
 देखना[README.md](./200/README.md)
 
-## 300 - हमारे एप्लिकेशन का निर्माण
+## 300 - Building Our Application
 
 देखना[README.md](./300/README.md)
 
