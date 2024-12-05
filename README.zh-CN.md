@@ -1,4 +1,4 @@
-存储库名称
+repository-name
 
 # 存储库名称
 
