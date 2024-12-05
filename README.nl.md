@@ -2,7 +2,7 @@ berichtenbord
 
 # Berichtenbord
 
-> Slaklijn
+> Slugline
 
 -   [Glossarium](./GLOSSARY.md)
 -   [Referenties](./REFERENCES.md)
@@ -11,7 +11,7 @@ berichtenbord
 
 **Samenvatting**
 
-1) Maak de SvelteKit-applicatie:
+1) Create the SvelteKit application:
 
     $ cd containers/app
     $ npx sv create frontend
