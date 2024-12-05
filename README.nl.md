@@ -4,14 +4,14 @@ berichtenbord
 
 > Slaklijn
 
--   [Glossary](./GLOSSARY.md)
+-   [Glossarium](./GLOSSARY.md)
 -   [Referenties](./REFERENCES.md)
--   [Documentation](./DOCUMENTATION.md)
+-   [Documentatie](./DOCUMENTATION.md)
 -   [Telemetrie](./TELEMETRY.md)
 
 **Samenvatting**
 
-1) Create the SvelteKit application:
+1) Maak de SvelteKit-applicatie:
 
     $ cd containers/app
     $ npx sv create frontend
@@ -21,7 +21,7 @@ berichtenbord
     Choose typography, forms, container-queries
     Choose pnpm
 
-Next steps:
+Volgende stappen:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
