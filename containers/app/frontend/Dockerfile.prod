@@ -13,6 +13,7 @@ WORKDIR /usr/src/app
 RUN pnpm fetch --prod
 
 COPY ./containers/app/frontend/ /usr/src/app
+RUN pnpm install
 RUN pnpm run build
 
 FROM base
