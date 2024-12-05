@@ -24,6 +24,7 @@ Choose pnpm
 
 Next steps:
 
+```
 │  1: cd frontend                                                          │
 |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
 |  3: change in svelte.config.js:                                          |
@@ -41,6 +42,7 @@ Next steps:
 |                                                                          |
 |  6: pnpm run build # creates a new build folder with production version  |
 |  7: pnpm run preview # creates a preview of the production version       |
+```
 
 ## 100 - Introduction
 
