@@ -1,8 +1,8 @@
-संदेश-बोर्ड
+message-board
 
 # संदेश बोर्ड
 
-> स्लगलाइन
+> Slugline
 
 -   [शब्दकोष](./GLOSSARY.md)
 -   [संदर्भ](./REFERENCES.md)
@@ -11,7 +11,7 @@
 
 **कार्यकारी सारांश**
 
-1) SvelteKit एप्लिकेशन बनाएं:
+1) Create the SvelteKit application:
 
     $ cd containers/app
     $ npx sv create frontend
@@ -49,7 +49,7 @@
 
 ## 200 - आवश्यकताएँ
 
-देखना[README.md](./200/README.md)
+See [README.md](./200/README.md)
 
 ## 300 - हमारे एप्लिकेशन का निर्माण
 
