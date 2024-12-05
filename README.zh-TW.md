@@ -2,7 +2,7 @@
 
 # 留言板
 
-> Slugline
+> 斯拉格萊恩
 
 -   [詞彙表](./GLOSSARY.md)
 -   [參考](./REFERENCES.md)
@@ -21,7 +21,7 @@
     Choose typography, forms, container-queries
     Choose pnpm
 
-Next steps:
+後續步驟：
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
@@ -57,4 +57,4 @@ Next steps:
 
 ## 400 - 結論
 
-看[README.md](./400/README.md)
+See [README.md](./400/README.md)
