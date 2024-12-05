@@ -2,7 +2,7 @@
 
 # لوحة الرسائل
 
-> Slugline
+> سلوجلاين
 
 -   [مسرد](./GLOSSARY.md)
 -   [مراجع](./REFERENCES.md)
@@ -11,7 +11,7 @@
 
 **ملخص تنفيذي**
 
-1) قم بإنشاء تطبيق SvelteKit:
+1) Create the SvelteKit application:
 
     $ cd containers/app
     $ npx sv create frontend
