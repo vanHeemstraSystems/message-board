@@ -7,7 +7,7 @@ repository-name
 -   [Glossarium](./GLOSSARY.md)
 -   [Referenties](./REFERENCES.md)
 -   [Documentatie](./DOCUMENTATION.md)
--   [Telemetrie](./TELEMETRY.md)
+-   [Telemetry](./TELEMETRY.md)
 
 **Samenvatting**
 
