@@ -5,7 +5,7 @@ tablero de mensajes
 > línea de bala
 
 -   [Glosario](./GLOSSARY.md)
--   [References](./REFERENCES.md)
+-   [Referencias](./REFERENCES.md)
 -   [Documentación](./DOCUMENTATION.md)
 -   [Telemetria](./TELEMETRY.md)
 
@@ -43,7 +43,7 @@ Próximos pasos:
 
 ## 100 - Introducción
 
-See [README.md](./100/README.md)
+Ver[README.md](./100/README.md)
 
 ## 200 - Requisitos
 

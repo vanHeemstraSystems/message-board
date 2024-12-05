@@ -1,6 +1,6 @@
 berichtenbord
 
-# Message Board
+# Berichtenbord
 
 > Slaklijn
 
@@ -11,7 +11,7 @@ berichtenbord
 
 **Samenvatting**
 
-1) Create the SvelteKit application:
+1) Maak de SvelteKit-applicatie:
 
     $ cd containers/app
     $ npx sv create frontend
