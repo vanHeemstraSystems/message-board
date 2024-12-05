@@ -2,7 +2,7 @@
 
 # 留言板
 
-> 斯拉格萊恩
+> Slugline
 
 -   [詞彙表](./GLOSSARY.md)
 -   [參考](./REFERENCES.md)
@@ -11,7 +11,7 @@
 
 **執行摘要**
 
-1）創建SvelteKit應用程式：
+1) Create the SvelteKit application:
 
     $ cd containers/app
     $ npx sv create frontend
@@ -45,13 +45,13 @@
 
 ## 100 - 簡介
 
-看[README.md](./100/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - 要求
 
 看[README.md](./200/README.md)
 
-## 300 - 建立我們的應用程式
+## 300 - Building Our Application
 
 看[README.md](./300/README.md)
 
