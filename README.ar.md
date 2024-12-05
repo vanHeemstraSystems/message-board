@@ -6,7 +6,7 @@
 
 -   [مسرد](./GLOSSARY.md)
 -   [مراجع](./REFERENCES.md)
--   [Documentation](./DOCUMENTATION.md)
+-   [التوثيق](./DOCUMENTATION.md)
 -   [القياس عن بعد](./TELEMETRY.md)
 
 **ملخص تنفيذي**
@@ -19,12 +19,12 @@
 
 ## 200 - المتطلبات
 
-See [README.md](./200/README.md)
+يرى[README.md](./200/README.md)
 
 ## 300 – بناء تطبيقنا
 
 يرى[README.md](./300/README.md)
 
-## 400 - الخاتمة
+## 400 - Conclusion
 
-يرى[README.md](./400/README.md)
+See [README.md](./400/README.md)
