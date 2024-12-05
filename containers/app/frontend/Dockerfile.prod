@@ -1,74 +1,22 @@
-ARG IMAGE_REPOSITORY
-# Use the official Node.js image
-# FROM ${IMAGE_REPOSITORY}${IMAGE_REPOSITORY_DIVISION}node:19.7-alpine AS build
-FROM node:19.7-alpine AS build
+# See https://pnpm.io/docker
+# See also https://www.youtube.com/watch?v=NLjolI9FwCU
+FROM node:20-slim AS base
 
-# See https://stackoverflow.com/questions/29261811/use-docker-compose-env-variable-in-dockerbuild-file
-# Hardcoded, make dynamic:
-# ARG PROXY_USER
-# ENV PROXY_USER=proxy-user
-# ARG PROXY_PASSWORD
-# ENV PROXY_PASSWORD=proxy-password
-# ARG PROXY_FQDN
-# ENV PROXY_FQDN=myproxy.company.com
-# ARG PROXY_PORT
-# ENV PROXY_PORT=8080
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 
-# ENV PROXY='http://"${PROXY_USER}:${PROXY_PASSWORD}"@${PROXY_FQDN}:${PROXY_PORT}'
-# ENV HTTP_PROXY='http://"${PROXY_USER}:${PROXY_PASSWORD}"@${PROXY_FQDN}:${PROXY_PORT}'
-# ENV HTTPS_PROXY='http://"${PROXY_USER}:${PROXY_PASSWORD}"@${PROXY_FQDN}:${PROXY_PORT}'
+FROM base AS prod
 
-# Hardcoded, make dynamic
-# ENV STRICT-SSL=false
-# ENV REGISTRY=http://registry.npmjs.org/
+COPY pnpm-lock.yaml /app
+WORKDIR /app
+RUN pnpm fetch --prod
 
-# Set the working directory
-WORKDIR /usr/src/app
+COPY . /app
+RUN pnpm run build
 
-# Set the time zone
-ARG TZ=Europe/Amsterdam
-
-# Copy package.json and pnpm-lock.yaml
-COPY package*.json ./
-COPY pnpm-lock.yaml ./
-# COPY .npmrc ./
-
-# Copy the rest of the application
-COPY . /usr/src/app
-
-# Apply time zone
-RUN apk --no-cache add curl tzdata
-RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
-# Install dependencies
-# RUN npm config set strict-ssl false
-# RUN npm config set registry "http://registry.npmjs.org/"
-# RUN npm --proxy http://"${PROXY_USER}:${PROXY_PASSWORD}"@${PROXY_FQDN}:${PROXY_PORT} install --verbose --global
-RUN npm install
-
-# Build the SvelteKit app
-RUN npm run build
-
-# Production image
-FROM node:19.7-alpine
-
-# Set the working directory
-WORKDIR /usr/src/app
-
-# Set and apply the time zone
-ARG TZ=Europe/Amsterdam
-RUN apk --no-cache add curl tzdata
-RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
-# Copy the built files from the build stage
-COPY --from=build /usr/src/app/package.json /usr/src/app/package.json
-COPY --from=build /usr/src/app/pnpm-lock.yaml /usr/src/app/pnpm-lock.yaml
-# COPY --from=build /usr/src/app/.npmrc /usr/src/app/.npmrc
-COPY --from=build /usr/src/app/migrations /usr/src/app/migrations
-COPY --from=build /usr/src/app/build-node /usr/src/app/build-node
-
-# Expose the port the app runs on
+FROM base
+COPY --from=prod /app/node_modules /app/node_modules
+COPY --from=prod /app/build-node /app/build-node
 EXPOSE 3000
-
-# Start server
-CMD ["npm", "run", "start:node"]
+CMD [ "pnpm", "start" ]

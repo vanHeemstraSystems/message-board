@@ -9,3 +9,5 @@
 - [SvelteKit Tutorial: Build a Website From Scratch](https://prismic.io/blog/svelte-sveltekit-tutorial)
 - [Dockerizing Your SvelteKit Applications: A Practical Guide](https://khromov.se/dockerizing-your-sveltekit-applications-a-practical-guide/)
 - [build-push-action](https://github.com/docker/build-push-action)
+- [Create and manage access tokens](https://docs.docker.com/security/for-developers/access-tokens/)
+- [](https://pnpm.io/docker)
