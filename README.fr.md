@@ -41,7 +41,7 @@ Prochaines étapes :
     |  6: pnpm run build # creates a new build folder with production version  |
     |  7: pnpm run preview # creates a preview of the production version       |
 
-## 100 - Introduction
+## 100 - Présentation
 
 Voir[README.md](./100/README.md)
 
@@ -49,9 +49,9 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Créer notre application
+## 300 - Construire notre application
 
-See [README.md](./300/README.md)
+Voir[README.md](./300/README.md)
 
 ## 400 - Conclusion
 
