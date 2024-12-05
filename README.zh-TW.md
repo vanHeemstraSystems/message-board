@@ -2,7 +2,7 @@
 
 # 留言板
 
-> 斯拉格萊恩
+> Slugline
 
 -   [詞彙表](./GLOSSARY.md)
 -   [參考](./REFERENCES.md)
@@ -45,7 +45,7 @@
 
 看[README.md](./100/README.md)
 
-## 200 - 要求
+## 200 - Requirements
 
 看[README.md](./200/README.md)
 
