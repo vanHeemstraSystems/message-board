@@ -9,7 +9,7 @@
 -   [प्रलेखन](./DOCUMENTATION.md)
 -   [टेलीमेटरी](./TELEMETRY.md)
 
-**Executive Summary**
+**कार्यकारी सारांश**
 
 1) SvelteKit एप्लिकेशन बनाएं:
 
