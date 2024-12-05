@@ -1,12 +1,12 @@
 संदेश-बोर्ड
 
-# Message Board
+# संदेश बोर्ड
 
 > स्लगलाइन
 
 -   [शब्दकोष](./GLOSSARY.md)
 -   [संदर्भ](./REFERENCES.md)
--   [Documentation](./DOCUMENTATION.md)
+-   [प्रलेखन](./DOCUMENTATION.md)
 -   [टेलीमेटरी](./TELEMETRY.md)
 
 **कार्यकारी सारांश**
