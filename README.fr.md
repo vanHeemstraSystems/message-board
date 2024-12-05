@@ -1,11 +1,11 @@
-babillard électronique
+message-board
 
 # Tableau de messages
 
 > Slugline
 
 -   [Glossaire](./GLOSSARY.md)
--   [Références](./REFERENCES.md)
+-   [References](./REFERENCES.md)
 -   [Documentation](./DOCUMENTATION.md)
 -   [Télémétrie](./TELEMETRY.md)
 
