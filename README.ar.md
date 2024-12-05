@@ -4,10 +4,10 @@
 
 > سلوجلاين
 
--   [Glossary](./GLOSSARY.md)
+-   [مسرد](./GLOSSARY.md)
 -   [مراجع](./REFERENCES.md)
 -   [التوثيق](./DOCUMENTATION.md)
--   [القياس عن بعد](./TELEMETRY.md)
+-   [Telemetry](./TELEMETRY.md)
 
 **ملخص تنفيذي**
 
@@ -55,4 +55,4 @@
 
 ## 400 - الخاتمة
 
-See [README.md](./400/README.md)
+يرى[README.md](./400/README.md)
