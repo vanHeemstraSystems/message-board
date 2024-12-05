@@ -1,4 +1,4 @@
-留言板
+message-board
 
 # 留言板
 
@@ -41,7 +41,7 @@
     |  6: pnpm run build # creates a new build folder with production version  |
     |  7: pnpm run preview # creates a preview of the production version       |
 
-## 100 - Introduction
+## 100 - 简介
 
 看[README.md](./100/README.md)
 
@@ -55,4 +55,4 @@
 
 ## 400 - 结论
 
-See [README.md](./400/README.md)
+看[README.md](./400/README.md)
