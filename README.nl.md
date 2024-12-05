@@ -1,8 +1,8 @@
 berichtenbord
 
-# Berichtenbord
+# Message Board
 
-> Slugline
+> Slaklijn
 
 -   [Glossarium](./GLOSSARY.md)
 -   [Referenties](./REFERENCES.md)
