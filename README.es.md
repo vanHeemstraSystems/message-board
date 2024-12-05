@@ -2,10 +2,10 @@ tablero de mensajes
 
 # Tablero de mensajes
 
-> Slugline
+> línea de bala
 
 -   [Glosario](./GLOSSARY.md)
--   [Referencias](./REFERENCES.md)
+-   [References](./REFERENCES.md)
 -   [Documentación](./DOCUMENTATION.md)
 -   [Telemetria](./TELEMETRY.md)
 
@@ -43,7 +43,7 @@ Próximos pasos:
 
 ## 100 - Introducción
 
-Ver[README.md](./100/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - Requisitos
 
