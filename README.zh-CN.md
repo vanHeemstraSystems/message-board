@@ -5,7 +5,7 @@
 > 斯拉格莱恩
 
 -   [词汇表](./GLOSSARY.md)
--   [References](./REFERENCES.md)
+-   [参考](./REFERENCES.md)
 -   [文档](./DOCUMENTATION.md)
 -   [遥测](./TELEMETRY.md)
 
@@ -47,9 +47,9 @@
 
 看[README.md](./100/README.md)
 
-## 200 - 要求
+## 200 - Requirements
 
-看[README.md](./200/README.md)
+See [README.md](./200/README.md)
 
 ## 300 - 构建我们的应用程序
 
