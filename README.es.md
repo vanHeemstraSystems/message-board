@@ -4,9 +4,9 @@ tablero de mensajes
 
 > línea de bala
 
--   [Glosario](./GLOSSARY.md)
+-   [Glossary](./GLOSSARY.md)
 -   [Referencias](./REFERENCES.md)
--   [Documentación](./DOCUMENTATION.md)
+-   [Documentation](./DOCUMENTATION.md)
 -   [Telemetria](./TELEMETRY.md)
 
 **Resumen ejecutivo**
@@ -31,15 +31,17 @@ Próximos pasos:
     |     and:                                                                 |
     |     FROM: adapter: adapter()                                             |
     |     TO:   adapter: adapter({ out: 'build' })                             |
-    │  4: git init && git add -A && git commit -m "Initial commit" (optional)  │
-    │  5: pnpm dev --open                                                      │
+    |  4: Add to package.json:                                                 |
+    |     "packageManager": "pnpm@9.14.4",                                     |
+    │  5: git init && git add -A && git commit -m "Initial commit" (optional)  │
+    │  6: pnpm dev --open                                                      │
     │                                                                          │
     │  To close the dev server, hit Ctrl-C                                     │
     │                                                                          │
     │  Stuck? Visit us at https://svelte.dev/chat                              |
     |                                                                          |
-    |  6: pnpm run build # creates a new build folder with production version  |
-    |  7: pnpm run preview # creates a preview of the production version       |
+    |  7: pnpm run build # creates a new build folder with production version  |
+    |  8: pnpm run preview # creates a preview of the production version       |
 
 ## 100 - Introducción
 
@@ -55,4 +57,4 @@ Ver[README.md](./300/README.md)
 
 ## 400 - Conclusión
 
-Ver[README.md](./400/README.md)
+See [README.md](./400/README.md)

@@ -9,7 +9,7 @@ berichtenbord
 -   [Documentatie](./DOCUMENTATION.md)
 -   [Telemetrie](./TELEMETRY.md)
 
-**Samenvatting**
+**Executive Summary**
 
 1) Maak de SvelteKit-applicatie:
 
@@ -31,15 +31,17 @@ Volgende stappen:
     |     and:                                                                 |
     |     FROM: adapter: adapter()                                             |
     |     TO:   adapter: adapter({ out: 'build' })                             |
-    │  4: git init && git add -A && git commit -m "Initial commit" (optional)  │
-    │  5: pnpm dev --open                                                      │
+    |  4: Add to package.json:                                                 |
+    |     "packageManager": "pnpm@9.14.4",                                     |
+    │  5: git init && git add -A && git commit -m "Initial commit" (optional)  │
+    │  6: pnpm dev --open                                                      │
     │                                                                          │
     │  To close the dev server, hit Ctrl-C                                     │
     │                                                                          │
     │  Stuck? Visit us at https://svelte.dev/chat                              |
     |                                                                          |
-    |  6: pnpm run build # creates a new build folder with production version  |
-    |  7: pnpm run preview # creates a preview of the production version       |
+    |  7: pnpm run build # creates a new build folder with production version  |
+    |  8: pnpm run preview # creates a preview of the production version       |
 
 ## 100 - Inleiding
 

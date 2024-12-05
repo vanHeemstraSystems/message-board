@@ -2,7 +2,7 @@
 
 # 留言板
 
-> 斯拉格莱恩
+> Slugline
 
 -   [词汇表](./GLOSSARY.md)
 -   [参考](./REFERENCES.md)
@@ -31,21 +31,23 @@
     |     and:                                                                 |
     |     FROM: adapter: adapter()                                             |
     |     TO:   adapter: adapter({ out: 'build' })                             |
-    │  4: git init && git add -A && git commit -m "Initial commit" (optional)  │
-    │  5: pnpm dev --open                                                      │
+    |  4: Add to package.json:                                                 |
+    |     "packageManager": "pnpm@9.14.4",                                     |
+    │  5: git init && git add -A && git commit -m "Initial commit" (optional)  │
+    │  6: pnpm dev --open                                                      │
     │                                                                          │
     │  To close the dev server, hit Ctrl-C                                     │
     │                                                                          │
     │  Stuck? Visit us at https://svelte.dev/chat                              |
     |                                                                          |
-    |  6: pnpm run build # creates a new build folder with production version  |
-    |  7: pnpm run preview # creates a preview of the production version       |
+    |  7: pnpm run build # creates a new build folder with production version  |
+    |  8: pnpm run preview # creates a preview of the production version       |
 
 ## 100 - 简介
 
-See [README.md](./100/README.md)
+看[README.md](./100/README.md)
 
-## 200 - Requirements
+## 200 - 要求
 
 看[README.md](./200/README.md)
 
