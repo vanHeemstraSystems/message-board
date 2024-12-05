@@ -11,7 +11,7 @@
 
 **ملخص تنفيذي**
 
-1) Create the SvelteKit application:
+1) قم بإنشاء تطبيق SvelteKit:
 
     $ cd containers/app
     $ npx sv create frontend
