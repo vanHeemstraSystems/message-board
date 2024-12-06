@@ -18,6 +18,6 @@ RUN pnpm run build
 
 FROM base
 COPY --from=prod /usr/src/app/node_modules /usr/src/app/node_modules
-COPY --from=prod /usr/src/app/build-node /usr/src/app/build-node
+COPY --from=prod /usr/src/app/build /usr/src/app/build
 EXPOSE 3000
 CMD [ "pnpm", "start" ]
