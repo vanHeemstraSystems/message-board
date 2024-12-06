@@ -37,5 +37,5 @@ jobs:
           curl -X PATCH \
             -H "Content-Type: application/json" \
             -u ${{ vars.DOCKERHUB_USERNAME }}:${{ secrets.DOCKERHUB_TOKEN }} \
-            -d "{\"description\":\"$DESCRIPTION\"}" \
+            -d "{\"description\":\"Hello\"}" \
             https://hub.docker.com/v2/repositories/${{ github.repository_owner }}/${{ github.repository }}-frontend/
