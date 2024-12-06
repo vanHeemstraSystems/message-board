@@ -4,12 +4,13 @@ berichtenbord
 
 > Slaklijn
 
--   [Glossarium](./GLOSSARY.md)
--   [Referenties](./REFERENCES.md)
 -   [Documentatie](./DOCUMENTATION.md)
+-   [Glossarium](./GLOSSARY.md)
+-   [Afbeeldingen](./IMAGES.md)
+-   [Referenties](./REFERENCES.md)
 -   [Telemetrie](./TELEMETRY.md)
 
-**Samenvatting**
+**Executive Summary**
 
 1) Maak de SvelteKit-applicatie:
 
@@ -45,7 +46,7 @@ Volgende stappen:
 
 ## 100 - Inleiding
 
-See [README.md](./100/README.md)
+Zien[README.md](./100/README.md)
 
 ## 200 - Vereisten
 
