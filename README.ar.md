@@ -1,6 +1,6 @@
 لوحة الرسائل
 
-# لوحة الرسائل
+# Message Board
 
 > سلوجلاين
 
@@ -9,7 +9,7 @@
 -   [التوثيق](./DOCUMENTATION.md)
 -   [القياس عن بعد](./TELEMETRY.md)
 
-**ملخص تنفيذي**
+**Executive Summary**
 
 1) قم بإنشاء تطبيق SvelteKit:
 
@@ -43,11 +43,11 @@
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
 
-## 100- مقدمة
+## 100 - Introduction
 
 يرى[README.md](./100/README.md)
 
-## 200 - المتطلبات
+## 200 - Requirements
 
 يرى[README.md](./200/README.md)
 
@@ -55,6 +55,6 @@
 
 يرى[README.md](./300/README.md)
 
-## 400 - الخاتمة
+## 400 - Conclusion
 
 يرى[README.md](./400/README.md)
