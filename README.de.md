@@ -4,9 +4,10 @@ Message-Board
 
 > Slugline
 
--   [Glossar](./GLOSSARY.md)
--   [Referenzen](./REFERENCES.md)
 -   [Dokumentation](./DOCUMENTATION.md)
+-   [Glossar](./GLOSSARY.md)
+-   [Bilder](./IMAGES.md)
+-   [Referenzen](./REFERENCES.md)
 -   [Telemetrie](./TELEMETRY.md)
 
 **Zusammenfassung**
