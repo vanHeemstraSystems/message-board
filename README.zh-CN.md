@@ -1,8 +1,8 @@
-message-board
+留言板
 
 # 留言板
 
-> Slugline
+> 斯拉格莱恩
 
 -   [词汇表](./GLOSSARY.md)
 -   [参考](./REFERENCES.md)
@@ -45,7 +45,7 @@ message-board
 
 ## 100 - 简介
 
-See [README.md](./100/README.md)
+看[README.md](./100/README.md)
 
 ## 200 - 要求
 

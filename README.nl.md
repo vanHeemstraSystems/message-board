@@ -6,7 +6,7 @@ berichtenbord
 
 -   [Glossarium](./GLOSSARY.md)
 -   [Referenties](./REFERENCES.md)
--   [Documentation](./DOCUMENTATION.md)
+-   [Documentatie](./DOCUMENTATION.md)
 -   [Telemetrie](./TELEMETRY.md)
 
 **Samenvatting**
@@ -45,7 +45,7 @@ Volgende stappen:
 
 ## 100 - Inleiding
 
-Zien[README.md](./100/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - Vereisten
 
