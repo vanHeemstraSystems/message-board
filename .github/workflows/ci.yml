@@ -33,7 +33,7 @@ jobs:
       - 
         name: Update Docker Hub Description
         run: |
-          DESCRIPTION=$(cat DESCRIPTION.md)
+          DESCRIPTION="# Frontend<br/>About frontend"
           curl -X PATCH \
             -H "Content-Type: application/json" \
             -u ${{ vars.DOCKERHUB_USERNAME }}:${{ secrets.DOCKERHUB_TOKEN }} \
