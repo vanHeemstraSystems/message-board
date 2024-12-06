@@ -22,7 +22,7 @@ berichtenbord
     Choose typography, forms, container-queries
     Choose pnpm
 
-Next steps:
+Volgende stappen:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
