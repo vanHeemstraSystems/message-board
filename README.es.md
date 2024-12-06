@@ -1,4 +1,4 @@
-message-board
+tablero de mensajes
 
 # Tablero de mensajes
 
@@ -7,12 +7,12 @@ message-board
 -   [Documentación](./DOCUMENTATION.md)
 -   [Glosario](./GLOSSARY.md)
 -   [Imágenes](./IMAGES.md)
--   [References](./REFERENCES.md)
+-   [Referencias](./REFERENCES.md)
 -   [Telemetria](./TELEMETRY.md)
 
 **Resumen ejecutivo**
 
-1) Cree la aplicación SvelteKit:
+1) Create the SvelteKit application:
 
     $ cd containers/app
     $ npx sv create frontend
