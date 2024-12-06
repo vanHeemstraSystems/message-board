@@ -10,4 +10,5 @@
 - [Dockerizing Your SvelteKit Applications: A Practical Guide](https://khromov.se/dockerizing-your-sveltekit-applications-a-practical-guide/)
 - [build-push-action](https://github.com/docker/build-push-action)
 - [Create and manage access tokens](https://docs.docker.com/security/for-developers/access-tokens/)
-- [](https://pnpm.io/docker)
+- [PNPM with Docker](https://pnpm.io/docker)
+- [Exploring SvelteKit: A Comprehensive Beginner's Guide - part 1](https://www.linkedin.com/pulse/exploring-sveltekit-comprehensive-beginners-guide-part-prakash/)
