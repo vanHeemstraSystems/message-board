@@ -4,9 +4,10 @@ babillard électronique
 
 > Slugline
 
--   [Glossaire](./GLOSSARY.md)
--   [Références](./REFERENCES.md)
 -   [Documentation](./DOCUMENTATION.md)
+-   [Glossaire](./GLOSSARY.md)
+-   [Images](./IMAGES.md)
+-   [Références](./REFERENCES.md)
 -   [Télémétrie](./TELEMETRY.md)
 
 **Résumé exécutif**
