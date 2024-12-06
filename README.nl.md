@@ -10,7 +10,7 @@ berichtenbord
 -   [Referenties](./REFERENCES.md)
 -   [Telemetrie](./TELEMETRY.md)
 
-**Executive Summary**
+**Samenvatting**
 
 1) Maak de SvelteKit-applicatie:
 
@@ -22,7 +22,7 @@ berichtenbord
     Choose typography, forms, container-queries
     Choose pnpm
 
-Volgende stappen:
+Next steps:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
@@ -46,7 +46,7 @@ Volgende stappen:
 
 ## 100 - Inleiding
 
-Zien[README.md](./100/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - Vereisten
 
