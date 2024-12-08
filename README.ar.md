@@ -12,7 +12,7 @@
 
 **ملخص تنفيذي**
 
-1) قم بإنشاء تطبيق SvelteKit:
+1) Create the SvelteKit application:
 
     $ cd containers/app
     $ npx sv create frontend
@@ -22,7 +22,7 @@
     Choose typography, forms, container-queries
     Choose pnpm
 
-الخطوات التالية:
+Next steps:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
@@ -44,7 +44,7 @@
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
 
-## 100 - Introduction
+## 100- مقدمة
 
 يرى[README.md](./100/README.md)
 
