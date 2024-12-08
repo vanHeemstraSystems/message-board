@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
+        name: Checkout
+        uses: actions/checkout@v4
+      -
         name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -33,9 +36,15 @@ jobs:
       - 
         name: Update Docker Hub Description
         run: |
-          DESCRIPTION="# Frontend<br/>About frontend"
+          # Read description from file and escape newlines
+          DESCRIPTION=$(cat ./containers/app/frontend/DESCRIPTION.md | sed ':a;N;$!ba;s/\n/\\n/g')
+          
+          # Update Docker Hub repository description
           curl -X PATCH \
             -H "Content-Type: application/json" \
             -u ${{ vars.DOCKERHUB_USERNAME }}:${{ secrets.DOCKERHUB_TOKEN }} \
-            -d "{\"description\":\"Hello\"}" \
-            https://hub.docker.com/v2/repositories/${{ github.repository_owner }}/${{ github.repository }}-frontend/
+            -d "{\"description\":\"$DESCRIPTION\"}" \
+            https://hub.docker.com/v2/repositories/vanheemstrasystems/message-board-frontend/
+
+      
+# https://hub.docker.com/v2/repositories/${{ github.repository_owner }}/${{ github.repository }}-frontend/            
