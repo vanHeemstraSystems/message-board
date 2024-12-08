@@ -12,7 +12,7 @@ babillard électronique
 
 **Résumé exécutif**
 
-1) Créez l'application SvelteKit :
+1) Create the SvelteKit application:
 
     $ cd containers/app
     $ npx sv create frontend
