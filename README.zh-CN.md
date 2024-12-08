@@ -6,13 +6,13 @@
 
 -   [文档](./DOCUMENTATION.md)
 -   [Glossary](./GLOSSARY.md)
--   [Images](./IMAGES.md)
+-   [图片](./IMAGES.md)
 -   [参考](./REFERENCES.md)
 -   [遥测](./TELEMETRY.md)
 
 **执行摘要**
 
-1）创建SvelteKit应用程序：
+1) Create the SvelteKit application:
 
     $ cd containers/app
     $ npx sv create frontend
@@ -52,7 +52,7 @@
 
 看[README.md](./200/README.md)
 
-## 300 - Building Our Application
+## 300 - 构建我们的应用程序
 
 看[README.md](./300/README.md)
 
