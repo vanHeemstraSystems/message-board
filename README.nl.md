@@ -10,7 +10,7 @@ berichtenbord
 -   [Referenties](./REFERENCES.md)
 -   [Telemetrie](./TELEMETRY.md)
 
-**Executive Summary**
+**Samenvatting**
 
 1) Maak de SvelteKit-applicatie:
 
