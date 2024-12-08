@@ -11,34 +11,31 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
-      -
-        name: Login to Docker Hub
+      - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Set up QEMU
+      - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-      -
-        name: Set up Docker Buildx
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      -
-        name: Build and push
+      - name: Build and push
         uses: docker/build-push-action@v6
         with:
           push: true
           file: ./containers/app/frontend/Dockerfile.prod
           tags: vanheemstrasystems/message-board-frontend:latest
-      - 
-        name: Update Docker Hub Description
+      - name: Update Docker Hub Description
         run: |
           # Read description from file and escape newlines
           DESCRIPTION=$(cat ./containers/app/frontend/DESCRIPTION.md | sed ':a;N;$!ba;s/\n/\\n/g')
-          
+          # Get the Docker Hub repository info
+          REPOSITORY_INFO=$(curl -s -u "${{ vars.DOCKERHUB_USERNAME }}:${{ secrets.DOCKERHUB_TOKEN }}" "https://hub.docker.com/v2/repositories/${{ vars.DOCKERHUB_ORGANIZATION_NAME }}/message-board-frontend/")
+          echo "$REPOSITORY_INFO"
+
           # Update Docker Hub repository description
           curl -v -X PATCH \
             -H "Content-Type: application/json" \
@@ -46,5 +43,4 @@ jobs:
             -d "{\"description\":\"$DESCRIPTION\"}" \
             "https://hub.docker.com/api/v2/repositories/${{ vars.DOCKERHUB_ORGANIZATION_NAME }}/message-board-frontend/"
 
-      
-# https://hub.docker.com/api/v2/repositories/${{ github.repository_owner }}/${{ github.repository }}-frontend/            
+# https://hub.docker.com/api/v2/repositories/${{ github.repository_owner }}/${{ github.repository }}-frontend/
