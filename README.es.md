@@ -1,6 +1,6 @@
 tablero de mensajes
 
-# Tablero de mensajes
+# Message Board
 
 > línea de bala
 
