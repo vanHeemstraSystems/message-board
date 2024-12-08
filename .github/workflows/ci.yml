@@ -28,25 +28,34 @@ jobs:
           push: true
           file: ./containers/app/frontend/Dockerfile.prod
           tags: vanheemstrasystems/message-board-frontend:latest
-      - name: Update Docker Hub Description
-        run: |
-          # Read description from file and escape newlines
-          DESCRIPTION=$(cat ./containers/app/frontend/DESCRIPTION.md | sed ':a;N;$!ba;s/\n/\\n/g')
-          echo "Description: $DESCRIPTION"
-          
-          # Get the Docker Hub repository info
-          REPOSITORY_INFO=$(curl -s -H "Accept: application/json" \
-            -u "${{ vars.DOCKERHUB_ORGANIZATION_NAME }}:${{ secrets.DOCKERHUB_TOKEN }}" \
-            "https://hub.docker.com/v2/repositories/${{ vars.DOCKERHUB_ORGANIZATION_NAME }}/message-board-frontend/")
-          echo "Repository Info: $REPOSITORY_INFO"
 
-          # Update Docker Hub repository description
-          curl -v -X PATCH \
-            -H "Accept: application/json" \
-            -H "Content-Type: application/json" \
-            -u "${{ vars.DOCKERHUB_ORGANIZATION_NAME }}:${{ secrets.DOCKERHUB_TOKEN }}" \
-            -d "{\"full_description\":\"$DESCRIPTION\", \"description\":\"$DESCRIPTION\"}" \
-            "https://hub.docker.com/v2/repositories/vanheemstrasystems/message-board-frontend/"
+      - name: Update Docker Hub Description
+        uses: peter-evans/dockerhub-description@v4
+        with:
+          username: ${{ vars.DOCKERHUB_ORGANIZATION_NAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: vanheemstrasystems/message-board-frontend
+          readme-filepath: ./containers/app/frontend/DESCRIPTION.md
+
+      # - name: Update Docker Hub Description
+      #   run: |
+      #     # Read description from file and escape newlines
+      #     DESCRIPTION=$(cat ./containers/app/frontend/DESCRIPTION.md | sed ':a;N;$!ba;s/\n/\\n/g')
+      #     echo "Description: $DESCRIPTION"
+          
+      #     # Get the Docker Hub repository info
+      #     REPOSITORY_INFO=$(curl -s -H "Accept: application/json" \
+      #       -u "${{ vars.DOCKERHUB_ORGANIZATION_NAME }}:${{ secrets.DOCKERHUB_TOKEN }}" \
+      #       "https://hub.docker.com/v2/repositories/${{ vars.DOCKERHUB_ORGANIZATION_NAME }}/message-board-frontend/")
+      #     echo "Repository Info: $REPOSITORY_INFO"
+
+      #     # Update Docker Hub repository description
+      #     curl -v -X PATCH \
+      #       -H "Accept: application/json" \
+      #       -H "Content-Type: application/json" \
+      #       -u "${{ vars.DOCKERHUB_ORGANIZATION_NAME }}:${{ secrets.DOCKERHUB_TOKEN }}" \
+      #       -d "{\"full_description\":\"$DESCRIPTION\", \"description\":\"$DESCRIPTION\"}" \
+      #       "https://hub.docker.com/v2/repositories/vanheemstrasystems/message-board-frontend/"
 
 # "https://hub.docker.com/v2/repositories/${{ vars.DOCKERHUB_ORGANIZATION_NAME }}/message-board-frontend/"            
 # https://hub.docker.com/api/v2/repositories/${{ github.repository_owner }}/${{ github.repository }}-frontend/
