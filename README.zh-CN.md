@@ -2,7 +2,7 @@
 
 # 留言板
 
-> Slugline
+> 斯拉格莱恩
 
 -   [文档](./DOCUMENTATION.md)
 -   [词汇表](./GLOSSARY.md)
@@ -46,7 +46,7 @@
 
 ## 100 - 简介
 
-See [README.md](./100/README.md)
+看[README.md](./100/README.md)
 
 ## 200 - 要求
 
