@@ -1,13 +1,13 @@
 留言板
 
-# 留言板
+# Message Board
 
 > 斯拉格萊恩
 
 -   [文件](./DOCUMENTATION.md)
 -   [詞彙表](./GLOSSARY.md)
 -   [圖片](./IMAGES.md)
--   [參考](./REFERENCES.md)
+-   [References](./REFERENCES.md)
 -   [遙測](./TELEMETRY.md)
 
 **執行摘要**
@@ -22,7 +22,7 @@
     Choose typography, forms, container-queries
     Choose pnpm
 
-後續步驟：
+Next steps:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
