@@ -5,14 +5,14 @@ Message-Board
 > Slugline
 
 -   [Dokumentation](./DOCUMENTATION.md)
--   [Glossar](./GLOSSARY.md)
+-   [Glossary](./GLOSSARY.md)
 -   [Bilder](./IMAGES.md)
 -   [Referenzen](./REFERENCES.md)
 -   [Telemetrie](./TELEMETRY.md)
 
 **Zusammenfassung**
 
-1) Erstellen Sie die SvelteKit-Anwendung:
+1) Create the SvelteKit application:
 
     $ cd containers/app
     $ npx sv create frontend
