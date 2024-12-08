@@ -12,3 +12,4 @@
 - [Create and manage access tokens](https://docs.docker.com/security/for-developers/access-tokens/)
 - [PNPM with Docker](https://pnpm.io/docker)
 - [Exploring SvelteKit: A Comprehensive Beginner's Guide - part 1](https://www.linkedin.com/pulse/exploring-sveltekit-comprehensive-beginners-guide-part-prakash/)
+- [Peter Evans Docker Hub Description](https://github.com/peter-evans/dockerhub-description)
