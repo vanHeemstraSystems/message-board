@@ -1,4 +1,4 @@
-tablero de mensajes
+message-board
 
 # Tablero de mensajes
 
@@ -48,7 +48,7 @@ Próximos pasos:
 
 Ver[README.md](./100/README.md)
 
-## 200 - Requisitos
+## 200 - Requirements
 
 Ver[README.md](./200/README.md)
 
