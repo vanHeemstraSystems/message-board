@@ -1,8 +1,8 @@
 tablero de mensajes
 
-# Message Board
+# Tablero de mensajes
 
-> línea de bala
+> Slugline
 
 -   [Documentación](./DOCUMENTATION.md)
 -   [Glosario](./GLOSSARY.md)
@@ -46,7 +46,7 @@ Próximos pasos:
 
 ## 100 - Introducción
 
-Ver[README.md](./100/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - Requisitos
 
