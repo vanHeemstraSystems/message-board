@@ -10,9 +10,9 @@
 -   [مراجع](./REFERENCES.md)
 -   [القياس عن بعد](./TELEMETRY.md)
 
-**Executive Summary**
+**ملخص تنفيذي**
 
-1) Create the SvelteKit application:
+1) قم بإنشاء تطبيق SvelteKit:
 
     $ cd containers/app
     $ npx sv create frontend
@@ -46,7 +46,7 @@
 
 ## 100- مقدمة
 
-يرى[README.md](./100/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - المتطلبات
 
