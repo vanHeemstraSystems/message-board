@@ -48,7 +48,7 @@ Nächste Schritte:
 
 Sehen[README.md](./100/README.md)
 
-## 200 – Anforderungen
+## 200 - Requirements
 
 Sehen[README.md](./200/README.md)
 
