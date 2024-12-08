@@ -1,4 +1,4 @@
-message-board
+لوحة الرسائل
 
 # لوحة الرسائل
 
@@ -12,7 +12,7 @@ message-board
 
 **ملخص تنفيذي**
 
-1) Create the SvelteKit application:
+1) قم بإنشاء تطبيق SvelteKit:
 
     $ cd containers/app
     $ npx sv create frontend
@@ -22,7 +22,7 @@ message-board
     Choose typography, forms, container-queries
     Choose pnpm
 
-Next steps:
+الخطوات التالية:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
