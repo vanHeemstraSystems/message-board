@@ -46,13 +46,13 @@ Prochaines étapes :
 
 ## 100 - Introduction
 
-See [README.md](./100/README.md)
+Voir[README.md](./100/README.md)
 
 ## 200 - Exigences
 
-See [README.md](./200/README.md)
+Voir[README.md](./200/README.md)
 
-## 300 - Créer notre application
+## 300 - Building Our Application
 
 Voir[README.md](./300/README.md)
 
