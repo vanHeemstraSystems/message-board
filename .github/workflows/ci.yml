@@ -40,11 +40,11 @@ jobs:
           DESCRIPTION=$(cat ./containers/app/frontend/DESCRIPTION.md | sed ':a;N;$!ba;s/\n/\\n/g')
           
           # Update Docker Hub repository description
-          curl -X PATCH \
+          curl -v -X PATCH \
             -H "Content-Type: application/json" \
-            -u ${{ vars.DOCKERHUB_USERNAME }}:${{ secrets.DOCKERHUB_TOKEN }} \
+            -u "${{ vars.DOCKERHUB_USERNAME }}:${{ secrets.DOCKERHUB_TOKEN }}" \
             -d "{\"description\":\"$DESCRIPTION\"}" \
-            https://hub.docker.com/v2/repositories/vanheemstrasystems/message-board-frontend/
+            "https://hub.docker.com/v2/repositories/${{ vars.DOCKERHUB_ORGANIZATION_NAME }}/message-board-frontend/"
 
       
 # https://hub.docker.com/v2/repositories/${{ github.repository_owner }}/${{ github.repository }}-frontend/            
