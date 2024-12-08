@@ -12,7 +12,7 @@
 
 **कार्यकारी सारांश**
 
-1) Create the SvelteKit application:
+1) SvelteKit एप्लिकेशन बनाएं:
 
     $ cd containers/app
     $ npx sv create frontend
