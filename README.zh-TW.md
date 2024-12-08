@@ -1,4 +1,4 @@
-留言板
+message-board
 
 # 留言板
 
