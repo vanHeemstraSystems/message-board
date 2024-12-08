@@ -12,7 +12,7 @@ tablero de mensajes
 
 **Resumen ejecutivo**
 
-1) Create the SvelteKit application:
+1) Cree la aplicación SvelteKit:
 
     $ cd containers/app
     $ npx sv create frontend
