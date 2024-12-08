@@ -1,6 +1,6 @@
 留言板
 
-# 留言板
+# Message Board
 
 > 斯拉格莱恩
 
@@ -46,7 +46,7 @@
 
 ## 100 - 简介
 
-See [README.md](./100/README.md)
+看[README.md](./100/README.md)
 
 ## 200 - 要求
 
