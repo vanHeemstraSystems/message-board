@@ -2,7 +2,7 @@
 
 # संदेश बोर्ड
 
-> Slugline
+> स्लगलाइन
 
 -   [प्रलेखन](./DOCUMENTATION.md)
 -   [शब्दकोष](./GLOSSARY.md)
