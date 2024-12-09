@@ -26,7 +26,7 @@
 
 **笔记**: 确保您满足[要求](./200/README.md).
 
-1.  **Installation process:**
+1.  **安装过程：**
 
     ```bash
     $ cd server
@@ -170,7 +170,7 @@ pip install threagile-monitoring
 
 ## 执照
 
-`threagile-monitoring` is distributed under the terms of the [和](https://spdx.org/licenses/MIT.html)执照。
+`threagile-monitoring`是根据以下条款分发的[和](https://spdx.org/licenses/MIT.html)执照。
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
