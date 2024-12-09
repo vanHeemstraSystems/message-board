@@ -1,0 +1,100 @@
+# 100 - Server
+
+See also [Python Environment Management with Hatch](https://earthly.dev/blog/python-hatch/)
+
+To create a new project, all you have to do is run the hatch new <project name> command. This command creates a project directory containing a source code directory (src), a test directory (tests), and a configuration file for project-related tools (pyproject.toml).
+
+For this tutorial, let’s create a simple Python application named message-board that uses a Flask API. To do so, run hatch new "Message Board". The folder structure that’s created will look like this:
+
+```
+$ cd containers/app
+$ hatch new "Message Board"
+server
+|---- src
+|     |---- message_board
+|           |---- __about__.py
+|           |---- __init__.py
+|---- tests
+|     |---- __init__.py
+|---- LICENSE.txt
+|---- README.md
+|---- pyproject.toml
+```
+
+**NOTE**: We manually renamed "message-board" to "server" in above diagram after the project was created.
+
+Go ahead and create a simple Flask API (app.py) in the src/message_board directory and a test script (test_app.py) in the tests directory.
+
+Add the following code to the app.py file:
+
+```
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "Hello, World!"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=3000)
+```
+src/message_board/app.py
+
+This code imports the Flask dependency and creates an endpoint named hello that prints a simple message.
+
+To test the app, add the following lines of code to the test_app.py file:
+
+```
+import unittest
+
+class TestStringMethods(unittest.TestCase):
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
+
+if __name__ == '__main__':
+    unittest.main()
+```
+tests/test_app.py
+
+This code performs [unit testing](https://docs.python.org/3/library/unittest.html) by converting a simple string to uppercase.
+
+Now that the setup is complete, it’s time to explore the environments in Hatch.
+
+Try:
+
+```
+$ cd server
+$ hatch env create
+```
+
+It will tell you that a 'default' environment already exists. That is fine.
+
+Look in ```pyproject.toml```:
+
+```
+[tool.hatch.envs.default]
+dependencies = [
+  "coverage[toml]>=6.5",
+  "flask"
+]
+[tool.hatch.envs.default.scripts]
+app = "python src/message_board/app.py"
+```
+server/pyproject.toml
+
+Yours may differ.
+
+To run a Python script using Hatch, you can use the hatch run command, which supports several arguments, including one for specifying the desired environment. If no environment is specified, the default environment and its dependencies are used to run the script.
+
+To start your Flask app in the default environment, run the following:
+
+```
+$ hatch run app
+```
+
+Your output should look like this:
+
+```
+ TO DO
+```
