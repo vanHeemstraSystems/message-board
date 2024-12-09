@@ -10,7 +10,7 @@ babillard électronique
 
 * * *
 
-> Un forum de discussion qui affichera les messages soumis.
+> Un forum de messages qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
@@ -36,7 +36,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
     $ hatch shell # spawn a shell within an environment
     (server) $ pip show message-board-server # optional, shows the project details, here 'message-board-server', from `pyproject.toml`
     # Name: message-board-server
-    # Version: 0.0.1 # it takes this from src/message_board/__about__.py
+    # Version: 0.1.0 # it takes this from src/message_board/__about__.py
     # ...
     (server) $ python -c "import sys;print(sys.executable)" # optional, see where your environment's python is located
     (server) $ pip install --upgrade pip # optional, the `run` command allows you to execute commands in an environment as if you had already entered it.
@@ -162,7 +162,7 @@ pip install threagile-monitoring
 
 ## Construire
 
--   Toutes les cibles de build utilisent le[hatch-vcs](https://github.com/ofek/hatch-vcs)construire un plugin hook pour expédier un`_version.py`fichier afin que la version puisse être utilisée au moment de l'exécution
+-   Toutes les cibles de build utilisent le[trappe-vcs](https://github.com/ofek/hatch-vcs)construire un plugin hook pour expédier un`_version.py`fichier afin que la version puisse être utilisée au moment de l'exécution
 -   Les roues utilisent le[trappe-mypyc](https://github.com/ofek/hatch-mypyc)construire un plugin hook pour compiler d'abord tout le code avec[Monpyc](https://github.com/mypyc/mypyc)
 -   Le[construire](.github/workflows/build.yml)Le workflow GitHub montre comment :
     -   utiliser[roue cibuild](https://github.com/pypa/cibuildwheel)distribuer des roues binaires pour chaque plateforme
@@ -170,7 +170,7 @@ pip install threagile-monitoring
 
 ## Licence
 
-`threagile-monitoring`est distribué selon les termes du[MIT](https://spdx.org/licenses/MIT.html)licence.
+`threagile-monitoring`est distribué selon les termes du[AVEC](https://spdx.org/licenses/MIT.html)licence.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
@@ -216,7 +216,7 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Construire notre application
+## 300 - Créer notre application
 
 Voir[README.md](./300/README.md)
 
