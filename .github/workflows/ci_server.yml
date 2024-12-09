@@ -11,39 +11,34 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-            python-version: '3.13' 
-      - name: Install dependencies
+
+      - name: Install FTL CLI
         run: |
-          pip install hatch
-          pip install awscli
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
-          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-          aws-region: us-east-1
+          wget https://github.com/yarlson/ftl/releases/latest/download/ftl-linux-amd64
+          chmod +x ftl-linux-amd64
+          sudo mv ftl-linux-amd64 /usr/local/bin/ftl
+
       - name: Determine Environment
         id: set-env
         run: |
-          if [["${{github.ref}}"=="refs/heads/main"]]; then
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
             echo "environment=production" >> $GITHUB_OUTPUT
-          elif [["${{github.ref}}"=="refs/heads/staging"]]; then
+          elif [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then
             echo "environment=staging" >> $GITHUB_OUTPUT
           else
             echo "environment=development" >> $GITHUB_OUTPUT
           fi
-      - name: Run Tests
-        run: hatch run test:run
-      - name: FTL Deployment
+  
+      - name: Configure Hetzner Credentials
+        run: |
+          echo "${{ secrets.HETZNER_API_TOKEN }}" | ftl auth login
+  
+      - name: Deploy with FTL
         run: |
           chmod +x .ftl/deploy.sh
-          .ftl/deploy.sh ${{steps.set-env.outputs.environment}}
+          .ftl/deploy.sh ${{ steps.set-env.outputs.environment }}
+
       - name: Health Check
         run: |
-          # Wait for deployment and run health check
           sleep 60
-          curl https://${{ steps.set-env.outputs.environment}}.yourdomain.com/health
+          curl https://message-board-server-${{ steps.set-env.outputs.environment }}.yourdomain.com/health
