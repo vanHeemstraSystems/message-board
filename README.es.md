@@ -5,7 +5,7 @@ tablero de mensajes
 |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | CI/CD   | [![CI - Server](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_server.yml/badge.svg)](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_server.yml)[![CD - Frontend](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_frontend.yml/badge.svg)](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_frontend.yml)                                                                                                                                                                                         |
-| Paquete | [![PyPI - Version](https://img.shields.io/pypi/v/message-board.svg?logo=pypi&label=PyPI&logoColor=gold)](https://pypi.org/project/message-board/)[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/message-board.svg?logo=python&label=Python&logoColor=gold)](https://pypi.org/project/message-board/)                                                                                                                                                                                                                                                                                 |
+| Package | [![PyPI - Version](https://img.shields.io/pypi/v/message-board.svg?logo=pypi&label=PyPI&logoColor=gold)](https://pypi.org/project/message-board/)[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/message-board.svg?logo=python&label=Python&logoColor=gold)](https://pypi.org/project/message-board/)                                                                                                                                                                                                                                                                                 |
 | Meta    | [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)[![code style - black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)[![types - Mypy](https://img.shields.io/badge/types-Mypy-blue.svg)](https://github.com/ambv/black)[![License - MIT](https://img.shields.io/badge/license-MIT-9400d3.svg)](https://spdx.org/licenses/)[![GitHub Sponsors](https://img.shields.io/github/sponsors/vanHeemstraSystems?logo=GitHub%20Sponsors&style=social)](https://github.com/sponsors/vanHeemstraSystems) |
 
 * * *
@@ -13,7 +13,7 @@ tablero de mensajes
 > Un tablero de mensajes que mostrará los mensajes enviados.
 
 -   [Documentación](./DOCUMENTATION.md)
--   [Glosario](./GLOSSARY.md)
+-   [Glossary](./GLOSSARY.md)
 -   [Imágenes](./IMAGES.md)
 -   [Referencias](./REFERENCES.md)
 -   [Telemetria](./TELEMETRY.md)
@@ -117,7 +117,7 @@ Cómo poner en marcha su código en su propio sistema.
     $ hatch run python src/threagile_monitoring/app.py
     ```
 
-    Then, navigate to `http://127.0.0.1:5000/`en su navegador web.
+    Luego, navegue hasta`http://127.0.0.1:5000/`en su navegador web.
 
     Para ejecutar pruebas, utilice:
 
@@ -127,7 +127,7 @@ Cómo poner en marcha su código en su propio sistema.
     $ pytest tests/
     ```
 
-# Documentación API
+# API Documentation
 
 Navegar a`http://127.0.0.1:5000/docs`en su navegador web, o descargue openapi.json desde`http://127.0.0.1:5000/openapi.json`.
 
