@@ -4,7 +4,7 @@ berichtenbord
 
 > Slaklijn
 
--   [Documentatie](./DOCUMENTATION.md)
+-   [Documentation](./DOCUMENTATION.md)
 -   [Glossarium](./GLOSSARY.md)
 -   [Afbeeldingen](./IMAGES.md)
 -   [Referenties](./REFERENCES.md)
