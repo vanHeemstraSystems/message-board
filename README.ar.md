@@ -36,7 +36,7 @@
     $ hatch shell # spawn a shell within an environment
     (server) $ pip show message-board-server # optional, shows the project details, here 'message-board-server', from `pyproject.toml`
     # Name: message-board-server
-    # Version: 0.0.1 # it takes this from src/message_board/__about__.py
+    # Version: 0.1.0 # it takes this from src/message_board/__about__.py
     # ...
     (server) $ python -c "import sys;print(sys.executable)" # optional, see where your environment's python is located
     (server) $ pip install --upgrade pip # optional, the `run` command allows you to execute commands in an environment as if you had already entered it.
@@ -45,7 +45,7 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    === START:  UPDATE THIS SECTION FOR message board ===
+    === البدء: قم بتحديث هذا القسم للوحة الرسائل ===
 
     **حزم موقعك باستخدام حزمة الويب:**بمجرد أن يكون لديك موقع ويب جيد بما يكفي لاستخدامه، يجب عليك حزم التطبيق مع حزمة الويب. تم إدراج مجلد الحزمة هذا في`.gitignore`لتجنب ذلك يجب الالتزام بـ git.
 
@@ -131,7 +131,7 @@
 
 انتقل إلى`http://127.0.0.1:5000/docs`في متصفح الويب الخاص بك، أو قم بتنزيل openapi.json من`http://127.0.0.1:5000/openapi.json`.
 
-# Metrics
+# المقاييس
 
 دع أداة مثل بروميثيوس تتخلص`http://127.0.0.1:9464/metrics`.
 
