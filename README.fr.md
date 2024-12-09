@@ -7,7 +7,7 @@ babillard électronique
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
 -   [Images](./IMAGES.md)
--   [References](./REFERENCES.md)
+-   [Références](./REFERENCES.md)
 -   [Télémétrie](./TELEMETRY.md)
 
 **Résumé exécutif**
@@ -46,7 +46,7 @@ Prochaines étapes :
 
 ## 100 - Introduction
 
-Voir[README.md](./100/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - Exigences
 
