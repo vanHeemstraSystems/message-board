@@ -2,11 +2,11 @@
 
 # संदेश बोर्ड
 
-> स्लगलाइन
+> Slugline
 
 -   [प्रलेखन](./DOCUMENTATION.md)
 -   [शब्दकोष](./GLOSSARY.md)
--   [इमेजिस](./IMAGES.md)
+-   [Images](./IMAGES.md)
 -   [संदर्भ](./REFERENCES.md)
 -   [टेलीमेटरी](./TELEMETRY.md)
 
@@ -46,7 +46,7 @@
 
 ## 100 - परिचय
 
-देखना[README.md](./100/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - आवश्यकताएँ
 
