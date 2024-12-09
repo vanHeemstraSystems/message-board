@@ -5,12 +5,12 @@
 > स्लगलाइन
 
 -   [प्रलेखन](./DOCUMENTATION.md)
--   [शब्दकोष](./GLOSSARY.md)
+-   [Glossary](./GLOSSARY.md)
 -   [इमेजिस](./IMAGES.md)
--   [References](./REFERENCES.md)
--   [Telemetry](./TELEMETRY.md)
+-   [संदर्भ](./REFERENCES.md)
+-   [टेलीमेटरी](./TELEMETRY.md)
 
-**कार्यकारी सारांश**
+**Executive Summary**
 
 1) SvelteKit एप्लिकेशन बनाएं:
 
