@@ -96,5 +96,13 @@ $ hatch run app
 Your output should look like this:
 
 ```
- TO DO
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://10.0.5.2:3000
+Press CTRL+C to quit
+192.168.0.74 - - [09/Dec/2024 13:08:24] "GET / HTTP/1.1" 200 -
+192.168.0.74 - - [09/Dec/2024 13:08:25] "GET /favicon.ico HTTP/1.1" 404 -
 ```
