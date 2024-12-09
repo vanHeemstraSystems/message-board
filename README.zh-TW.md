@@ -12,7 +12,7 @@
 
 **執行摘要**
 
-1）創建SvelteKit應用程式：
+1) Create the SvelteKit application:
 
     $ cd containers/app
     $ npx sv create frontend
@@ -52,10 +52,10 @@
 
 看[README.md](./200/README.md)
 
-## 300 - 建立我們的應用程式
+## 300 - Building Our Application
 
 看[README.md](./300/README.md)
 
 ## 400 - 結論
 
-See [README.md](./400/README.md)
+看[README.md](./400/README.md)
