@@ -10,7 +10,7 @@ babillard électronique
 
 * * *
 
-> Un forum de messages qui affichera les messages soumis.
+> Un forum de discussion qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
@@ -97,7 +97,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
 
     Pour exécuter l'application, utilisez :
 
-    Linux:
+    Linux :
 
     ```bash
     $ export SECRET_KEY="secret"
@@ -140,7 +140,7 @@ Laissez un outil comme Prometheus gratter`http://127.0.0.1:9464/metrics`.
 **Table des matières**
 
 -   [Installation](#installation)
--   [Version source](#version-source)
+-   [Source de la version](#version-source)
 -   [Environnements](#environments)
 -   [Construire](#build)
 -   [Licence](#license)
@@ -216,7 +216,7 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Créer notre application
+## 300 - Construire notre application
 
 Voir[README.md](./300/README.md)
 
