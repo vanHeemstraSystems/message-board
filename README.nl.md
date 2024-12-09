@@ -2,7 +2,7 @@ berichtenbord
 
 # Berichtenbord
 
-> Slaklijn
+> Slugline
 
 -   [Documentatie](./DOCUMENTATION.md)
 -   [Glossarium](./GLOSSARY.md)
