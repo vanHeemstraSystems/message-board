@@ -1,3 +1,35 @@
+# Message Board Server, a Flask Application with Hatch
+
+## Project Setup
+
+### Prerequisites
+- Python 3.11+
+- Hatch
+
+### Installation
+```bash
+# Install Hatch if not already installed
+pip install hatch
+
+# Create development environment
+hatch env create
+```
+
+### Running the Application
+```bash
+# Run the application
+hatch run flask:run
+
+# Run tests
+hatch run test:run
+```
+
+### Development
+- Use `hatch run dev` for development environment
+- Use `hatch run test:run` to execute tests
+- Use `hatch run flask:shell` to open Flask shell
+```
+
 ## Faster Than Light (FTL) Deployment
 
 ### Prerequisites
