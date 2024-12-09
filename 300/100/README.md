@@ -87,6 +87,37 @@ Yours may differ.
 
 To run a Python script using Hatch, you can use the hatch run command, which supports several arguments, including one for specifying the desired environment. If no environment is specified, the default environment and its dependencies are used to run the script.
 
+Install Python:
+
+```
+$ hatch python install 3.13
+```
+
+
+Test with the following command:
+
+```
+$ hatch test --all
+```
+
+You will see an output alike:
+
+```
+
+────────────────────────────────────────────── hatch-test.py3.13 ──────────────────────────────────────────────────────────────────────
+============================================== test session starts ====================================================================
+platform linux -- Python 3.13.0, pytest-8.3.4, pluggy-1.5.0
+rootdir: /workspace/message-board/containers/app/server
+configfile: pyproject.toml
+plugins: rerunfailures-14.0, mock-3.14.0, xdist-3.6.1
+collected 1 item                                                                                                                                                                                              
+
+tests/test_app.py .                                                                                                                                                                                     [100%]
+
+=============================================== 1 passed in 0.05s ======================================================================
+
+```
+
 To start your Flask app in the default environment, run the following:
 
 ```
