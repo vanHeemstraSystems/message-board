@@ -97,7 +97,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
 
     Pour exécuter l'application, utilisez :
 
-    Linux :
+    Linux:
 
     ```bash
     $ export SECRET_KEY="secret"
@@ -140,7 +140,7 @@ Laissez un outil comme Prometheus gratter`http://127.0.0.1:9464/metrics`.
 **Table des matières**
 
 -   [Installation](#installation)
--   [Source de la version](#version-source)
+-   [Version source](#version-source)
 -   [Environnements](#environments)
 -   [Construire](#build)
 -   [Licence](#license)
