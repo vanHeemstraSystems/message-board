@@ -1,6 +1,6 @@
 tablero de mensajes
 
-# Message Board
+# Tablero de mensajes
 
 > línea de bala
 
@@ -8,7 +8,7 @@ tablero de mensajes
 -   [Glosario](./GLOSSARY.md)
 -   [Imágenes](./IMAGES.md)
 -   [Referencias](./REFERENCES.md)
--   [Telemetry](./TELEMETRY.md)
+-   [Telemetria](./TELEMETRY.md)
 
 **Resumen ejecutivo**
 
