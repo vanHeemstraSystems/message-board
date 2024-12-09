@@ -4,13 +4,13 @@ Message-Board
 
 > Slugline
 
--   [Documentation](./DOCUMENTATION.md)
+-   [Dokumentation](./DOCUMENTATION.md)
 -   [Glossar](./GLOSSARY.md)
 -   [Bilder](./IMAGES.md)
--   [Referenzen](./REFERENCES.md)
+-   [References](./REFERENCES.md)
 -   [Telemetrie](./TELEMETRY.md)
 
-**Zusammenfassung**
+**Executive Summary**
 
 1) Erstellen Sie die SvelteKit-Anwendung:
 
