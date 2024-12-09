@@ -22,7 +22,7 @@ Message-Board
     Choose typography, forms, container-queries
     Choose pnpm
 
-Nächste Schritte:
+Next steps:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
