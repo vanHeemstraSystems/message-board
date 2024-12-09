@@ -1,18 +1,18 @@
 留言板
 
-# Message Board
+# 留言板
 
 > 斯拉格莱恩
 
 -   [文档](./DOCUMENTATION.md)
--   [Glossary](./GLOSSARY.md)
--   [Images](./IMAGES.md)
+-   [词汇表](./GLOSSARY.md)
+-   [图片](./IMAGES.md)
 -   [参考](./REFERENCES.md)
 -   [遥测](./TELEMETRY.md)
 
 **执行摘要**
 
-1) Create the SvelteKit application:
+1）创建SvelteKit应用程序：
 
     $ cd containers/app
     $ npx sv create frontend
@@ -44,9 +44,9 @@
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
 
-## 100 - Introduction
+## 100 - 简介
 
-看[README.md](./100/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - 要求
 
@@ -58,4 +58,4 @@
 
 ## 400 - 结论
 
-See [README.md](./400/README.md)
+看[README.md](./400/README.md)
