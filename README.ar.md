@@ -151,7 +151,7 @@
 pip install threagile-monitoring
 ```
 
-## Version source
+## مصدر النسخة
 
 -   ال[Hatch-vcs](https://github.com/ofek/hatch-vcs)يحدد البرنامج المساعد لمصدر الإصدار إصدار المشروع باستخدام علامات Git
 
