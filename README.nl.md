@@ -50,7 +50,8 @@ Uw code op uw eigen systeem operationeel krijgen.
     **Verpak uw site met webpack:**Zodra u een website heeft die goed genoeg is om te gebruiken, moet u de applicatie verpakken met webpack. Deze pakketmap wordt vermeld in`.gitignore`om te voorkomen dat het aan git wordt vastgelegd.
 
     Alle instellingen zouden nu klaar moeten zijn, dus alles wat je hoeft te doen:
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`
+    3) `(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
 
     Hierdoor ontstaat de`app.js`bestand - dat alle componenten bevat - in`/src/threagile_monitoring/static/js/`.
 
@@ -72,7 +73,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     **Loop:**
 
-    If not developing, run the application (backend and frontend simultaneously) this way: 
+    Als u niet aan het ontwikkelen bent, voert u de applicatie (backend en frontend tegelijkertijd) op deze manier uit:
 
         $ hatch run python src/threagile_monitoring/app.py # starts the app 
 
@@ -95,7 +96,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     <https://app.coderabbit.ai/dashboard>(gebruikt`phpstan.neon`)
 
-    To run the application, use:
+    Om de applicatie uit te voeren, gebruikt u:
 
     Linux:
 
@@ -141,7 +142,7 @@ Laat een stuk gereedschap als Prometheus schrapen`http://127.0.0.1:9464/metrics`
 
 -   [Installatie](#installation)
 -   [Versiebron](#version-source)
--   [Omgevingen](#environments)
+-   [Environments](#environments)
 -   [Bouwen](#build)
 -   [Licentie](#license)
 

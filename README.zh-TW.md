@@ -52,7 +52,7 @@
     現在所有設定都應該準備就緒，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
 
-    This will create the `app.js`文件 - 包含所有組件 - 在`/src/threagile_monitoring/static/js/`.
+    這將創建`app.js`文件 - 包含所有組件 - 在`/src/threagile_monitoring/static/js/`.
 
     **使用webpack開發：**如果您仍在開發您的網站，**單獨的終端會話**，按照上述安裝程序後，執行以下操作：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
@@ -139,7 +139,7 @@
 
 **目錄**
 
--   [Installation](#installation)
+-   [安裝](#installation)
 -   [版本來源](#version-source)
 -   [環境](#environments)
 -   [建造](#build)
@@ -220,6 +220,6 @@ pip install threagile-monitoring
 
 看[README.md](./300/README.md)
 
-## 400 - Conclusion
+## 400 - 結論
 
 看[README.md](./400/README.md)
