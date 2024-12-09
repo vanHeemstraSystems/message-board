@@ -10,7 +10,7 @@ Message-Board
 -   [Referenzen](./REFERENCES.md)
 -   [Telemetrie](./TELEMETRY.md)
 
-**Executive Summary**
+**Zusammenfassung**
 
 1) Erstellen Sie die SvelteKit-Anwendung:
 

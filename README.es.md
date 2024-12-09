@@ -5,7 +5,7 @@ tablero de mensajes
 > línea de bala
 
 -   [Documentación](./DOCUMENTATION.md)
--   [Glosario](./GLOSSARY.md)
+-   [Glossary](./GLOSSARY.md)
 -   [Imágenes](./IMAGES.md)
 -   [Referencias](./REFERENCES.md)
 -   [Telemetria](./TELEMETRY.md)
@@ -44,7 +44,7 @@ Próximos pasos:
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
 
-## 100 - Introducción
+## 100 - Introduction
 
 Ver[README.md](./100/README.md)
 
@@ -56,6 +56,6 @@ Ver[README.md](./200/README.md)
 
 Ver[README.md](./300/README.md)
 
-## 400 - Conclusión
+## 400 - Conclusion
 
-Ver[README.md](./400/README.md)
+See [README.md](./400/README.md)
