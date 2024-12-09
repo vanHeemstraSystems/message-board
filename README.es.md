@@ -1,6 +1,6 @@
-tablero de mensajes
+message-board
 
-# Message Board
+# Tablero de mensajes
 
 > línea de bala
 
@@ -48,9 +48,9 @@ Próximos pasos:
 
 Ver[README.md](./100/README.md)
 
-## 200 - Requirements
+## 200 - Requisitos
 
-See [README.md](./200/README.md)
+Ver[README.md](./200/README.md)
 
 ## 300 - Construyendo nuestra aplicación
 
