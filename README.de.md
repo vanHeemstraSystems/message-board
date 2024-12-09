@@ -68,7 +68,8 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
     Testen Sie die Anwendung (Frontend) auf diese Weise:
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`
+    4) `(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **Laufen:**
 
@@ -76,7 +77,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
         $ hatch run python src/threagile_monitoring/app.py # starts the app 
 
-2.  Softwareabhängigkeiten
+2.  Software dependencies
 
 3.  Neueste Veröffentlichungen
 
@@ -158,7 +159,7 @@ pip install threagile-monitoring
 ## Umgebungen
 
 -   Ordentlich in einem Standalone definiert[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   Der`test`Matrix verwendet die[Lukencontainer](https://github.com/ofek/hatch-containers)Plugin zum Ausführen jeder Umgebung in Docker-Containern; Die Verwendung ist in der zu sehen[prüfen](.github/workflows/test.yml)GitHub-Workflow
+-   Der`test`Matrix verwendet die[Lukencontainer](https://github.com/ofek/hatch-containers) plugin to run each environment inside Docker containers; usage can be seen in the [prüfen](.github/workflows/test.yml)GitHub-Workflow
 
 ## Bauen
 
@@ -176,7 +177,7 @@ pip install threagile-monitoring
 
 ## Frontend
 
-1) Create the SvelteKit application:
+1) Erstellen Sie die SvelteKit-Anwendung:
 
     $ cd containers/app
     $ npx sv create frontend
