@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "message-board"
 dynamic = ["version"]
-description = ''
+description = 'Message Board Server Application'
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
