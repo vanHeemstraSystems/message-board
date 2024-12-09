@@ -36,7 +36,7 @@
     $ hatch shell # spawn a shell within an environment
     (server) $ pip show message-board-server # optional, shows the project details, here 'message-board-server', from `pyproject.toml`
     # Name: message-board-server
-    # Version: 0.0.1 # it takes this from src/message_board/__about__.py
+    # Version: 0.1.0 # it takes this from src/message_board/__about__.py
     # ...
     (server) $ python -c "import sys;print(sys.executable)" # optional, see where your environment's python is located
     (server) $ pip install --upgrade pip # optional, the `run` command allows you to execute commands in an environment as if you had already entered it.
