@@ -176,7 +176,7 @@ pip install threagile-monitoring
 
 ## Frontend
 
-1) Erstellen Sie die SvelteKit-Anwendung:
+1) Create the SvelteKit application:
 
     $ cd containers/app
     $ npx sv create frontend

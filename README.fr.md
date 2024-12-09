@@ -68,7 +68,8 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
 
     Testez l'application (frontend) de cette façon :
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`
+    4) `(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **Courir:**
 

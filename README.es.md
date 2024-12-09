@@ -117,7 +117,7 @@ Cómo poner en marcha su código en su propio sistema.
     $ hatch run python src/threagile_monitoring/app.py
     ```
 
-    Luego, navegue hasta`http://127.0.0.1:5000/`en su navegador web.
+    Then, navigate to `http://127.0.0.1:5000/`en su navegador web.
 
     Para ejecutar pruebas, utilice:
 
@@ -218,7 +218,7 @@ Ver[README.md](./200/README.md)
 
 ## 300 - Construyendo nuestra aplicación
 
-See [README.md](./300/README.md)
+Ver[README.md](./300/README.md)
 
 ## 400 - Conclusión
 

@@ -143,7 +143,7 @@
 -   [版本来源](#version-source)
 -   [环境](#environments)
 -   [建造](#build)
--   [执照](#license)
+-   [License](#license)
 
 ## 安装
 
@@ -162,7 +162,7 @@ pip install threagile-monitoring
 
 ## 建造
 
--   所有构建目标都使用[孵化VCS](https://github.com/ofek/hatch-vcs)构建钩子插件来发送`_version.py` file so the version can be used at runtime
+-   所有构建目标都使用[孵化VCS](https://github.com/ofek/hatch-vcs)构建钩子插件来发送`_version.py`文件，以便可以在运行时使用该版本
 -   轮子使用[孵化 mypyc](https://github.com/ofek/hatch-mypyc)构建钩子插件以首先编译所有代码[Mypyc](https://github.com/mypyc/mypyc)
 -   这[建造](.github/workflows/build.yml)GitHub 工作流程展示了如何：
     -   使用[cibuildwheel](https://github.com/pypa/cibuildwheel)为每个平台分发二进制轮子
@@ -222,4 +222,4 @@ pip install threagile-monitoring
 
 ## 400 - 结论
 
-看[README.md](./400/README.md)
+See [README.md](./400/README.md)
