@@ -1,4 +1,5 @@
 # server/src/message_board/utils/app_utils.py
+import logging
 from apiflask import APIFlask
 from flask import jsonify
 from config import DevelopmentConfig as Config  # DevelopmentConfig | ProductionConfig
@@ -11,6 +12,11 @@ def create_app(config=Config):
         static_url_path="/static",
         static_folder="../static",
         template_folder="../templates",
+    )
+
+    # Configure logging
+    logging.basicConfig(
+        level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
     )
 
     # Load configuration

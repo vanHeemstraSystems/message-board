@@ -1,7 +1,7 @@
 # tests/test_app.py
 import unittest
 import pytest
-from message_board.utils import create_app
+from message_board.utils.app_utils import create_app
 
 
 class TestStringMethods(unittest.TestCase):
