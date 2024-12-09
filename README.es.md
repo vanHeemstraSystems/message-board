@@ -22,7 +22,7 @@ tablero de mensajes
 
 ## Servidor
 
-Poner en funcionamiento su código en su propio sistema.
+Cómo poner en marcha su código en su propio sistema.
 
 **Nota**: Asegúrese de cumplir con los[requisitos](./200/README.md).
 
@@ -36,7 +36,7 @@ Poner en funcionamiento su código en su propio sistema.
     $ hatch shell # spawn a shell within an environment
     (server) $ pip show message-board-server # optional, shows the project details, here 'message-board-server', from `pyproject.toml`
     # Name: message-board-server
-    # Version: 0.0.1 # it takes this from src/message_board/__about__.py
+    # Version: 0.1.0 # it takes this from src/message_board/__about__.py
     # ...
     (server) $ python -c "import sys;print(sys.executable)" # optional, see where your environment's python is located
     (server) $ pip install --upgrade pip # optional, the `run` command allows you to execute commands in an environment as if you had already entered it.
@@ -158,7 +158,7 @@ pip install threagile-monitoring
 ## Ambientes
 
 -   Definido claramente de forma independiente[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   El`test`la matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
+-   El`test`La matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
 
 ## Construir
 
