@@ -22,7 +22,7 @@ babillard électronique
 
 ## Serveur
 
-Faire en sorte que votre code soit opérationnel sur votre propre système.
+Getting your code up and running on your own system.
 
 **Note**: Assurez-vous de remplir les[exigences](./200/README.md).
 
