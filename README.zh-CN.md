@@ -22,7 +22,7 @@
     Choose typography, forms, container-queries
     Choose pnpm
 
-Next steps:
+后续步骤：
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
