@@ -22,7 +22,7 @@ babillard électronique
     Choose typography, forms, container-queries
     Choose pnpm
 
-Prochaines étapes :
+Next steps:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
