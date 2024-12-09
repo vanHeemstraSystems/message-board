@@ -4,7 +4,7 @@
 
 > 斯拉格萊恩
 
--   [文件](./DOCUMENTATION.md)
+-   [Documentation](./DOCUMENTATION.md)
 -   [詞彙表](./GLOSSARY.md)
 -   [圖片](./IMAGES.md)
 -   [參考](./REFERENCES.md)
@@ -12,7 +12,7 @@
 
 **執行摘要**
 
-1) Create the SvelteKit application:
+1）創建SvelteKit應用程式：
 
     $ cd containers/app
     $ npx sv create frontend
@@ -52,7 +52,7 @@
 
 看[README.md](./200/README.md)
 
-## 300 - Building Our Application
+## 300 - 建立我們的應用程式
 
 看[README.md](./300/README.md)
 
