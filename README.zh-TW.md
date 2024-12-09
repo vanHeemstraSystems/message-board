@@ -186,7 +186,7 @@ pip install threagile-monitoring
     Choose typography, forms, container-queries
     Choose pnpm
 
-後續步驟：
+Next steps:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
@@ -208,7 +208,7 @@ pip install threagile-monitoring
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
 
-## 100 - 簡介
+## 100 - Introduction
 
 看[README.md](./100/README.md)
 
