@@ -99,6 +99,12 @@ To enter the environment use:
 $ hatch shell
 ```
 
+To enter a specific environment (here: default), run:
+
+```
+$ hatch -e default shell
+```
+
 Inside the shell, you can find the project details with:
 ```
 (message-board) $ pip show message-board
