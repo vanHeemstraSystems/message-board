@@ -36,7 +36,7 @@
     $ hatch shell # spawn a shell within an environment
     (server) $ pip show message-board-server # optional, shows the project details, here 'message-board-server', from `pyproject.toml`
     # Name: message-board-server
-    # Version: 0.0.1 # it takes this from src/message_board/__about__.py
+    # Version: 0.1.0 # it takes this from src/message_board/__about__.py
     # ...
     (server) $ python -c "import sys;print(sys.executable)" # optional, see where your environment's python is located
     (server) $ pip install --upgrade pip # optional, the `run` command allows you to execute commands in an environment as if you had already entered it.
@@ -66,10 +66,9 @@
 
     **測試**
 
-    Test the application (frontend) this way:
+    以這種方式測試應用程式（前端）：
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`
-    3) `(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1) `$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **跑步：**
 
@@ -128,9 +127,9 @@
     $ pytest tests/
     ```
 
-# API Documentation
+# API文件
 
-導航至`http://127.0.0.1:5000/docs` in your web browser, or download the openapi.json from `http://127.0.0.1:5000/openapi.json`.
+導航至`http://127.0.0.1:5000/docs`在您的網頁瀏覽器中，或從下列位置下載 openapi.json`http://127.0.0.1:5000/openapi.json`.
 
 # 指標
 
@@ -141,7 +140,7 @@
 **目錄**
 
 -   [安裝](#installation)
--   [版本來源](#version-source)
+-   [Version source](#version-source)
 -   [環境](#environments)
 -   [建造](#build)
 -   [執照](#license)
