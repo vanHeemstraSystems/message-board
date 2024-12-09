@@ -52,7 +52,7 @@
     現在所有設定都應該準備就緒，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
 
-    這將創建`app.js`文件 - 包含所有組件 - 在`/src/threagile_monitoring/static/js/`.
+    This will create the `app.js`文件 - 包含所有組件 - 在`/src/threagile_monitoring/static/js/`.
 
     **使用webpack開發：**如果您仍在開發您的網站，**單獨的終端會話**，按照上述安裝程序後，執行以下操作：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
@@ -139,7 +139,7 @@
 
 **目錄**
 
--   [安裝](#installation)
+-   [Installation](#installation)
 -   [版本來源](#version-source)
 -   [環境](#environments)
 -   [建造](#build)
@@ -186,7 +186,7 @@ pip install threagile-monitoring
     Choose typography, forms, container-queries
     Choose pnpm
 
-Next steps:
+後續步驟：
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
@@ -208,7 +208,7 @@ Next steps:
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
 
-## 100 - Introduction
+## 100 - 簡介
 
 看[README.md](./100/README.md)
 
@@ -220,6 +220,6 @@ Next steps:
 
 看[README.md](./300/README.md)
 
-## 400 - 結論
+## 400 - Conclusion
 
 看[README.md](./400/README.md)
