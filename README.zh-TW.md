@@ -1,13 +1,13 @@
 留言板
 
-# Message Board
+# 留言板
 
 > 斯拉格萊恩
 
 -   [文件](./DOCUMENTATION.md)
--   [詞彙表](./GLOSSARY.md)
+-   [Glossary](./GLOSSARY.md)
 -   [圖片](./IMAGES.md)
--   [References](./REFERENCES.md)
+-   [參考](./REFERENCES.md)
 -   [遙測](./TELEMETRY.md)
 
 **執行摘要**
@@ -22,7 +22,7 @@
     Choose typography, forms, container-queries
     Choose pnpm
 
-Next steps:
+後續步驟：
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
@@ -44,7 +44,7 @@ Next steps:
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
 
-## 100 - 簡介
+## 100 - Introduction
 
 看[README.md](./100/README.md)
 
