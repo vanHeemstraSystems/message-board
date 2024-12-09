@@ -9,7 +9,7 @@
 ### Installation
 ```bash
 # Install Hatch if not already installed
-pip install hatch
+pipx install hatch
 
 # Create development environment
 hatch env create
