@@ -10,7 +10,7 @@
 -   [参考](./REFERENCES.md)
 -   [遥测](./TELEMETRY.md)
 
-**Executive Summary**
+**执行摘要**
 
 1）创建SvelteKit应用程序：
 
@@ -22,7 +22,7 @@
     Choose typography, forms, container-queries
     Choose pnpm
 
-后续步骤：
+Next steps:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
@@ -52,7 +52,7 @@
 
 看[README.md](./200/README.md)
 
-## 300 - Building Our Application
+## 300 - 构建我们的应用程序
 
 看[README.md](./300/README.md)
 
