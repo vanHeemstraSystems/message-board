@@ -1,11 +1,17 @@
 # server/src/message_board/utils/app_utils.py
-from flask import Flask, jsonify
+from apiflask import APIFlask
+from flask import jsonify
 from config import DevelopmentConfig as Config  # DevelopmentConfig | ProductionConfig
 
 
 def create_app(config=Config):
     """Create and configure the Flask application"""
-    app = Flask(__name__)
+    app = APIFlask(
+        __name__,
+        static_url_path="/static",
+        static_folder="../static",
+        template_folder="../templates",
+    )
 
     # Load configuration
     app.config.from_object(config)
