@@ -10,7 +10,7 @@ babillard électronique
 -   [Références](./REFERENCES.md)
 -   [Télémétrie](./TELEMETRY.md)
 
-**Executive Summary**
+**Résumé exécutif**
 
 1) Créez l'application SvelteKit :
 
