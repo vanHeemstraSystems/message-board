@@ -18,7 +18,7 @@
 -   [مراجع](./REFERENCES.md)
 -   [القياس عن بعد](./TELEMETRY.md)
 
-**Executive Summary**
+**ملخص تنفيذي**
 
 ## الخادم
 
@@ -26,7 +26,7 @@
 
 **ملحوظة**: تأكد من الوفاء[متطلبات](./200/README.md).
 
-1.  **عملية التثبيت:** 
+1.  **عملية التثبيت:**
 
     ```bash
     $ cd server
@@ -174,7 +174,7 @@ pip install threagile-monitoring
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
-## Frontend
+## الواجهة الأمامية
 
 1) قم بإنشاء تطبيق SvelteKit:
 

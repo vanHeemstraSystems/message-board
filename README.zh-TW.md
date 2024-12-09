@@ -95,7 +95,7 @@
 
     <https://app.coderabbit.ai/dashboard>（使用`phpstan.neon`)
 
-    要運行該應用程序，請使用：
+    To run the application, use:
 
     Linux：
 
@@ -119,7 +119,7 @@
 
     然後，導航至`http://127.0.0.1:5000/`在您的網頁瀏覽器中。
 
-    若要執行測試，請使用：
+    To run tests, use:
 
     ```bash
     $ cd threagile-monitoring
@@ -208,7 +208,7 @@ pip install threagile-monitoring
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
 
-## 100 - Introduction
+## 100 - 簡介
 
 看[README.md](./100/README.md)
 
