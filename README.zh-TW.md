@@ -68,7 +68,7 @@
 
     以這種方式測試應用程式（前端）：
 
-    1) `$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **跑步：**
 
@@ -140,7 +140,7 @@
 **目錄**
 
 -   [安裝](#installation)
--   [Version source](#version-source)
+-   [版本來源](#version-source)
 -   [環境](#environments)
 -   [建造](#build)
 -   [執照](#license)
