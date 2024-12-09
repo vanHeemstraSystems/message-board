@@ -5,7 +5,7 @@
 > 斯拉格萊恩
 
 -   [文件](./DOCUMENTATION.md)
--   [Glossary](./GLOSSARY.md)
+-   [詞彙表](./GLOSSARY.md)
 -   [圖片](./IMAGES.md)
 -   [參考](./REFERENCES.md)
 -   [遙測](./TELEMETRY.md)
@@ -44,7 +44,7 @@
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
 
-## 100 - Introduction
+## 100 - 簡介
 
 看[README.md](./100/README.md)
 
