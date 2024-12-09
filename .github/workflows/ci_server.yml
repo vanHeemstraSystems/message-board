@@ -1,0 +1,48 @@
+name: ci_server
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with: python-version:'3.11'
+      - name: Install dependencies
+        run: |
+          pip install hatch
+          pip install awscli
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+            aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+            aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+            aws-region: us-east-1
+      - name: Determine Environment
+        id: set-env
+        run: |
+          if [["${{github.ref}}"=="refs/heads/main"]]; then
+            echo "environment=production" >> $GITHUB_OUTPUT
+          elif [["${{github.ref}}"=="refs/heads/staging"]]; then
+            echo "environment=staging" >> $GITHUB_OUTPUT
+          else
+            echo "environment=development" >> $GITHUB_OUTPUT
+          fi
+      - name: Run Tests
+        run: hatch run test:run
+      - name: FTL Deployment
+        run: |
+          chmod +x .ftl/deploy.sh
+          .ftl/deploy.sh ${{steps.set-env.outputs.environment}}
+      - name: Health Check
+        run: |
+          # Wait for deployment and run health check
+          sleep 60
+          curl https://${{ steps.set-env.outputs.environment}}.yourdomain.com/health
