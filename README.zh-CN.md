@@ -47,7 +47,7 @@
 
     === 开始：更新留言板的这一部分 ===
 
-    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 打包应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
+    **Package your site with webpack:**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 打包应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
 
     现在所有设置都应该准备就绪，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -168,7 +168,7 @@ pip install threagile-monitoring
     -   使用[cibuildwheel](https://github.com/pypa/cibuildwheel)为每个平台分发二进制轮子
     -   使用[应用程序](https://hatch.pypa.io/latest/plugins/builder/app/)构建目标为每个平台构建独立发行版
 
-## License
+## 执照
 
 `threagile-monitoring`是根据以下条款分发的[和](https://spdx.org/licenses/MIT.html)执照。
 
