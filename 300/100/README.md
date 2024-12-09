@@ -93,6 +93,84 @@ Install Python:
 $ hatch python install 3.13
 ```
 
+To enter the environment use:
+
+```
+$ hatch shell
+```
+
+Inside the shell, you can find the project details with:
+```
+(message-board) $ pip show message-board
+```
+
+You will see:
+
+```
+Name: message-board
+Version: 0.0.1
+Summary: 
+Home-page: 
+Author: 
+Author-email: Willem van Heemstra <wvanheemstra@icloud.com>
+License: MIT
+Location: /home/gitpod/.local/share/hatch/env/virtual/message-board/R24GuwJR/message-board/lib/python3.12/site-packages
+Editable project location: /workspace/message-board/containers/app/server
+Requires: 
+Required-by: 
+```
+
+Optionally, see where your envirponment's python is located:
+
+```
+(message-board) $ python -c "import sys;print(sys.executable)"
+```
+
+You will something like:
+
+```
+/home/gitpod/.local/share/hatch/env/virtual/message-board/R24GuwJR/message-board/bin/python
+```
+
+Now upgrade pip (optional):
+
+```
+(message-board) $ pip install --upgrade pip
+```
+
+Install the requirements of the project (kept in requirements.txt):
+
+```
+(message-board) $ pip install -r requirements.txt
+```
+
+This will install all required python packages.
+
+You can now run the application with:
+
+```
+(message-board) $ python src/message_board/app.py
+```
+
+Your output should look like this:
+
+```
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://10.0.5.2:3000
+Press CTRL+C to quit
+192.168.0.74 - - [09/Dec/2024 13:08:24] "GET / HTTP/1.1" 200 -
+192.168.0.74 - - [09/Dec/2024 13:08:25] "GET /favicon.ico HTTP/1.1" 404 -
+```
+
+Exit the shell:
+
+```
+(message-board) $ exit
+```
 
 Test with the following command:
 
