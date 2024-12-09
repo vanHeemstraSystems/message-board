@@ -14,7 +14,7 @@
 
 -   [文件](./DOCUMENTATION.md)
 -   [詞彙表](./GLOSSARY.md)
--   [圖片](./IMAGES.md)
+-   [Images](./IMAGES.md)
 -   [參考](./REFERENCES.md)
 -   [遙測](./TELEMETRY.md)
 
@@ -70,7 +70,7 @@
 
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
-    **跑步：**
+    **Run:**
 
     如果不進行開發，請按以下方式運行應用程式（同時後端和前端）：
 
