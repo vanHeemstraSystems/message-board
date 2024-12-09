@@ -10,7 +10,7 @@
 -   [مراجع](./REFERENCES.md)
 -   [القياس عن بعد](./TELEMETRY.md)
 
-**ملخص تنفيذي**
+**Executive Summary**
 
 1) قم بإنشاء تطبيق SvelteKit:
 
