@@ -10,7 +10,7 @@ babillard électronique
 
 * * *
 
-> Un forum de messages qui affichera les messages soumis.
+> Un forum de discussion qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
@@ -22,7 +22,7 @@ babillard électronique
 
 ## Serveur
 
-Getting your code up and running on your own system.
+Faire en sorte que votre code soit opérationnel sur votre propre système.
 
 **Note**: Assurez-vous de remplir les[exigences](./200/README.md).
 
@@ -216,7 +216,7 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Créer notre application
+## 300 - Construire notre application
 
 Voir[README.md](./300/README.md)
 
