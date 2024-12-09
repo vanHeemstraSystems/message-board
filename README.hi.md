@@ -1,6 +1,6 @@
 संदेश-बोर्ड
 
-# Message Board
+# संदेश बोर्ड
 
 > स्लगलाइन
 
@@ -10,7 +10,7 @@
 -   [संदर्भ](./REFERENCES.md)
 -   [टेलीमेटरी](./TELEMETRY.md)
 
-**Executive Summary**
+**कार्यकारी सारांश**
 
 1) SvelteKit एप्लिकेशन बनाएं:
 

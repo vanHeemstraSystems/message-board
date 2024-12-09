@@ -4,7 +4,7 @@ Message-Board
 
 > Slugline
 
--   [Dokumentation](./DOCUMENTATION.md)
+-   [Documentation](./DOCUMENTATION.md)
 -   [Glossar](./GLOSSARY.md)
 -   [Bilder](./IMAGES.md)
 -   [Referenzen](./REFERENCES.md)
@@ -22,7 +22,7 @@ Message-Board
     Choose typography, forms, container-queries
     Choose pnpm
 
-Next steps:
+Nächste Schritte:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
