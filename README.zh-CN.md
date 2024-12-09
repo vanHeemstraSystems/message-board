@@ -168,7 +168,7 @@ pip install threagile-monitoring
     -   使用[cibuildwheel](https://github.com/pypa/cibuildwheel)为每个平台分发二进制轮子
     -   使用[应用程序](https://hatch.pypa.io/latest/plugins/builder/app/)构建目标为每个平台构建独立发行版
 
-## 执照
+## License
 
 `threagile-monitoring`是根据以下条款分发的[和](https://spdx.org/licenses/MIT.html)执照。
 
