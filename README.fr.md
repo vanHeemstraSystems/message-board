@@ -8,7 +8,7 @@ babillard électronique
 -   [Glossaire](./GLOSSARY.md)
 -   [Images](./IMAGES.md)
 -   [Références](./REFERENCES.md)
--   [Télémétrie](./TELEMETRY.md)
+-   [Telemetry](./TELEMETRY.md)
 
 **Résumé exécutif**
 
@@ -58,4 +58,4 @@ Voir[README.md](./300/README.md)
 
 ## 400 - Conclusion
 
-See [README.md](./400/README.md)
+Voir[README.md](./400/README.md)
