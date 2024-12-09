@@ -1,4 +1,4 @@
-message-board
+tablero de mensajes
 
 # Tablero de mensajes
 
