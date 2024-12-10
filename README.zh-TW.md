@@ -117,7 +117,7 @@
     $ hatch run python src/threagile_monitoring/app.py
     ```
 
-    然後，導航至`http://127.0.0.1:5000/` in your web browser.
+    然後，導航至`http://127.0.0.1:5000/`在您的網頁瀏覽器中。
 
     若要執行測試，請使用：
 
