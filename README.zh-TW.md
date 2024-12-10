@@ -22,7 +22,7 @@
 
 ## 伺服器
 
-Getting your code up and running on your own system.
+在您自己的系統上啟動並運行您的程式碼。
 
 **筆記**: 確保您滿足[要求](./200/README.md).
 
@@ -142,7 +142,7 @@ Getting your code up and running on your own system.
 -   [安裝](#installation)
 -   [版本來源](#version-source)
 -   [環境](#environments)
--   [Build](#build)
+-   [建造](#build)
 -   [執照](#license)
 
 ## 安裝
