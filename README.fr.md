@@ -95,7 +95,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
 
     <https://app.coderabbit.ai/dashboard>(utilise`phpstan.neon`)
 
-    To run the application, use:
+    Pour exécuter l'application, utilisez :
 
     Linux :
 
@@ -143,7 +143,7 @@ Laissez un outil comme Prometheus gratter`http://127.0.0.1:9464/metrics`.
 -   [Source de la version](#version-source)
 -   [Environnements](#environments)
 -   [Construire](#build)
--   [Licence](#license)
+-   [License](#license)
 
 ## Installation
 
