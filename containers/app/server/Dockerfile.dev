@@ -20,14 +20,11 @@ RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Hatch
-RUN pip install --no-cache-dir hatch
+# Install Hatch and dependencies
+RUN pip install --no-cache-dir hatch flask apiflask python-dotenv
 
 # Copy the application
 COPY . .
-
-# Install dependencies
-RUN pip install -e .
 
 # Expose the port the app runs on
 EXPOSE 5000
