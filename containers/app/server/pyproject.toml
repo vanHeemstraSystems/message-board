@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "message_board"
 version = "0.0.1"
-description = "Message Board Application"
+description = "Message Board Server"
 dependencies = [
     "flask>=2.0.0",
     "apiflask>=2.0.0",

@@ -26,7 +26,7 @@ COPY . .
 
 # Install the package and dependencies
 RUN hatch env create
-RUN hatch shell --run "pip install -e ."
+RUN hatch run pip install -e .
 
 # Expose the port the app runs on
 EXPOSE 5000
