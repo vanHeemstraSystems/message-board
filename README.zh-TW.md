@@ -10,7 +10,7 @@
 
 * * *
 
-> A Message Board that will display submitted messages.
+> 留言板將顯示提交的訊息。
 
 -   [文件](./DOCUMENTATION.md)
 -   [詞彙表](./GLOSSARY.md)
