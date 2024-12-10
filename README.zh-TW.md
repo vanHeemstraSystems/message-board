@@ -10,7 +10,7 @@
 
 * * *
 
-> 留言板將顯示提交的訊息。
+> A Message Board that will display submitted messages.
 
 -   [文件](./DOCUMENTATION.md)
 -   [詞彙表](./GLOSSARY.md)
@@ -153,7 +153,7 @@ pip install threagile-monitoring
 
 ## 版本來源
 
--   The [孵化VCS](https://github.com/ofek/hatch-vcs)版本來源外掛程式使用 Git 標籤來確定專案版本
+-   這[孵化VCS](https://github.com/ofek/hatch-vcs)版本來源外掛程式使用 Git 標籤來確定專案版本
 
 ## 環境
 
