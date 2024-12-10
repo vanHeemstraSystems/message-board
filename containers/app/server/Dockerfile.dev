@@ -5,6 +5,7 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PIP_NO_CACHE_DIR=1
+ENV PYTHONPATH=/app/src
 
 # Set Flask environment variables
 ENV FLASK_ENV=development
@@ -26,7 +27,7 @@ COPY . .
 
 # Install the package and dependencies
 RUN hatch env create
-RUN hatch run pip install -e .
+RUN pip install -e .
 
 # Expose the port the app runs on
 EXPOSE 5000
