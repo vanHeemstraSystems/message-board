@@ -131,13 +131,13 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
 Navigieren Sie zu`http://127.0.0.1:5000/docs`in Ihrem Webbrowser oder laden Sie openapi.json herunter von`http://127.0.0.1:5000/openapi.json`.
 
-# Metriken
+# Metrics
 
 Lassen Sie ein Werkzeug wie Prometheus kratzen`http://127.0.0.1:9464/metrics`.
 
 **_NEU_**
 
-**Inhaltsverzeichnis**
+**Table of Contents**
 
 -   [Installation](#installation)
 -   [Versionsquelle](#version-source)
@@ -214,7 +214,7 @@ Sehen[README.md](./100/README.md)
 
 ## 200 – Anforderungen
 
-See [README.md](./200/README.md)
+Sehen[README.md](./200/README.md)
 
 ## 300 – Erstellen unserer Anwendung
 
