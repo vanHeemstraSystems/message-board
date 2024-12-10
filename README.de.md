@@ -61,8 +61,8 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
     Um die Änderungen zu sehen, speichern Sie einfach Ihren Navigator und laden Sie ihn neu (normalerweise mit F5).
 
-    Make sure, to run your webpage when testing with backend functions, as follows:
-    1) `(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
+    Stellen Sie sicher, dass Sie Ihre Webseite beim Testen mit Backend-Funktionen wie folgt ausführen:
+    1)`(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
 
     **Prüfen**
 
@@ -82,7 +82,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
 4.  API-Referenzen
 
-5.  Build and Test:
+5.  Erstellen und testen:
 
     Um Ihren Code zu erstellen, verwenden Sie:
 
@@ -131,7 +131,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
 Navigieren Sie zu`http://127.0.0.1:5000/docs`in Ihrem Webbrowser oder laden Sie openapi.json herunter von`http://127.0.0.1:5000/openapi.json`.
 
-# Metrics
+# Metriken
 
 Lassen Sie ein Werkzeug wie Prometheus kratzen`http://127.0.0.1:9464/metrics`.
 
