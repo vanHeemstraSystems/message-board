@@ -43,7 +43,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **NOTIZ**: Die moderne Art ist zu verwenden`pyproject.toml`um Abhängigkeiten zu installieren, nicht „requirements.txt“. Daher sollte es keine Datei „requirements.txt“ geben.
+    **NOTIZ**: Die moderne Art ist zu verwenden`pyproject.toml` to install dependencies, not \`\`\`requirements.txt. Hence there should not be a requirements.txt file.
 
     === START: AKTUALISIEREN SIE DIESEN ABSCHNITT FÜR DAS Message Board ===
 
