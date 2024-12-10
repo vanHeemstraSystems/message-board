@@ -23,8 +23,8 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --no-cache-dir hatch
 
 # Copy only what's needed for package installation first
-COPY pyproject.toml .
-COPY src/ ./src/
+COPY ./pyproject.toml ./
+COPY ./src ./src/
 
 # Install the package in development mode
 RUN pip install -e .
