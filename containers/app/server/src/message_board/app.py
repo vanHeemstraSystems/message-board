@@ -1,6 +1,6 @@
 # server/src/message_board/app.py
 import os
-from utils import create_app
+from .utils.app_utils import create_app
 
 app = create_app()
 

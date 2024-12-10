@@ -2,7 +2,7 @@
 import logging
 from apiflask import APIFlask
 from flask import jsonify
-from config import DevelopmentConfig as Config  # DevelopmentConfig | ProductionConfig
+from message_board.config import DevelopmentConfig as Config  # DevelopmentConfig | ProductionConfig
 
 
 def create_app(config=Config):

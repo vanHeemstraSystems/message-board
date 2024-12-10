@@ -37,10 +37,10 @@ Getting your code up and running on your own system.
     # ...
     (server) $ python -c "import sys;print(sys.executable)" # optional, see where your environment's python is located
     (server) $ pip install --upgrade pip # optional, the `run` command allows you to execute commands in an environment as if you had already entered it.
-    (server) $ pip install -r requirements.txt # pipx won't do this
-    (server) $ python -m setuptools_scm # optional, display the version of our package and perform any side-effects like writing to a file. (here: `_version.py`)
     (server) $ exit # optional, type `exit` to leave the environment
     ```
+
+    **NOTE**: The modern way is to use ```pyproject.toml``` to install dependencies, not ```requirements.txt. Hence there should not be a requirements.txt file.
 
     === START:  UPDATE THIS SECTION FOR message board ===
 
