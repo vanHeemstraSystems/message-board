@@ -68,8 +68,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
     Testen Sie die Anwendung (Frontend) auf diese Weise:
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`
-    3) `(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **Laufen:**
 
@@ -171,7 +170,7 @@ pip install threagile-monitoring
 
 ## Lizenz
 
-`threagile-monitoring` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html)Lizenz.
+`threagile-monitoring`wird gemäß den Bedingungen der verteilt[MIT](https://spdx.org/licenses/MIT.html)Lizenz.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
