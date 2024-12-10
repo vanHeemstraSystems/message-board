@@ -54,3 +54,6 @@ exclude_lines = [
 
 [tool.hatch.build]
 packages = ["src/message_board"]
+include = [
+    "/src/message_board",
+]

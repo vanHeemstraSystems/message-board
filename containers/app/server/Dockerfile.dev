@@ -22,12 +22,12 @@ RUN apt-get update && apt-get install -y \
 # Install Hatch
 RUN pip install --no-cache-dir hatch
 
-# Copy the rest of the application
+# Copy the application
 COPY . .
 
-# Create Hatch environment and install dependencies
-RUN pip install -e .
+# Create Hatch environment first
 RUN hatch env create
+RUN pip install -e .
 
 # Expose the port the app runs on
 EXPOSE 5000
