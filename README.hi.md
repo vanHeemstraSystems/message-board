@@ -129,7 +129,7 @@
 
 # एपीआई दस्तावेज़ीकरण
 
-पर नेविगेट करें`http://127.0.0.1:5000/docs`अपने वेब ब्राउज़र में, या openapi.json डाउनलोड करें`http://127.0.0.1:5000/openapi.json`.
+पर नेविगेट करें`http://127.0.0.1:5000/docs` in your web browser, or download the openapi.json from `http://127.0.0.1:5000/openapi.json`.
 
 # मेट्रिक्स
 
