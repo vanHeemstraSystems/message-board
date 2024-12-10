@@ -22,17 +22,12 @@ RUN apt-get update && apt-get install -y \
 # Install Hatch
 RUN pip install --no-cache-dir hatch
 
-# Copy only what's needed for package installation
-COPY pyproject.toml .
-COPY src/ ./src/
-COPY README.md .
+# Copy the rest of the application
+COPY . .
 
 # Create Hatch environment and install dependencies
 RUN pip install -e .
 RUN hatch env create
-
-# Copy the rest of the application
-COPY . .
 
 # Expose the port the app runs on
 EXPOSE 5000
