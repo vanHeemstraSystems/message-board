@@ -43,7 +43,7 @@ omit = [
 
 [tool.coverage.paths]
 message_board = ["src/message_board", "*/server/src/message_board"]
-tests = ["tests", "*/message-board/tests"]
+tests = ["tests", "*/server/tests"]
 
 [tool.coverage.report]
 exclude_lines = [
