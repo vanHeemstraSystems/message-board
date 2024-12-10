@@ -43,7 +43,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **NOTIZ**: Die moderne Art ist zu verwenden`pyproject.toml` to install dependencies, not \`\`\`requirements.txt. Hence there should not be a requirements.txt file.
+    **NOTIZ**: Die moderne Art ist zu verwenden`pyproject.toml`um Abhängigkeiten zu installieren, nicht „requirements.txt“. Daher sollte es keine Datei „requirements.txt“ geben.
 
     === START: AKTUALISIEREN SIE DIESEN ABSCHNITT FÜR DAS Message Board ===
 
@@ -54,7 +54,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
     Dadurch wird das erstellt`app.js`Datei - die alle Komponenten enthält - in`/src/threagile_monitoring/static/js/`.
 
-    **Entwicklung mit Webpack:**Wenn Sie Ihre Website noch entwickeln, in a**separate Terminalsitzung**, nachdem Sie den oben genannten Installationsprozess befolgt haben, gehen Sie wie folgt vor:
+    **Entwicklung mit Webpack:**Wenn Sie Ihre Website noch entwickeln, in a**separate terminal session**, nachdem Sie den oben genannten Installationsprozess befolgt haben, gehen Sie wie folgt vor:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
     Dies wird - in der separaten Terminalsitzung (d. h.`background`) – lädt die von Ihnen vorgenommenen Änderungen ständig in die entsprechenden Dateien, während Sie diese Änderungen weiterhin vornehmen können – in der ersten Terminalsitzung (d. h.`foreground`). Sie müssen Ihre Quellen also nicht nach jeder Bearbeitung neu erstellen, dies geschieht automatisch!
