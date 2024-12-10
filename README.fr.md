@@ -10,7 +10,7 @@ babillard électronique
 
 * * *
 
-> Un forum de discussion qui affichera les messages soumis.
+> Un forum de messages qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
@@ -95,7 +95,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
 
     <https://app.coderabbit.ai/dashboard>(utilise`phpstan.neon`)
 
-    Pour exécuter l'application, utilisez :
+    To run the application, use:
 
     Linux :
 
@@ -222,4 +222,4 @@ Voir[README.md](./300/README.md)
 
 ## 400 - Conclusion
 
-See [README.md](./400/README.md)
+Voir[README.md](./400/README.md)
