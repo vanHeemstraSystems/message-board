@@ -119,7 +119,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     Navigeer vervolgens naar`http://127.0.0.1:5000/`in uw webbrowser.
 
-    To run tests, use:
+    Om tests uit te voeren, gebruikt u:
 
     ```bash
     $ cd threagile-monitoring
