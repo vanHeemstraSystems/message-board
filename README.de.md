@@ -62,7 +62,8 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     Um die Änderungen zu sehen, speichern Sie einfach Ihren Navigator und laden Sie ihn neu (normalerweise mit F5).
 
     Stellen Sie sicher, dass Sie Ihre Webseite beim Testen mit Backend-Funktionen wie folgt ausführen:
-    1)`(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
+    1)`(threagile-monitoring) $ cd src/threagile_monitoring`
+    2) `(threagile-monitoring) $ python app.py`
 
     **Prüfen**
 
