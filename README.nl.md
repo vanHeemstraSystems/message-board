@@ -82,7 +82,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
 4.  API-referenties
 
-5.  Bouwen en testen:
+5.  Build and Test:
 
     Om uw code samen te stellen, gebruikt u:
 
