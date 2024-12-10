@@ -25,9 +25,9 @@ RUN pip install --no-cache-dir hatch
 # Copy the application
 COPY . .
 
-# Create Hatch environment first
+# Install dependencies and create environment
 RUN hatch env create
-RUN pip install -e .
+RUN cd src && pip install -e .
 
 # Expose the port the app runs on
 EXPOSE 5000

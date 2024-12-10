@@ -12,48 +12,14 @@ dependencies = [
     "python-dotenv>=1.0.0"
 ]
 
-[project.optional-dependencies]
-dev = [
-    "pytest>=7.0",
-    # other dev dependencies...
-]
-
-[project.urls]
-Documentation = "https://github.com/vanHeemstraSystems/message-board#readme"
-Issues = "https://github.com/vanHeemstraSystems/message-board/issues"
-Source = "https://github.com/vanHeemstraSystems/message-board"
-
-[tool.hatch.version]
-path = "src/message_board/__about__.py"
-
-[tool.hatch.envs.types]
-extra-dependencies = [
-  "mypy>=1.0.0",
-]
-[tool.hatch.envs.types.scripts]
-check = "mypy --install-types --non-interactive {args:src/message_board tests}"
-
-[tool.coverage.run]
-source_pkgs = ["message_board", "tests"]
-branch = true
-parallel = true
-omit = [
-  "src/message_board/__about__.py",
-]
-
-[tool.coverage.paths]
-message_board = ["src/message_board", "*/server/src/message_board"]
-tests = ["tests", "*/server/tests"]
-
-[tool.coverage.report]
-exclude_lines = [
-  "no cov",
-  "if __name__ == .__main__.:",
-  "if TYPE_CHECKING:",
-]
-
 [tool.hatch.build]
 packages = ["src/message_board"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/message_board"]
+
+[tool.hatch.build.targets.sdist]
 include = [
-    "/src/message_board",
+    "/src",
+    "/tests",
 ]
