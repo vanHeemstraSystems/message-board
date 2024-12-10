@@ -97,7 +97,7 @@
 
     لتشغيل التطبيق استخدم:
 
-    لينكس:
+    Linux:
 
     ```bash
     $ export SECRET_KEY="secret"
