@@ -95,7 +95,7 @@
 
     <https://app.coderabbit.ai/dashboard>（使用`phpstan.neon`)
 
-    要運行該應用程序，請使用：
+    To run the application, use:
 
     Linux：
 

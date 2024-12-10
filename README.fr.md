@@ -170,7 +170,7 @@ pip install threagile-monitoring
 
 ## Licence
 
-`threagile-monitoring`est distribué selon les termes du[MIT](https://spdx.org/licenses/MIT.html)licence.
+`threagile-monitoring`est distribué selon les termes du[AVEC](https://spdx.org/licenses/MIT.html)licence.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 

@@ -140,7 +140,7 @@ Dejemos que una herramienta como Prometeo raspe`http://127.0.0.1:9464/metrics`.
 **Tabla de contenido**
 
 -   [Instalación](#installation)
--   [Fuente de la versión](#version-source)
+-   [Version source](#version-source)
 -   [Ambientes](#environments)
 -   [Construir](#build)
 -   [Licencia](#license)
@@ -153,7 +153,7 @@ pip install threagile-monitoring
 
 ## Fuente de la versión
 
--   El[escotilla-vcs](https://github.com/ofek/hatch-vcs)El complemento fuente de la versión determina la versión del proyecto usando etiquetas Git.
+-   El[escotilla-vcs](https://github.com/ofek/hatch-vcs) version source plugin determines the project version using Git tags
 
 ## Ambientes
 
