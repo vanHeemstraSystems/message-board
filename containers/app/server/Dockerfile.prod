@@ -22,9 +22,9 @@ RUN apt-get update && apt-get install -y \
 # Install Hatch
 RUN pip install --no-cache-dir hatch
 
-# Copy only what's needed for package installation first
-COPY ./pyproject.toml .
-COPY ./src ./src/
+# Copy package files
+COPY pyproject.toml README.md ./
+COPY src/message_board ./src/message_board/
 
 # Install the package in development mode
 RUN pip install -e .
