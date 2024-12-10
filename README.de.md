@@ -52,7 +52,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     Die gesamte Einrichtung sollte inzwischen fertig sein. Sie müssen also nur noch Folgendes tun:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
 
-    Dadurch wird das erstellt`app.js`Datei - die alle Komponenten enthält - in`/src/threagile_monitoring/static/js/`.
+    Dadurch wird das erstellt`app.js` file - which contains all components - in `/src/threagile_monitoring/static/js/`.
 
     **Entwicklung mit Webpack:**Wenn Sie Ihre Website noch entwickeln, in a**separate Terminalsitzung**, nachdem Sie den oben genannten Installationsprozess befolgt haben, gehen Sie wie folgt vor:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
@@ -151,9 +151,9 @@ Lassen Sie ein Werkzeug wie Prometheus kratzen`http://127.0.0.1:9464/metrics`.
 pip install threagile-monitoring
 ```
 
-## Versionsquelle
+## Version source
 
--   Der[hatch-vcs](https://github.com/ofek/hatch-vcs)Das Versionsquellen-Plugin bestimmt die Projektversion mithilfe von Git-Tags
+-   The [hatch-vcs](https://github.com/ofek/hatch-vcs)Das Versionsquellen-Plugin bestimmt die Projektversion mithilfe von Git-Tags
 
 ## Umgebungen
 
@@ -220,6 +220,6 @@ Sehen[README.md](./200/README.md)
 
 Sehen[README.md](./300/README.md)
 
-## 400 - Conclusion
+## 400 – Fazit
 
 Sehen[README.md](./400/README.md)
