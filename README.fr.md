@@ -24,7 +24,7 @@ babillard électronique
 
 Faire en sorte que votre code soit opérationnel sur votre propre système.
 
-**Note**: Assurez-vous de remplir les[exigences](./200/README.md).
+**Note**: Assurez-vous de remplir les[requirements](./200/README.md).
 
 1.  **Processus d'installation :**
 
@@ -70,7 +70,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
 
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
-    **Courir:**
+    **Run:**
 
     Si vous ne développez pas, exécutez l'application (backend et frontend simultanément) de cette façon :
 
@@ -117,9 +117,9 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
     $ hatch run python src/threagile_monitoring/app.py
     ```
 
-    Ensuite, accédez à`http://127.0.0.1:5000/`dans votre navigateur Internet.
+    Then, navigate to `http://127.0.0.1:5000/`dans votre navigateur Internet.
 
-    Pour exécuter des tests, utilisez :
+    To run tests, use:
 
     ```bash
     $ cd threagile-monitoring
@@ -216,7 +216,7 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Créer notre application
+## 300 - Construire notre application
 
 Voir[README.md](./300/README.md)
 
