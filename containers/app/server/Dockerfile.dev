@@ -23,9 +23,9 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --no-cache-dir hatch
 
 # Copy only what's needed for package installation
-COPY ./pyproject.toml .
-COPY ./src/ ./src/
-COPY ./README.md .
+COPY pyproject.toml .
+COPY src/ ./src/
+COPY README.md .
 
 # Create Hatch environment and install dependencies
 RUN pip install -e .
