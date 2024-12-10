@@ -22,19 +22,6 @@ jobs:
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      # - name: Build and push server
-      #   uses: docker/build-push-action@v6
-      #   with:
-      #     push: true
-      #     file: ./containers/app/frontend/Dockerfile.prod
-      #     tags: vanheemstrasystems/message-board-server:latest
-      # - name: Update Docker Hub Description for Server
-      #   uses: peter-evans/dockerhub-description@v4
-      #   with:
-      #     username: ${{ vars.DOCKERHUB_USERNAME }}
-      #     password: ${{ secrets.DOCKERHUB_PASSWORD }}
-      #     repository: vanheemstrasystems/message-board-server
-      #     readme-filepath: ./containers/app/server/DESCRIPTION.md
       - name: Build and push frontend
         uses: docker/build-push-action@v6
         with:
