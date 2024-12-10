@@ -76,7 +76,7 @@
 
         $ hatch run python src/threagile_monitoring/app.py # starts the app 
 
-2.  تبعيات البرمجيات
+2.  Software dependencies
 
 3.  أحدث الإصدارات
 
@@ -137,7 +137,7 @@
 
 **_جديد_**
 
-**جدول المحتويات**
+**Table of Contents**
 
 -   [تثبيت](#installation)
 -   [مصدر النسخة](#version-source)

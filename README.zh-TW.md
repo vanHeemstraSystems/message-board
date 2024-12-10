@@ -95,7 +95,7 @@
 
     <https://app.coderabbit.ai/dashboard>（使用`phpstan.neon`)
 
-    To run the application, use:
+    要運行該應用程序，請使用：
 
     Linux：
 
@@ -153,7 +153,7 @@ pip install threagile-monitoring
 
 ## 版本來源
 
--   這[孵化VCS](https://github.com/ofek/hatch-vcs)版本來源外掛程式使用 Git 標籤來確定專案版本
+-   The [孵化VCS](https://github.com/ofek/hatch-vcs)版本來源外掛程式使用 Git 標籤來確定專案版本
 
 ## 環境
 
