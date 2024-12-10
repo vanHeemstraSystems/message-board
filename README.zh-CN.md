@@ -20,7 +20,7 @@
 
 **执行摘要**
 
-## Server
+## 服务器
 
 在您自己的系统上启动并运行您的代码。
 
@@ -91,7 +91,7 @@
     $ hatch build
     ```
 
-    To use AI for pull request reviews, use:
+    要使用 AI 进行拉取请求审查，请使用：
 
     <https://app.coderabbit.ai/dashboard>（使用`phpstan.neon`)
 
@@ -166,7 +166,7 @@ pip install threagile-monitoring
 -   轮子使用[孵化 mypyc](https://github.com/ofek/hatch-mypyc)构建钩子插件以首先编译所有代码[Mypyc](https://github.com/mypyc/mypyc)
 -   这[建造](.github/workflows/build.yml)GitHub 工作流程展示了如何：
     -   使用[cibuildwheel](https://github.com/pypa/cibuildwheel)为每个平台分发二进制轮子
-    -   使用[app](https://hatch.pypa.io/latest/plugins/builder/app/)构建目标为每个平台构建独立发行版
+    -   使用[应用程序](https://hatch.pypa.io/latest/plugins/builder/app/)构建目标为每个平台构建独立发行版
 
 ## 执照
 
