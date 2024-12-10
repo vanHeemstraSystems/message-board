@@ -22,11 +22,11 @@ tablero de mensajes
 
 ## Servidor
 
-Poner en funcionamiento su código en su propio sistema.
+Cómo poner en marcha su código en su propio sistema.
 
 **Nota**: Asegúrese de cumplir con los[requisitos](./200/README.md).
 
-1.  **Proceso de instalación:**
+1.  **Installation process:**
 
     ```bash
     $ cd server
@@ -54,21 +54,22 @@ Poner en funcionamiento su código en su propio sistema.
 
     Esto creará el`app.js`archivo, que contiene todos los componentes, en`/src/threagile_monitoring/static/js/`.
 
-    **Desarrollo con paquete web:**Si todavía estás desarrollando tu sitio web, en un**separate terminal session**, después de haber seguido el proceso de instalación anterior, haga esto:
+    **Desarrollo con paquete web:**Si todavía estás desarrollando tu sitio web, en un**sesión terminal separada**, después de haber seguido el proceso de instalación anterior, haga esto:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
     Esto, en la sesión de terminal separada (es decir,`background`) - cargue constantemente los cambios que realice en los archivos apropiados, mientras puede continuar realizando esos cambios - en la sesión inicial del terminal (es decir,`foreground`). Así que no tienes que crear tus fuentes después de cada edición, ¡se encargan automáticamente!
 
     Para ver los cambios simplemente guarda y recarga tu navegador (normalmente con F5).
 
-    Make sure, to run your webpage when testing with backend functions, as follows:
-    1) `(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
+    Asegúrese de ejecutar su página web cuando pruebe con funciones de backend, de la siguiente manera:
+    1)`(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
 
     **Prueba**
 
     Pruebe la aplicación (frontend) de esta manera:
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`
+    3) `(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **Correr:**
 
@@ -80,7 +81,7 @@ Poner en funcionamiento su código en su propio sistema.
 
 3.  Últimos lanzamientos
 
-4.  Referencias API
+4.  API references
 
 5.  Construir y probar:
 
@@ -158,7 +159,7 @@ pip install threagile-monitoring
 ## Ambientes
 
 -   Definido claramente de forma independiente[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   El`test`la matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
+-   El`test`La matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
 
 ## Construir
 
@@ -166,11 +167,11 @@ pip install threagile-monitoring
 -   Las ruedas utilizan el[hatch-mypyc](https://github.com/ofek/hatch-mypyc)complemento de enlace de compilación para compilar primero todo el código[mipyc](https://github.com/mypyc/mypyc)
 -   El[construir](.github/workflows/build.yml)El flujo de trabajo de GitHub muestra cómo:
     -   usar[cibuildwheel](https://github.com/pypa/cibuildwheel)distribuir ruedas binarias para cada plataforma
-    -   utilizar el[app](https://hatch.pypa.io/latest/plugins/builder/app/)construir objetivo para crear distribuciones independientes para cada plataforma
+    -   use the [aplicación](https://hatch.pypa.io/latest/plugins/builder/app/)construir objetivo para crear distribuciones independientes para cada plataforma
 
 ## Licencia
 
-`threagile-monitoring` is distributed under the terms of the [CON](https://spdx.org/licenses/MIT.html)licencia.
+`threagile-monitoring`se distribuye bajo los términos del[CON](https://spdx.org/licenses/MIT.html) license.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
