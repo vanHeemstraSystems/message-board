@@ -24,7 +24,7 @@ RUN pip install --no-cache-dir hatch
 
 # Copy package files
 COPY pyproject.toml README.md ./
-COPY src/message_board ./src/message_board/
+COPY src ./src/
 
 # Install the package in development mode
 RUN pip install -e .
