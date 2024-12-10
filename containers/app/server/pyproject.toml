@@ -13,7 +13,11 @@ dependencies = [
 ]
 
 [tool.hatch.build]
-packages = ["src/message_board"]
+packages = ["src"]
+include = [
+    "src/message_board/**/*.py",
+    "src/message_board/**/*.yaml",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/message_board"]
