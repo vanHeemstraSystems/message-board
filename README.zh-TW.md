@@ -43,7 +43,7 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **筆記**：現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
+    **筆記**: The modern way is to use `pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
 
     === 開始：更新留言板的這一部分 ===
 
@@ -210,7 +210,7 @@ pip install threagile-monitoring
 
 ## 100 - 簡介
 
-看[README.md](./100/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - 要求
 
