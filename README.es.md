@@ -22,7 +22,7 @@ tablero de mensajes
 
 ## Servidor
 
-Poner en funcionamiento su código en su propio sistema.
+Cómo poner en marcha su código en su propio sistema.
 
 **Nota**: Asegúrese de cumplir con los[requisitos](./200/README.md).
 
@@ -50,7 +50,8 @@ Poner en funcionamiento su código en su propio sistema.
     **Empaqueta tu sitio con webpack:**Una vez que tenga un sitio web que sea lo suficientemente bueno para su uso, deberá empaquetar la aplicación con webpack. Esta carpeta de paquete aparece en`.gitignore`para evitar que se comprometa con git.
 
     Toda la configuración ya debería estar lista, así que todo lo que tienes que hacer:
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`
+    4) `(threagile-monitoring) $ npm run build`
 
     Esto creará el`app.js`archivo, que contiene todos los componentes, en`/src/threagile_monitoring/static/js/`.
 
@@ -151,14 +152,14 @@ Dejemos que una herramienta como Prometeo raspe`http://127.0.0.1:9464/metrics`.
 pip install threagile-monitoring
 ```
 
-## Fuente de la versión
+## Version source
 
 -   El[escotilla-vcs](https://github.com/ofek/hatch-vcs)El complemento fuente de la versión determina la versión del proyecto usando etiquetas Git.
 
 ## Ambientes
 
 -   Definido claramente de forma independiente[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   El`test`la matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[test](.github/workflows/test.yml)flujo de trabajo de GitHub
+-   El`test`La matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
 
 ## Construir
 
