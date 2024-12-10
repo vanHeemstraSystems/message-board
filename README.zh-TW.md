@@ -14,7 +14,7 @@
 
 -   [文件](./DOCUMENTATION.md)
 -   [詞彙表](./GLOSSARY.md)
--   [Images](./IMAGES.md)
+-   [圖片](./IMAGES.md)
 -   [參考](./REFERENCES.md)
 -   [遙測](./TELEMETRY.md)
 
@@ -117,7 +117,7 @@
     $ hatch run python src/threagile_monitoring/app.py
     ```
 
-    然後，導航至`http://127.0.0.1:5000/`在您的網頁瀏覽器中。
+    然後，導航至`http://127.0.0.1:5000/` in your web browser.
 
     若要執行測試，請使用：
 
@@ -145,7 +145,7 @@
 -   [建造](#build)
 -   [執照](#license)
 
-## Installation
+## 安裝
 
 ```console
 pip install threagile-monitoring
