@@ -170,7 +170,7 @@ pip install threagile-monitoring
 
 ## Licence
 
-`threagile-monitoring`est distribué selon les termes du[MIT](https://spdx.org/licenses/MIT.html)licence.
+`threagile-monitoring`est distribué selon les termes du[AVEC](https://spdx.org/licenses/MIT.html)licence.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
@@ -216,7 +216,7 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Créer notre application
+## 300 - Construire notre application
 
 Voir[README.md](./300/README.md)
 
