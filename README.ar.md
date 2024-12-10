@@ -40,10 +40,10 @@
     # ...
     (server) $ python -c "import sys;print(sys.executable)" # optional, see where your environment's python is located
     (server) $ pip install --upgrade pip # optional, the `run` command allows you to execute commands in an environment as if you had already entered it.
-    (server) $ pip install -r requirements.txt # pipx won't do this
-    (server) $ python -m setuptools_scm # optional, display the version of our package and perform any side-effects like writing to a file. (here: `_version.py`)
     (server) $ exit # optional, type `exit` to leave the environment
     ```
+
+    **ملحوظة**: الطريقة الحديثة هي الاستخدام`pyproject.toml`لتثبيت التبعيات، وليس \`\`\`requirements.txt. ومن ثم لا ينبغي أن يكون هناك ملف require.txt.
 
     === البدء: قم بتحديث هذا القسم للوحة الرسائل ===
 
@@ -153,7 +153,7 @@ pip install threagile-monitoring
 
 ## مصدر النسخة
 
--   ال[Hatch-vcs](https://github.com/ofek/hatch-vcs)يحدد البرنامج المساعد لمصدر الإصدار إصدار المشروع باستخدام علامات Git
+-   ال[Hatch-vcs](https://github.com/ofek/hatch-vcs) version source plugin determines the project version using Git tags
 
 ## البيئات
 
@@ -166,11 +166,11 @@ pip install threagile-monitoring
 -   تستخدم العجلات[Hatch-mypyc](https://github.com/ofek/hatch-mypyc)أنشئ ملحقًا ربطًا لتجميع جميع التعليمات البرمجية أولاً[Mypyc](https://github.com/mypyc/mypyc)
 -   ال[يبني](.github/workflows/build.yml)يوضح سير عمل GitHub كيفية:
     -   يستخدم[cibuildwheel](https://github.com/pypa/cibuildwheel)لتوزيع العجلات الثنائية لكل منصة
-    -   استخدم[برنامج](https://hatch.pypa.io/latest/plugins/builder/app/)بناء الهدف لبناء توزيعات مستقلة لكل منصة
+    -   استخدم[برنامج](https://hatch.pypa.io/latest/plugins/builder/app/) build target to build standalone distributions for every platform
 
 ## رخصة
 
-`threagile-monitoring`يتم توزيعها بموجب شروط[مع](https://spdx.org/licenses/MIT.html)رخصة.
+`threagile-monitoring`يتم توزيعها بموجب شروط[MIT](https://spdx.org/licenses/MIT.html)رخصة.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
@@ -208,7 +208,7 @@ pip install threagile-monitoring
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
 
-## 100- مقدمة
+## 100 - Introduction
 
 يرى[README.md](./100/README.md)
 
@@ -220,6 +220,6 @@ pip install threagile-monitoring
 
 يرى[README.md](./300/README.md)
 
-## 400 - الخاتمة
+## 400 - Conclusion
 
 يرى[README.md](./400/README.md)
