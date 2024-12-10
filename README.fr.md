@@ -13,7 +13,7 @@ babillard électronique
 > Un forum de messages qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
--   [Glossaire](./GLOSSARY.md)
+-   [Glossary](./GLOSSARY.md)
 -   [Images](./IMAGES.md)
 -   [Références](./REFERENCES.md)
 -   [Télémétrie](./TELEMETRY.md)
@@ -143,7 +143,7 @@ Laissez un outil comme Prometheus gratter`http://127.0.0.1:9464/metrics`.
 -   [Source de la version](#version-source)
 -   [Environnements](#environments)
 -   [Construire](#build)
--   [License](#license)
+-   [Licence](#license)
 
 ## Installation
 
@@ -216,7 +216,7 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Créer notre application
+## 300 - Construire notre application
 
 Voir[README.md](./300/README.md)
 
