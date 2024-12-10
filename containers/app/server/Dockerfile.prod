@@ -5,7 +5,7 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PIP_NO_CACHE_DIR=1
-ENV PYTHONPATH=/app/src/message_board
+ENV PYTHONPATH=/app/src
 
 # Set Flask environment variables
 ENV FLASK_ENV=production
@@ -22,14 +22,17 @@ RUN apt-get update && apt-get install -y \
 # Install Hatch
 RUN pip install --no-cache-dir hatch
 
-# Copy the entire project
-COPY . .
+# Copy only what's needed for package installation
+COPY pyproject.toml hatch.toml ./
+COPY src/ ./src/
+COPY README.md ./
 
-# Create Hatch environment first
+# Create Hatch environment and install dependencies
+RUN pip install -e .
 RUN hatch env create
 
-# Install in development mode
-RUN cd src && pip install -e .
+# Copy the rest of the application
+COPY . .
 
 # Expose the port the app runs on
 EXPOSE 5000
