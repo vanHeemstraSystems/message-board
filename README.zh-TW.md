@@ -14,7 +14,7 @@
 
 -   [文件](./DOCUMENTATION.md)
 -   [詞彙表](./GLOSSARY.md)
--   [圖片](./IMAGES.md)
+-   [Images](./IMAGES.md)
 -   [參考](./REFERENCES.md)
 -   [遙測](./TELEMETRY.md)
 
@@ -40,10 +40,10 @@
     # ...
     (server) $ python -c "import sys;print(sys.executable)" # optional, see where your environment's python is located
     (server) $ pip install --upgrade pip # optional, the `run` command allows you to execute commands in an environment as if you had already entered it.
-    (server) $ pip install -r requirements.txt # pipx won't do this
-    (server) $ python -m setuptools_scm # optional, display the version of our package and perform any side-effects like writing to a file. (here: `_version.py`)
     (server) $ exit # optional, type `exit` to leave the environment
     ```
+
+    **筆記**：現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
 
     === 開始：更新留言板的這一部分 ===
 
@@ -145,7 +145,7 @@
 -   [建造](#build)
 -   [執照](#license)
 
-## 安裝
+## Installation
 
 ```console
 pip install threagile-monitoring
