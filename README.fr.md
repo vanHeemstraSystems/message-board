@@ -10,7 +10,7 @@ babillard électronique
 
 * * *
 
-> Un forum de discussion qui affichera les messages soumis.
+> Un forum de messages qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
@@ -84,7 +84,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
 
 5.  Construire et tester :
 
-    Pour construire votre code, utilisez :
+    To build your code, use:
 
     ```bash
     $ cd threagile-monitoring
@@ -137,7 +137,7 @@ Laissez un outil comme Prometheus gratter`http://127.0.0.1:9464/metrics`.
 
 **_NOUVEAU_**
 
-**Table des matières**
+**Table of Contents**
 
 -   [Installation](#installation)
 -   [Source de la version](#version-source)
