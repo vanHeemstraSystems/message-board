@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [tool.hatch.build]
-packages = ["src"]
+packages = ["src/message_board"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/message_board"]
@@ -23,3 +23,6 @@ include = [
     "/src",
     "/tests",
 ]
+
+[tool.hatch.metadata]
+allow-direct-references = true
