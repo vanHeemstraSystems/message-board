@@ -24,7 +24,7 @@
 
 在您自己的系统上启动并运行您的代码。
 
-**笔记**: 确保您满足[requirements](./200/README.md).
+**笔记**: 确保您满足[要求](./200/README.md).
 
 1.  **安装过程：**
 
@@ -45,7 +45,7 @@
 
     **笔记**：现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
 
-    === START:  UPDATE THIS SECTION FOR message board ===
+    === 开始：更新留言板的这一部分 ===
 
     **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 打包应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
 
