@@ -40,10 +40,10 @@ Uw code op uw eigen systeem operationeel krijgen.
     # ...
     (server) $ python -c "import sys;print(sys.executable)" # optional, see where your environment's python is located
     (server) $ pip install --upgrade pip # optional, the `run` command allows you to execute commands in an environment as if you had already entered it.
-    (server) $ pip install -r requirements.txt # pipx won't do this
-    (server) $ python -m setuptools_scm # optional, display the version of our package and perform any side-effects like writing to a file. (here: `_version.py`)
     (server) $ exit # optional, type `exit` to leave the environment
     ```
+
+    **OPMERKING**: De moderne manier is om te gebruiken`pyproject.toml`om afhankelijkheden te installeren, niet \`\`\`requirements.txt. Daarom mag er geen require.txt-bestand zijn.
 
     === START: UPDATE DEZE SECTIE VOOR message board ===
 
@@ -119,7 +119,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     Navigeer vervolgens naar`http://127.0.0.1:5000/`in uw webbrowser.
 
-    Om tests uit te voeren, gebruikt u:
+    To run tests, use:
 
     ```bash
     $ cd threagile-monitoring
