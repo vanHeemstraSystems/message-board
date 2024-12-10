@@ -22,9 +22,9 @@ tablero de mensajes
 
 ## Servidor
 
-Poner en funcionamiento su código en su propio sistema.
+Cómo poner en marcha su código en su propio sistema.
 
-**Note**: Asegúrese de cumplir con los[requisitos](./200/README.md).
+**Nota**: Asegúrese de cumplir con los[requisitos](./200/README.md).
 
 1.  **Proceso de instalación:**
 
@@ -54,8 +54,7 @@ Poner en funcionamiento su código en su propio sistema.
 
     Esto creará el`app.js`archivo, que contiene todos los componentes, en`/src/threagile_monitoring/static/js/`.
 
-    **Desarrollo con paquete web:**
-    If you are still developing your website, in a **sesión terminal separada**, después de haber seguido el proceso de instalación anterior, haga esto:
+    **Desarrollo con paquete web:**Si todavía estás desarrollando tu sitio web, en un**sesión terminal separada**, después de haber seguido el proceso de instalación anterior, haga esto:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
     Esto, en la sesión de terminal separada (es decir,`background`) - cargue constantemente los cambios que realice en los archivos apropiados, mientras puede continuar realizando esos cambios - en la sesión inicial del terminal (es decir,`foreground`). Así que no tienes que crear tus fuentes después de cada edición, ¡se encargan automáticamente!
@@ -81,7 +80,7 @@ Poner en funcionamiento su código en su propio sistema.
 
 3.  Últimos lanzamientos
 
-4.  API references
+4.  Referencias API
 
 5.  Construir y probar:
 
@@ -118,7 +117,7 @@ Poner en funcionamiento su código en su propio sistema.
     $ hatch run python src/threagile_monitoring/app.py
     ```
 
-    Then, navigate to `http://127.0.0.1:5000/`en su navegador web.
+    Luego, navegue hasta`http://127.0.0.1:5000/`en su navegador web.
 
     Para ejecutar pruebas, utilice:
 
@@ -159,7 +158,7 @@ pip install threagile-monitoring
 ## Ambientes
 
 -   Definido claramente de forma independiente[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   El`test`la matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
+-   El`test`La matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
 
 ## Construir
 
@@ -177,7 +176,7 @@ pip install threagile-monitoring
 
 ## Interfaz
 
-1) Create the SvelteKit application:
+1) Cree la aplicación SvelteKit:
 
     $ cd containers/app
     $ npx sv create frontend
