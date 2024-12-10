@@ -10,7 +10,7 @@ ENV PYTHONPATH=/app/src
 # Set Flask environment variables
 ENV FLASK_ENV=production
 ENV FLASK_DEBUG=False
-ENV FLASK_APP=src/message_board/app.py
+ENV FLASK_APP=message_board.app
 
 # Set the working directory in the container
 WORKDIR /app
@@ -26,8 +26,8 @@ RUN pip install --no-cache-dir hatch
 # Copy the application
 COPY . .
 
-# Install dependencies from pyproject.toml
-RUN pip install .
+# Install dependencies
+RUN pip install -e .
 
 # Expose the port the app runs on
 EXPOSE 5000

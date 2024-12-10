@@ -13,11 +13,10 @@ dependencies = [
 ]
 
 [tool.hatch.build]
-packages = ["src/message_board"]
+packages = ["src"]
 
 [tool.hatch.build.targets.wheel]
-only-include = ["src"]
-sources = ["src"]
+packages = ["src/message_board"]
 
 [tool.hatch.build.targets.sdist]
 only-include = ["src"]
