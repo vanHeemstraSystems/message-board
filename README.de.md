@@ -127,6 +127,19 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     $ pytest tests/
     ```
 
+# Docker
+
+Starten Sie Ihre Docker-Container mit:
+
+    $ cd containers/app
+    $ docker-compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+Dadurch werden drei Container geöffnet:
+
+-   message-board-server-dev (Port 8080:5000)
+-   message-board-frontend-dev (Port 80:3000)
+-   message-board-database-dev (Port 5432:5432)
+
 # API-Dokumentation
 
 Navigieren Sie zu`http://127.0.0.1:5000/docs`in Ihrem Webbrowser oder laden Sie openapi.json herunter von`http://127.0.0.1:5000/openapi.json`.
@@ -165,7 +178,7 @@ pip install threagile-monitoring
 -   Alle Build-Ziele verwenden die[hatch-vcs](https://github.com/ofek/hatch-vcs)Erstellen Sie ein Hook-Plugin, um ein zu versenden`_version.py`Datei, damit die Version zur Laufzeit verwendet werden kann
 -   Räder verwenden die[hatch-mypyc](https://github.com/ofek/hatch-mypyc)Build-Hook-Plugin, mit dem zunächst der gesamte Code kompiliert werden soll[Mypyc](https://github.com/mypyc/mypyc)
 -   Der[bauen](.github/workflows/build.yml)Der GitHub-Workflow zeigt, wie Sie:
-    -   verwenden[cibuildwheel](https://github.com/pypa/cibuildwheel)binäre Räder für jede Plattform zu verteilen
+    -   verwenden[cibuildwheel](https://github.com/pypa/cibuildwheel) to distribute binary wheels for every platform
     -   Benutze die[App](https://hatch.pypa.io/latest/plugins/builder/app/)build target zum Erstellen eigenständiger Distributionen für jede Plattform
 
 ## Lizenz
@@ -176,7 +189,7 @@ pip install threagile-monitoring
 
 ## Frontend
 
-1) Create the SvelteKit application:
+1) Erstellen Sie die SvelteKit-Anwendung:
 
     $ cd containers/app
     $ npx sv create frontend
