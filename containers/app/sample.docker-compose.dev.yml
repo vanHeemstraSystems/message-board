@@ -1,0 +1,203 @@
+version: "3.7"
+
+# See https://stackoverflow.com/questions/29261811/use-docker-compose-env-variable-in-dockerbuild-file
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+      args:
+        # from env_file
+        IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
+        IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
+        PROXY_USER: ${PROXY_USER}
+        PROXY_PASSWORD: ${PROXY_PASSWORD}
+        PROXY_FQDN: ${PROXY_FQDN}
+        PROXY_PORT: ${PROXY_PORT}
+    env_file:
+      - .env
+    container_name: ${UNIQUE_NAMESPACE}-frontend-dev
+    privileged: true
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "80:3000"
+    networks:
+      - gateway-dev
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+      args:
+        # from env_file
+        IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
+        IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
+        PROXY_USER: ${PROXY_USER}
+        PROXY_PASSWORD: ${PROXY_PASSWORD}
+        PROXY_FQDN: ${PROXY_FQDN}
+        PROXY_PORT: ${PROXY_PORT}
+    env_file:
+      - .env
+    container_name: ${UNIQUE_NAMESPACE}-server-dev
+    privileged: true
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "8080:5000"
+    networks:
+      - gateway-dev
+
+  database:
+    build:
+      context: ./database
+      dockerfile: Dockerfile.dev
+      args:
+        # from env_file
+        IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
+        IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
+        PROXY_USER: ${PROXY_USER}
+        PROXY_PASSWORD: ${PROXY_PASSWORD}
+        PROXY_FQDN: ${PROXY_FQDN}
+        PROXY_PORT: ${PROXY_PORT}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    env_file:
+      - .env
+    container_name: ${UNIQUE_NAMESPACE}-database-dev
+    privileged: true
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    environment:
+      # Database configuration
+      POSTGRES_DB: message_board_db
+      POSTGRES_USER: message_board_admin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-strongpassword123}
+
+      # Additional PostgreSQL configuration
+      PGDATA: /var/lib/postgresql/data/pgdata
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      # Persistent data storage
+      - message-board-data:/var/lib/postgresql/data
+
+      # Custom configuration files
+      - ./database/postgresql.conf.dev:/etc/postgresql/postgresql.conf
+      - ./database/init.sql.dev:/docker-entrypoint-initdb.d/init.sql
+
+    # Custom PostgreSQL configuration
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+
+    # Resource constraints (optional)
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+    # Health check to ensure database is ready
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U message_board_admin -d message_board_db" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # # Optional: PostgreSQL admin interface
+  # pgadmin:
+  #   image: mirror-dhub.apps-artifactory.asml.com/dpage/pgadmin4:8.13.0
+  #   environment: # from env_file
+  #     IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
+  #     IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
+  #     PROXY_USER: ${PROXY_USER}
+  #     PROXY_PASSWORD: ${PROXY_PASSWORD}
+  #     PROXY_FQDN: ${PROXY_FQDN}
+  #     PROXY_PORT: ${PROXY_PORT}
+  #     PGADMIN_DEFAULT_EMAIL: ${PGADMIN_PASSWORD:-admin@example.com}
+  #     PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-adminpassword123}
+  #   env_file:
+  #     - .env
+  #   container_name: ${UNIQUE_NAMESPACE}-pgadmin-dev
+  #   privileged: true   
+  #   security_opt:
+  #     - no-new-privileges:false 
+  #   restart: unless-stopped
+  #   ports:
+  #     - 8088:80
+  #   depends_on:
+  #     - database
+
+  db-gui:
+    build:
+      context: ./db-gui
+      dockerfile: Dockerfile.dev
+      args:
+        # from env_file
+        IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
+        IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
+        PROXY_USER: ${PROXY_USER}
+        PROXY_PASSWORD: ${PROXY_PASSWORD}
+        PROXY_FQDN: ${PROXY_FQDN}
+        PROXY_PORT: ${PROXY_PORT}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    env_file:
+      - .env
+    container_name: ${UNIQUE_NAMESPACE}-db-gui-dev
+    privileged: true
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    volumes:
+      - ./db-gui/dbvis-home:/home/dbvis/.DbVisualizer
+      - ./db-gui/licenses:/home/dbvis/.DbVisualizer/licenses
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+    network_mode: "host"
+  #    depends_on:
+  #      - database
+
+  # gateway:
+  #   build:
+  #     context: ./gateway
+  #     dockerfile: Dockerfile.dev
+  #     args: # from env_file
+  #       IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
+  #       IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
+  #       PROXY_USER: ${PROXY_USER}
+  #       PROXY_PASSWORD: ${PROXY_PASSWORD}
+  #       PROXY_FQDN: ${PROXY_FQDN}
+  #       PROXY_PORT: ${PROXY_PORT}
+  #   env_file:
+  #     - .env     
+  #   container_name: ${UNIQUE_NAMESPACE}-gateway-dev
+  #   depends_on:
+  #     - frontend   
+  #   privileged: true   
+  #   security_opt:
+  #     - no-new-privileges:true     
+  #   restart: unless-stopped
+  #   ports:
+  #     - "80:80" 
+  #   networks:
+  #     - default
+  #     - gateway-dev
+  #   external_links:
+  #     - message-board-frontend-dev
+
+  # see https://stackoverflow.com/questions/45255066/create-networks-automatically-in-docker-compose
+networks:
+  default:
+    driver: bridge
+  gateway-dev:
+    external: true
+    name: gateway-dev
+
+volumes:
+  message-board-data:
+    driver: local
