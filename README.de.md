@@ -18,7 +18,7 @@ Message-Board
 -   [Referenzen](./REFERENCES.md)
 -   [Telemetrie](./TELEMETRY.md)
 
-**Executive Summary**
+**Zusammenfassung**
 
 ## Server
 
@@ -57,7 +57,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     **Entwicklung mit Webpack:**Wenn Sie Ihre Website noch entwickeln, in a**separate Terminalsitzung**, nachdem Sie den oben genannten Installationsprozess befolgt haben, gehen Sie wie folgt vor:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
-    Dies wird - in der separaten Terminalsitzung (d. h.`background`) – lädt die von Ihnen vorgenommenen Änderungen ständig in die entsprechenden Dateien, während Sie diese Änderungen weiterhin vornehmen können – in der ersten Terminalsitzung (d. h.`foreground`). Sie müssen also nach jeder Bearbeitung keine Quellen erstellen, sondern wird automatisch gepflegt!
+    Dies wird - in der separaten Terminalsitzung (d. h.`background`) – lädt die von Ihnen vorgenommenen Änderungen ständig in die entsprechenden Dateien, während Sie diese Änderungen weiterhin vornehmen können – in der ersten Terminalsitzung (d. h.`foreground`). Sie müssen Ihre Quellen also nicht nach jeder Bearbeitung neu erstellen, dies geschieht automatisch!
 
     Um die Änderungen zu sehen, speichern Sie einfach Ihren Navigator und laden Sie ihn neu (normalerweise mit F5).
 
@@ -183,7 +183,7 @@ pip install threagile-monitoring
 
 ## Lizenz
 
-`threagile-monitoring`wird gemäß den Bedingungen der verteilt[MIT](https://spdx.org/licenses/MIT.html)Lizenz.
+`threagile-monitoring` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html)Lizenz.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
