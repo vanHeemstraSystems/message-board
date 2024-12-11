@@ -103,7 +103,7 @@ Cómo poner en marcha su código en su propio sistema.
     $ export SECRET_KEY="secret"
     ```
 
-    Windows:
+    Ventanas:
 
     ```bash
     $ setx SECRET_KEY secret
@@ -129,7 +129,7 @@ Cómo poner en marcha su código en su propio sistema.
 
 # Documentación API
 
-Navegar a`http://127.0.0.1:5000/docs`en su navegador web, o descargue openapi.json desde`http://127.0.0.1:5000/openapi.json`.
+Navegar a`http://127.0.0.1:5000/docs` in your web browser, or download the openapi.json from `http://127.0.0.1:5000/openapi.json`.
 
 # Métrica
 
@@ -212,7 +212,7 @@ Próximos pasos:
 
 Ver[README.md](./100/README.md)
 
-## 200 - Requirements
+## 200 - Requisitos
 
 Ver[README.md](./200/README.md)
 
