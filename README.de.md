@@ -64,7 +64,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     Stellen Sie sicher, dass Sie Ihre Webseite beim Testen mit Backend-Funktionen wie folgt ausführen:
     1)`(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
 
-    **Test**
+    **Prüfen**
 
     Testen Sie die Anwendung (Frontend) auf diese Weise:
 
@@ -117,7 +117,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     $ hatch run python src/threagile_monitoring/app.py
     ```
 
-    Navigieren Sie dann zu`http://127.0.0.1:5000/` in your web browser.
+    Navigieren Sie dann zu`http://127.0.0.1:5000/`in Ihrem Webbrowser.
 
     Um Tests auszuführen, verwenden Sie:
 
@@ -176,7 +176,7 @@ pip install threagile-monitoring
 
 ## Frontend
 
-1) Erstellen Sie die SvelteKit-Anwendung:
+1) Create the SvelteKit application:
 
     $ cd containers/app
     $ npx sv create frontend

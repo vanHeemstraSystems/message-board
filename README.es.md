@@ -43,7 +43,7 @@ Cómo poner en marcha su código en su propio sistema.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **NOTA**: La forma moderna es utilizar`pyproject.toml`para instalar dependencias, no \`\`\`requirements.txt. Por lo tanto, no debería haber un archivo de requisitos.txt.
+    **NOTA**: La forma moderna es utilizar`pyproject.toml` to install dependencies, not \`\`\`requirements.txt. Hence there should not be a requirements.txt file.
 
     === INICIO: ACTUALIZAR ESTA SECCIÓN PARA el tablero de mensajes ===
 
@@ -72,7 +72,7 @@ Cómo poner en marcha su código en su propio sistema.
 
     **Correr:**
 
-    Si no está en desarrollo, ejecute la aplicación (backend y frontend simultáneamente) de esta manera:
+    If not developing, run the application (backend and frontend simultaneously) this way: 
 
         $ hatch run python src/threagile_monitoring/app.py # starts the app 
 
@@ -129,7 +129,7 @@ Cómo poner en marcha su código en su propio sistema.
 
 # Documentación API
 
-Navegar a`http://127.0.0.1:5000/docs` in your web browser, or download the openapi.json from `http://127.0.0.1:5000/openapi.json`.
+Navegar a`http://127.0.0.1:5000/docs`en su navegador web, o descargue openapi.json desde`http://127.0.0.1:5000/openapi.json`.
 
 # Métrica
 
@@ -153,7 +153,7 @@ pip install threagile-monitoring
 
 ## Fuente de la versión
 
--   El[escotilla-vcs](https://github.com/ofek/hatch-vcs)El complemento fuente de la versión determina la versión del proyecto usando etiquetas Git.
+-   El[hatch-vcs](https://github.com/ofek/hatch-vcs)El complemento fuente de la versión determina la versión del proyecto usando etiquetas Git.
 
 ## Ambientes
 
