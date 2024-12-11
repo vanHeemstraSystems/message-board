@@ -132,7 +132,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
 Démarrez vos conteneurs Docker avec :
 
     $ cd containers/app
-    $ docker-compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 Cela fera tourner trois conteneurs :
 
