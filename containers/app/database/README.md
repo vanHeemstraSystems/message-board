@@ -56,6 +56,20 @@ cp postgresql.conf.prod postgresql.conf
 docker compose -f docker-compose.prod.yml up database
 ```
 
+The database is now ready to be used by your application. You can connect to it using:
+
+Host: localhost
+Port: 5432
+Database: message_board_db
+
+1. Read-only access:
+- User: message_reader
+- Password: readonly_message_password
+
+2. Read/Write access:
+- User: message_writer
+- Password: writeaccess_message_password
+
 ## Database Maintenance
 
 ### Backup
