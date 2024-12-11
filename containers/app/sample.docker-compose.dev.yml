@@ -23,8 +23,8 @@ services:
       - no-new-privileges:true
     ports:
       - "80:3000"
-    networks:
-      - gateway-dev
+    # networks:
+    #   - gateway-dev
 
   server:
     build:
@@ -46,8 +46,8 @@ services:
       - no-new-privileges:true
     ports:
       - "8080:5000"
-    networks:
-      - gateway-dev
+    # networks:
+    #   - gateway-dev
 
   database:
     build:
@@ -194,9 +194,9 @@ services:
 networks:
   default:
     driver: bridge
-  gateway-dev:
-    external: true
-    name: gateway-dev
+  # gateway-dev:
+  #   external: true
+  #   name: gateway-dev
 
 volumes:
   message-board-data:

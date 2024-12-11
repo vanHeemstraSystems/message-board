@@ -24,11 +24,11 @@ RUN corepack enable
 
 FROM base AS prod
 
-COPY ./containers/app/frontend/pnpm-lock.yaml /app
+COPY ./pnpm-lock.yaml /app
 WORKDIR /usr/src/app
 RUN pnpm fetch --prod
 
-COPY ./containers/app/frontend/ /usr/src/app
+COPY ./ /usr/src/app
 # RUN pnpm --proxy http://"${PROXY_USER}:${PROXY_PASSWORD}"@${PROXY_FQDN}:${PROXY_PORT} install
 RUN pnpm install
 RUN pnpm run build

@@ -139,8 +139,9 @@ Start your Docker containers with:
 
 ```
 $ cd containers/app
-$ docker-compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+$ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 ```
+
 This will spin up three containers:
 
 - message-board-server-dev (port 8080:5000)

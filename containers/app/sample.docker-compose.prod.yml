@@ -23,8 +23,8 @@ services:
       - no-new-privileges:true
     ports:
       - "80:3000"
-    networks:
-      - gateway-prod
+    # networks:
+    #   - gateway-prod
 
   server:
     build:
@@ -46,8 +46,8 @@ services:
       - no-new-privileges:true
     ports:
       - "8080:5000"
-    networks:
-      - gateway-prod
+    # networks:
+    #   - gateway-prod
 
   database:
     build:
@@ -194,9 +194,9 @@ services:
 networks:
   default:
     driver: bridge
-  gateway-prod:
-    external: true
-    name: gateway-prod
+  # gateway-prod:
+  #   external: true
+  #   name: gateway-prod
 
 volumes:
   message-board-data:
