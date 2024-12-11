@@ -127,6 +127,19 @@ Uw code op uw eigen systeem operationeel krijgen.
     $ pytest tests/
     ```
 
+# Dokwerker
+
+Start uw Docker-containers met:
+
+    $ cd containers/app
+    $ docker-compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+Hierdoor worden drie containers geactiveerd:
+
+-   message-board-server-dev (poort 8080:5000)
+-   message-board-frontend-dev (poort 80:3000)
+-   message-board-database-dev (poort 5432:5432)
+
 # API-documentatie
 
 Navigeer naar`http://127.0.0.1:5000/docs`in uw webbrowser, of download de openapi.json van`http://127.0.0.1:5000/openapi.json`.
@@ -153,7 +166,7 @@ pip install threagile-monitoring
 
 ## Versiebron
 
--   De[hatch-vcs](https://github.com/ofek/hatch-vcs)versie bronplug-in bepaalt de projectversie met behulp van Git-tags
+-   De[hatch-vcs](https://github.com/ofek/hatch-vcs)versiebronplug-in bepaalt de projectversie met behulp van Git-tags
 
 ## Omgevingen
 
@@ -222,4 +235,4 @@ Zien[README.md](./300/README.md)
 
 ## 400 - Conclusie
 
-Zien[README.md](./400/README.md)
+See [README.md](./400/README.md)
