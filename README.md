@@ -133,6 +133,19 @@ Getting your code up and running on your own system.
     $ pip install pytest # optional
     $ pytest tests/
     ```
+# Docker
+
+Start your Docker containers with:
+
+```
+$ cd containers/app
+$ docker-compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+```
+This will spin up three containers:
+
+- message-board-server-dev (port 8080:5000)
+- message-board-frontend-dev (port 80:3000)
+- message-board-database-dev (port 5432:5432)    
 
 # API Documentation
 
