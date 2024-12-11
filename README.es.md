@@ -61,8 +61,8 @@ Cómo poner en marcha su código en su propio sistema.
 
     Para ver los cambios simplemente guarda y recarga tu navegador (normalmente con F5).
 
-    Asegúrese de ejecutar su página web cuando pruebe con funciones de backend, de la siguiente manera:
-    1)`(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
+    Make sure, to run your webpage when testing with backend functions, as follows:
+    1) `(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
 
     **Prueba**
 
@@ -132,7 +132,7 @@ Cómo poner en marcha su código en su propio sistema.
 Inicie sus contenedores Docker con:
 
     $ cd containers/app
-    $ docker-compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 Esto hará girar tres contenedores:
 
