@@ -132,7 +132,7 @@
 使用以下命令启动 Docker 容器：
 
     $ cd containers/app
-    $ docker-compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 这将启动三个容器：
 
@@ -171,7 +171,7 @@ pip install threagile-monitoring
 ## 环境
 
 -   整齐地定义在一个独立的[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   这`test`矩阵使用[孵化集装箱](https://github.com/ofek/hatch-containers)用于运行 Docker 容器内每个环境的插件；用法可以在[测试](.github/workflows/test.yml)GitHub 工作流程
+-   这`test`矩阵使用[孵化集装箱](https://github.com/ofek/hatch-containers)用于运行 Docker 容器内每个环境的插件；用法可以在[test](.github/workflows/test.yml)GitHub 工作流程
 
 ## 建造
 
@@ -183,7 +183,7 @@ pip install threagile-monitoring
 
 ## 执照
 
-`threagile-monitoring`是根据以下条款分发的[和](https://spdx.org/licenses/MIT.html) license.
+`threagile-monitoring`是根据以下条款分发的[和](https://spdx.org/licenses/MIT.html)执照。
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
