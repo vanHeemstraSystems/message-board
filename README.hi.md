@@ -127,6 +127,19 @@
     $ pytest tests/
     ```
 
+# डाक में काम करनेवाला मज़दूर
+
+अपने डॉकर कंटेनरों को इसके साथ प्रारंभ करें:
+
+    $ cd containers/app
+    $ docker-compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+इससे तीन कंटेनर घूमेंगे:
+
+-   संदेश-बोर्ड-सर्वर-देव (पोर्ट 8080:5000)
+-   संदेश-बोर्ड-फ्रंटएंड-डेव (पोर्ट 80:3000)
+-   संदेश-बोर्ड-डेटाबेस-देव (पोर्ट 5432:5432)
+
 # एपीआई दस्तावेज़ीकरण
 
 पर नेविगेट करें`http://127.0.0.1:5000/docs`अपने वेब ब्राउज़र में, या openapi.json डाउनलोड करें`http://127.0.0.1:5000/openapi.json`.
@@ -176,7 +189,7 @@ pip install threagile-monitoring
 
 ## फ़्रंट एंड
 
-1) Create the SvelteKit application:
+1) SvelteKit एप्लिकेशन बनाएं:
 
     $ cd containers/app
     $ npx sv create frontend

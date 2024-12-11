@@ -127,6 +127,19 @@
     $ pytest tests/
     ```
 
+# 码头工人
+
+使用以下命令启动 Docker 容器：
+
+    $ cd containers/app
+    $ docker-compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+这将启动三个容器：
+
+-   留言板服务器-dev（端口 8080:5000）
+-   留言板前端开发（端口 80:3000）
+-   留言板数据库-dev（端口 5432:5432）
+
 # API文档
 
 导航至`http://127.0.0.1:5000/docs`在您的网络浏览器中，或从以下位置下载 openapi.json`http://127.0.0.1:5000/openapi.json`.
@@ -170,7 +183,7 @@ pip install threagile-monitoring
 
 ## 执照
 
-`threagile-monitoring`是根据以下条款分发的[和](https://spdx.org/licenses/MIT.html)执照。
+`threagile-monitoring`是根据以下条款分发的[和](https://spdx.org/licenses/MIT.html) license.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 

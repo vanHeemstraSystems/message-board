@@ -43,7 +43,7 @@ Cómo poner en marcha su código en su propio sistema.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **NOTA**: La forma moderna es utilizar`pyproject.toml` to install dependencies, not \`\`\`requirements.txt. Hence there should not be a requirements.txt file.
+    **NOTA**: La forma moderna es utilizar`pyproject.toml`para instalar dependencias, no \`\`\`requirements.txt. Por lo tanto, no debería haber un archivo de requisitos.txt.
 
     === INICIO: ACTUALIZAR ESTA SECCIÓN PARA el tablero de mensajes ===
 
@@ -72,7 +72,7 @@ Cómo poner en marcha su código en su propio sistema.
 
     **Correr:**
 
-    If not developing, run the application (backend and frontend simultaneously) this way: 
+    Si no está en desarrollo, ejecute la aplicación (backend y frontend simultáneamente) de esta manera:
 
         $ hatch run python src/threagile_monitoring/app.py # starts the app 
 
@@ -127,6 +127,19 @@ Cómo poner en marcha su código en su propio sistema.
     $ pytest tests/
     ```
 
+# Estibador
+
+Inicie sus contenedores Docker con:
+
+    $ cd containers/app
+    $ docker-compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+Esto hará girar tres contenedores:
+
+-   tablero de mensajes-servidor-dev (puerto 8080:5000)
+-   tablero de mensajes-frontend-dev (puerto 80:3000)
+-   tablero de mensajes-base de datos-dev (puerto 5432:5432)
+
 # Documentación API
 
 Navegar a`http://127.0.0.1:5000/docs`en su navegador web, o descargue openapi.json desde`http://127.0.0.1:5000/openapi.json`.
@@ -153,7 +166,7 @@ pip install threagile-monitoring
 
 ## Fuente de la versión
 
--   El[hatch-vcs](https://github.com/ofek/hatch-vcs)El complemento fuente de la versión determina la versión del proyecto usando etiquetas Git.
+-   El[escotilla-vcs](https://github.com/ofek/hatch-vcs)El complemento fuente de la versión determina la versión del proyecto usando etiquetas Git.
 
 ## Ambientes
 
