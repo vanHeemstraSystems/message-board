@@ -1,0 +1,130 @@
+-- Create schemas
+CREATE SCHEMA IF NOT EXISTS app_data;
+CREATE SCHEMA IF NOT EXISTS audit_log;
+
+-- Create enum for message priority
+CREATE TYPE message_priority AS ENUM ('low', 'medium', 'high', 'critical');
+
+-- Create users with specific permissions
+CREATE USER message_reader WITH PASSWORD 'readonly_message_password';
+CREATE USER message_writer WITH PASSWORD 'writeaccess_message_password';
+
+-- Create messages table
+CREATE TABLE app_data.messages (
+    id SERIAL PRIMARY KEY,
+    owner VARCHAR(100) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    created_on TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_on TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    priority message_priority DEFAULT 'medium',
+    
+    -- Additional constraints
+    CONSTRAINT check_title_length CHECK (length(title) > 0 AND length(title) <= 255),
+    CONSTRAINT check_owner_length CHECK (length(owner) > 0 AND length(owner) <= 100)
+);
+
+-- Create indexes for performance and querying
+CREATE INDEX idx_messages_owner ON app_data.messages(owner);
+CREATE INDEX idx_messages_priority ON app_data.messages(priority);
+CREATE INDEX idx_messages_created_on ON app_data.messages(created_on);
+
+-- Trigger to automatically update 'updated_on' timestamp
+CREATE OR REPLACE FUNCTION update_modified_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_on = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER update_messages_modtime
+BEFORE UPDATE ON app_data.messages
+FOR EACH ROW
+EXECUTE FUNCTION update_modified_column();
+
+-- Create roles and permissions
+CREATE ROLE message_read_role;
+CREATE ROLE message_write_role;
+
+-- Grant permissions to roles
+GRANT USAGE ON SCHEMA app_data TO message_read_role;
+GRANT SELECT ON ALL TABLES IN SCHEMA app_data TO message_read_role;
+
+GRANT USAGE ON SCHEMA app_data TO message_write_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA app_data TO message_write_role;
+
+-- Grant roles to specific users
+GRANT message_read_role TO message_reader;
+GRANT message_write_role TO message_writer;
+
+-- Insert some initial sample messages
+INSERT INTO app_data.messages (owner, title, description, priority) VALUES 
+    ('john_doe', 'First Message', 'This is the first sample message', 'low'),
+    ('jane_smith', 'Important Update', 'A critical message that needs attention', 'critical'),
+    ('system', 'Welcome Message', 'Welcome to the messaging system', 'medium');
+
+-- Create a function for inserting messages with validation
+CREATE OR REPLACE FUNCTION app_data.insert_message(
+    p_owner VARCHAR(100),
+    p_title VARCHAR(255),
+    p_description TEXT DEFAULT NULL,
+    p_priority message_priority DEFAULT 'medium'
+) RETURNS INTEGER AS $$
+DECLARE
+    v_message_id INTEGER;
+BEGIN
+    -- Validate input
+    IF p_owner IS NULL OR trim(p_owner) = '' THEN
+        RAISE EXCEPTION 'Owner cannot be empty';
+    END IF;
+
+    IF p_title IS NULL OR trim(p_title) = '' THEN
+        RAISE EXCEPTION 'Title cannot be empty';
+    END IF;
+
+    -- Insert the message and return the new ID
+    INSERT INTO app_data.messages (owner, title, description, priority)
+    VALUES (p_owner, p_title, p_description, p_priority)
+    RETURNING id INTO v_message_id;
+
+    RETURN v_message_id;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Create a function for searching messages
+CREATE OR REPLACE FUNCTION app_data.search_messages(
+    p_owner VARCHAR(100) DEFAULT NULL,
+    p_priority message_priority DEFAULT NULL,
+    p_start_date TIMESTAMP WITH TIME ZONE DEFAULT NULL,
+    p_end_date TIMESTAMP WITH TIME ZONE DEFAULT NULL
+) RETURNS TABLE (
+    id INTEGER,
+    owner VARCHAR(100),
+    title VARCHAR(255),
+    description TEXT,
+    created_on TIMESTAMP WITH TIME ZONE,
+    updated_on TIMESTAMP WITH TIME ZONE,
+    priority message_priority
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT 
+        m.id, 
+        m.owner, 
+        m.title, 
+        m.description, 
+        m.created_on, 
+        m.updated_on, 
+        m.priority
+    FROM 
+        app_data.messages m
+    WHERE 
+        (p_owner IS NULL OR m.owner = p_owner)
+        AND (p_priority IS NULL OR m.priority = p_priority)
+        AND (p_start_date IS NULL OR m.created_on >= p_start_date)
+        AND (p_end_date IS NULL OR m.created_on <= p_end_date)
+    ORDER BY 
+        m.created_on DESC;
+END;
+$$ LANGUAGE plpgsql;
