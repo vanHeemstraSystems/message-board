@@ -84,11 +84,11 @@ services:
       - message-board-data:/var/lib/postgresql/data
 
       # Custom configuration files
-      - ./database/postgresql.conf.prod:/etc/postgresql/postgresql.conf
-      - ./database/init.sql.prod:/docker-entrypoint-initdb.d/init.sql
+      - ./database/postgresql.conf.prod:/var/lib/postgresql/data/postgresql.conf
+      - ./database/init.sql.prod:/docker-entrypoint-initdb.d
 
     # Custom PostgreSQL configuration
-    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+    command: postgres -c config_file=/var/lib/postgresql/data/postgresql.conf
 
     # Resource constraints (optional)
     deploy:
