@@ -10,13 +10,13 @@
 
 * * *
 
-> 留言板将显示提交的消息。
+> A Message Board that will display submitted messages.
 
 -   [文档](./DOCUMENTATION.md)
 -   [词汇表](./GLOSSARY.md)
 -   [图片](./IMAGES.md)
 -   [参考](./REFERENCES.md)
--   [遥测](./TELEMETRY.md)
+-   [Telemetry](./TELEMETRY.md)
 
 **执行摘要**
 
@@ -24,7 +24,7 @@
 
 在您自己的系统上启动并运行您的代码。
 
-**笔记**: 确保您满足[要求](./200/README.md).
+**笔记**: Make sure you fulfill the [要求](./200/README.md).
 
 1.  **安装过程：**
 
@@ -68,7 +68,8 @@
 
     以这种方式测试应用程序（前端）：
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`
+    3) `(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **跑步：**
 
@@ -222,4 +223,4 @@ pip install threagile-monitoring
 
 ## 400 - 结论
 
-看[README.md](./400/README.md)
+See [README.md](./400/README.md)
