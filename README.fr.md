@@ -91,7 +91,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
     $ hatch build
     ```
 
-    Pour utiliser l'IA pour les révisions de demandes d'extraction, utilisez :
+    To use AI for pull request reviews, use:
 
     <https://app.coderabbit.ai/dashboard>(utilise`phpstan.neon`)
 
