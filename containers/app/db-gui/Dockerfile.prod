@@ -23,11 +23,11 @@ RUN useradd -ms /bin/bash dbvis
 USER dbvis
 WORKDIR /home/dbvis
 
-# Create DbVisualizer config directory with proper permissions
-RUN mkdir -p /home/dbvis/.dbvis/config/14.0
-
-# Add initial connection settings
-COPY --chown=dbvis:dbvis dbvis.prefs.prod /home/dbvis/.dbvis/config/14.0/dbvis.prefs
+# Create config directory and copy preferences file
+COPY --chown=dbvis:dbvis dbvis.prefs.prod /tmp/dbvis.prefs
+RUN mkdir -p /home/dbvis/.dbvis/config/14.0 \
+    && cp /tmp/dbvis.prefs /home/dbvis/.dbvis/config/14.0/dbvis.prefs \
+    && ls -la /home/dbvis/.dbvis/config/14.0/
 
 # Create startup script with debugging
 RUN echo '#!/bin/bash\n\
