@@ -119,7 +119,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     Navigeer vervolgens naar`http://127.0.0.1:5000/`in uw webbrowser.
 
-    Om tests uit te voeren, gebruikt u:
+    To run tests, use:
 
     ```bash
     $ cd threagile-monitoring
@@ -183,7 +183,7 @@ pip install threagile-monitoring
 
 ## Licentie
 
-`threagile-monitoring`wordt verspreid onder de voorwaarden van de[MIT](https://spdx.org/licenses/MIT.html)licentie.
+`threagile-monitoring`wordt verspreid onder de voorwaarden van de[MET](https://spdx.org/licenses/MIT.html)licentie.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
