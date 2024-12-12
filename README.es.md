@@ -188,7 +188,7 @@ Dejemos que una herramienta como Prometeo raspe`http://127.0.0.1:9464/metrics`.
 **Tabla de contenido**
 
 -   [Instalación](#installation)
--   [Fuente de la versión](#version-source)
+-   [Version source](#version-source)
 -   [Ambientes](#environments)
 -   [Construir](#build)
 -   [Licencia](#license)
