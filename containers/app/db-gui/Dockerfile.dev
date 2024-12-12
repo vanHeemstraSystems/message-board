@@ -10,37 +10,27 @@ RUN apt-get update && apt-get install -y \
     libxi6 \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy and install DbVisualizer with verbose output
+# Install DbVisualizer and verify installation
 COPY dbvis_linux_14_0_4.deb /tmp/
 RUN dpkg -i /tmp/dbvis_linux_14_0_4.deb \
-    && rm /tmp/dbvis_linux_14_0_4.deb \
-    && echo "=== Checking all possible DbVisualizer locations ===" \
-    && ls -la /opt/ || echo "Not in /opt" \
-    && ls -la /usr/share/ || echo "Not in /usr/share" \
-    && ls -la /usr/bin/ || echo "Not in /usr/bin" \
-    && echo "=== Finding dbvisualizer executable ===" \
-    && find / -name "dbvisualizer*" 2>/dev/null \
-    && echo "=== Package contents ===" \
-    && dpkg -L dbvis \
-    && echo "=== Done checking locations ==="
+    && rm /tmp/dbvis_linux_14_0_4.deb
+
+# Add correct DbVisualizer paths
+ENV PATH="/usr/local/bin:/opt/DbVisualizer:${PATH}"
 
 # Create a non-root user
 RUN useradd -ms /bin/bash dbvis
 USER dbvis
 WORKDIR /home/dbvis
 
-# Add initial connection settings (using dev-specific preferences)
-COPY --chown=dbvis:dbvis dbvis.prefs.dev .dbvis/config/14.0/
+# Create DbVisualizer config directory with proper permissions
+RUN mkdir -p .dbvis/config/14.0
+
+# Add initial connection settings (using clean, version-specific preferences)
+COPY --chown=dbvis:dbvis dbvis.prefs.dev .dbvis/config/14.0/dbvis.prefs
 
 # Expose DbVisualizer port
 EXPOSE 5444
 
-# Use shell to run multiple commands with more debugging
-CMD ["sh", "-c", "echo '=== Current location ===' && pwd \
-    && echo '=== Directory contents ===' && ls -la \
-    && echo '=== System PATH ===' && echo $PATH \
-    && echo '=== Trying to run dbvisualizer ===' \
-    && which dbvisualizer || echo 'dbvisualizer not in PATH' \
-    && /usr/bin/dbvisualizer || echo 'Not in /usr/bin' \
-    && /usr/share/dbvis/dbvisualizer || echo 'Not in /usr/share/dbvis' \
-    && /opt/dbvis/dbvisualizer || echo 'Not in /opt/dbvis'"]
+# Launch DbVisualizer GUI with clean preferences
+CMD ["/opt/DbVisualizer/dbvisgui.sh", "-clearsettings", "-cfg", "/home/dbvis/.dbvis/config/14.0/dbvis.prefs"]
