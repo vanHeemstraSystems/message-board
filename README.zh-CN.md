@@ -43,11 +43,11 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **笔记**：现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
+    **笔记**: 现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
 
     === 开始：更新留言板的这一部分 ===
 
-    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 打包该应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
+    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 打包应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
 
     现在所有设置都应该准备就绪，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -132,13 +132,48 @@
 使用以下命令启动 Docker 容器：
 
     $ cd containers/app
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For Linux
+    $ xhost +local:docker
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For macOS with XQuartz
+    # On macOS we need to start XQuartz first. Here's the complete sequence:
+    # 1.Install XQuartz if you haven't already:
+    $ brew install --cask xquartz
+    # 2. Start XQuartz:
+    $ open -a XQuartz
+    # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
+    # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
+    # 5. Wait a few seconds for XQuartz to fully start up
+    # 6. Then in your terminal:
+    $ xhost +localhost
+    $ export DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # The key is that XQuartz must be running before you execute the xhost command.
+
+    # For Windows with VcXsrv
+    $ set DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 这将启动三个容器：
 
 -   留言板服务器-dev（端口 8080:5000）
 -   留言板前端开发（端口 80:3000）
 -   留言板数据库-dev（端口 5432:5432）
+-   留言板-db-gui-dev（端口 5444:5444）
+
+DbVisualizer 应使用以下凭据连接到您的 PostgreSQL 数据库：
+
+服务器：数据库
+端口：5432
+数据库：message_board_db
+用户名：db-user-dev
+密码：db-password-dev
+
+如果 DbVisualizer 没有自动启动，您可以检查容器日志：
+
+    $ docker logs message-board-db-gui-dev
 
 # API文档
 
@@ -146,7 +181,7 @@
 
 # 指标
 
-让 Prometheus 这样的工具刮擦`http://127.0.0.1:9464/metrics`.
+让像 Prometheus 这样的工具刮擦`http://127.0.0.1:9464/metrics`.
 
 **_新的_**
 
