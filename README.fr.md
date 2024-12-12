@@ -160,7 +160,7 @@ Cela fera tourner trois conteneurs :
 
 -   message-board-server-dev (port 8080:5000)
 -   message-board-frontend-dev (port 80:3000)
--   message-board-database-dev (port 5432:5432)
+-   message-board-database-dev (port 5432:5432) 
 -   message-board-db-gui-dev (port 5444:5444)
 
 DbVisualizer doit se connecter à votre base de données PostgreSQL à l'aide de ces informations d'identification :
@@ -208,11 +208,11 @@ pip install threagile-monitoring
 -   Bien défini dans un environnement autonome[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
 -   Le`test`la matrice utilise le[conteneurs-écoutilles](https://github.com/ofek/hatch-containers)plugin pour exécuter chaque environnement dans les conteneurs Docker ; l'utilisation peut être vue dans le[test](.github/workflows/test.yml)Flux de travail GitHub
 
-## Construire
+## Build
 
 -   Toutes les cibles de build utilisent le[trappe-vcs](https://github.com/ofek/hatch-vcs)construire un plugin hook pour expédier un`_version.py`fichier afin que la version puisse être utilisée au moment de l'exécution
 -   Les roues utilisent le[trappe-mypyc](https://github.com/ofek/hatch-mypyc)construire un plugin hook pour compiler d'abord tout le code avec[Monpyc](https://github.com/mypyc/mypyc)
--   Le[construire](.github/workflows/build.yml)Le workflow GitHub montre comment :
+-   Le[build](.github/workflows/build.yml)Le workflow GitHub montre comment :
     -   utiliser[roue cibuild](https://github.com/pypa/cibuildwheel)distribuer des roues binaires pour chaque plateforme
     -   utiliser le[application](https://hatch.pypa.io/latest/plugins/builder/app/)construire une cible pour créer des distributions autonomes pour chaque plate-forme
 
@@ -256,7 +256,7 @@ Prochaines étapes :
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
 
-## 100 - Introduction
+## 100 - Présentation
 
 Voir[README.md](./100/README.md)
 
