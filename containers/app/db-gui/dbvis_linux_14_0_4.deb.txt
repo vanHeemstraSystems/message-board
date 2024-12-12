@@ -1,0 +1,5 @@
+In this directory should be the following file:
+
+dbvis_linux_14_0_4.deb
+
+Download it from https://dbvis.com/download/
