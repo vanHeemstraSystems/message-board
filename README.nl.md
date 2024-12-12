@@ -68,7 +68,8 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     Test de applicatie (frontend) op deze manier:
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`
+    5) `(threagile-monitoring) $ npm test -- --coverage`
 
     **Loop:**
 
@@ -163,7 +164,7 @@ Hierdoor worden drie containers geactiveerd:
 -   message-board-database-dev (poort 5432:5432)
 -   message-board-db-gui-dev (poort 5444:5444)
 
-DbVisualizer moet verbinding maken met uw PostgreSQL-database met behulp van deze inloggegevens:
+DbVisualizer zou verbinding moeten maken met uw PostgreSQL-database met behulp van deze inloggegevens:
 
 Server: database
 Haven: 5432
@@ -185,7 +186,7 @@ Laat een stuk gereedschap als Prometheus schrapen`http://127.0.0.1:9464/metrics`
 
 **_NIEUW_**
 
-**Inhoudsopgave**
+**Table of Contents**
 
 -   [Installatie](#installation)
 -   [Versiebron](#version-source)
@@ -214,7 +215,7 @@ pip install threagile-monitoring
 -   Wielen gebruiken de[hatch-mypyc](https://github.com/ofek/hatch-mypyc)bouw hook-plug-in om eerst alle code mee te compileren[Mijnpyc](https://github.com/mypyc/mypyc)
 -   De[bouwen](.github/workflows/build.yml)De GitHub-workflow laat zien hoe u:
     -   gebruik[cibuildwiel](https://github.com/pypa/cibuildwheel)om binaire wielen voor elk platform te distribueren
-    -   use the [app](https://hatch.pypa.io/latest/plugins/builder/app/)build target om zelfstandige distributies voor elk platform te bouwen
+    -   gebruik de[app](https://hatch.pypa.io/latest/plugins/builder/app/)build target om zelfstandige distributies voor elk platform te bouwen
 
 ## Licentie
 
