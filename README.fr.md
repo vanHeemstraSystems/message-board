@@ -10,7 +10,7 @@ babillard électronique
 
 * * *
 
-> Un forum de discussion qui affichera les messages soumis.
+> Un forum de messages qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)

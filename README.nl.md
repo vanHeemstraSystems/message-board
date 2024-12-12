@@ -45,7 +45,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     **OPMERKING**: De moderne manier is om te gebruiken`pyproject.toml`om afhankelijkheden te installeren, niet \`\`\`requirements.txt. Daarom mag er geen require.txt-bestand zijn.
 
-    === Start: update dit gedeelte voor een prikbord ===
+    === START: UPDATE DEZE SECTIE VOOR message board ===
 
     **Verpak uw site met webpack:**Zodra u een website heeft die goed genoeg is om te gebruiken, moet u de applicatie verpakken met webpack. Deze pakketmap wordt vermeld in`.gitignore`om te voorkomen dat het aan git wordt vastgelegd.
 
@@ -166,16 +166,16 @@ pip install threagile-monitoring
 
 ## Versiebron
 
--   De[hatch-vcs](https://github.com/ofek/hatch-vcs)versiebronplug-in bepaalt de projectversie met behulp van Git-tags
+-   De[hatch-vcs](https://github.com/ofek/hatch-vcs)versie bronplug-in bepaalt de projectversie met behulp van Git-tags
 
 ## Omgevingen
 
 -   Netjes gedefinieerd in een standalone[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   De`test`Matrix gebruikt de[luikcontainers](https://github.com/ofek/hatch-containers)plug -in om elke omgeving in Docker -containers te laten werken; gebruik is te zien in de[test](.github/workflows/test.yml)GitHub-workflow
+-   De`test`matrix maakt gebruik van de[luikcontainers](https://github.com/ofek/hatch-containers)plug-in om elke omgeving binnen Docker-containers uit te voeren; gebruik is te zien in de[test](.github/workflows/test.yml)GitHub-workflow
 
 ## Bouwen
 
--   Alle bouwdoelen gebruiken de[hatch-vcs](https://github.com/ofek/hatch-vcs)Bouw haakplug -in om een`_version.py`bestand zodat de versie tijdens runtime kan worden gebruikt
+-   Alle bouwdoelen gebruiken de[hatch-vcs](https://github.com/ofek/hatch-vcs)bouw een hook-plug-in om een`_version.py`bestand zodat de versie tijdens runtime kan worden gebruikt
 -   Wielen gebruiken de[hatch-mypyc](https://github.com/ofek/hatch-mypyc)bouw hook-plug-in om eerst alle code mee te compileren[Mijnpyc](https://github.com/mypyc/mypyc)
 -   De[bouwen](.github/workflows/build.yml)De GitHub-workflow laat zien hoe u:
     -   gebruik[cibuildwiel](https://github.com/pypa/cibuildwheel)om binaire wielen voor elk platform te distribueren
@@ -183,7 +183,7 @@ pip install threagile-monitoring
 
 ## Licentie
 
-`threagile-monitoring`wordt verspreid onder de voorwaarden van de[MET](https://spdx.org/licenses/MIT.html)licentie.
+`threagile-monitoring`wordt verspreid onder de voorwaarden van de[MIT](https://spdx.org/licenses/MIT.html)licentie.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
