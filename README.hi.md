@@ -68,7 +68,8 @@
 
     एप्लिकेशन (फ़्रंटएंड) का इस प्रकार परीक्षण करें:
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`
+    3) `(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **दौड़ना:**
 
@@ -117,7 +118,7 @@
     $ hatch run python src/threagile_monitoring/app.py
     ```
 
-    फिर, नेविगेट करें`http://127.0.0.1:5000/`आपके वेब ब्राउज़र में.
+    फिर, नेविगेट करें`http://127.0.0.1:5000/` in your web browser.
 
     परीक्षण चलाने के लिए, उपयोग करें:
 
