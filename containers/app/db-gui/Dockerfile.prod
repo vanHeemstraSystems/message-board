@@ -23,15 +23,16 @@ RUN useradd -ms /bin/bash dbvis
 USER dbvis
 WORKDIR /home/dbvis
 
-# Create config directory and copy preferences file
-COPY --chown=dbvis:dbvis dbvis.prefs.prod /tmp/dbvis.prefs
-RUN mkdir -p /home/dbvis/.dbvis/config/14.0 \
-    && cp /tmp/dbvis.prefs /home/dbvis/.dbvis/config/14.0/dbvis.prefs \
-    && ls -la /home/dbvis/.dbvis/config/14.0/
+# Copy preferences file to home directory
+COPY --chown=dbvis:dbvis dbvis.prefs.prod /home/dbvis/dbvis.prefs.prod
 
-# Create startup script with debugging
+# Create startup script with configuration setup
 RUN echo '#!/bin/bash\n\
-echo "=== Checking config directory ==="\n\
+set -x\n\
+echo "=== Setting up configuration ==="\n\
+mkdir -p ~/.dbvis/config/14.0\n\
+cp /home/dbvis/dbvis.prefs.prod ~/.dbvis/config/14.0/dbvis.prefs\n\
+echo "=== Verifying configuration ==="\n\
 ls -la ~/.dbvis/config/14.0/\n\
 echo "=== Config file contents ==="\n\
 cat ~/.dbvis/config/14.0/dbvis.prefs\n\
@@ -42,5 +43,5 @@ exec /opt/DbVisualizer/dbvisgui.sh "$@"' > /home/dbvis/start.sh && \
 # Expose DbVisualizer port
 EXPOSE 5444
 
-# Launch DbVisualizer GUI with debug script
+# Launch DbVisualizer GUI with setup script
 ENTRYPOINT ["/home/dbvis/start.sh"]
