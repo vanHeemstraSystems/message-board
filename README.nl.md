@@ -132,13 +132,48 @@ Uw code op uw eigen systeem operationeel krijgen.
 Start uw Docker-containers met:
 
     $ cd containers/app
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For Linux
+    $ xhost +local:docker
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For macOS with XQuartz
+    # On macOS we need to start XQuartz first. Here's the complete sequence:
+    # 1.Install XQuartz if you haven't already:
+    $ brew install --cask xquartz
+    # 2. Start XQuartz:
+    $ open -a XQuartz
+    # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
+    # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
+    # 5. Wait a few seconds for XQuartz to fully start up
+    # 6. Then in your terminal:
+    $ xhost +localhost
+    $ export DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # The key is that XQuartz must be running before you execute the xhost command.
+
+    # For Windows with VcXsrv
+    $ set DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 Hierdoor worden drie containers geactiveerd:
 
 -   message-board-server-dev (poort 8080:5000)
 -   message-board-frontend-dev (poort 80:3000)
 -   message-board-database-dev (poort 5432:5432)
+-   message-board-db-gui-dev (poort 5444:5444)
+
+DbVisualizer zou verbinding moeten maken met uw PostgreSQL-database met behulp van deze inloggegevens:
+
+Server: database
+Haven: 5432
+Database: message_board_db
+Gebruikersnaam: db-user-dev
+Wachtwoord: db-wachtwoord-dev
+
+Als DbVisualizer niet automatisch start, kunt u de containerlogboeken controleren:
+
+    $ docker logs message-board-db-gui-dev
 
 # API-documentatie
 
@@ -166,7 +201,7 @@ pip install threagile-monitoring
 
 ## Versiebron
 
--   De[hatch-vcs](https://github.com/ofek/hatch-vcs)versiebronplug-in bepaalt de projectversie met behulp van Git-tags
+-   De[hatch-vcs](https://github.com/ofek/hatch-vcs)versie bronplug-in bepaalt de projectversie met behulp van Git-tags
 
 ## Omgevingen
 
@@ -177,7 +212,7 @@ pip install threagile-monitoring
 
 -   Alle bouwdoelen gebruiken de[hatch-vcs](https://github.com/ofek/hatch-vcs)bouw een hook-plug-in om een`_version.py`bestand zodat de versie tijdens runtime kan worden gebruikt
 -   Wielen gebruiken de[hatch-mypyc](https://github.com/ofek/hatch-mypyc)bouw hook-plug-in om eerst alle code mee te compileren[Mijnpyc](https://github.com/mypyc/mypyc)
--   The [bouwen](.github/workflows/build.yml)De GitHub-workflow laat zien hoe u:
+-   De[bouwen](.github/workflows/build.yml)De GitHub-workflow laat zien hoe u:
     -   gebruik[cibuildwiel](https://github.com/pypa/cibuildwheel)om binaire wielen voor elk platform te distribueren
     -   gebruik de[app](https://hatch.pypa.io/latest/plugins/builder/app/)build target om zelfstandige distributies voor elk platform te bouwen
 

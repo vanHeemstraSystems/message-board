@@ -68,8 +68,7 @@
 
     एप्लिकेशन (फ़्रंटएंड) का इस प्रकार परीक्षण करें:
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`
-    3) `(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **दौड़ना:**
 
@@ -118,7 +117,7 @@
     $ hatch run python src/threagile_monitoring/app.py
     ```
 
-    फिर, नेविगेट करें`http://127.0.0.1:5000/` in your web browser.
+    फिर, नेविगेट करें`http://127.0.0.1:5000/`आपके वेब ब्राउज़र में.
 
     परीक्षण चलाने के लिए, उपयोग करें:
 
@@ -133,13 +132,48 @@
 अपने डॉकर कंटेनरों को इसके साथ प्रारंभ करें:
 
     $ cd containers/app
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For Linux
+    $ xhost +local:docker
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For macOS with XQuartz
+    # On macOS we need to start XQuartz first. Here's the complete sequence:
+    # 1.Install XQuartz if you haven't already:
+    $ brew install --cask xquartz
+    # 2. Start XQuartz:
+    $ open -a XQuartz
+    # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
+    # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
+    # 5. Wait a few seconds for XQuartz to fully start up
+    # 6. Then in your terminal:
+    $ xhost +localhost
+    $ export DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # The key is that XQuartz must be running before you execute the xhost command.
+
+    # For Windows with VcXsrv
+    $ set DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 इससे तीन कंटेनर घूमेंगे:
 
 -   संदेश-बोर्ड-सर्वर-देव (पोर्ट 8080:5000)
 -   संदेश-बोर्ड-फ्रंटएंड-डेव (पोर्ट 80:3000)
 -   संदेश-बोर्ड-डेटाबेस-देव (पोर्ट 5432:5432)
+-   संदेश-बोर्ड-डीबी-गुई-देव (पोर्ट 5444:5444)
+
+DbVisualizer को इन क्रेडेंशियल्स का उपयोग करके आपके PostgreSQL डेटाबेस से कनेक्ट होना चाहिए:
+
+सर्वर: डेटाबेस
+पोर्ट: 5432
+डेटाबेस: message_board_db
+उपयोगकर्ता नाम: डीबी-उपयोगकर्ता-देव
+पासवर्ड: डीबी-पासवर्ड-डेव
+
+यदि DbVisualizer स्वचालित रूप से लॉन्च नहीं होता है, तो आप कंटेनर लॉग की जांच कर सकते हैं:
+
+    $ docker logs message-board-db-gui-dev
 
 # एपीआई दस्तावेज़ीकरण
 

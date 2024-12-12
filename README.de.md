@@ -132,13 +132,48 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 Starten Sie Ihre Docker-Container mit:
 
     $ cd containers/app
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For Linux
+    $ xhost +local:docker
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For macOS with XQuartz
+    # On macOS we need to start XQuartz first. Here's the complete sequence:
+    # 1.Install XQuartz if you haven't already:
+    $ brew install --cask xquartz
+    # 2. Start XQuartz:
+    $ open -a XQuartz
+    # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
+    # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
+    # 5. Wait a few seconds for XQuartz to fully start up
+    # 6. Then in your terminal:
+    $ xhost +localhost
+    $ export DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # The key is that XQuartz must be running before you execute the xhost command.
+
+    # For Windows with VcXsrv
+    $ set DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 Dadurch werden drei Container geöffnet:
 
 -   message-board-server-dev (Port 8080:5000)
 -   message-board-frontend-dev (Port 80:3000)
 -   message-board-database-dev (Port 5432:5432)
+-   message-board-db-gui-dev (Port 5444:5444)
+
+DbVisualizer sollte mit diesen Anmeldeinformationen eine Verbindung zu Ihrer PostgreSQL-Datenbank herstellen:
+
+Server: Datenbank
+Port: 5432
+Datenbank: message_board_db
+Benutzername: db-user-dev
+Passwort: db-password-dev
+
+Wenn DbVisualizer nicht automatisch startet, können Sie die Containerprotokolle überprüfen:
+
+    $ docker logs message-board-db-gui-dev
 
 # API-Dokumentation
 

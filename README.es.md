@@ -93,7 +93,7 @@ Cómo poner en marcha su código en su propio sistema.
 
     Para usar IA para revisiones de solicitudes de extracción, use:
 
-    <https://app.coderabbit.ai/dashboard>(usa`phpstan.neon`)
+    <https://app.coderabbit.ai/dashboard> (uses `phpstan.neon`)
 
     Para ejecutar la aplicación, utilice:
 
@@ -132,13 +132,48 @@ Cómo poner en marcha su código en su propio sistema.
 Inicie sus contenedores Docker con:
 
     $ cd containers/app
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For Linux
+    $ xhost +local:docker
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For macOS with XQuartz
+    # On macOS we need to start XQuartz first. Here's the complete sequence:
+    # 1.Install XQuartz if you haven't already:
+    $ brew install --cask xquartz
+    # 2. Start XQuartz:
+    $ open -a XQuartz
+    # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
+    # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
+    # 5. Wait a few seconds for XQuartz to fully start up
+    # 6. Then in your terminal:
+    $ xhost +localhost
+    $ export DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # The key is that XQuartz must be running before you execute the xhost command.
+
+    # For Windows with VcXsrv
+    $ set DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 Esto hará girar tres contenedores:
 
 -   tablero de mensajes-servidor-dev (puerto 8080:5000)
 -   tablero de mensajes-frontend-dev (puerto 80:3000)
 -   tablero de mensajes-base de datos-dev (puerto 5432:5432)
+-   tablero de mensajes-db-gui-dev (puerto 5444:5444)
+
+DbVisualizer debería conectarse a su base de datos PostgreSQL usando estas credenciales:
+
+Servidor: base de datos
+Puerto: 5432
+Base de datos: message_board_db
+Nombre de usuario: db-user-dev
+Contraseña: db-contraseña-dev
+
+Si DbVisualizer no se inicia automáticamente, puede consultar los registros del contenedor:
+
+    $ docker logs message-board-db-gui-dev
 
 # Documentación API
 
@@ -171,7 +206,7 @@ pip install threagile-monitoring
 ## Ambientes
 
 -   Definido claramente de forma independiente[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   El`test`La matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
+-   El`test`la matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
 
 ## Construir
 
