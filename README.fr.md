@@ -43,7 +43,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **NOTE**: La manière moderne consiste à utiliser`pyproject.toml`pour installer les dépendances, pas \`\`\`requirements.txt. Par conséquent, il ne devrait pas y avoir de fichier exigences.txt.
+    **NOTE**: La manière moderne consiste à utiliser`pyproject.toml` to install dependencies, not \`\`\`requirements.txt. Hence there should not be a requirements.txt file.
 
     === DÉBUT : METTRE À JOUR CETTE SECTION POUR le forum ===
 
