@@ -57,7 +57,7 @@
     **التطوير باستخدام حزمة الويب:**إذا كنت لا تزال تقوم بتطوير موقع الويب الخاص بك، في**جلسة طرفية منفصلة**، بعد اتباع عملية التثبيت المذكورة أعلاه، قم بما يلي:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
-    سيؤدي هذا - في الجلسة الطرفية المنفصلة (أي`background`) - قم بتحميل التغييرات التي تجريها باستمرار على الملفات المناسبة، بينما يمكنك الاستمرار في إجراء هذه التغييرات - في الجلسة الطرفية الأولية (أي.`foreground`). So you do not have to build your sources after each edit, it is taken care of automatically!
+    سيؤدي هذا - في الجلسة الطرفية المنفصلة (أي`background`) - قم بتحميل التغييرات التي تجريها باستمرار على الملفات المناسبة، بينما يمكنك الاستمرار في إجراء هذه التغييرات - في الجلسة الطرفية الأولية (أي:`foreground`). لذلك لا يتوجب عليك بناء مصادرك بعد كل تعديل، بل يتم الاهتمام بها تلقائيًا!
 
     لرؤية التغييرات، ما عليك سوى حفظ متصفحك وإعادة تحميله (عادةً باستخدام F5).
 
@@ -132,13 +132,48 @@
 ابدأ تشغيل حاويات Docker الخاصة بك باستخدام:
 
     $ cd containers/app
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For Linux
+    $ xhost +local:docker
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For macOS with XQuartz
+    # On macOS we need to start XQuartz first. Here's the complete sequence:
+    # 1.Install XQuartz if you haven't already:
+    $ brew install --cask xquartz
+    # 2. Start XQuartz:
+    $ open -a XQuartz
+    # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
+    # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
+    # 5. Wait a few seconds for XQuartz to fully start up
+    # 6. Then in your terminal:
+    $ xhost +localhost
+    $ export DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # The key is that XQuartz must be running before you execute the xhost command.
+
+    # For Windows with VcXsrv
+    $ set DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 سيؤدي ذلك إلى تدوير ثلاث حاويات:
 
 -   تطوير خادم لوحة الرسائل (المنفذ 8080:5000)
 -   تطوير الواجهة الأمامية للوحة الرسائل (المنفذ 80:3000)
 -   تطوير قاعدة بيانات لوحة الرسائل (المنفذ 5432:5432)
+-   لوحة الرسائل-db-gui-dev (المنفذ 5444:5444)
+
+يجب أن يتصل DbVisualizer بقاعدة بيانات PostgreSQL الخاصة بك باستخدام بيانات الاعتماد التالية:
+
+الخادم: قاعدة البيانات
+المنفذ: 5432
+قاعدة البيانات: message_board_db
+اسم المستخدم: db-user-dev
+كلمة المرور: ديسيبل كلمة المرور ديف
+
+إذا لم يتم تشغيل DbVisualizer تلقائيًا، فيمكنك التحقق من سجلات الحاوية:
+
+    $ docker logs message-board-db-gui-dev
 
 # وثائق واجهة برمجة التطبيقات
 
@@ -175,7 +210,7 @@ pip install threagile-monitoring
 
 ## يبني
 
--   تستخدم جميع أهداف البناء[Hatch-vcs](https://github.com/ofek/hatch-vcs)بناء البرنامج المساعد هوك لشحن أ`_version.py`ملف بحيث يمكن استخدام الإصدار في وقت التشغيل
+-   جميع أهداف البناء تستخدم[Hatch-vcs](https://github.com/ofek/hatch-vcs)بناء البرنامج المساعد هوك لشحن أ`_version.py`ملف بحيث يمكن استخدام الإصدار في وقت التشغيل
 -   تستخدم العجلات[Hatch-mypyc](https://github.com/ofek/hatch-mypyc)أنشئ ملحقًا ربطًا لتجميع جميع التعليمات البرمجية أولاً[Mypyc](https://github.com/mypyc/mypyc)
 -   ال[يبني](.github/workflows/build.yml)يوضح سير عمل GitHub كيفية:
     -   يستخدم[cibuildwheel](https://github.com/pypa/cibuildwheel)لتوزيع العجلات الثنائية لكل منصة
