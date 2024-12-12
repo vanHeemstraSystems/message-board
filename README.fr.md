@@ -10,7 +10,7 @@ babillard électronique
 
 * * *
 
-> Un forum de discussion qui affichera les messages soumis.
+> Un forum de messages qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
@@ -43,7 +43,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **NOTE**: La manière moderne consiste à utiliser`pyproject.toml`pour installer les dépendances, pas \`\`\`requirements.txt. Par conséquent, il ne devrait pas y avoir de fichier exigences.txt.
+    **NOTE**: The modern way is to use `pyproject.toml`pour installer les dépendances, pas \`\`\`requirements.txt. Par conséquent, il ne devrait pas y avoir de fichier exigences.txt.
 
     === DÉBUT : METTRE À JOUR CETTE SECTION POUR le forum ===
 
@@ -132,13 +132,48 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
 Démarrez vos conteneurs Docker avec :
 
     $ cd containers/app
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For Linux
+    $ xhost +local:docker
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+
+    # For macOS with XQuartz
+    # On macOS we need to start XQuartz first. Here's the complete sequence:
+    # 1.Install XQuartz if you haven't already:
+    $ brew install --cask xquartz
+    # 2. Start XQuartz:
+    $ open -a XQuartz
+    # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
+    # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
+    # 5. Wait a few seconds for XQuartz to fully start up
+    # 6. Then in your terminal:
+    $ xhost +localhost
+    $ export DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # The key is that XQuartz must be running before you execute the xhost command.
+
+    # For Windows with VcXsrv
+    $ set DISPLAY=host.docker.internal:0
+    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 Cela fera tourner trois conteneurs :
 
 -   message-board-server-dev (port 8080:5000)
 -   message-board-frontend-dev (port 80:3000)
 -   message-board-database-dev (port 5432:5432)
+-   message-board-db-gui-dev (port 5444:5444)
+
+DbVisualizer doit se connecter à votre base de données PostgreSQL à l'aide de ces informations d'identification :
+
+Serveur : base de données
+Port : 5432
+Base de données : message_board_db
+Nom d'utilisateur : db-user-dev
+Mot de passe : db-password-dev
+
+Si DbVisualizer ne se lance pas automatiquement, vous pouvez vérifier les journaux du conteneur :
+
+    $ docker logs message-board-db-gui-dev
 
 # Documentation API
 
