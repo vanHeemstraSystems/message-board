@@ -11,9 +11,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy and install DbVisualizer
-COPY dbvis_linux_14_0.deb /tmp/
-RUN dpkg -i /tmp/dbvis_linux_14_0.deb \
-    && rm /tmp/dbvis_linux_14_0.deb
+COPY dbvis_linux_14_0_4.deb /tmp/
+RUN dpkg -i /tmp/dbvis_linux_14_0_4.deb \
+    && rm /tmp/dbvis_linux_14_0_4.deb
 
 # Create a non-root user
 RUN useradd -ms /bin/bash dbvis
@@ -26,4 +26,5 @@ COPY --chown=dbvis:dbvis dbvis.prefs.prod .dbvis/config/24.0/
 # Expose DbVisualizer port
 EXPOSE 5444
 
-CMD ["dbvisualizer"]
+# Use full path to dbvisualizer executable
+CMD ["/usr/share/dbvis/dbvisualizer"]

@@ -142,7 +142,7 @@ $ cd containers/app
 
 # For Linux
 $ xhost +local:docker
-$docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+$ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 # For macOS with XQuartz
 # On macOS we need to start XQuartz first. Here's the complete sequence:
@@ -156,12 +156,12 @@ $ open -a XQuartz
 # 6. Then in your terminal:
 $ xhost +localhost
 $ export DISPLAY=host.docker.internal:0
-$docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+$ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 # The key is that XQuartz must be running before you execute the xhost command.
 
 # For Windows with VcXsrv
 $ set DISPLAY=host.docker.internal:0
-$docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+$ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 ```
 
 This will spin up three containers:
