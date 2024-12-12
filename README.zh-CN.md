@@ -47,7 +47,7 @@
 
     === 开始：更新留言板的这一部分 ===
 
-    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 来打包应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
+    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 打包该应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
 
     现在所有设置都应该准备就绪，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -61,8 +61,8 @@
 
     要查看更改，只需保存并重新加载导航器（通常使用 F5）。
 
-    Make sure, to run your webpage when testing with backend functions, as follows:
-    1) `(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
+    确保在使用后端功能进行测试时运行您的网页，如下所示：
+    1）`(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
 
     **测试**
 
@@ -181,7 +181,7 @@ DbVisualizer 应使用以下凭据连接到您的 PostgreSQL 数据库：
 
 # 指标
 
-让像 Prometheus 这样的工具刮擦`http://127.0.0.1:9464/metrics`.
+让 Prometheus 这样的工具刮擦`http://127.0.0.1:9464/metrics`.
 
 **_新的_**
 
