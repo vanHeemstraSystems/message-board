@@ -188,7 +188,7 @@ DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
 **目錄**
 
 -   [安裝](#installation)
--   [Version source](#version-source)
+-   [版本來源](#version-source)
 -   [環境](#environments)
 -   [建造](#build)
 -   [執照](#license)
@@ -208,7 +208,7 @@ pip install threagile-monitoring
 -   整齊地定義在一個獨立的[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
 -   這`test`矩陣使用[孵化貨櫃](https://github.com/ofek/hatch-containers)用於運行 Docker 容器內每個環境的插件；用法可以在[測試](.github/workflows/test.yml)GitHub 工作流程
 
-## Build
+## 建造
 
 -   所有建置目標都使用[孵化VCS](https://github.com/ofek/hatch-vcs)建立鉤子插件來發送`_version.py`文件，以便可以在運行時使用該版本
 -   輪子使用[孵化 mypyc](https://github.com/ofek/hatch-mypyc)建立鉤子插件以首先編譯所有程式碼[Mypyc](https://github.com/mypyc/mypyc)
