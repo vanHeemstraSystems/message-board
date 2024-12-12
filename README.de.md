@@ -14,7 +14,7 @@ Message-Board
 
 -   [Dokumentation](./DOCUMENTATION.md)
 -   [Glossar](./GLOSSARY.md)
--   [Bilder](./IMAGES.md)
+-   [Images](./IMAGES.md)
 -   [Referenzen](./REFERENCES.md)
 -   [Telemetrie](./TELEMETRY.md)
 
@@ -183,7 +183,7 @@ pip install threagile-monitoring
 
 ## Lizenz
 
-`threagile-monitoring` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html)Lizenz.
+`threagile-monitoring`wird gemäß den Bedingungen der verteilt[MIT](https://spdx.org/licenses/MIT.html)Lizenz.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
