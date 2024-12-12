@@ -14,7 +14,7 @@
 
 -   [التوثيق](./DOCUMENTATION.md)
 -   [مسرد](./GLOSSARY.md)
--   [Images](./IMAGES.md)
+-   [الصور](./IMAGES.md)
 -   [مراجع](./REFERENCES.md)
 -   [القياس عن بعد](./TELEMETRY.md)
 
@@ -57,7 +57,7 @@
     **التطوير باستخدام حزمة الويب:**إذا كنت لا تزال تقوم بتطوير موقع الويب الخاص بك، في**جلسة طرفية منفصلة**، بعد اتباع عملية التثبيت المذكورة أعلاه، قم بما يلي:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
-    سيؤدي هذا - في الجلسة الطرفية المنفصلة (أي`background`) - constantly load the changes you make into the appropriate files, whilst you can can continue make those changes - in the initial terminal session (i.e. `foreground`). لذلك لا يتوجب عليك بناء مصادرك بعد كل تعديل، بل يتم الاهتمام بها تلقائيًا!
+    سيؤدي هذا - في الجلسة الطرفية المنفصلة (أي`background`) - قم بتحميل التغييرات التي تجريها باستمرار على الملفات المناسبة، بينما يمكنك الاستمرار في إجراء هذه التغييرات - في الجلسة الطرفية الأولية (أي.`foreground`). لذلك لا يتوجب عليك بناء مصادرك بعد كل تعديل، بل يتم الاهتمام بها تلقائيًا!
 
     لرؤية التغييرات، ما عليك سوى حفظ متصفحك وإعادة تحميله (عادةً باستخدام F5).
 
@@ -135,7 +135,7 @@
 
     # For Linux
     $ xhost +local:docker
-    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
     # For macOS with XQuartz
     # On macOS we need to start XQuartz first. Here's the complete sequence:
@@ -149,12 +149,12 @@
     # 6. Then in your terminal:
     $ xhost +localhost
     $ export DISPLAY=host.docker.internal:0
-    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
     # The key is that XQuartz must be running before you execute the xhost command.
 
     # For Windows with VcXsrv
     $ set DISPLAY=host.docker.internal:0
-    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 سيؤدي ذلك إلى تدوير ثلاث حاويات:
 

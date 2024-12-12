@@ -127,7 +127,7 @@ Cómo poner en marcha su código en su propio sistema.
     $ pytest tests/
     ```
 
-# Estibador
+# Docker
 
 Inicie sus contenedores Docker con:
 
@@ -135,7 +135,7 @@ Inicie sus contenedores Docker con:
 
     # For Linux
     $ xhost +local:docker
-    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
     # For macOS with XQuartz
     # On macOS we need to start XQuartz first. Here's the complete sequence:
@@ -149,14 +149,14 @@ Inicie sus contenedores Docker con:
     # 6. Then in your terminal:
     $ xhost +localhost
     $ export DISPLAY=host.docker.internal:0
-    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
     # The key is that XQuartz must be running before you execute the xhost command.
 
     # For Windows with VcXsrv
     $ set DISPLAY=host.docker.internal:0
-    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
-This will spin up three containers:
+Esto hará girar tres contenedores:
 
 -   tablero de mensajes-servidor-dev (puerto 8080:5000)
 -   tablero de mensajes-frontend-dev (puerto 80:3000)
@@ -211,10 +211,10 @@ pip install threagile-monitoring
 ## Construir
 
 -   Todos los objetivos de construcción utilizan el[escotilla-vcs](https://github.com/ofek/hatch-vcs)construir complemento de gancho para enviar un`_version.py`archivo para que la versión pueda usarse en tiempo de ejecución
--   Las ruedas utilizan el[hatch-mypyc](https://github.com/ofek/hatch-mypyc)complemento de enlace de compilación para compilar primero todo el código[mipyc](https://github.com/mypyc/mypyc)
+-   Las ruedas utilizan el[hatch-mypyc](https://github.com/ofek/hatch-mypyc)complemento de enlace de compilación para compilar primero todo el código[Mypyc](https://github.com/mypyc/mypyc)
 -   El[construir](.github/workflows/build.yml)El flujo de trabajo de GitHub muestra cómo:
     -   usar[cibuildwheel](https://github.com/pypa/cibuildwheel)distribuir ruedas binarias para cada plataforma
-    -   utilizar el[aplicación](https://hatch.pypa.io/latest/plugins/builder/app/)construir objetivo para crear distribuciones independientes para cada plataforma
+    -   utilizar el[app](https://hatch.pypa.io/latest/plugins/builder/app/)construir objetivo para crear distribuciones independientes para cada plataforma
 
 ## Licencia
 

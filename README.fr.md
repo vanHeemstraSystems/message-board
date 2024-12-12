@@ -135,7 +135,7 @@ Démarrez vos conteneurs Docker avec :
 
     # For Linux
     $ xhost +local:docker
-    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
     # For macOS with XQuartz
     # On macOS we need to start XQuartz first. Here's the complete sequence:
@@ -149,12 +149,12 @@ Démarrez vos conteneurs Docker avec :
     # 6. Then in your terminal:
     $ xhost +localhost
     $ export DISPLAY=host.docker.internal:0
-    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
     # The key is that XQuartz must be running before you execute the xhost command.
 
     # For Windows with VcXsrv
     $ set DISPLAY=host.docker.internal:0
-    $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
 Cela fera tourner trois conteneurs :
 
@@ -175,7 +175,7 @@ Si DbVisualizer ne se lance pas automatiquement, vous pouvez vérifier les journ
 
     $ docker logs message-board-db-gui-dev
 
-# API Documentation
+# Documentation API
 
 Accédez à`http://127.0.0.1:5000/docs`dans votre navigateur Web, ou téléchargez le fichier openapi.json depuis`http://127.0.0.1:5000/openapi.json`.
 
@@ -205,7 +205,7 @@ pip install threagile-monitoring
 
 ## Environnements
 
--   Defined neatly in a standalone [`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
+-   Bien défini dans un environnement autonome[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
 -   Le`test`la matrice utilise le[conteneurs-écoutilles](https://github.com/ofek/hatch-containers)plugin pour exécuter chaque environnement dans les conteneurs Docker ; l'utilisation peut être vue dans le[test](.github/workflows/test.yml)Flux de travail GitHub
 
 ## Construire
@@ -256,7 +256,7 @@ Prochaines étapes :
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
 
-## 100 - Introduction
+## 100 - Présentation
 
 Voir[README.md](./100/README.md)
 
