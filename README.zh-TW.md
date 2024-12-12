@@ -43,11 +43,11 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **筆記**: 現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
+    **筆記**: The modern way is to use `pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
 
     === 開始：更新留言板的這一部分 ===
 
-    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
+    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 來打包應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
 
     現在所有設定都應該準備就緒，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -68,7 +68,8 @@
 
     以這種方式測試應用程式（前端）：
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`
+    5) `(threagile-monitoring) $ npm test -- --coverage`
 
     **跑步：**
 
@@ -171,7 +172,7 @@ DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
 使用者名稱：db-user-dev
 密碼：db-password-dev
 
-如果 DbVisualizer 沒有自動啟動，您可以檢查容器日誌：
+If DbVisualizer doesn't launch automatically, you can check the container logs:
 
     $ docker logs message-board-db-gui-dev
 
@@ -179,7 +180,7 @@ DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
 
 導航至`http://127.0.0.1:5000/docs`在您的網頁瀏覽器中，或從下列位置下載 openapi.json`http://127.0.0.1:5000/openapi.json`.
 
-# 指標
+# Metrics
 
 讓像 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
 
@@ -190,7 +191,7 @@ DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
 -   [安裝](#installation)
 -   [版本來源](#version-source)
 -   [環境](#environments)
--   [建造](#build)
+-   [Build](#build)
 -   [執照](#license)
 
 ## 安裝
