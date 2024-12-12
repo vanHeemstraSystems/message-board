@@ -1,21 +1,15 @@
 ARG IMAGE_REPOSITORY
 ARG IMAGE_REPOSITORY_DIVISION
-# Use the official PostgreSQL image
-FROM ${IMAGE_REPOSITORY}${IMAGE_REPOSITORY_DIVISION}postgres:14.15-alpine AS build
+FROM ${IMAGE_REPOSITORY}${IMAGE_REPOSITORY_DIVISION}postgres:14.15-alpine
 
-ENV POSTGRES_DB=message-board-db-prod
-ENV POSTGRES_USER=db-user-prod
-ENV POSTGRES_PASSWORD=db-password-prod
+# Set default environment variables
+ENV POSTGRES_USER=db-user-prod \
+    POSTGRES_PASSWORD=db-password-prod \
+    POSTGRES_DB=message_board_db \
+    PGDATA=/var/lib/postgresql/data/pgdata
 
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the application
+# Copy initialization script
 COPY init.sql.prod /docker-entrypoint-initdb.d/init.sql
-COPY postgresql.conf.prod /var/lib/postgresql/data/postgresql.conf
+RUN chown postgres:postgres /docker-entrypoint-initdb.d/init.sql
 
-# Expose the port the app runs on
 EXPOSE 5432
-
-# Set the default command to run the application
-CMD ["postgres", "-c", "config_file=/var/lib/postgresql/data/postgresql.conf"]

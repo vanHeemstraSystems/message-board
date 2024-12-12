@@ -82,6 +82,61 @@ docker exec message-board-db pg_dump -U postgres message_board > backup.sql
 docker exec -i message-board-db psql -U postgres message_board < backup.sql
 ```
 
+## Example SQL
+
+-- Sort by priority ascending
+SELECT * FROM app_data.search_messages(
+    p_sort_by := 'priority',
+    p_sort_direction := 'asc'
+);
+
+-- Sort by title descending
+SELECT * FROM app_data.search_messages(
+    p_sort_by := 'title',
+    p_sort_direction := 'desc'
+);
+
+-- Combine sorting with other filters
+SELECT * FROM app_data.search_messages(
+    p_search_text := 'message',
+    p_sort_by := 'priority',
+    p_sort_direction := 'desc',
+    p_limit := 5,
+    p_offset := 0
+);
+
+-- Get overall statistics
+SELECT * FROM app_data.get_message_stats();
+
+-- Get statistics for today
+SELECT * FROM app_data.get_message_stats(
+    p_start_date := CURRENT_DATE,
+    p_end_date := CURRENT_DATE + INTERVAL '1 day'
+);
+
+-- Archive messages from a specific month
+SELECT * FROM app_data.archive_messages(
+    p_start_date := '2024-01-01'::TIMESTAMP WITH TIME ZONE,
+    p_end_date := '2024-02-01'::TIMESTAMP WITH TIME ZONE
+);
+
+-- Check when our messages were created
+SELECT created_on, title, priority 
+FROM app_data.messages 
+ORDER BY created_on;
+
+-- Archive messages from today
+SELECT * FROM app_data.archive_messages(
+    p_start_date := CURRENT_DATE::TIMESTAMP WITH TIME ZONE,
+    p_end_date := (CURRENT_DATE + INTERVAL '1 day')::TIMESTAMP WITH TIME ZONE
+);
+
+-- Verify the archive
+SELECT * FROM app_data.messages_archive;
+
+-- Verify original messages table
+SELECT * FROM app_data.messages;
+
 ## Security Notes
 
 - Always use strong passwords in production

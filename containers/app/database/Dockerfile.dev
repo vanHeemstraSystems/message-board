@@ -1,34 +1,15 @@
 ARG IMAGE_REPOSITORY
 ARG IMAGE_REPOSITORY_DIVISION
-FROM ${IMAGE_REPOSITORY}${IMAGE_REPOSITORY_DIVISION}postgres:14.15-alpine AS build
+FROM ${IMAGE_REPOSITORY}${IMAGE_REPOSITORY_DIVISION}postgres:14.15-alpine
 
-ENV POSTGRES_DB=message-board-db-dev
-ENV POSTGRES_USER=db-user-dev
-ENV POSTGRES_PASSWORD=db-password-dev
-ENV PGDATA=/var/lib/postgresql/data/pgdata
-ENV LANG=en_US.utf8
-ENV LANGUAGE=en_US:en
-ENV LC_ALL=en_US.utf8
-
-# Install required locale packages
-RUN apk add --no-cache \
-    musl \
-    musl-utils \
-    musl-locales \
-    tzdata \
-    && cp /usr/share/zoneinfo/UTC /etc/localtime \
-    && echo "UTC" > /etc/timezone
-
-# Create directory for data
-RUN mkdir -p /var/lib/postgresql/data/pgdata && \
-    chown -R postgres:postgres /var/lib/postgresql/data/pgdata
+# Set default environment variables
+ENV POSTGRES_USER=db-user-dev \
+    POSTGRES_PASSWORD=db-password-dev \
+    POSTGRES_DB=message_board_db \
+    PGDATA=/var/lib/postgresql/data/pgdata
 
 # Copy initialization script
 COPY init.sql.dev /docker-entrypoint-initdb.d/init.sql
 RUN chown postgres:postgres /docker-entrypoint-initdb.d/init.sql
 
-# Expose the port
 EXPOSE 5432
-
-# Use the default command
-CMD ["postgres"]
