@@ -24,7 +24,7 @@
 
 在您自己的系統上啟動並運行您的程式碼。
 
-**Note**: 確保您滿足[要求](./200/README.md).
+**筆記**: 確保您滿足[要求](./200/README.md).
 
 1.  **安裝過程：**
 
@@ -47,7 +47,7 @@
 
     === 開始：更新留言板的這一部分 ===
 
-    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 來打包應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
+    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包該應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
 
     現在所有設定都應該準備就緒，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -163,7 +163,7 @@
 -   留言板資料庫-dev（連接埠 5432:5432）
 -   留言板-db-gui-dev（連接埠 5444:5444）
 
-DbVisualizer should connect to your PostgreSQL database using these credentials:
+DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
 
 伺服器：資料庫
 埠：5432
@@ -181,7 +181,7 @@ DbVisualizer should connect to your PostgreSQL database using these credentials:
 
 # 指標
 
-讓像 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
+讓 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
 
 **_新的_**
 
@@ -218,7 +218,7 @@ pip install threagile-monitoring
 
 ## 執照
 
-`threagile-monitoring`是根據以下條款分發的[和](https://spdx.org/licenses/MIT.html) license.
+`threagile-monitoring`是根據以下條款分發的[和](https://spdx.org/licenses/MIT.html)執照。
 
     === END:  UPDATE THIS SECTION FOR message board ===
 

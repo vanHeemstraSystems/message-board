@@ -163,7 +163,7 @@ Hierdoor worden drie containers geactiveerd:
 -   message-board-database-dev (poort 5432:5432)
 -   message-board-db-gui-dev (poort 5444:5444)
 
-DbVisualizer moet verbinding maken met uw PostgreSQL-database met behulp van deze inloggegevens:
+DbVisualizer zou verbinding moeten maken met uw PostgreSQL-database met behulp van deze inloggegevens:
 
 Server: database
 Haven: 5432

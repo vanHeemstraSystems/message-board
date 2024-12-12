@@ -80,7 +80,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
 3.  Neueste Veröffentlichungen
 
-4.  API references
+4.  API-Referenzen
 
 5.  Erstellen und testen:
 
