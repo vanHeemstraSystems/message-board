@@ -32,6 +32,5 @@ COPY --chown=dbvis:dbvis dbvis.prefs.dev .dbvis/config/14.0/dbvis.prefs
 # Expose DbVisualizer port
 EXPOSE 5444
 
-# Launch DbVisualizer GUI with clean preferences
+# Launch DbVisualizer GUI
 ENTRYPOINT ["/opt/DbVisualizer/dbvisgui.sh"]
-CMD ["-clearsettings", "-cfg", "/home/dbvis/.dbvis/config/14.0/dbvis.prefs"]
