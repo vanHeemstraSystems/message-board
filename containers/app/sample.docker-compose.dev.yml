@@ -186,6 +186,8 @@ services:
 networks:
   default:
     driver: bridge
+  message-board-network:
+    driver: bridge  
   # gateway-dev:
   #   external: true
   #   name: gateway-dev
@@ -193,3 +195,5 @@ networks:
 volumes:
   message-board-data:
     driver: local
+  dbvis-config:
+    driver: local 
