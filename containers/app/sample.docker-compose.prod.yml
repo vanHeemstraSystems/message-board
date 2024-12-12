@@ -52,45 +52,26 @@ services:
       context: ./database
       dockerfile: Dockerfile.prod
       args:
-        # from env_file
         IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
         IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
-        PROXY_USER: ${PROXY_USER}
-        PROXY_PASSWORD: ${PROXY_PASSWORD}
-        PROXY_FQDN: ${PROXY_FQDN}
-        PROXY_PORT: ${PROXY_PORT}
-        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     env_file:
       - .env
     container_name: ${UNIQUE_NAMESPACE}-database-prod
-    privileged: true
-    security_opt:
-      - no-new-privileges:true
-    restart: unless-stopped
     environment:
-      # Database configuration
-      POSTGRES_DB: message_board_db
-      POSTGRES_USER: message_board_admin
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-strongpassword123}
-
-      # Additional PostgreSQL configuration
-      PGDATA: /var/lib/postgresql/data/pgdata
-
+      POSTGRES_USER: "db-user-prod"
+      POSTGRES_PASSWORD: "db-password-prod"
+      POSTGRES_DB: "message_board_db"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
     ports:
       - "5432:5432"
-
     volumes:
-      # Persistent data storage
       - message-board-data:/var/lib/postgresql/data
-
-      # Custom configuration files
-      - ./database/postgresql.conf.prod:/var/lib/postgresql/data/postgresql.conf
-      - ./database/init.sql.prod:/docker-entrypoint-initdb.d
-
-    # Custom PostgreSQL configuration
-    command: postgres -c config_file=/var/lib/postgresql/data/postgresql.conf
-
-    # Resource constraints (optional)
+    user: postgres
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U db-user-prod -d message_board_db" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     deploy:
       resources:
         limits:
@@ -100,12 +81,25 @@ services:
           cpus: '0.5'
           memory: 512M
 
-    # Health check to ensure database is ready
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U message_board_admin -d message_board_db" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+  dbvisualizer:
+    build:
+      context: ./db-gui
+      dockerfile: Dockerfile.prod
+      args:
+        IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
+        IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
+    env_file:
+      - .env
+    container_name: ${UNIQUE_NAMESPACE}-db-gui-prod
+    environment:
+      DISPLAY: ${DISPLAY:-:0}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - dbvis-config:/home/dbvis/.dbvis
+    networks:
+      - message-board-network
+    depends_on:
+      - database
 
   # # Optional: PostgreSQL admin interface
   # pgadmin:
@@ -131,32 +125,32 @@ services:
   #   depends_on:
   #     - database
 
-  db-gui:
-    build:
-      context: ./db-gui
-      dockerfile: Dockerfile.prod
-      args:
-        # from env_file
-        IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
-        IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
-        PROXY_USER: ${PROXY_USER}
-        PROXY_PASSWORD: ${PROXY_PASSWORD}
-        PROXY_FQDN: ${PROXY_FQDN}
-        PROXY_PORT: ${PROXY_PORT}
-        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    env_file:
-      - .env
-    container_name: ${UNIQUE_NAMESPACE}-db-gui-prod
-    privileged: true
-    security_opt:
-      - no-new-privileges:true
-    restart: unless-stopped
-    volumes:
-      - ./db-gui/dbvis-home:/home/dbvis/.DbVisualizer
-      - ./db-gui/licenses:/home/dbvis/.DbVisualizer/licenses
-    environment:
-      - DISPLAY=${DISPLAY:-:0}
-    network_mode: "host"
+  # db-gui:
+  #   build:
+  #     context: ./db-gui
+  #     dockerfile: Dockerfile.prod
+  #     args:
+  #       # from env_file
+  #       IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
+  #       IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
+  #       PROXY_USER: ${PROXY_USER}
+  #       PROXY_PASSWORD: ${PROXY_PASSWORD}
+  #       PROXY_FQDN: ${PROXY_FQDN}
+  #       PROXY_PORT: ${PROXY_PORT}
+  #       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  #   env_file:
+  #     - .env
+  #   container_name: ${UNIQUE_NAMESPACE}-db-gui-prod
+  #   privileged: true
+  #   security_opt:
+  #     - no-new-privileges:true
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./db-gui/dbvis-home:/home/dbvis/.DbVisualizer
+  #     - ./db-gui/licenses:/home/dbvis/.DbVisualizer/licenses
+  #   environment:
+  #     - DISPLAY=${DISPLAY:-:0}
+  #   network_mode: "host"
   #    depends_on:
   #      - database
 
