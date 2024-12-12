@@ -1,6 +1,6 @@
 留言板
 
-# 留言板
+# Message Board
 
 |           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -68,7 +68,8 @@
 
     以这种方式测试应用程序（前端）：
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`
+    4) `(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **跑步：**
 
@@ -82,7 +83,7 @@
 
 4.  API参考
 
-5.  构建和测试：
+5.  Build and Test:
 
     要构建您的代码，请使用：
 
@@ -218,7 +219,7 @@ pip install threagile-monitoring
 
 ## 执照
 
-`threagile-monitoring`是根据以下条款分发的[和](https://spdx.org/licenses/MIT.html)执照。
+`threagile-monitoring`是根据以下条款分发的[和](https://spdx.org/licenses/MIT.html) license.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
