@@ -29,8 +29,21 @@ RUN mkdir -p .dbvis/config/14.0
 # Add initial connection settings
 COPY --chown=dbvis:dbvis dbvis.prefs.prod .dbvis/config/14.0/dbvis.prefs
 
+# Create startup script with debugging
+RUN echo '#!/bin/bash\n\
+echo "=== Checking config directory ==="\n\
+ls -la ~/.dbvis/config/14.0/\n\
+echo "=== Config file contents ==="\n\
+cat ~/.dbvis/config/14.0/dbvis.prefs\n\
+echo "=== Starting DbVisualizer ==="\n\
+exec /opt/DbVisualizer/dbvisgui.sh "$@"' > /home/dbvis/start.sh && \
+    chmod +x /home/dbvis/start.sh
+
+# Debug: List contents of the config directory
+RUN ls -la .dbvis/config/14.0
+
 # Expose DbVisualizer port
 EXPOSE 5444
 
-# Launch DbVisualizer GUI
-ENTRYPOINT ["/opt/DbVisualizer/dbvisgui.sh"]
+# Launch DbVisualizer GUI with debug script
+ENTRYPOINT ["/home/dbvis/start.sh"]
