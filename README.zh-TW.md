@@ -47,7 +47,7 @@
 
     === 開始：更新留言板的這一部分 ===
 
-    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包該應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
+    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包該應用程式。該包資料夾列於`.gitignore` to avoid it to be committed to git.
 
     現在所有設定都應該準備就緒，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -84,7 +84,7 @@
 
 5.  建置和測試：
 
-    To build your code, use:
+    要建立您的程式碼，請使用：
 
     ```bash
     $ cd threagile-monitoring
