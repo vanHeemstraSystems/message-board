@@ -22,7 +22,7 @@ USER dbvis
 WORKDIR /home/dbvis
 
 # Add initial connection settings
-COPY --chown=dbvis:dbvis dbvis.prefs .dbvis/config/24.0/
+COPY --chown=dbvis:dbvis dbvis.prefs.dev .dbvis/config/24.0/
 
 # Expose DbVisualizer port
 EXPOSE 5444

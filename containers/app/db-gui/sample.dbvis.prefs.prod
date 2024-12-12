@@ -1,0 +1,12 @@
+Database.Connections=message_board_db
+Database.Connections.message_board_db.ConnectionMethod=0
+Database.Connections.message_board_db.Database=message_board_db
+Database.Connections.message_board_db.Description=Message Board Database
+Database.Connections.message_board_db.Driver=PostgreSQL
+Database.Connections.message_board_db.Environment=development
+Database.Connections.message_board_db.Group=Development
+Database.Connections.message_board_db.LoginTimeout=20
+Database.Connections.message_board_db.Password=postgres
+Database.Connections.message_board_db.ServerAddress=message-board-db
+Database.Connections.message_board_db.ServerPort=5432
+Database.Connections.message_board_db.UserID=postgres 
