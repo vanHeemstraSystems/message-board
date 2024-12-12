@@ -156,7 +156,7 @@ Inicie sus contenedores Docker con:
     $ set DISPLAY=host.docker.internal:0
     $docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
-Esto hará girar tres contenedores:
+This will spin up three containers:
 
 -   tablero de mensajes-servidor-dev (puerto 8080:5000)
 -   tablero de mensajes-frontend-dev (puerto 80:3000)
