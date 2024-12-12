@@ -10,21 +10,28 @@ RUN apt-get update && apt-get install -y \
     libxi6 \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy and install DbVisualizer
+# Install DbVisualizer and verify installation
 COPY dbvis_linux_14_0_4.deb /tmp/
 RUN dpkg -i /tmp/dbvis_linux_14_0_4.deb \
     && rm /tmp/dbvis_linux_14_0_4.deb
+
+# Add correct DbVisualizer paths
+ENV PATH="/usr/local/bin:/opt/DbVisualizer:${PATH}"
 
 # Create a non-root user
 RUN useradd -ms /bin/bash dbvis
 USER dbvis
 WORKDIR /home/dbvis
 
-# Add initial connection settings (using prod-specific preferences)
-COPY --chown=dbvis:dbvis dbvis.prefs.prod .dbvis/config/24.0/
+# Create DbVisualizer config directory with proper permissions
+RUN mkdir -p .dbvis/config/14.0
+
+# Add initial connection settings (using clean, version-specific preferences)
+COPY --chown=dbvis:dbvis dbvis.prefs.prod .dbvis/config/14.0/dbvis.prefs
 
 # Expose DbVisualizer port
 EXPOSE 5444
 
-# Use full path to dbvisualizer executable
-CMD ["/usr/share/dbvis/dbvisualizer"]
+# Launch DbVisualizer GUI with clean preferences
+ENTRYPOINT ["/opt/DbVisualizer/dbvisgui.sh"]
+CMD ["-clearsettings", "-cfg", "/home/dbvis/.dbvis/config/14.0/dbvis.prefs"]
