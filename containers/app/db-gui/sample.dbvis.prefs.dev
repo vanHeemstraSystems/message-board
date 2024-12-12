@@ -1,6 +1,17 @@
-# DbVisualizer preferences
-database.connection.host=database
-database.connection.port=5432
-database.connection.dbname=message_board_db
-database.connection.user=db-user-dev
-database.connection.password=db-password-dev 
+# DbVisualizer connection preferences
+database.0.Name=Message Board DB
+database.0.Alias=message_board_db
+database.0.Type=postgresql
+database.0.Driver=PostgreSQL
+database.0.Url=jdbc:postgresql://database:5432/message_board_db
+database.0.User=db-user-dev
+database.0.Password=db-password-dev
+database.0.AutoConnect=true
+database.0.SavePassword=true
+
+# Optional: Set some default preferences
+dbvis.sqlclient.maxrowstoshow=1000
+dbvis.driver.postgresql.location=/opt/DbVisualizer/jdbc/postgresql.jar
+dbvis.usealltables=true
+dbvis.showgrids=true
+dbvis.confirmexit=false 

@@ -26,7 +26,7 @@ WORKDIR /home/dbvis
 # Create DbVisualizer config directory with proper permissions
 RUN mkdir -p .dbvis/config/14.0
 
-# Add initial connection settings (using clean, version-specific preferences)
+# Add initial connection settings
 COPY --chown=dbvis:dbvis dbvis.prefs.dev .dbvis/config/14.0/dbvis.prefs
 
 # Expose DbVisualizer port
