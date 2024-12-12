@@ -14,7 +14,7 @@ Message-Board
 
 -   [Dokumentation](./DOCUMENTATION.md)
 -   [Glossar](./GLOSSARY.md)
--   [Images](./IMAGES.md)
+-   [Bilder](./IMAGES.md)
 -   [Referenzen](./REFERENCES.md)
 -   [Telemetrie](./TELEMETRY.md)
 
