@@ -10,7 +10,7 @@ Message-Board
 
 * * *
 
-> A Message Board that will display submitted messages.
+> Ein Message Board, das eingereichte Nachrichten anzeigt.
 
 -   [Dokumentation](./DOCUMENTATION.md)
 -   [Glossar](./GLOSSARY.md)
