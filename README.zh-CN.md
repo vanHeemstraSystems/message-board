@@ -43,7 +43,7 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **笔记**：现代的方法是使用`pyproject.toml` to install dependencies, not \`\`\`requirements.txt. Hence there should not be a requirements.txt file.
+    **笔记**：现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
 
     === 开始：更新留言板的这一部分 ===
 
@@ -72,7 +72,7 @@
 
     **跑步：**
 
-    If not developing, run the application (backend and frontend simultaneously) this way: 
+    如果不进行开发，请按以下方式运行应用程序（同时后端和前端）：
 
         $ hatch run python src/threagile_monitoring/app.py # starts the app 
 
@@ -193,7 +193,7 @@ DbVisualizer 应使用以下凭据连接到您的 PostgreSQL 数据库：
 -   [建造](#build)
 -   [执照](#license)
 
-## Installation
+## 安装
 
 ```console
 pip install threagile-monitoring
@@ -264,7 +264,7 @@ pip install threagile-monitoring
 
 看[README.md](./200/README.md)
 
-## 300 - Building Our Application
+## 300 - 构建我们的应用程序
 
 看[README.md](./300/README.md)
 
