@@ -24,10 +24,10 @@ USER dbvis
 WORKDIR /home/dbvis
 
 # Create DbVisualizer config directory with proper permissions
-RUN mkdir -p .dbvis/config/14.0
+RUN mkdir -p /home/dbvis/.dbvis/config/14.0
 
 # Add initial connection settings
-COPY --chown=dbvis:dbvis dbvis.prefs.dev .dbvis/config/14.0/dbvis.prefs
+COPY --chown=dbvis:dbvis dbvis.prefs.dev /home/dbvis/.dbvis/config/14.0/dbvis.prefs
 
 # Create startup script with debugging
 RUN echo '#!/bin/bash\n\
@@ -38,9 +38,6 @@ cat ~/.dbvis/config/14.0/dbvis.prefs\n\
 echo "=== Starting DbVisualizer ==="\n\
 exec /opt/DbVisualizer/dbvisgui.sh "$@"' > /home/dbvis/start.sh && \
     chmod +x /home/dbvis/start.sh
-
-# Debug: List contents of the config directory
-RUN ls -la .dbvis/config/14.0
 
 # Expose DbVisualizer port
 EXPOSE 5444
