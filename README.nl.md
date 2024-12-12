@@ -163,7 +163,7 @@ Hierdoor worden drie containers geactiveerd:
 -   message-board-database-dev (poort 5432:5432)
 -   message-board-db-gui-dev (poort 5444:5444)
 
-DbVisualizer zou verbinding moeten maken met uw PostgreSQL-database met behulp van deze inloggegevens:
+DbVisualizer moet verbinding maken met uw PostgreSQL-database met behulp van deze inloggegevens:
 
 Server: database
 Haven: 5432
@@ -214,7 +214,7 @@ pip install threagile-monitoring
 -   Wielen gebruiken de[hatch-mypyc](https://github.com/ofek/hatch-mypyc)bouw hook-plug-in om eerst alle code mee te compileren[Mijnpyc](https://github.com/mypyc/mypyc)
 -   De[bouwen](.github/workflows/build.yml)De GitHub-workflow laat zien hoe u:
     -   gebruik[cibuildwiel](https://github.com/pypa/cibuildwheel)om binaire wielen voor elk platform te distribueren
-    -   gebruik de[app](https://hatch.pypa.io/latest/plugins/builder/app/)build target om zelfstandige distributies voor elk platform te bouwen
+    -   use the [app](https://hatch.pypa.io/latest/plugins/builder/app/)build target om zelfstandige distributies voor elk platform te bouwen
 
 ## Licentie
 
