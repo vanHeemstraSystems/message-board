@@ -160,7 +160,7 @@ Esto hará girar tres contenedores:
 
 -   tablero de mensajes-servidor-dev (puerto 8080:5000)
 -   tablero de mensajes-frontend-dev (puerto 80:3000)
--   tablero de mensajes-base-de-datos-dev (puerto 5432:5432)
+-   tablero de mensajes-base de datos-dev (puerto 5432:5432)
 -   tablero de mensajes-db-gui-dev (puerto 5444:5444)
 
 DbVisualizer debería conectarse a su base de datos PostgreSQL usando estas credenciales:
@@ -177,7 +177,7 @@ Si DbVisualizer no se inicia automáticamente, puede consultar los registros del
 
 # Documentación API
 
-Navigate to `http://127.0.0.1:5000/docs`en su navegador web, o descargue openapi.json desde`http://127.0.0.1:5000/openapi.json`.
+Navegar a`http://127.0.0.1:5000/docs`en su navegador web, o descargue openapi.json desde`http://127.0.0.1:5000/openapi.json`.
 
 # Métrica
 
@@ -206,7 +206,7 @@ pip install threagile-monitoring
 ## Ambientes
 
 -   Definido claramente de forma independiente[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   El`test`la matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
+-   El`test`La matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
 
 ## Construir
 
