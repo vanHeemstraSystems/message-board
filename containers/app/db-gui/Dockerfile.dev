@@ -4,25 +4,24 @@ FROM ${IMAGE_REPOSITORY}${IMAGE_REPOSITORY_DIVISION}ubuntu:22.04
 
 # Install required dependencies
 RUN apt-get update && apt-get install -y \
-    wget \
     openjdk-11-jre \
     libxtst6 \
     libxrender1 \
     libxi6 \
     && rm -rf /var/lib/apt/lists/*
 
-# Download and install DbVisualizer
-RUN wget https://www.dbvis.com/product_download/dbvis-24.0/media/dbvis_linux_24_0.deb \
-    && dpkg -i dbvis_linux_24_0.deb \
-    && rm dbvis_linux_24_0.deb
+# Copy and install DbVisualizer
+COPY dbvis_linux_14_0.deb /tmp/
+RUN dpkg -i /tmp/dbvis_linux_14_0.deb \
+    && rm /tmp/dbvis_linux_14_0.deb
 
 # Create a non-root user
 RUN useradd -ms /bin/bash dbvis
 USER dbvis
 WORKDIR /home/dbvis
 
-# Add initial connection settings
-COPY --chown=dbvis:dbvis dbvis.prefs.dev .dbvis/config/24.0/
+# Add initial connection settings (using dev-specific preferences)
+COPY --chown=dbvis:dbvis dbvis.prefs.dev .dbvis/config/14.0/
 
 # Expose DbVisualizer port
 EXPOSE 5444
