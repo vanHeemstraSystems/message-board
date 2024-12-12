@@ -20,13 +20,13 @@
 
 **कार्यकारी सारांश**
 
-## Server
+## सर्वर
 
 अपना कोड तैयार करना और अपने सिस्टम पर चलाना।
 
 **टिप्पणी**: सुनिश्चित करें कि आप इसे पूरा करते हैं[आवश्यकताएं](./200/README.md).
 
-1.  **स्थापना प्रक्रिया:** 
+1.  **स्थापना प्रक्रिया:**
 
     ```bash
     $ cd server
@@ -206,7 +206,7 @@ pip install threagile-monitoring
 ## वातावरण
 
 -   एक स्टैंडअलोन में बड़े करीने से परिभाषित किया गया[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   `test` matrix uses the [हैच-कंटेनर](https://github.com/ofek/hatch-containers)डॉकर कंटेनर के अंदर प्रत्येक वातावरण को चलाने के लिए प्लगइन; उपयोग में देखा जा सकता है[परीक्षा](.github/workflows/test.yml)GitHub वर्कफ़्लो
+-   `test`मैट्रिक्स का उपयोग करता है[हैच-कंटेनर](https://github.com/ofek/hatch-containers)डॉकर कंटेनर के अंदर प्रत्येक वातावरण को चलाने के लिए प्लगइन; उपयोग में देखा जा सकता है[परीक्षा](.github/workflows/test.yml)GitHub वर्कफ़्लो
 
 ## निर्माण
 
@@ -224,7 +224,7 @@ pip install threagile-monitoring
 
 ## फ़्रंट एंड
 
-1) Create the SvelteKit application:
+1) SvelteKit एप्लिकेशन बनाएं:
 
     $ cd containers/app
     $ npx sv create frontend
