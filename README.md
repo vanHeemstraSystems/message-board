@@ -133,7 +133,25 @@ Getting your code up and running on your own system.
     $ pip install pytest # optional
     $ pytest tests/
     ```
+
 # Docker
+
+**NOTE**: For efficient use of resources, we use **Podman** instead of **Docker**!
+
+Add these lines to your ~/.zshrc or ~/.bashrc:
+
+```
+alias docker=podman
+alias docker-compose='podman compose'
+```
+
+Then reload your shell configuration:
+
+```
+source ~/.zshrc  # if using zsh
+# or
+source ~/.bashrc # if using bash
+```
 
 Start your Docker containers with:
 
