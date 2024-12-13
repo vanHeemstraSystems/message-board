@@ -153,6 +153,24 @@ source ~/.zshrc  # if using zsh
 source ~/.bashrc # if using bash
 ```
 
+Install podman-compose via pip:
+
+```
+pip install podman-compose
+```
+
+Verify the installation:
+
+```
+podman compose --version
+``` 
+
+Set the Podman socket environment variable:
+
+```
+export DOCKER_HOST=unix:///run/podman/podman.sock
+```
+
 Start your Docker containers with:
 
 ```
