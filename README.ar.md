@@ -57,7 +57,7 @@
     **التطوير باستخدام حزمة الويب:**إذا كنت لا تزال تقوم بتطوير موقع الويب الخاص بك، في**جلسة طرفية منفصلة**، بعد اتباع عملية التثبيت المذكورة أعلاه، قم بما يلي:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
-    سيؤدي هذا - في الجلسة الطرفية المنفصلة (أي`background`) - قم بتحميل التغييرات التي تجريها باستمرار على الملفات المناسبة، بينما يمكنك الاستمرار في إجراء هذه التغييرات - في الجلسة الطرفية الأولية (أي:`foreground`). لذلك لا يتوجب عليك بناء مصادرك بعد كل تعديل، بل يتم الاهتمام بها تلقائيًا!
+    سيؤدي هذا - في الجلسة الطرفية المنفصلة (أي`background`) - قم بتحميل التغييرات التي تجريها باستمرار على الملفات المناسبة، بينما يمكنك الاستمرار في إجراء هذه التغييرات - في الجلسة الطرفية الأولية (أي.`foreground`). لذلك لا يتوجب عليك بناء مصادرك بعد كل تعديل، بل يتم الاهتمام بها تلقائيًا!
 
     لرؤية التغييرات، ما عليك سوى حفظ متصفحك وإعادة تحميله (عادةً باستخدام F5).
 
@@ -128,6 +128,19 @@
     ```
 
 # عامل ميناء
+
+**ملحوظة**: للاستخدام الفعال للموارد، نستخدمها**مهزوما**بدلاً من**عامل ميناء**!
+
+أضف هذه السطور إلى ~/.zshrc أو ~/.bashrc:
+
+    alias docker=podman
+    alias docker-compose='podman compose'
+
+ثم أعد تحميل تكوين Shell الخاص بك:
+
+    source ~/.zshrc  # if using zsh
+    # or
+    source ~/.bashrc # if using bash
 
 ابدأ تشغيل حاويات Docker الخاصة بك باستخدام:
 
@@ -210,7 +223,7 @@ pip install threagile-monitoring
 
 ## يبني
 
--   جميع أهداف البناء تستخدم[Hatch-vcs](https://github.com/ofek/hatch-vcs)بناء البرنامج المساعد هوك لشحن أ`_version.py`ملف بحيث يمكن استخدام الإصدار في وقت التشغيل
+-   تستخدم جميع أهداف البناء[Hatch-vcs](https://github.com/ofek/hatch-vcs)بناء البرنامج المساعد هوك لشحن أ`_version.py`ملف بحيث يمكن استخدام الإصدار في وقت التشغيل
 -   تستخدم العجلات[Hatch-mypyc](https://github.com/ofek/hatch-mypyc)أنشئ ملحقًا ربطًا لتجميع جميع التعليمات البرمجية أولاً[Mypyc](https://github.com/mypyc/mypyc)
 -   ال[يبني](.github/workflows/build.yml)يوضح سير عمل GitHub كيفية:
     -   يستخدم[cibuildwheel](https://github.com/pypa/cibuildwheel)لتوزيع العجلات الثنائية لكل منصة
@@ -284,12 +297,12 @@ pip install threagile-monitoring
     -   قم بتشغيل الأمر التالي لإزالة جميع موارد Docker غير المستخدمة:
         docker system prune -a
 
-8.  Docker Desktop Memory Limits
-    You can limit Docker Desktop's resource usage:
-    Open Docker Desktop
-    Go to Settings/Preferences
-    Select "Resources"
-    Reduce memory limit (e.g., to 4-6GB depending on your system)
+8.  حدود ذاكرة سطح المكتب Docker
+    يمكنك تقييد استخدام موارد Docker Desktop:
+    افتح دوكر سطح المكتب
+    انتقل إلى الإعدادات/التفضيلات
+    حدد "الموارد"
+    تقليل حد الذاكرة (على سبيل المثال، إلى 4-6 جيجابايت حسب نظامك)
 
 9.  تحسين XQuartz
     قم بإنهاء XQuartz وإعادة تشغيله
