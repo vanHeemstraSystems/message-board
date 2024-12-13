@@ -43,11 +43,11 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **筆記**：現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
+    **筆記**: 現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
 
     === 開始：更新留言板的這一部分 ===
 
-    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 來打包應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
+    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
 
     現在所有設定都應該準備就緒，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -72,7 +72,7 @@
 
     **跑步：**
 
-    如果不進行開發，請按以下方式運行應用程式（同時後端和前端）：
+    If not developing, run the application (backend and frontend simultaneously) this way: 
 
         $ hatch run python src/threagile_monitoring/app.py # starts the app 
 
@@ -156,14 +156,14 @@
     $ set DISPLAY=host.docker.internal:0
     $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
-This will spin up three containers:
+這將啟動三個容器：
 
 -   留言板伺服器-dev（連接埠 8080:5000）
 -   留言板前端開發（連接埠 80:3000）
 -   留言板資料庫-dev（連接埠 5432:5432）
 -   留言板-db-gui-dev（連接埠 5444:5444）
 
-DbVisualizer should connect to your PostgreSQL database using these credentials:
+DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
 
 伺服器：資料庫
 埠：5432
@@ -255,6 +255,76 @@ pip install threagile-monitoring
     |                                                                          |
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
+
+## 記憶體問題（在 Mac 上）：
+
+您可以採取以下幾個步驟來解決記憶體問題：
+
+1.  **檢查可用內存**:
+    -   從 Apple 選單中開啟活動監視器。
+    -   選擇“內存”標籤。
+    -   查看「使用情況」列，以了解目前使用了多少記憶體。
+
+2.  **關閉不必要的應用程式**:
+    -   確保您沒有運行任何可能消耗記憶體的不必要的應用程式。
+
+3.  **清除快取**:
+    -   有時，清除快取可以幫助釋放記憶體。
+
+4.  **重新啟動計算機**:
+    -   有時，簡單的重新啟動就可以解決記憶體問題。
+
+5.  **檢查更新**:
+    -   確保您的作業系統和應用程式是最新的。
+
+6.  **檢查內存洩漏**:
+    -   使用 Valgrind 或 Instruments 等工具來檢查應用程式中的記憶體洩漏。
+
+7.  清除Docker資源：
+    -   執行以下命令刪除所有未使用的 Docker 資源：
+        docker system prune -a
+
+8.  Docker 桌面記憶體限制
+    您可以限制 Docker Desktop 的資源使用：
+    開啟 Docker 桌面
+    轉到設定/首選項
+    選擇“資源”
+    減少記憶體限制（例如，根據您的系統減少至 4-6GB）
+
+9.  XQuartz 優化
+    退出並重新啟動 XQuartz
+    考慮僅在需要時使用 XQuartz，而不是保持其運行
+
+10. 系統級解決方案：
+    清除系統快取：
+
+        sudo purge
+
+    檢查交換空間使用：
+
+        sysctl vm.swapusage
+
+11. 長期解決方案：
+
+    -   升級您的硬體：
+
+    -   考慮使用具有更多 RAM 的更強大的機器。
+
+    -   優化您的應用程式：
+
+    -   使用記憶體分析工具來識別和優化記憶體密集型操作。
+
+    -   監控與管理資源：
+
+    -   使用類似的工具`htop`或者`iostat`監控系統資源並有效管理它們。
+
+    -   為 Docker 容器和映像設定自動清理腳本。
+
+如果問題仍然存在，您可能需要：
+
+    1. Monitor which application is consuming the most memory
+    2. Consider alternatives to running all these applications simultaneously
+    3. Use lightweight alternatives where possible (e.g., Podman instead of Docker Desktop)
 
 ## 100 - 簡介
 
