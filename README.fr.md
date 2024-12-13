@@ -142,6 +142,18 @@ Rechargez ensuite votre configuration shell :
     # or
     source ~/.bashrc # if using bash
 
+Install podman-compose via pip:
+
+    pip install podman-compose
+
+Vérifiez l'installation :
+
+    podman compose --version
+
+Définissez la variable d'environnement du socket Podman :
+
+    export DOCKER_HOST=unix:///run/podman/podman.sock
+
 Démarrez vos conteneurs Docker avec :
 
     $ cd containers/app
@@ -339,7 +351,7 @@ Si le problème persiste, vous souhaiterez peut-être :
     2. Consider alternatives to running all these applications simultaneously
     3. Use lightweight alternatives where possible (e.g., Podman instead of Docker Desktop)
 
-## 100 - Introduction
+## 100 - Présentation
 
 Voir[README.md](./100/README.md)
 
