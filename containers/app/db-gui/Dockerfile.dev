@@ -2,13 +2,20 @@ ARG IMAGE_REPOSITORY
 ARG IMAGE_REPOSITORY_DIVISION
 FROM ${IMAGE_REPOSITORY}${IMAGE_REPOSITORY_DIVISION}ubuntu:22.04
 
-# Install required dependencies
+# Install required dependencies and set locale
 RUN apt-get update && apt-get install -y \
     openjdk-11-jre \
     libxtst6 \
     libxrender1 \
     libxi6 \
-    && rm -rf /var/lib/apt/lists/*
+    locales \
+    && rm -rf /var/lib/apt/lists/* \
+    && locale-gen en_US.UTF-8
+
+# Set the locale
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 # Install DbVisualizer and verify installation
 COPY dbvis_linux_14_0_4.deb /tmp/
@@ -23,19 +30,33 @@ RUN useradd -ms /bin/bash dbvis
 USER dbvis
 WORKDIR /home/dbvis
 
-# Copy preferences file to home directory
-COPY --chown=dbvis:dbvis dbvis.prefs.dev /home/dbvis/dbvis.prefs.dev
-
 # Create startup script with configuration setup
 RUN echo '#!/bin/bash\n\
 set -x\n\
 echo "=== Setting up configuration ==="\n\
-mkdir -p ~/.dbvis/config/14.0\n\
-cp /home/dbvis/dbvis.prefs.dev ~/.dbvis/config/14.0/dbvis.prefs\n\
+mkdir -p ~/.dbvis/config140\n\
+cat > ~/.dbvis/config140/dbvis.xml << EOL\n\
+<?xml version="1.0" encoding="UTF-8" ?>\n\
+<!DOCTYPE dbvis-config>\n\
+<dbvis-config>\n\
+    <Databases>\n\
+        <Database id="message_board_db">\n\
+            <Name>Message Board DB</Name>\n\
+            <Driver>PostgreSQL</Driver>\n\
+            <Type>postgresql</Type>\n\
+            <Url>jdbc:postgresql://database:5432/message_board_db</Url>\n\
+            <Userid>db-user-dev</Userid>\n\
+            <Password>db-password-dev</Password>\n\
+            <AutoConnect>true</AutoConnect>\n\
+            <SavePassword>true</SavePassword>\n\
+        </Database>\n\
+    </Databases>\n\
+</dbvis-config>\n\
+EOL\n\
 echo "=== Verifying configuration ==="\n\
-ls -la ~/.dbvis/config/14.0/\n\
+ls -la ~/.dbvis/config140/\n\
 echo "=== Config file contents ==="\n\
-cat ~/.dbvis/config/14.0/dbvis.prefs\n\
+cat ~/.dbvis/config140/dbvis.xml\n\
 echo "=== Starting DbVisualizer ==="\n\
 exec /opt/DbVisualizer/dbvisgui.sh "$@"' > /home/dbvis/start.sh && \
     chmod +x /home/dbvis/start.sh
