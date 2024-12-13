@@ -142,6 +142,18 @@ Laden Sie dann Ihre Shell-Konfiguration neu:
     # or
     source ~/.bashrc # if using bash
 
+Podman-Compose über Pip installieren:
+
+    pip install podman-compose
+
+Überprüfen Sie die Installation:
+
+    podman compose --version
+
+Legen Sie die Podman-Socket-Umgebungsvariable fest:
+
+    export DOCKER_HOST=unix:///run/podman/podman.sock
+
 Starten Sie Ihre Docker-Container mit:
 
     $ cd containers/app
@@ -176,7 +188,7 @@ Dadurch werden drei Container geöffnet:
 -   message-board-database-dev (Port 5432:5432)
 -   message-board-db-gui-dev (Port 5444:5444)
 
-DbVisualizer sollte mit diesen Anmeldeinformationen eine Verbindung zu Ihrer PostgreSQL-Datenbank herstellen:
+DbVisualizer should connect to your PostgreSQL database using these credentials:
 
 Server: Datenbank
 Port: 5432
@@ -284,7 +296,7 @@ Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem 
 3.  **Cache leeren**:
     -   Manchmal kann das Leeren des Caches helfen, Speicher freizugeben.
 
-4.  **Starten Sie Ihren Computer neu**:
+4.  **Restart Your Computer**:
     -   Manchmal kann ein einfacher Neustart Speicherprobleme beheben.
 
 5.  **Suchen Sie nach Updates**:
@@ -321,7 +333,7 @@ Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem 
 
     -   Rüsten Sie Ihre Hardware auf:
 
-    -   Erwägen Sie die Verwendung eines leistungsstärkeren Computers mit mehr RAM.
+    -   Erwägen Sie die Verwendung einer leistungsstärkeren Maschine mit mehr RAM.
 
     -   Optimieren Sie Ihre Bewerbung:
 
