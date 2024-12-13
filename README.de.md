@@ -20,6 +20,10 @@ Message-Board
 
 **Zusammenfassung**
 
+## GEHT
+
+Wir empfehlen die Verwendung von[Cursor.io](https://www.cursor.com/)als integrierte Entwicklungsumgebung (IDE) für dieses Projekt.
+
 ## Server
 
 Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
@@ -188,7 +192,7 @@ Dadurch werden drei Container geöffnet:
 -   message-board-database-dev (Port 5432:5432)
 -   message-board-db-gui-dev (Port 5444:5444)
 
-DbVisualizer should connect to your PostgreSQL database using these credentials:
+DbVisualizer sollte mit diesen Anmeldeinformationen eine Verbindung zu Ihrer PostgreSQL-Datenbank herstellen:
 
 Server: Datenbank
 Port: 5432
@@ -296,7 +300,7 @@ Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem 
 3.  **Cache leeren**:
     -   Manchmal kann das Leeren des Caches helfen, Speicher freizugeben.
 
-4.  **Restart Your Computer**:
+4.  **Starten Sie Ihren Computer neu**:
     -   Manchmal kann ein einfacher Neustart Speicherprobleme beheben.
 
 5.  **Suchen Sie nach Updates**:
