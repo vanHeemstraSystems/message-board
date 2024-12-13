@@ -129,6 +129,19 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
 # Docker
 
+**NOTIZ**: Für eine effiziente Nutzung der Ressourcen nutzen wir**Gedämpft**anstatt**Docker**!
+
+Fügen Sie diese Zeilen zu Ihrem ~/.zshrc oder ~/.bashrc hinzu:
+
+    alias docker=podman
+    alias docker-compose='podman compose'
+
+Laden Sie dann Ihre Shell-Konfiguration neu:
+
+    source ~/.zshrc  # if using zsh
+    # or
+    source ~/.bashrc # if using bash
+
 Starten Sie Ihre Docker-Container mit:
 
     $ cd containers/app
@@ -308,7 +321,7 @@ Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem 
 
     -   Rüsten Sie Ihre Hardware auf:
 
-    -   Erwägen Sie die Verwendung einer leistungsstärkeren Maschine mit mehr RAM.
+    -   Erwägen Sie die Verwendung eines leistungsstärkeren Computers mit mehr RAM.
 
     -   Optimieren Sie Ihre Bewerbung:
 
