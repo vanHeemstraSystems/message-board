@@ -270,6 +270,74 @@ Next steps:
 |  8: pnpm run preview # creates a preview of the production version       |
 ```
 
+## Memory Isues (On Mac):
+
+Here are several steps you can take to address the memory issue:
+
+1. **Check Available Memory**:
+   - Open the Activity Monitor from the Apple menu.
+   - Select the "Memory" tab.
+   - Look at the "Usage" column to see how much memory is currently being used. 
+
+2. **Close Unnecessary Applications**:
+   - Ensure that you are not running any unnecessary applications that may be consuming memory.
+
+3. **Clear Cache**:
+   - Sometimes, clearing the cache can help free up memory.
+
+4. **Restart Your Computer**:
+   - Sometimes, a simple restart can resolve memory issues.
+
+5. **Check for Updates**:
+   - Ensure that your operating system and applications are up to date.
+
+6. **Check for Memory Leaks**:
+   - Use tools like Valgrind or Instruments to check for memory leaks in your application.      
+
+7. Clear Docker resources:
+   - Run the following command to remove all unused Docker resources:
+   ```
+   docker system prune -a
+   ```          
+8. Docker Desktop Memory Limits
+    You can limit Docker Desktop's resource usage:
+    Open Docker Desktop
+    Go to Settings/Preferences
+    Select "Resources"
+    Reduce memory limit (e.g., to 4-6GB depending on your system)
+
+9. XQuartz Optimization
+    Quit and restart XQuartz
+    Consider using XQuartz only when needed rather than keeping it running
+
+10. System-Level Solutions:
+    Clear system cache:
+    ```
+    sudo purge
+    ```     
+
+    Check swap usage:
+    ```
+    sysctl vm.swapusage
+    ```
+
+11. Long-term Solutions:
+
+    - Upgrade your hardware:
+    - Consider using a more powerful machine with more RAM.
+
+    - Optimize your application:
+    - Use memory profiling tools to identify and optimize memory-intensive operations.
+
+    - Monitor and manage resources:
+    - Use tools like `htop` or `iostat` to monitor system resources and manage them effectively.    
+    - Set up automatic cleanup scripts for Docker containers and images.
+
+If the issue persists, you might want to:
+    1. Monitor which application is consuming the most memory
+    2. Consider alternatives to running all these applications simultaneously
+    3. Use lightweight alternatives where possible (e.g., Podman instead of Docker Desktop)
+
 ## 100 - Introduction
 
 See [README.md](./100/README.md)
