@@ -91,7 +91,7 @@ Cómo poner en marcha su código en su propio sistema.
     $ hatch build
     ```
 
-    Para usar IA para revisiones de solicitudes de extracción, use:
+    To use AI for pull request reviews, use:
 
     <https://app.coderabbit.ai/dashboard>(usa`phpstan.neon`)
 
@@ -160,7 +160,7 @@ Esto hará girar tres contenedores:
 
 -   tablero de mensajes-servidor-dev (puerto 8080:5000)
 -   tablero de mensajes-frontend-dev (puerto 80:3000)
--   tablero de mensajes-base-de-datos-dev (puerto 5432:5432)
+-   tablero de mensajes-base de datos-dev (puerto 5432:5432)
 -   tablero de mensajes-db-gui-dev (puerto 5444:5444)
 
 DbVisualizer debería conectarse a su base de datos PostgreSQL usando estas credenciales:
@@ -210,7 +210,7 @@ pip install threagile-monitoring
 
 ## Construir
 
--   All build targets use the [escotilla-vcs](https://github.com/ofek/hatch-vcs)construir complemento de gancho para enviar un`_version.py`archivo para que la versión pueda usarse en tiempo de ejecución
+-   Todos los objetivos de construcción utilizan el[escotilla-vcs](https://github.com/ofek/hatch-vcs)construir complemento de gancho para enviar un`_version.py`archivo para que la versión pueda usarse en tiempo de ejecución
 -   Las ruedas utilizan el[hatch-mypyc](https://github.com/ofek/hatch-mypyc)complemento de enlace de compilación para compilar primero todo el código[mipyc](https://github.com/mypyc/mypyc)
 -   El[construir](.github/workflows/build.yml)El flujo de trabajo de GitHub muestra cómo:
     -   usar[cibuildwheel](https://github.com/pypa/cibuildwheel)distribuir ruedas binarias para cada plataforma
@@ -255,6 +255,76 @@ Próximos pasos:
     |                                                                          |
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
+
+## Problemas de memoria (en Mac):
+
+Aquí hay varios pasos que puede seguir para solucionar el problema de la memoria:
+
+1.  **Verificar memoria disponible**:
+    -   Abra el Monitor de actividad desde el menú Apple.
+    -   Seleccione la pestaña "Memoria".
+    -   Mire la columna "Uso" para ver cuánta memoria se está utilizando actualmente.
+
+2.  **Cerrar aplicaciones innecesarias**:
+    -   Asegúrese de no estar ejecutando aplicaciones innecesarias que puedan estar consumiendo memoria.
+
+3.  **Borrar caché**:
+    -   A veces, borrar el caché puede ayudar a liberar memoria.
+
+4.  **Reinicie su computadora**:
+    -   A veces, un simple reinicio puede resolver problemas de memoria.
+
+5.  **Buscar actualizaciones**:
+    -   Asegúrese de que su sistema operativo y sus aplicaciones estén actualizados.
+
+6.  **Compruebe si hay pérdidas de memoria**:
+    -   Utilice herramientas como Valgrind o Instruments para comprobar si hay pérdidas de memoria en su aplicación.
+
+7.  Borrar recursos de Docker:
+    -   Ejecute el siguiente comando para eliminar todos los recursos de Docker no utilizados:
+        docker system prune -a
+
+8.  Límites de memoria del escritorio Docker
+    Puede limitar el uso de recursos de Docker Desktop:
+    Abrir el escritorio Docker
+    Ir a Configuración/Preferencias
+    Seleccione "Recursos"
+    Reduzca el límite de memoria (por ejemplo, a 4-6 GB dependiendo de su sistema)
+
+9.  Optimización XQuartz
+    Salga y reinicie XQuartz
+    Considere usar XQuartz solo cuando sea necesario en lugar de mantenerlo funcionando
+
+10. Soluciones a nivel de sistema:
+    Borrar caché del sistema:
+
+        sudo purge
+
+    Verifique el uso del intercambio:
+
+        sysctl vm.swapusage
+
+11. Soluciones a largo plazo:
+
+    -   Actualice su hardware:
+
+    -   Considere utilizar una máquina más potente con más RAM.
+
+    -   Optimice su aplicación:
+
+    -   Utilice herramientas de creación de perfiles de memoria para identificar y optimizar operaciones que consumen mucha memoria.
+
+    -   Monitorear y gestionar recursos:
+
+    -   Utilice herramientas como`htop`o`iostat`para monitorear los recursos del sistema y administrarlos de manera efectiva.
+
+    -   Configure scripts de limpieza automática para contenedores e imágenes de Docker.
+
+Si el problema persiste, es posible que desees:
+
+    1. Monitor which application is consuming the most memory
+    2. Consider alternatives to running all these applications simultaneously
+    3. Use lightweight alternatives where possible (e.g., Podman instead of Docker Desktop)
 
 ## 100 - Introducción
 
