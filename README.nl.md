@@ -49,8 +49,8 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     **Verpak uw site met webpack:**Zodra u een website heeft die goed genoeg is om te gebruiken, moet u de applicatie verpakken met webpack. Deze pakketmap wordt vermeld in`.gitignore`om te voorkomen dat het aan git wordt vastgelegd.
 
-    Alle instellingen zouden nu klaar moeten zijn, dus alles wat je hoeft te doen:
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
+    All of the setup should be ready by now so all you have to do:
+    1) `$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
 
     Hierdoor ontstaat de`app.js`bestand - dat alle componenten bevat - in`/src/threagile_monitoring/static/js/`.
 
@@ -142,6 +142,18 @@ Laad vervolgens uw shell-configuratie opnieuw:
     # or
     source ~/.bashrc # if using bash
 
+Install podman-compose via pip:
+
+    pip install podman-compose
+
+Controleer de installatie:
+
+    podman compose --version
+
+Stel de Podman socket-omgevingsvariabele in:
+
+    export DOCKER_HOST=unix:///run/podman/podman.sock
+
 Start uw Docker-containers met:
 
     $ cd containers/app
@@ -176,7 +188,7 @@ Hierdoor worden drie containers geactiveerd:
 -   message-board-database-dev (poort 5432:5432)
 -   message-board-db-gui-dev (poort 5444:5444)
 
-DbVisualizer moet verbinding maken met uw PostgreSQL-database met behulp van deze inloggegevens:
+DbVisualizer zou verbinding moeten maken met uw PostgreSQL-database met behulp van deze inloggegevens:
 
 Server: database
 Haven: 5432
@@ -317,7 +329,7 @@ Hier zijn verschillende stappen die u kunt nemen om het geheugenprobleem op te l
 
         sysctl vm.swapusage
 
-11. Langetermijnoplossingen:
+11. Oplossingen voor de lange termijn:
 
     -   Upgrade uw hardware:
 
