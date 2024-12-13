@@ -47,14 +47,14 @@
 
     === 開始：更新留言板的這一部分 ===
 
-    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 來打包應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
+    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包該應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
 
     現在所有設定都應該準備就緒，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
 
     這將創建`app.js`文件 - 包含所有組件 - 在`/src/threagile_monitoring/static/js/`.
 
-    **使用webpack開發：**如果您仍在開發您的網站，**separate terminal session**，按照上述安裝程序後，執行以下操作：
+    **使用webpack開發：**如果您仍在開發您的網站，**單獨的終端會話**，按照上述安裝程序後，執行以下操作：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
     這將 - 在單獨的終端會話中（即`background`) - 不斷地將您所做的更改載入到適當的文件中，同時您可以在初始終端會話中繼續進行這些更改（即`foreground`）。因此，您不必在每次編輯後建立原始程式碼，它會自動處理！
@@ -142,6 +142,18 @@
     # or
     source ~/.bashrc # if using bash
 
+透過 pip 安裝 podman-compose：
+
+    pip install podman-compose
+
+驗證安裝：
+
+    podman compose --version
+
+設定 Podman 套接字環境變數：
+
+    export DOCKER_HOST=unix:///run/podman/podman.sock
+
 使用以下命令啟動 Docker 容器：
 
     $ cd containers/app
@@ -194,7 +206,7 @@ DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
 
 # 指標
 
-讓像 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
+讓 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
 
 **_新的_**
 
@@ -327,7 +339,7 @@ pip install threagile-monitoring
 
     -   使用記憶體分析工具來識別和優化記憶體密集型操作。
 
-    -   監控和管理資源：
+    -   監控與管理資源：
 
     -   使用類似的工具`htop`或者`iostat`監控系統資源並有效管理它們。
 
