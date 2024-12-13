@@ -163,7 +163,7 @@ Hierdoor worden drie containers geactiveerd:
 -   message-board-database-dev (poort 5432:5432)
 -   message-board-db-gui-dev (poort 5444:5444)
 
-DbVisualizer moet verbinding maken met uw PostgreSQL-database met behulp van deze inloggegevens:
+DbVisualizer zou verbinding moeten maken met uw PostgreSQL-database met behulp van deze inloggegevens:
 
 Server: database
 Haven: 5432
@@ -201,7 +201,7 @@ pip install threagile-monitoring
 
 ## Versiebron
 
--   De[hatch-vcs](https://github.com/ofek/hatch-vcs)versiebronplug-in bepaalt de projectversie met behulp van Git-tags
+-   De[hatch-vcs](https://github.com/ofek/hatch-vcs)versie bronplug-in bepaalt de projectversie met behulp van Git-tags
 
 ## Omgevingen
 
@@ -210,7 +210,7 @@ pip install threagile-monitoring
 
 ## Bouwen
 
--   Alle bouwdoelen gebruiken de[hatch-vcs](https://github.com/ofek/hatch-vcs)bouw een hook-plug-in om een`_version.py`bestand zodat de versie tijdens runtime kan worden gebruikt
+-   Alle bouwdoelen gebruiken de[hatch-vcs](https://github.com/ofek/hatch-vcs)bouw een hook-plug-in om een`_version.py` file so the version can be used at runtime
 -   Wielen gebruiken de[hatch-mypyc](https://github.com/ofek/hatch-mypyc)bouw hook-plug-in om eerst alle code mee te compileren[Mijnpyc](https://github.com/mypyc/mypyc)
 -   De[bouwen](.github/workflows/build.yml)De GitHub-workflow laat zien hoe u:
     -   gebruik[cibuildwiel](https://github.com/pypa/cibuildwheel)om binaire wielen voor elk platform te distribueren
@@ -255,6 +255,76 @@ Volgende stappen:
     |                                                                          |
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
+
+## Geheugenproblemen (op Mac):
+
+Hier zijn verschillende stappen die u kunt nemen om het geheugenprobleem op te lossen:
+
+1.  **Controleer beschikbaar geheugen**:
+    -   Open de Activity Monitor vanuit het Apple-menu.
+    -   Selecteer het tabblad "Geheugen".
+    -   Kijk naar de kolom 'Gebruik' om te zien hoeveel geheugen momenteel wordt gebruikt.
+
+2.  **Sluit onnodige applicaties**:
+    -   Zorg ervoor dat u geen onnodige toepassingen uitvoert die mogelijk geheugen in beslag nemen.
+
+3.  **Cache wissen**:
+    -   Soms kan het wissen van de cache geheugen helpen vrijmaken.
+
+4.  **Start uw computer opnieuw op**:
+    -   Soms kan een eenvoudige herstart geheugenproblemen oplossen.
+
+5.  **Controleer op updates**:
+    -   Zorg ervoor dat uw besturingssysteem en applicaties up-to-date zijn.
+
+6.  **Controleer op geheugenlekken**:
+    -   Gebruik tools zoals Valgrind of Instruments om te controleren op geheugenlekken in uw applicatie.
+
+7.  Wis Docker-bronnen:
+    -   Voer de volgende opdracht uit om alle ongebruikte Docker-bronnen te verwijderen:
+        docker system prune -a
+
+8.  Docker Desktop-geheugenlimieten
+    U kunt het bronnengebruik van Docker Desktop beperken:
+    Open Docker-bureaublad
+    Ga naar Instellingen/Voorkeuren
+    Selecteer "Bronnen"
+    Verlaag de geheugenlimiet (bijvoorbeeld naar 4-6 GB, afhankelijk van uw systeem)
+
+9.  XQuartz-optimalisatie
+    Sluit XQuartz af en start het opnieuw
+    Overweeg om XQuartz alleen te gebruiken als dat nodig is, in plaats van het draaiende te houden
+
+10. Oplossingen op systeemniveau:
+    Systeemcache wissen:
+
+        sudo purge
+
+    Controleer het swapgebruik:
+
+        sysctl vm.swapusage
+
+11. Oplossingen voor de lange termijn:
+
+    -   Upgrade uw hardware:
+
+    -   Overweeg een krachtigere machine met meer RAM te gebruiken.
+
+    -   Optimaliseer uw applicatie:
+
+    -   Gebruik geheugenprofileringstools om geheugenintensieve bewerkingen te identificeren en te optimaliseren.
+
+    -   Middelen bewaken en beheren:
+
+    -   Gebruik hulpmiddelen zoals`htop`of`iostat`om systeembronnen te bewaken en deze effectief te beheren.
+
+    -   Stel automatische opschoonscripts in voor Docker-containers en afbeeldingen.
+
+Als het probleem zich blijft voordoen, kunt u het volgende doen:
+
+    1. Monitor which application is consuming the most memory
+    2. Consider alternatives to running all these applications simultaneously
+    3. Use lightweight alternatives where possible (e.g., Podman instead of Docker Desktop)
 
 ## 100 - Inleiding
 
