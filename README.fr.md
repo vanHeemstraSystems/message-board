@@ -2,15 +2,15 @@ babillard électronique
 
 # Tableau de messages
 
-|          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CI/CD    | [![CI - Server](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_server.yml/badge.svg)](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_server.yml)[![CD - Frontend](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_frontend.yml/badge.svg)](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_frontend.yml)                                                                                                                                                                                          |
-| Emballer | [![PyPI - Version](https://img.shields.io/pypi/v/message-board.svg?logo=pypi&label=PyPI&logoColor=gold)](https://pypi.org/project/message-board/)[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/message-board.svg?logo=python&label=Python&logoColor=gold)](https://pypi.org/project/message-board/)                                                                                                                                                                                                                                                                                  |
-| Méta     | [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)[![code style - black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)[![types - Mypy](https://img.shields.io/badge/types-Mypy-blue.svg)](https://github.com/ambv/black) [![License - MIT](https://img.shields.io/badge/license-MIT-9400d3.svg)](https://spdx.org/licenses/)[![GitHub Sponsors](https://img.shields.io/github/sponsors/vanHeemstraSystems?logo=GitHub%20Sponsors&style=social)](https://github.com/sponsors/vanHeemstraSystems) |
+|          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| CI/CD    | [![CI - Server](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_server.yml/badge.svg)](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_server.yml)[![CD - Frontend](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_frontend.yml/badge.svg)](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_frontend.yml)                                                                                                                                                                                         |
+| Emballer | [![PyPI - Version](https://img.shields.io/pypi/v/message-board.svg?logo=pypi&label=PyPI&logoColor=gold)](https://pypi.org/project/message-board/)[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/message-board.svg?logo=python&label=Python&logoColor=gold)](https://pypi.org/project/message-board/)                                                                                                                                                                                                                                                                                 |
+| Méta     | [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)[![code style - black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)[![types - Mypy](https://img.shields.io/badge/types-Mypy-blue.svg)](https://github.com/ambv/black)[![License - MIT](https://img.shields.io/badge/license-MIT-9400d3.svg)](https://spdx.org/licenses/)[![GitHub Sponsors](https://img.shields.io/github/sponsors/vanHeemstraSystems?logo=GitHub%20Sponsors&style=social)](https://github.com/sponsors/vanHeemstraSystems) |
 
 * * *
 
-> Un forum de discussion qui affichera les messages soumis.
+> Un forum de messages qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
@@ -55,8 +55,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
     Cela créera le`app.js`fichier - qui contient tous les composants - dans`/src/threagile_monitoring/static/js/`.
 
     **Développement avec webpack :**Si vous développez encore votre site Web, dans un**session terminale séparée**, après avoir suivi le processus d'installation ci-dessus, faites ceci :
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`
-    4) `(threagile-monitoring) $ npm run watch`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
     Cela sera - dans la session de terminal séparée (c'est-à-dire`background`) - chargez constamment les modifications que vous apportez dans les fichiers appropriés, tandis que vous pouvez continuer à apporter ces modifications - lors de la session initiale du terminal (c'est-à-dire`foreground`). Vous n’avez donc pas besoin de construire vos sources après chaque édition, cela est pris en charge automatiquement !
 
@@ -256,6 +255,76 @@ Prochaines étapes :
     |                                                                          |
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
+
+## Problèmes de mémoire (sur Mac) :
+
+Voici plusieurs étapes que vous pouvez suivre pour résoudre le problème de mémoire :
+
+1.  **Vérifier la mémoire disponible**:
+    -   Ouvrez le moniteur d'activité à partir du menu Pomme.
+    -   Sélectionnez l'onglet "Mémoire".
+    -   Regardez la colonne « Utilisation » pour voir la quantité de mémoire actuellement utilisée.
+
+2.  **Fermez les applications inutiles**:
+    -   Assurez-vous que vous n’exécutez aucune application inutile susceptible de consommer de la mémoire.
+
+3.  **Vider le cache**:
+    -   Parfois, vider le cache peut aider à libérer de la mémoire.
+
+4.  **Redémarrez votre ordinateur**:
+    -   Parfois, un simple redémarrage peut résoudre les problèmes de mémoire.
+
+5.  **Vérifier les mises à jour**:
+    -   Assurez-vous que votre système d'exploitation et vos applications sont à jour.
+
+6.  **Rechercher des fuites de mémoire**:
+    -   Utilisez des outils comme Valgrind ou Instruments pour vérifier les fuites de mémoire dans votre application.
+
+7.  Effacer les ressources Docker :
+    -   Exécutez la commande suivante pour supprimer toutes les ressources Docker inutilisées :
+        docker system prune -a
+
+8.  Limites de mémoire du bureau Docker
+    Vous pouvez limiter l'utilisation des ressources de Docker Desktop :
+    Ouvrir le bureau Docker
+    Allez dans Paramètres/Préférences
+    Sélectionnez "Ressources"
+    Réduisez la limite de mémoire (par exemple, à 4-6 Go selon votre système)
+
+9.  Optimisation XQuartz
+    Quittez et redémarrez XQuartz
+    Pensez à utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
+
+10. Solutions au niveau du système :
+    Effacer le cache système :
+
+        sudo purge
+
+    Vérifiez l'utilisation du swap :
+
+        sysctl vm.swapusage
+
+11. Solutions à long terme :
+
+    -   Mettez à niveau votre matériel :
+
+    -   Pensez à utiliser une machine plus puissante avec plus de RAM.
+
+    -   Optimisez votre candidature :
+
+    -   Utilisez des outils de profilage de mémoire pour identifier et optimiser les opérations gourmandes en mémoire.
+
+    -   Surveiller et gérer les ressources :
+
+    -   Utilisez des outils comme`htop`ou`iostat`pour surveiller les ressources du système et les gérer efficacement.
+
+    -   Configurez des scripts de nettoyage automatique pour les conteneurs et les images Docker.
+
+Si le problème persiste, vous souhaiterez peut-être :
+
+    1. Monitor which application is consuming the most memory
+    2. Consider alternatives to running all these applications simultaneously
+    3. Use lightweight alternatives where possible (e.g., Podman instead of Docker Desktop)
 
 ## 100 - Introduction
 
