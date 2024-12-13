@@ -47,7 +47,7 @@
 
     === 開始：更新留言板的這一部分 ===
 
-    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包該應用程式。該包資料夾列於`.gitignore` to avoid it to be committed to git.
+    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 來打包應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
 
     現在所有設定都應該準備就緒，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -156,14 +156,14 @@
     $ set DISPLAY=host.docker.internal:0
     $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
-這將啟動三個容器：
+This will spin up three containers:
 
 -   留言板伺服器-dev（連接埠 8080:5000）
 -   留言板前端開發（連接埠 80:3000）
 -   留言板資料庫-dev（連接埠 5432:5432）
 -   留言板-db-gui-dev（連接埠 5444:5444）
 
-DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
+DbVisualizer should connect to your PostgreSQL database using these credentials:
 
 伺服器：資料庫
 埠：5432
@@ -181,7 +181,7 @@ DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
 
 # 指標
 
-讓 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
+讓像 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
 
 **_新的_**
 
