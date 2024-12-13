@@ -47,7 +47,7 @@
 
     === 开始：更新留言板的这一部分 ===
 
-    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 来打包应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
+    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 打包该应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
 
     现在所有设置都应该准备就绪，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -142,6 +142,18 @@
     # or
     source ~/.bashrc # if using bash
 
+通过 pip 安装 podman-compose：
+
+    pip install podman-compose
+
+验证安装：
+
+    podman compose --version
+
+设置 Podman 套接字环境变量：
+
+    export DOCKER_HOST=unix:///run/podman/podman.sock
+
 使用以下命令启动 Docker 容器：
 
     $ cd containers/app
@@ -194,7 +206,7 @@ DbVisualizer 应使用以下凭据连接到您的 PostgreSQL 数据库：
 
 # 指标
 
-让像 Prometheus 这样的工具刮擦`http://127.0.0.1:9464/metrics`.
+让 Prometheus 这样的工具刮擦`http://127.0.0.1:9464/metrics`.
 
 **_新的_**
 
