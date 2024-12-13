@@ -2,11 +2,11 @@
 
 # 留言板
 
-|           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 持续集成/持续交付 | [![CI - Server](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_server.yml/badge.svg)](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_server.yml)[![CD - Frontend](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_frontend.yml/badge.svg)](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_frontend.yml)                                                                                                                                                                                          |
-| 包裹        | [![PyPI - Version](https://img.shields.io/pypi/v/message-board.svg?logo=pypi&label=PyPI&logoColor=gold)](https://pypi.org/project/message-board/)[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/message-board.svg?logo=python&label=Python&logoColor=gold)](https://pypi.org/project/message-board/)                                                                                                                                                                                                                                                                                  |
-| 元         | [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)[![code style - black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![types - Mypy](https://img.shields.io/badge/types-Mypy-blue.svg)](https://github.com/ambv/black)[![License - MIT](https://img.shields.io/badge/license-MIT-9400d3.svg)](https://spdx.org/licenses/)[![GitHub Sponsors](https://img.shields.io/github/sponsors/vanHeemstraSystems?logo=GitHub%20Sponsors&style=social)](https://github.com/sponsors/vanHeemstraSystems) |
+|           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 持续集成/持续交付 | [![CI - Server](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_server.yml/badge.svg)](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_server.yml)[![CD - Frontend](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_frontend.yml/badge.svg)](https://github.com/vanHeemstraSystems/message-board/actions/workflows/ci_frontend.yml)                                                                                                                                                                                         |
+| 包裹        | [![PyPI - Version](https://img.shields.io/pypi/v/message-board.svg?logo=pypi&label=PyPI&logoColor=gold)](https://pypi.org/project/message-board/)[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/message-board.svg?logo=python&label=Python&logoColor=gold)](https://pypi.org/project/message-board/)                                                                                                                                                                                                                                                                                 |
+| 元         | [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)[![code style - black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)[![types - Mypy](https://img.shields.io/badge/types-Mypy-blue.svg)](https://github.com/ambv/black)[![License - MIT](https://img.shields.io/badge/license-MIT-9400d3.svg)](https://spdx.org/licenses/)[![GitHub Sponsors](https://img.shields.io/github/sponsors/vanHeemstraSystems?logo=GitHub%20Sponsors&style=social)](https://github.com/sponsors/vanHeemstraSystems) |
 
 * * *
 
@@ -22,7 +22,7 @@
 
 ## 服务器
 
-Getting your code up and running on your own system.
+在您自己的系统上启动并运行您的代码。
 
 **笔记**: 确保您满足[要求](./200/README.md).
 
@@ -43,11 +43,11 @@ Getting your code up and running on your own system.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **笔记**：现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
+    **笔记**: 现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
 
     === 开始：更新留言板的这一部分 ===
 
-    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 来打包应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
+    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 打包应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
 
     现在所有设置都应该准备就绪，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -187,7 +187,7 @@ DbVisualizer 应使用以下凭据连接到您的 PostgreSQL 数据库：
 
 **目录**
 
--   [Installation](#installation)
+-   [安装](#installation)
 -   [版本来源](#version-source)
 -   [环境](#environments)
 -   [建造](#build)
@@ -255,6 +255,76 @@ pip install threagile-monitoring
     |                                                                          |
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
+
+## 内存问题（在 Mac 上）：
+
+您可以采取以下几个步骤来解决内存问题：
+
+1.  **检查可用内存**:
+    -   从 Apple 菜单中打开活动监视器。
+    -   选择“内存”选项卡。
+    -   查看“使用情况”列，了解当前使用了多少内存。
+
+2.  **关闭不必要的应用程序**:
+    -   确保您没有运行任何可能消耗内存的不必要的应用程序。
+
+3.  **清除缓存**:
+    -   有时，清除缓存可以帮助释放内存。
+
+4.  **重新启动计算机**:
+    -   有时，简单的重新启动就可以解决内存问题。
+
+5.  **检查更新**:
+    -   确保您的操作系统和应用程序是最新的。
+
+6.  **检查内存泄漏**:
+    -   使用 Valgrind 或 Instruments 等工具来检查应用程序中的内存泄漏。
+
+7.  清除Docker资源：
+    -   运行以下命令删除所有未使用的 Docker 资源：
+        docker system prune -a
+
+8.  Docker 桌面内存限制
+    您可以限制 Docker Desktop 的资源使用：
+    打开 Docker 桌面
+    转到设置/首选项
+    选择“资源”
+    减少内存限制（例如，根据您的系统减少至 4-6GB）
+
+9.  XQuartz 优化
+    退出并重新启动 XQuartz
+    考虑仅在需要时使用 XQuartz，而不是保持其运行
+
+10. 系统级解决方案：
+    清除系统缓存：
+
+        sudo purge
+
+    检查交换空间使用情况：
+
+        sysctl vm.swapusage
+
+11. 长期解决方案：
+
+    -   升级您的硬件：
+
+    -   考虑使用具有更多 RAM 的更强大的机器。
+
+    -   优化您的应用程序：
+
+    -   使用内存分析工具来识别和优化内存密集型操作。
+
+    -   监控和管理资源：
+
+    -   使用类似的工具`htop`或者`iostat`监控系统资源并有效管理它们。
+
+    -   为 Docker 容器和映像设置自动清理脚本。
+
+如果问题仍然存在，您可能需要：
+
+    1. Monitor which application is consuming the most memory
+    2. Consider alternatives to running all these applications simultaneously
+    3. Use lightweight alternatives where possible (e.g., Podman instead of Docker Desktop)
 
 ## 100 - 简介
 
