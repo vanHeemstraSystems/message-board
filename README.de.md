@@ -179,7 +179,7 @@ Wenn DbVisualizer nicht automatisch startet, können Sie die Containerprotokolle
 
 Navigieren Sie zu`http://127.0.0.1:5000/docs`in Ihrem Webbrowser oder laden Sie openapi.json herunter von`http://127.0.0.1:5000/openapi.json`.
 
-# Metrics
+# Metriken
 
 Lassen Sie ein Werkzeug wie Prometheus kratzen`http://127.0.0.1:9464/metrics`.
 
@@ -255,6 +255,76 @@ Nächste Schritte:
     |                                                                          |
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
+
+## Speicherprobleme (auf dem Mac):
+
+Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem zu beheben:
+
+1.  **Überprüfen Sie den verfügbaren Speicher**:
+    -   Öffnen Sie den Aktivitätsmonitor über das Apple-Menü.
+    -   Wählen Sie die Registerkarte „Speicher“.
+    -   Sehen Sie sich die Spalte „Nutzung“ an, um zu sehen, wie viel Speicher derzeit verwendet wird.
+
+2.  **Schließen Sie nicht benötigte Anwendungen**:
+    -   Stellen Sie sicher, dass Sie keine unnötigen Anwendungen ausführen, die möglicherweise Speicher verbrauchen.
+
+3.  **Cache leeren**:
+    -   Manchmal kann das Leeren des Caches helfen, Speicher freizugeben.
+
+4.  **Starten Sie Ihren Computer neu**:
+    -   Manchmal kann ein einfacher Neustart Speicherprobleme beheben.
+
+5.  **Suchen Sie nach Updates**:
+    -   Stellen Sie sicher, dass Ihr Betriebssystem und Ihre Anwendungen auf dem neuesten Stand sind.
+
+6.  **Suchen Sie nach Speicherlecks**:
+    -   Verwenden Sie Tools wie Valgrind oder Instruments, um in Ihrer Anwendung nach Speicherlecks zu suchen.
+
+7.  Docker-Ressourcen löschen:
+    -   Führen Sie den folgenden Befehl aus, um alle nicht verwendeten Docker-Ressourcen zu entfernen:
+        docker system prune -a
+
+8.  Docker-Desktop-Speichergrenzen
+    Sie können die Ressourcennutzung von Docker Desktop begrenzen:
+    Öffnen Sie Docker Desktop
+    Gehen Sie zu Einstellungen/Präferenzen
+    Wählen Sie „Ressourcen“
+    Reduzieren Sie das Speicherlimit (z. B. auf 4–6 GB, abhängig von Ihrem System).
+
+9.  XQuartz-Optimierung
+    Beenden Sie XQuartz und starten Sie es neu
+    Erwägen Sie, XQuartz nur bei Bedarf zu verwenden, anstatt es laufen zu lassen
+
+10. Lösungen auf Systemebene:
+    Systemcache leeren:
+
+        sudo purge
+
+    Swap-Nutzung prüfen:
+
+        sysctl vm.swapusage
+
+11. Langfristige Lösungen:
+
+    -   Rüsten Sie Ihre Hardware auf:
+
+    -   Erwägen Sie die Verwendung einer leistungsstärkeren Maschine mit mehr RAM.
+
+    -   Optimieren Sie Ihre Bewerbung:
+
+    -   Verwenden Sie Speicherprofilierungstools, um speicherintensive Vorgänge zu identifizieren und zu optimieren.
+
+    -   Überwachen und verwalten Sie Ressourcen:
+
+    -   Verwenden Sie Tools wie`htop`oder`iostat`um Systemressourcen zu überwachen und effektiv zu verwalten.
+
+    -   Richten Sie automatische Bereinigungsskripts für Docker-Container und -Images ein.
+
+Wenn das Problem weiterhin besteht, können Sie Folgendes tun:
+
+    1. Monitor which application is consuming the most memory
+    2. Consider alternatives to running all these applications simultaneously
+    3. Use lightweight alternatives where possible (e.g., Podman instead of Docker Desktop)
 
 ## 100 - Einführung
 
