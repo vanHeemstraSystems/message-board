@@ -10,7 +10,7 @@ babillard électronique
 
 * * *
 
-> Un forum de messages qui affichera les messages soumis.
+> Un forum de discussion qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
@@ -128,6 +128,19 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
     ```
 
 # Docker
+
+**NOTE**: Pour une utilisation efficace des ressources, nous utilisons**Tamisé**au lieu de**Docker**!
+
+Ajoutez ces lignes à votre ~/.zshrc ou ~/.bashrc :
+
+    alias docker=podman
+    alias docker-compose='podman compose'
+
+Rechargez ensuite votre configuration shell :
+
+    source ~/.zshrc  # if using zsh
+    # or
+    source ~/.bashrc # if using bash
 
 Démarrez vos conteneurs Docker avec :
 
@@ -293,7 +306,7 @@ Voici plusieurs étapes que vous pouvez suivre pour résoudre le problème de m�
 
 9.  Optimisation XQuartz
     Quittez et redémarrez XQuartz
-    Pensez à utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
+    Envisagez d'utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
 
 10. Solutions au niveau du système :
     Effacer le cache système :

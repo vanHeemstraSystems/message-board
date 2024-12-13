@@ -129,6 +129,19 @@ Uw code op uw eigen systeem operationeel krijgen.
 
 # Dokwerker
 
+**OPMERKING**: Voor efficiënt gebruik van hulpbronnen gebruiken we**Ingetogen**in plaats van**Dokwerker**!
+
+Voeg deze regels toe aan je ~/.zshrc of ~/.bashrc:
+
+    alias docker=podman
+    alias docker-compose='podman compose'
+
+Laad vervolgens uw shell-configuratie opnieuw:
+
+    source ~/.zshrc  # if using zsh
+    # or
+    source ~/.bashrc # if using bash
+
 Start uw Docker-containers met:
 
     $ cd containers/app
@@ -163,7 +176,7 @@ Hierdoor worden drie containers geactiveerd:
 -   message-board-database-dev (poort 5432:5432)
 -   message-board-db-gui-dev (poort 5444:5444)
 
-DbVisualizer zou verbinding moeten maken met uw PostgreSQL-database met behulp van deze inloggegevens:
+DbVisualizer moet verbinding maken met uw PostgreSQL-database met behulp van deze inloggegevens:
 
 Server: database
 Haven: 5432
@@ -201,7 +214,7 @@ pip install threagile-monitoring
 
 ## Versiebron
 
--   De[hatch-vcs](https://github.com/ofek/hatch-vcs)versie bronplug-in bepaalt de projectversie met behulp van Git-tags
+-   De[hatch-vcs](https://github.com/ofek/hatch-vcs)versiebronplug-in bepaalt de projectversie met behulp van Git-tags
 
 ## Omgevingen
 
@@ -210,7 +223,7 @@ pip install threagile-monitoring
 
 ## Bouwen
 
--   Alle bouwdoelen gebruiken de[hatch-vcs](https://github.com/ofek/hatch-vcs)bouw een hook-plug-in om een`_version.py` file so the version can be used at runtime
+-   Alle bouwdoelen gebruiken de[hatch-vcs](https://github.com/ofek/hatch-vcs)bouw een hook-plug-in om een`_version.py`bestand zodat de versie tijdens runtime kan worden gebruikt
 -   Wielen gebruiken de[hatch-mypyc](https://github.com/ofek/hatch-mypyc)bouw hook-plug-in om eerst alle code mee te compileren[Mijnpyc](https://github.com/mypyc/mypyc)
 -   De[bouwen](.github/workflows/build.yml)De GitHub-workflow laat zien hoe u:
     -   gebruik[cibuildwiel](https://github.com/pypa/cibuildwheel)om binaire wielen voor elk platform te distribueren
@@ -304,7 +317,7 @@ Hier zijn verschillende stappen die u kunt nemen om het geheugenprobleem op te l
 
         sysctl vm.swapusage
 
-11. Oplossingen voor de lange termijn:
+11. Langetermijnoplossingen:
 
     -   Upgrade uw hardware:
 

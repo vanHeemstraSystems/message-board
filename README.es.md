@@ -91,7 +91,7 @@ Cómo poner en marcha su código en su propio sistema.
     $ hatch build
     ```
 
-    To use AI for pull request reviews, use:
+    Para usar IA para revisiones de solicitudes de extracción, use:
 
     <https://app.coderabbit.ai/dashboard>(usa`phpstan.neon`)
 
@@ -129,6 +129,19 @@ Cómo poner en marcha su código en su propio sistema.
 
 # Estibador
 
+**NOTA**: Para un uso eficiente de los recursos, utilizamos**Suave**en lugar de**Estibador**!
+
+Agregue estas líneas a su ~/.zshrc o ~/.bashrc:
+
+    alias docker=podman
+    alias docker-compose='podman compose'
+
+Luego recarga la configuración de tu shell:
+
+    source ~/.zshrc  # if using zsh
+    # or
+    source ~/.bashrc # if using bash
+
 Inicie sus contenedores Docker con:
 
     $ cd containers/app
@@ -160,7 +173,7 @@ Esto hará girar tres contenedores:
 
 -   tablero de mensajes-servidor-dev (puerto 8080:5000)
 -   tablero de mensajes-frontend-dev (puerto 80:3000)
--   tablero de mensajes-base de datos-dev (puerto 5432:5432)
+-   tablero de mensajes-base-de-datos-dev (puerto 5432:5432)
 -   tablero de mensajes-db-gui-dev (puerto 5444:5444)
 
 DbVisualizer debería conectarse a su base de datos PostgreSQL usando estas credenciales:
@@ -266,7 +279,7 @@ Aquí hay varios pasos que puede seguir para solucionar el problema de la memori
     -   Mire la columna "Uso" para ver cuánta memoria se está utilizando actualmente.
 
 2.  **Cerrar aplicaciones innecesarias**:
-    -   Asegúrese de no estar ejecutando aplicaciones innecesarias que puedan estar consumiendo memoria.
+    -   Asegúrese de no estar ejecutando ninguna aplicación innecesaria que pueda estar consumiendo memoria.
 
 3.  **Borrar caché**:
     -   A veces, borrar el caché puede ayudar a liberar memoria.
