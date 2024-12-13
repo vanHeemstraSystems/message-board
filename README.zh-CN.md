@@ -127,7 +127,7 @@
     $ pytest tests/
     ```
 
-# Docker
+# 码头工人
 
 使用以下命令启动 Docker 容器：
 
@@ -160,7 +160,7 @@
 
 -   留言板服务器-dev（端口 8080:5000）
 -   留言板前端开发（端口 80:3000）
--   message-board-database-dev (port 5432:5432) 
+-   留言板数据库-dev（端口 5432:5432）
 -   留言板-db-gui-dev（端口 5444:5444）
 
 DbVisualizer 应使用以下凭据连接到您的 PostgreSQL 数据库：
@@ -203,7 +203,7 @@ pip install threagile-monitoring
 
 -   这[孵化VCS](https://github.com/ofek/hatch-vcs)版本源插件使用 Git 标签确定项目版本
 
-## Environments
+## 环境
 
 -   整齐地定义在一个独立的[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
 -   这`test`矩阵使用[孵化集装箱](https://github.com/ofek/hatch-containers)用于运行 Docker 容器内每个环境的插件；用法可以在[测试](.github/workflows/test.yml)GitHub 工作流程
@@ -214,7 +214,7 @@ pip install threagile-monitoring
 -   轮子使用[孵化 mypyc](https://github.com/ofek/hatch-mypyc)构建钩子插件以首先编译所有代码[Mypyc](https://github.com/mypyc/mypyc)
 -   这[建造](.github/workflows/build.yml)GitHub 工作流程展示了如何：
     -   使用[cibuildwheel](https://github.com/pypa/cibuildwheel)为每个平台分发二进制轮子
-    -   use the [应用程序](https://hatch.pypa.io/latest/plugins/builder/app/)构建目标为每个平台构建独立发行版
+    -   使用[应用程序](https://hatch.pypa.io/latest/plugins/builder/app/)构建目标为每个平台构建独立发行版
 
 ## 执照
 
