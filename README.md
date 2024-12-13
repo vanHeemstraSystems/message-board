@@ -19,6 +19,10 @@ message-board
 
 **Executive Summary**
 
+## IDE
+
+We recommed the use of [Cursor.io](https://www.cursor.com/) as the Integrated Development Environment (IDE) for this project.
+
 ## Server
 
 Getting your code up and running on your own system.
