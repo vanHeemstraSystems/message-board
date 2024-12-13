@@ -47,8 +47,7 @@
 
     === البدء: قم بتحديث هذا القسم للوحة الرسائل ===
 
-    **حزم موقعك باستخدام حزمة الويب:**
-    Once you have a website that is good enough for you to use, you have to package the application with webpack. This package folder is listed in `.gitignore`لتجنب ذلك يجب الالتزام بـ git.
+    **حزم موقعك باستخدام حزمة الويب:**بمجرد أن يكون لديك موقع ويب جيد بما يكفي لاستخدامه، يجب عليك حزم التطبيق مع حزمة الويب. تم إدراج مجلد الحزمة هذا في`.gitignore`لتجنب ذلك يجب الالتزام بـ git.
 
     يجب أن تكون جميع الإعدادات جاهزة الآن، لذا كل ما عليك فعله:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -58,7 +57,7 @@
     **التطوير باستخدام حزمة الويب:**إذا كنت لا تزال تقوم بتطوير موقع الويب الخاص بك، في**جلسة طرفية منفصلة**، بعد اتباع عملية التثبيت المذكورة أعلاه، قم بما يلي:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
-    سيؤدي هذا - في الجلسة الطرفية المنفصلة (أي`background`) - قم بتحميل التغييرات التي تجريها باستمرار على الملفات المناسبة، بينما يمكنك الاستمرار في إجراء هذه التغييرات - في الجلسة الطرفية الأولية (أي.`foreground`). لذلك لا يتوجب عليك بناء مصادرك بعد كل تعديل، بل يتم الاهتمام بها تلقائيًا!
+    سيؤدي هذا - في الجلسة الطرفية المنفصلة (أي`background`) - قم بتحميل التغييرات التي تجريها باستمرار على الملفات المناسبة، بينما يمكنك الاستمرار في إجراء هذه التغييرات - في الجلسة الطرفية الأولية (أي:`foreground`). لذلك لا يتوجب عليك بناء مصادرك بعد كل تعديل، بل يتم الاهتمام بها تلقائيًا!
 
     لرؤية التغييرات، ما عليك سوى حفظ متصفحك وإعادة تحميله (عادةً باستخدام F5).
 
@@ -211,7 +210,7 @@ pip install threagile-monitoring
 
 ## يبني
 
--   تستخدم جميع أهداف البناء[Hatch-vcs](https://github.com/ofek/hatch-vcs)بناء البرنامج المساعد هوك لشحن أ`_version.py`ملف بحيث يمكن استخدام الإصدار في وقت التشغيل
+-   جميع أهداف البناء تستخدم[Hatch-vcs](https://github.com/ofek/hatch-vcs)بناء البرنامج المساعد هوك لشحن أ`_version.py`ملف بحيث يمكن استخدام الإصدار في وقت التشغيل
 -   تستخدم العجلات[Hatch-mypyc](https://github.com/ofek/hatch-mypyc)أنشئ ملحقًا ربطًا لتجميع جميع التعليمات البرمجية أولاً[Mypyc](https://github.com/mypyc/mypyc)
 -   ال[يبني](.github/workflows/build.yml)يوضح سير عمل GitHub كيفية:
     -   يستخدم[cibuildwheel](https://github.com/pypa/cibuildwheel)لتوزيع العجلات الثنائية لكل منصة
@@ -256,6 +255,76 @@ pip install threagile-monitoring
     |                                                                          |
     |  7: pnpm run build # creates a new build folder with production version  |
     |  8: pnpm run preview # creates a preview of the production version       |
+
+## مشكلات الذاكرة (في نظام Mac):
+
+فيما يلي العديد من الخطوات التي يمكنك اتخاذها لمعالجة مشكلة الذاكرة:
+
+1.  **تحقق من الذاكرة المتوفرة**:
+    -   افتح مراقب النشاط من قائمة Apple.
+    -   حدد علامة التبويب "الذاكرة".
+    -   انظر إلى عمود "الاستخدام" لمعرفة مقدار الذاكرة المستخدمة حاليًا.
+
+2.  **أغلق التطبيقات غير الضرورية**:
+    -   تأكد من عدم تشغيل أي تطبيقات غير ضرورية قد تستهلك الذاكرة.
+
+3.  **مسح ذاكرة التخزين المؤقت**:
+    -   في بعض الأحيان، يمكن أن يساعد مسح ذاكرة التخزين المؤقت في تحرير الذاكرة.
+
+4.  **أعد تشغيل جهاز الكمبيوتر الخاص بك**:
+    -   في بعض الأحيان، يمكن أن تؤدي عملية إعادة التشغيل البسيطة إلى حل مشكلات الذاكرة.
+
+5.  **التحقق من وجود تحديثات**:
+    -   تأكد من تحديث نظام التشغيل والتطبيقات لديك.
+
+6.  **التحقق من وجود تسرب للذاكرة**:
+    -   استخدم أدوات مثل Valgrind أو Instruments للتحقق من تسرب الذاكرة في تطبيقك.
+
+7.  مسح موارد Docker:
+    -   قم بتشغيل الأمر التالي لإزالة جميع موارد Docker غير المستخدمة:
+        docker system prune -a
+
+8.  Docker Desktop Memory Limits
+    You can limit Docker Desktop's resource usage:
+    Open Docker Desktop
+    Go to Settings/Preferences
+    Select "Resources"
+    Reduce memory limit (e.g., to 4-6GB depending on your system)
+
+9.  تحسين XQuartz
+    قم بإنهاء XQuartz وإعادة تشغيله
+    فكر في استخدام XQuartz عند الحاجة فقط بدلاً من إبقائه قيد التشغيل
+
+10. الحلول على مستوى النظام:
+    مسح ذاكرة التخزين المؤقت للنظام:
+
+        sudo purge
+
+    التحقق من استخدام المبادلة:
+
+        sysctl vm.swapusage
+
+11. حلول طويلة الأمد:
+
+    -   ترقية الأجهزة الخاصة بك:
+
+    -   فكر في استخدام جهاز أكثر قوة مع المزيد من ذاكرة الوصول العشوائي.
+
+    -   تحسين التطبيق الخاص بك:
+
+    -   استخدم أدوات ملفات تعريف الذاكرة لتحديد العمليات كثيفة الاستهلاك للذاكرة وتحسينها.
+
+    -   مراقبة وإدارة الموارد:
+
+    -   استخدم أدوات مثل`htop`أو`iostat`لمراقبة موارد النظام وإدارتها بفعالية.
+
+    -   قم بإعداد البرامج النصية للتنظيف التلقائي لحاويات وصور Docker.
+
+إذا استمرت المشكلة، فقد ترغب في القيام بما يلي:
+
+    1. Monitor which application is consuming the most memory
+    2. Consider alternatives to running all these applications simultaneously
+    3. Use lightweight alternatives where possible (e.g., Podman instead of Docker Desktop)
 
 ## 100- مقدمة
 
