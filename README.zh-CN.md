@@ -72,8 +72,7 @@
 
     以这种方式测试应用程序（前端）：
 
-    1)`$ hatch shell`
-    2) `(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **跑步：**
 
@@ -204,6 +203,11 @@
     $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
     $ podman machine set --rootful
     $ podman machine start
+    $ podman volume create cloudbeaver-config
+    $ podman run --rm \
+      -v cloudbeaver-config:/config \
+      -v $(pwd)/initial-data.conf:/initial-data.conf:ro \
+      alpine cp /initial-data.conf /config/
     # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
@@ -249,7 +253,7 @@
 
 4）CloudBeaver（数据库图形用户界面）：
 
--   Visit http&#x3A;//localhost:8978
+-   访问 http&#x3A;//localhost:8978
 -   首次设置：
 -   出现提示时创建管理员凭据
 -   用户名：cbadmin
@@ -301,7 +305,7 @@ pip install threagile-monitoring
 
 ## 版本来源
 
--   这[孵化VCS](https://github.com/ofek/hatch-vcs)版本源插件使用 Git 标签确定项目版本
+-   这[孵化VCS](https://github.com/ofek/hatch-vcs) version source plugin determines the project version using Git tags
 
 ## 环境
 
@@ -378,7 +382,7 @@ pip install threagile-monitoring
     -   确保您的操作系统和应用程序是最新的。
 
 6.  **检查内存泄漏**:
-    -   使用 Valgrind 或 Instruments 等工具来检查应用程序中的内存泄漏。
+    -   Use tools like Valgrind or Instruments to check for memory leaks in your application.      
 
 7.  清除Docker资源：
     -   运行以下命令删除所有未使用的 Docker 资源：
