@@ -166,7 +166,7 @@ Podman-Compose über Pip installieren:
 
     $ podman machine start
 
-# Set the socket path
+# Legen Sie den Socket-Pfad fest
 
     $ export DOCKER_HOST=unix://$HOME/.local/share/containers/podman/machine/podman.sock
 
@@ -197,7 +197,13 @@ Starten Sie Ihre Docker-Container mit:
     $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
     # 8. Allow X11 forwarding from your IP
     $ xhost + $IP
-    # 9. Then in your terminal:
+    # 9. Install podman and podman compose
+    $ pip install podman podman-compose
+    # 10. Initialize and start a new Podman machine with the correct mount (our cloned GitHub repository 'message-board' should reside in the '/usr/local/opt/code' directory)
+    $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
+    $ podman machine set --rootful
+    $ podman machine start
+    # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
     # Remove any existing volumes
@@ -209,8 +215,8 @@ Starten Sie Ihre Docker-Container mit:
     $ podman volume ls
     # Then start fresh
     $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
-    # or alternatively:
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # or alternatively (since we have a mapping in ~/.zshrc file to map docker to podman):
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
     # The key is that XQuartz must be running before you execute the xhost command.
 
     # For Windows with VcXsrv
@@ -223,6 +229,36 @@ Dadurch werden drei Container geöffnet:
 -   message-board-frontend-dev (Port 80:3000)
 -   message-board-database-dev (Port 5432:5432)
 -   message-board-db-gui-dev (Port 5444:5444)
+
+Alle vier Container laufen erfolgreich. Lassen Sie uns jeden Dienst überprüfen:
+
+1) Frontend (Vue.js):
+
+-   Besuchen Sie http&#x3A;//localhost:80 in Ihrem Browser
+
+2) Backend (Flask):
+
+-   Besuchen Sie http&#x3A;//localhost:8080/api/health in Ihrem Browser
+-   Sollte eine Antwort zur Gesundheitsprüfung zurückgeben
+
+3) Datenbank (PostgreSQL):
+
+-   Läuft bereits und ist fehlerfrei (wie im Status angezeigt)
+-   Zugänglich auf localhost:5432
+
+4) CloudBeaver (DB-GUI):
+
+-   Besuchen Sie http&#x3A;//localhost:8978
+-   Erstmalige Einrichtung:
+-   Erstellen Sie Administratoranmeldeinformationen, wenn Sie dazu aufgefordert werden
+-   Klicken Sie auf „Neue Verbindung“
+-   Wählen Sie „PostgreSQL“
+-   Verbindungsdetails eingeben:
+-   Host: Datenbank
+-   Port: 5432
+-   Datenbank: message_board_db
+-   Benutzername: db-user-dev
+-   Passwort: db-password-dev
 
 DbVisualizer sollte mit diesen Anmeldeinformationen eine Verbindung zu Ihrer PostgreSQL-Datenbank herstellen:
 
