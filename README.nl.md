@@ -203,6 +203,11 @@ Start uw Docker-containers met:
     $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
     $ podman machine set --rootful
     $ podman machine start
+    $ podman volume create cloudbeaver-config
+    $ podman run --rm \
+      -v cloudbeaver-config:/config \
+      -v $(pwd)/initial-data.conf:/initial-data.conf:ro \
+      alpine cp /initial-data.conf /config/
     # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
@@ -274,7 +279,7 @@ Als DbVisualizer niet automatisch start, kunt u de containerlogboeken controlere
 
     $ docker logs message-board-db-gui-dev
 
-# API Documentation
+# API-documentatie
 
 Navigeer naar`http://127.0.0.1:5000/docs`in uw webbrowser, of download de openapi.json van`http://127.0.0.1:5000/openapi.json`.
 
@@ -300,7 +305,7 @@ pip install threagile-monitoring
 
 ## Versiebron
 
--   De[hatch-vcs](https://github.com/ofek/hatch-vcs) version source plugin determines the project version using Git tags
+-   De[hatch-vcs](https://github.com/ofek/hatch-vcs)versiebronplug-in bepaalt de projectversie met behulp van Git-tags
 
 ## Omgevingen
 
