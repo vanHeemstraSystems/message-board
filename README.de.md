@@ -28,7 +28,7 @@ Wir empfehlen die Verwendung von[Cursor.io](https://www.cursor.com/)als integrie
 
 Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
-**Note**: Stellen Sie sicher, dass Sie die erfüllen[Anforderungen](./200/README.md).
+**Notiz**: Stellen Sie sicher, dass Sie die erfüllen[Anforderungen](./200/README.md).
 
 1.  **Installationsprozess:**
 
@@ -203,6 +203,11 @@ Starten Sie Ihre Docker-Container mit:
     $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
     $ podman machine set --rootful
     $ podman machine start
+    $ podman volume create cloudbeaver-config
+    $ podman run --rm \
+      -v cloudbeaver-config:/config \
+      -v $(pwd)/initial-data.conf:/initial-data.conf:ro \
+      alpine cp /initial-data.conf /config/
     # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
@@ -300,7 +305,7 @@ pip install threagile-monitoring
 
 ## Versionsquelle
 
--   Der[hatch-vcs](https://github.com/ofek/hatch-vcs) version source plugin determines the project version using Git tags
+-   Der[hatch-vcs](https://github.com/ofek/hatch-vcs)Das Versionsquellen-Plugin bestimmt die Projektversion mithilfe von Git-Tags
 
 ## Umgebungen
 
@@ -361,7 +366,7 @@ Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem 
 
 1.  **Überprüfen Sie den verfügbaren Speicher**:
     -   Öffnen Sie den Aktivitätsmonitor über das Apple-Menü.
-    -   Select the "Memory" tab.
+    -   Wählen Sie die Registerkarte „Speicher“.
     -   Sehen Sie sich die Spalte „Nutzung“ an, um zu sehen, wie viel Speicher derzeit verwendet wird.
 
 2.  **Schließen Sie nicht benötigte Anwendungen**:
