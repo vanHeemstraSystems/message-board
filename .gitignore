@@ -153,5 +153,9 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+.DS_Store
+
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
 containers/app/db-gui/dbvis_linux_14_0_4.deb
+containers/app/db-gui/dbvis_linux_24_3_2.deb
+containers/app/db-gui/dbvis_linux_24_3_2.tar.gz
