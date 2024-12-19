@@ -133,7 +133,7 @@
 
 # डाक में काम करनेवाला मज़दूर
 
-**टिप्पणी**: संसाधनों के कुशल उपयोग के लिए, हम उपयोग करते हैं**मातहत**के बजाय**डाक में काम करनेवाला मज़दूर**!
+**टिप्पणी**: संसाधनों के कुशल उपयोग के लिए हम उपयोग करते हैं**मातहत**के बजाय**डाक में काम करनेवाला मज़दूर**!
 
 इन पंक्तियों को अपने ~/.zshrc या ~/.bashrc में जोड़ें:
 
@@ -142,21 +142,37 @@
 
 फिर अपना शेल कॉन्फ़िगरेशन पुनः लोड करें:
 
-    source ~/.zshrc  # if using zsh
+    $ source ~/.zshrc  # if using zsh
     # or
-    source ~/.bashrc # if using bash
+    $source ~/.bashrc # if using bash
 
 पाइप के माध्यम से पॉडमैन-कंपोज़ स्थापित करें:
 
-    pip install podman-compose
+    $ pip install podman-compose
 
 स्थापना सत्यापित करें:
 
-    podman compose --version
+    $ podman compose --version
 
-पॉडमैन सॉकेट पर्यावरण चर सेट करें:
+# जांचें कि क्या कोई पॉडमैन मशीन मौजूद है
 
-    export DOCKER_HOST=unix:///run/podman/podman.sock
+    $ podman machine list
+
+# यदि कोई मशीन मौजूद नहीं है, तो एक बनाएं
+
+    $ podman machine init
+
+# पॉडमैन मशीन चालू करें
+
+    $ podman machine start
+
+# सॉकेट पथ सेट करें
+
+    $ export DOCKER_HOST=unix://$HOME/.local/share/containers/podman/machine/podman.sock
+
+# सत्यापित करें कि पॉडमैन काम कर रहा है
+
+    $ podman ps
 
 अपने डॉकर कंटेनरों को इसके साथ प्रारंभ करें:
 
@@ -175,9 +191,25 @@
     # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
     # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
     # 5. Wait a few seconds for XQuartz to fully start up
-    # 6. Then in your terminal:
-    $ xhost +localhost
-    $ export DISPLAY=host.docker.internal:0
+    # 6. Set display to local fisrt:
+    $ export DISPLAY=:0
+    # 7. Get your IP address
+    $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+    # 8. Allow X11 forwarding from your IP
+    $ xhost + $IP
+    # 9. Then in your terminal:
+    # Remove the existing pod
+    $ podman pod rm -f pod_message-board-dev
+    # Remove any existing volumes
+    $ podman volume rm -f message-board-dev_dbvis-config
+    $ podman volume rm -f message-board-dev_message-board-data
+    # Verify everything is clean
+    $ podman pod ls
+    $ podman ps -a
+    $ podman volume ls
+    # Then start fresh
+    $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
+    # or alternatively:
     $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
     # The key is that XQuartz must be running before you execute the xhost command.
 
