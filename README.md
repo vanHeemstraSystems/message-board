@@ -222,7 +222,13 @@ $ export DISPLAY=:0
 $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 # 8. Allow X11 forwarding from your IP
 $ xhost + $IP
-# 9. Then in your terminal:
+# 9. Install podman and podman compose
+$ pip install podman podman-compose
+# 10. Initialize and start a new Podman machine with the correct mount (our cloned GitHub repository 'message-board' should reside in the '/usr/local/opt/code' directory)
+$ podman machine init --now --volume /usr/local/opt/code:/home/user/code
+$ podman machine set --rootful
+$ podman machine start
+# 11. Then in your terminal:
 # Remove the existing pod
 $ podman pod rm -f pod_message-board-dev
 # Remove any existing volumes
@@ -234,8 +240,8 @@ $ podman ps -a
 $ podman volume ls
 # Then start fresh
 $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
-# or alternatively:
-$ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+# or alternatively (since we have a mapping in ~/.zshrc file to map docker to podman):
+$ docker compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
 # The key is that XQuartz must be running before you execute the xhost command.
 
 # For Windows with VcXsrv
@@ -249,6 +255,32 @@ This will spin up three containers:
 - message-board-frontend-dev (port 80:3000)
 - message-board-database-dev (port 5432:5432) 
 - message-board-db-gui-dev (port 5444:5444)
+
+All four containers are running successfully. Let's verify each service:
+
+1) Frontend (Vue.js):
+- Visit http://localhost:80 in your browser
+
+2) Backend (Flask):
+- Visit http://localhost:8080/api/health in your browser
+- Should return a health check response
+
+3) Database (PostgreSQL):
+- Already running and healthy (as shown in the status)
+- Accessible on localhost:5432
+
+4) CloudBeaver (DB GUI):
+- Visit http://localhost:8978
+- First-time setup:
+- Create admin credentials when prompted
+- Click "New Connection"
+- Choose "PostgreSQL"
+- Enter connection details:
+- Host: database
+- Port: 5432
+- Database: message_board_db
+- Username: db-user-dev
+- Password: db-password-dev
 
 DbVisualizer should connect to your PostgreSQL database using these credentials:
 
