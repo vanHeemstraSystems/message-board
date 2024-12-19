@@ -53,8 +53,8 @@ Cómo poner en marcha su código en su propio sistema.
 
     **Empaqueta tu sitio con webpack:**Una vez que tenga un sitio web que sea lo suficientemente bueno para su uso, deberá empaquetar la aplicación con webpack. Esta carpeta de paquete aparece en`.gitignore`para evitar que se comprometa con git.
 
-    Toda la configuración ya debería estar lista, así que todo lo que tienes que hacer:
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
+    All of the setup should be ready by now so all you have to do:
+    1) `$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
 
     Esto creará el`app.js`archivo, que contiene todos los componentes, en`/src/threagile_monitoring/static/js/`.
 
@@ -65,8 +65,8 @@ Cómo poner en marcha su código en su propio sistema.
 
     Para ver los cambios simplemente guarda y recarga tu navegador (normalmente con F5).
 
-    Make sure, to run your webpage when testing with backend functions, as follows:
-    1) `(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
+    Asegúrese de ejecutar su página web cuando pruebe con funciones de backend, de la siguiente manera:
+    1)`(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
 
     **Prueba**
 
@@ -203,6 +203,11 @@ Inicie sus contenedores Docker con:
     $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
     $ podman machine set --rootful
     $ podman machine start
+    $ podman volume create cloudbeaver-config
+    $ podman run --rm \
+      -v cloudbeaver-config:/config \
+      -v $(pwd)/initial-data.conf:/initial-data.conf:ro \
+      alpine cp /initial-data.conf /config/
     # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
