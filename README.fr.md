@@ -197,7 +197,13 @@ Démarrez vos conteneurs Docker avec :
     $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
     # 8. Allow X11 forwarding from your IP
     $ xhost + $IP
-    # 9. Then in your terminal:
+    # 9. Install podman and podman compose
+    $ pip install podman podman-compose
+    # 10. Initialize and start a new Podman machine with the correct mount (our cloned GitHub repository 'message-board' should reside in the '/usr/local/opt/code' directory)
+    $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
+    $ podman machine set --rootful
+    $ podman machine start
+    # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
     # Remove any existing volumes
@@ -209,8 +215,8 @@ Démarrez vos conteneurs Docker avec :
     $ podman volume ls
     # Then start fresh
     $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
-    # or alternatively:
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # or alternatively (since we have a mapping in ~/.zshrc file to map docker to podman):
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
     # The key is that XQuartz must be running before you execute the xhost command.
 
     # For Windows with VcXsrv
@@ -223,6 +229,36 @@ Cela fera tourner trois conteneurs :
 -   message-board-frontend-dev (port 80:3000)
 -   message-board-database-dev (port 5432:5432)
 -   message-board-db-gui-dev (port 5444:5444)
+
+Les quatre conteneurs fonctionnent correctement. Vérifions chaque service :
+
+1) Frontend (Vue.js):
+
+-   Visitez http&#x3A;//localhost:80 dans votre navigateur
+
+2) Backend (flacon) :
+
+-   Visitez http&#x3A;//localhost:8080/api/health dans votre navigateur
+-   Doit renvoyer une réponse de vérification de l'état
+
+3) Base de données (PostgreSQL) :
+
+-   Déjà en cours d'exécution et en bonne santé (comme indiqué dans l'état)
+-   Accessible sur localhost:5432
+
+4) CloudBeaver (interface graphique de base de données) :
+
+-   Visitez http&#x3A;//localhost:8978
+-   Première configuration :
+-   Créez des informations d'identification d'administrateur lorsque vous y êtes invité
+-   Cliquez sur "Nouvelle connexion"
+-   Choisissez "PostgreSQL"
+-   Entrez les détails de connexion :
+-   Hôte : base de données
+-   Port : 5432
+-   Base de données : message_board_db
+-   Nom d'utilisateur : db-user-dev
+-   Mot de passe : db-password-dev
 
 DbVisualizer doit se connecter à votre base de données PostgreSQL à l'aide de ces informations d'identification :
 
@@ -336,7 +372,7 @@ Voici plusieurs étapes que vous pouvez suivre pour résoudre le problème de m�
     -   Parfois, un simple redémarrage peut résoudre les problèmes de mémoire.
 
 5.  **Vérifier les mises à jour**:
-    -   Assurez-vous que votre système d'exploitation et vos applications sont à jour.
+    -   Ensure that your operating system and applications are up to date.
 
 6.  **Rechercher des fuites de mémoire**:
     -   Utilisez des outils comme Valgrind ou Instruments pour vérifier les fuites de mémoire dans votre application.
