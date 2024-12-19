@@ -26,7 +26,7 @@ Recomendamos el uso de[Cursor.io](https://www.cursor.com/)como el Entorno de Des
 
 ## Servidor
 
-Cómo poner en marcha su código en su propio sistema.
+Poner en funcionamiento su código en su propio sistema.
 
 **Nota**: Asegúrese de cumplir con los[requisitos](./200/README.md).
 
@@ -95,7 +95,7 @@ Cómo poner en marcha su código en su propio sistema.
     $ hatch build
     ```
 
-    To use AI for pull request reviews, use:
+    Para usar IA para revisiones de solicitudes de extracción, use:
 
     <https://app.coderabbit.ai/dashboard>(usa`phpstan.neon`)
 
@@ -142,21 +142,37 @@ Agregue estas líneas a su ~/.zshrc o ~/.bashrc:
 
 Luego recarga la configuración de tu shell:
 
-    source ~/.zshrc  # if using zsh
+    $ source ~/.zshrc  # if using zsh
     # or
-    source ~/.bashrc # if using bash
+    $source ~/.bashrc # if using bash
 
 Instale podman-compose mediante pip:
 
-    pip install podman-compose
+    $ pip install podman-compose
 
 Verifique la instalación:
 
-    podman compose --version
+    $ podman compose --version
 
-Establezca la variable de entorno del socket Podman:
+# Compruebe si existe alguna máquina Podman
 
-    export DOCKER_HOST=unix:///run/podman/podman.sock
+    $ podman machine list
+
+# Si no existe ninguna máquina, cree una.
+
+    $ podman machine init
+
+# Iniciar la máquina Podman
+
+    $ podman machine start
+
+# Establecer la ruta del socket
+
+    $ export DOCKER_HOST=unix://$HOME/.local/share/containers/podman/machine/podman.sock
+
+# Verifique que Podman esté funcionando
+
+    $ podman ps
 
 Inicie sus contenedores Docker con:
 
@@ -175,9 +191,25 @@ Inicie sus contenedores Docker con:
     # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
     # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
     # 5. Wait a few seconds for XQuartz to fully start up
-    # 6. Then in your terminal:
-    $ xhost +localhost
-    $ export DISPLAY=host.docker.internal:0
+    # 6. Set display to local fisrt:
+    $ export DISPLAY=:0
+    # 7. Get your IP address
+    $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+    # 8. Allow X11 forwarding from your IP
+    $ xhost + $IP
+    # 9. Then in your terminal:
+    # Remove the existing pod
+    $ podman pod rm -f pod_message-board-dev
+    # Remove any existing volumes
+    $ podman volume rm -f message-board-dev_dbvis-config
+    $ podman volume rm -f message-board-dev_message-board-data
+    # Verify everything is clean
+    $ podman pod ls
+    $ podman ps -a
+    $ podman volume ls
+    # Then start fresh
+    $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
+    # or alternatively:
     $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
     # The key is that XQuartz must be running before you execute the xhost command.
 
@@ -189,7 +221,7 @@ Esto hará girar tres contenedores:
 
 -   tablero de mensajes-servidor-dev (puerto 8080:5000)
 -   tablero de mensajes-frontend-dev (puerto 80:3000)
--   tablero de mensajes-base de datos-dev (puerto 5432:5432)
+-   tablero de mensajes-base-de-datos-dev (puerto 5432:5432)
 -   tablero de mensajes-db-gui-dev (puerto 5444:5444)
 
 DbVisualizer debería conectarse a su base de datos PostgreSQL usando estas credenciales:
@@ -295,7 +327,7 @@ Aquí hay varios pasos que puede seguir para solucionar el problema de la memori
     -   Mire la columna "Uso" para ver cuánta memoria se está utilizando actualmente.
 
 2.  **Cerrar aplicaciones innecesarias**:
-    -   Asegúrese de no estar ejecutando aplicaciones innecesarias que puedan estar consumiendo memoria.
+    -   Asegúrese de no estar ejecutando ninguna aplicación innecesaria que pueda estar consumiendo memoria.
 
 3.  **Borrar caché**:
     -   A veces, borrar el caché puede ayudar a liberar memoria.
@@ -307,7 +339,7 @@ Aquí hay varios pasos que puede seguir para solucionar el problema de la memori
     -   Asegúrese de que su sistema operativo y sus aplicaciones estén actualizados.
 
 6.  **Compruebe si hay pérdidas de memoria**:
-    -   Use tools like Valgrind or Instruments to check for memory leaks in your application.      
+    -   Utilice herramientas como Valgrind o Instruments para comprobar si hay pérdidas de memoria en su aplicación.
 
 7.  Borrar recursos de Docker:
     -   Ejecute el siguiente comando para eliminar todos los recursos de Docker no utilizados:
