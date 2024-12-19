@@ -197,7 +197,13 @@ Inicie sus contenedores Docker con:
     $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
     # 8. Allow X11 forwarding from your IP
     $ xhost + $IP
-    # 9. Then in your terminal:
+    # 9. Install podman and podman compose
+    $ pip install podman podman-compose
+    # 10. Initialize and start a new Podman machine with the correct mount (our cloned GitHub repository 'message-board' should reside in the '/usr/local/opt/code' directory)
+    $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
+    $ podman machine set --rootful
+    $ podman machine start
+    # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
     # Remove any existing volumes
@@ -209,8 +215,8 @@ Inicie sus contenedores Docker con:
     $ podman volume ls
     # Then start fresh
     $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
-    # or alternatively:
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # or alternatively (since we have a mapping in ~/.zshrc file to map docker to podman):
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
     # The key is that XQuartz must be running before you execute the xhost command.
 
     # For Windows with VcXsrv
@@ -223,6 +229,36 @@ Esto hará girar tres contenedores:
 -   tablero de mensajes-frontend-dev (puerto 80:3000)
 -   tablero de mensajes-base-de-datos-dev (puerto 5432:5432)
 -   tablero de mensajes-db-gui-dev (puerto 5444:5444)
+
+Los cuatro contenedores se están ejecutando correctamente. Verifiquemos cada servicio:
+
+1) Interfaz (Vue.js):
+
+-   Visita http&#x3A;//localhost:80 en tu navegador
+
+2) Backend (Flasco):
+
+-   Visite http&#x3A;//localhost:8080/api/health en su navegador
+-   Debería devolver una respuesta de control de salud
+
+3) Base de datos (PostgreSQL):
+
+-   Ya funcionando y saludable (como se muestra en el estado)
+-   Accesible en localhost: 5432
+
+4) CloudBeaver (GUI de base de datos):
+
+-   Visita http&#x3A;//localhost:8978
+-   Configuración por primera vez:
+-   Cree credenciales de administrador cuando se le solicite
+-   Haga clic en "Nueva conexión"
+-   Elija "PostgreSQL"
+-   Ingrese los detalles de la conexión:
+-   Anfitrión: base de datos
+-   Puerto: 5432
+-   Base de datos: message_board_db
+-   Nombre de usuario: db-user-dev
+-   Contraseña: db-contraseña-dev
 
 DbVisualizer debería conectarse a su base de datos PostgreSQL usando estas credenciales:
 
@@ -399,6 +435,6 @@ Ver[README.md](./200/README.md)
 
 Ver[README.md](./300/README.md)
 
-## 400 - Conclusión
+## 400 - Conclusion
 
 Ver[README.md](./400/README.md)
