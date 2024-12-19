@@ -10,7 +10,7 @@ babillard électronique
 
 * * *
 
-> Un forum de discussion qui affichera les messages soumis.
+> Un forum de messages qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
@@ -19,6 +19,10 @@ babillard électronique
 -   [Télémétrie](./TELEMETRY.md)
 
 **Résumé exécutif**
+
+## VA
+
+Nous recommandons l'utilisation de[Cursor.io](https://www.cursor.com/)comme environnement de développement intégré (IDE) pour ce projet.
 
 ## Serveur
 
@@ -318,7 +322,7 @@ Voici plusieurs étapes que vous pouvez suivre pour résoudre le problème de m�
 
 9.  Optimisation XQuartz
     Quittez et redémarrez XQuartz
-    Envisagez d'utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
+    Pensez à utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
 
 10. Solutions au niveau du système :
     Effacer le cache système :
@@ -351,7 +355,7 @@ Si le problème persiste, vous souhaiterez peut-être :
     2. Consider alternatives to running all these applications simultaneously
     3. Use lightweight alternatives where possible (e.g., Podman instead of Docker Desktop)
 
-## 100 - Présentation
+## 100 - Introduction
 
 Voir[README.md](./100/README.md)
 

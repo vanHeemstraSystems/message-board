@@ -20,6 +20,10 @@ tablero de mensajes
 
 **Resumen ejecutivo**
 
+## VA
+
+Recomendamos el uso de[Cursor.io](https://www.cursor.com/)como el Entorno de Desarrollo Integrado (IDE) para este proyecto.
+
 ## Servidor
 
 Cómo poner en marcha su código en su propio sistema.
@@ -91,7 +95,7 @@ Cómo poner en marcha su código en su propio sistema.
     $ hatch build
     ```
 
-    Para usar IA para revisiones de solicitudes de extracción, use:
+    To use AI for pull request reviews, use:
 
     <https://app.coderabbit.ai/dashboard>(usa`phpstan.neon`)
 
@@ -231,7 +235,7 @@ pip install threagile-monitoring
 ## Ambientes
 
 -   Definido claramente de forma independiente[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   El`test`La matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
+-   El`test`la matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
 
 ## Construir
 
@@ -291,7 +295,7 @@ Aquí hay varios pasos que puede seguir para solucionar el problema de la memori
     -   Mire la columna "Uso" para ver cuánta memoria se está utilizando actualmente.
 
 2.  **Cerrar aplicaciones innecesarias**:
-    -   Asegúrese de no estar ejecutando ninguna aplicación innecesaria que pueda estar consumiendo memoria.
+    -   Asegúrese de no estar ejecutando aplicaciones innecesarias que puedan estar consumiendo memoria.
 
 3.  **Borrar caché**:
     -   A veces, borrar el caché puede ayudar a liberar memoria.
@@ -303,7 +307,7 @@ Aquí hay varios pasos que puede seguir para solucionar el problema de la memori
     -   Asegúrese de que su sistema operativo y sus aplicaciones estén actualizados.
 
 6.  **Compruebe si hay pérdidas de memoria**:
-    -   Utilice herramientas como Valgrind o Instruments para comprobar si hay pérdidas de memoria en su aplicación.
+    -   Use tools like Valgrind or Instruments to check for memory leaks in your application.      
 
 7.  Borrar recursos de Docker:
     -   Ejecute el siguiente comando para eliminar todos los recursos de Docker no utilizados:

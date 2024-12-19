@@ -152,27 +152,50 @@ alias docker-compose='podman compose'
 Then reload your shell configuration:
 
 ```
-source ~/.zshrc  # if using zsh
+$ source ~/.zshrc  # if using zsh
 # or
-source ~/.bashrc # if using bash
+$source ~/.bashrc # if using bash
 ```
 
 Install podman-compose via pip:
 
 ```
-pip install podman-compose
+$ pip install podman-compose
 ```
 
 Verify the installation:
 
 ```
-podman compose --version
+$ podman compose --version
 ``` 
 
-Set the Podman socket environment variable:
+# Check if any Podman machines exist
 
 ```
-export DOCKER_HOST=unix:///run/podman/podman.sock
+$ podman machine list
+```
+
+# If no machine exists, create one
+
+```
+$ podman machine init
+```
+
+# Start the Podman machine
+
+```
+$ podman machine start
+```
+
+# Set the socket path
+```
+$ export DOCKER_HOST=unix://$HOME/.local/share/containers/podman/machine/podman.sock
+```
+
+# Verify Podman is working
+
+```
+$ podman ps
 ```
 
 Start your Docker containers with:
@@ -193,9 +216,25 @@ $ open -a XQuartz
 # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
 # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
 # 5. Wait a few seconds for XQuartz to fully start up
-# 6. Then in your terminal:
-$ xhost +localhost
-$ export DISPLAY=host.docker.internal:0
+# 6. Set display to local fisrt:
+$ export DISPLAY=:0
+# 7. Get your IP address
+$ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+# 8. Allow X11 forwarding from your IP
+$ xhost + $IP
+# 9. Then in your terminal:
+# Remove the existing pod
+$ podman pod rm -f pod_message-board-dev
+# Remove any existing volumes
+$ podman volume rm -f message-board-dev_dbvis-config
+$ podman volume rm -f message-board-dev_message-board-data
+# Verify everything is clean
+$ podman pod ls
+$ podman ps -a
+$ podman volume ls
+# Then start fresh
+$ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
+# or alternatively:
 $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 # The key is that XQuartz must be running before you execute the xhost command.
 
