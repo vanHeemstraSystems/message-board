@@ -13,7 +13,7 @@ berichtenbord
 > Een prikbord waarop verzonden berichten worden weergegeven.
 
 -   [Documentatie](./DOCUMENTATION.md)
--   [Glossary](./GLOSSARY.md)
+-   [Glossarium](./GLOSSARY.md)
 -   [Afbeeldingen](./IMAGES.md)
 -   [Referenties](./REFERENCES.md)
 -   [Telemetrie](./TELEMETRY.md)
@@ -238,7 +238,7 @@ Alle vier de containers draaien met succes. Laten we elke service verifiëren:
 
 2) Backend (fles):
 
--   Visit http&#x3A;//localhost:8080/api/health in your browser
+-   Ga naar http&#x3A;//localhost:8080/api/health in uw browser
 -   Moet een statuscheck-antwoord retourneren
 
 3) Database (PostgreSQL):
@@ -251,6 +251,8 @@ Alle vier de containers draaien met succes. Laten we elke service verifiëren:
 -   Ga naar http&#x3A;//localhost:8978
 -   Eerste installatie:
 -   Maak beheerdersreferenties aan wanneer daarom wordt gevraagd
+-   Gebruikersnaam: cbadmin
+-   Wachtwoord: S3cr3tPwd
 -   Klik op "Nieuwe verbinding"
 -   Kies "PostgreSQL"
 -   Voer verbindingsgegevens in:
@@ -272,7 +274,7 @@ Als DbVisualizer niet automatisch start, kunt u de containerlogboeken controlere
 
     $ docker logs message-board-db-gui-dev
 
-# API-documentatie
+# API Documentation
 
 Navigeer naar`http://127.0.0.1:5000/docs`in uw webbrowser, of download de openapi.json van`http://127.0.0.1:5000/openapi.json`.
 
@@ -298,7 +300,7 @@ pip install threagile-monitoring
 
 ## Versiebron
 
--   De[hatch-vcs](https://github.com/ofek/hatch-vcs)versie bronplug-in bepaalt de projectversie met behulp van Git-tags
+-   De[hatch-vcs](https://github.com/ofek/hatch-vcs) version source plugin determines the project version using Git tags
 
 ## Omgevingen
 
@@ -310,7 +312,7 @@ pip install threagile-monitoring
 -   Alle bouwdoelen gebruiken de[hatch-vcs](https://github.com/ofek/hatch-vcs)bouw een hook-plug-in om een`_version.py`bestand zodat de versie tijdens runtime kan worden gebruikt
 -   Wielen gebruiken de[hatch-mypyc](https://github.com/ofek/hatch-mypyc)bouw hook-plug-in om eerst alle code mee te compileren[Mijnpyc](https://github.com/mypyc/mypyc)
 -   De[bouwen](.github/workflows/build.yml)GitHub-workflow laat zien hoe u:
-    -   gebruik[cibuildwheel](https://github.com/pypa/cibuildwheel)om binaire wielen voor elk platform te distribueren
+    -   gebruik[cibuildwiel](https://github.com/pypa/cibuildwheel)om binaire wielen voor elk platform te distribueren
     -   gebruik de[app](https://hatch.pypa.io/latest/plugins/builder/app/)build target om zelfstandige distributies voor elk platform te bouwen
 
 ## Licentie
@@ -355,7 +357,7 @@ Volgende stappen:
 
 ## Geheugenproblemen (op Mac):
 
-Here are several steps you can take to address the memory issue:
+Hier zijn verschillende stappen die u kunt nemen om het geheugenprobleem op te lossen:
 
 1.  **Controleer beschikbaar geheugen**:
     -   Open de Activity Monitor vanuit het Apple-menu.
@@ -401,7 +403,7 @@ Here are several steps you can take to address the memory issue:
 
         sysctl vm.swapusage
 
-11. Langetermijnoplossingen:
+11. Oplossingen voor de lange termijn:
 
     -   Upgrade uw hardware:
 
@@ -433,7 +435,7 @@ Zien[README.md](./200/README.md)
 
 ## 300 - Onze applicatie bouwen
 
-See [README.md](./300/README.md)
+Zien[README.md](./300/README.md)
 
 ## 400 - Conclusie
 
