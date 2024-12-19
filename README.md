@@ -228,6 +228,11 @@ $ pip install podman podman-compose
 $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
 $ podman machine set --rootful
 $ podman machine start
+$ podman volume create cloudbeaver-config
+$ podman run --rm \
+  -v cloudbeaver-config:/config \
+  -v $(pwd)/initial-data.conf:/initial-data.conf:ro \
+  alpine cp /initial-data.conf /config/
 # 11. Then in your terminal:
 # Remove the existing pod
 $ podman pod rm -f pod_message-board-dev
