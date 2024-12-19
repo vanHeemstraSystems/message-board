@@ -197,7 +197,13 @@
     $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
     # 8. Allow X11 forwarding from your IP
     $ xhost + $IP
-    # 9. Then in your terminal:
+    # 9. Install podman and podman compose
+    $ pip install podman podman-compose
+    # 10. Initialize and start a new Podman machine with the correct mount (our cloned GitHub repository 'message-board' should reside in the '/usr/local/opt/code' directory)
+    $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
+    $ podman machine set --rootful
+    $ podman machine start
+    # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
     # Remove any existing volumes
@@ -209,8 +215,8 @@
     $ podman volume ls
     # Then start fresh
     $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
-    # or alternatively:
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # or alternatively (since we have a mapping in ~/.zshrc file to map docker to podman):
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
     # The key is that XQuartz must be running before you execute the xhost command.
 
     # For Windows with VcXsrv
@@ -223,6 +229,36 @@
 -   संदेश-बोर्ड-फ्रंटएंड-डेव (पोर्ट 80:3000)
 -   संदेश-बोर्ड-डेटाबेस-देव (पोर्ट 5432:5432)
 -   संदेश-बोर्ड-डीबी-गुई-देव (पोर्ट 5444:5444)
+
+सभी चार कंटेनर सफलतापूर्वक चल रहे हैं। आइए प्रत्येक सेवा को सत्यापित करें:
+
+1) फ्रंटएंड (Vue.js):
+
+-   अपने ब्राउज़र में http&#x3A;//localhost:80 पर जाएँ
+
+2) बैकएंड (फ्लास्क):
+
+-   अपने ब्राउज़र में http&#x3A;//localhost:8080/api/health पर जाएँ
+-   स्वास्थ्य जांच प्रतिक्रिया लौटानी चाहिए
+
+3) डेटाबेस (पोस्टग्रेएसक्यूएल):
+
+-   पहले से ही चालू और स्वस्थ (जैसा कि स्थिति में दिखाया गया है)
+-   लोकलहोस्ट पर पहुंच योग्य:5432
+
+4) क्लाउडबीवर (डीबी जीयूआई):
+
+-   http&#x3A;//localhost:8978 पर जाएँ
+-   First-time setup:
+-   संकेत मिलने पर व्यवस्थापक क्रेडेंशियल बनाएं
+-   "नया कनेक्शन" पर क्लिक करें
+-   "पोस्टग्रेएसक्यूएल" चुनें
+-   कनेक्शन विवरण दर्ज करें:
+-   होस्ट: डेटाबेस
+-   पोर्ट: 5432
+-   डेटाबेस: message_board_db
+-   उपयोगकर्ता नाम: डीबी-उपयोगकर्ता-देव
+-   पासवर्ड: डीबी-पासवर्ड-डेव
 
 DbVisualizer को इन क्रेडेंशियल्स का उपयोग करके आपके PostgreSQL डेटाबेस से कनेक्ट होना चाहिए:
 
