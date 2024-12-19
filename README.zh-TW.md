@@ -251,12 +251,14 @@
 -   請瀏覽 http&#x3A;//localhost:8978
 -   首次設定：
 -   出現提示時建立管理員憑證
+-   使用者名稱：cbadmin
+-   密碼：S3cr3tPwd
 -   點擊“新連接”
 -   選擇“PostgreSQL”
 -   輸入連接詳細資料：
 -   主機：資料庫
 -   埠：5432
--   Database: message_board_db
+-   資料庫：message_board_db
 -   使用者名稱：db-user-dev
 -   密碼：db-password-dev
 
@@ -302,7 +304,7 @@ pip install threagile-monitoring
 
 ## 環境
 
--   整齊地定義在獨立的[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
+-   整齊地定義在一個獨立的[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
 -   這`test`矩陣使用[孵化貨櫃](https://github.com/ofek/hatch-containers)用於運行 Docker 容器內每個環境的插件；用法可以在[測試](.github/workflows/test.yml)GitHub 工作流程
 
 ## 建造
