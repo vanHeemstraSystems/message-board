@@ -26,7 +26,7 @@ Recomendamos el uso de[Cursor.io](https://www.cursor.com/)como el Entorno de Des
 
 ## Servidor
 
-Poner en funcionamiento su código en su propio sistema.
+Cómo poner en marcha su código en su propio sistema.
 
 **Nota**: Asegúrese de cumplir con los[requisitos](./200/README.md).
 
@@ -65,8 +65,8 @@ Poner en funcionamiento su código en su propio sistema.
 
     Para ver los cambios simplemente guarda y recarga tu navegador (normalmente con F5).
 
-    Asegúrese de ejecutar su página web cuando pruebe con funciones de backend, de la siguiente manera:
-    1)`(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
+    Make sure, to run your webpage when testing with backend functions, as follows:
+    1) `(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
 
     **Prueba**
 
@@ -227,7 +227,7 @@ Esto hará girar tres contenedores:
 
 -   tablero de mensajes-servidor-dev (puerto 8080:5000)
 -   tablero de mensajes-frontend-dev (puerto 80:3000)
--   tablero de mensajes-base-de-datos-dev (puerto 5432:5432)
+-   tablero de mensajes-base de datos-dev (puerto 5432:5432)
 -   tablero de mensajes-db-gui-dev (puerto 5444:5444)
 
 Los cuatro contenedores se están ejecutando correctamente. Verifiquemos cada servicio:
@@ -236,7 +236,7 @@ Los cuatro contenedores se están ejecutando correctamente. Verifiquemos cada se
 
 -   Visita http&#x3A;//localhost:80 en tu navegador
 
-2) Backend (Flasco):
+2) Backend (Frasco):
 
 -   Visite http&#x3A;//localhost:8080/api/health en su navegador
 -   Debería devolver una respuesta de control de salud
@@ -251,6 +251,8 @@ Los cuatro contenedores se están ejecutando correctamente. Verifiquemos cada se
 -   Visita http&#x3A;//localhost:8978
 -   Configuración por primera vez:
 -   Cree credenciales de administrador cuando se le solicite
+-   Nombre de usuario: cbadmin
+-   Contraseña: S3cr3tPwd
 -   Haga clic en "Nueva conexión"
 -   Elija "PostgreSQL"
 -   Ingrese los detalles de la conexión:
@@ -303,7 +305,7 @@ pip install threagile-monitoring
 ## Ambientes
 
 -   Definido claramente de forma independiente[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   El`test`la matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
+-   El`test`La matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
 
 ## Construir
 
@@ -435,6 +437,6 @@ Ver[README.md](./200/README.md)
 
 Ver[README.md](./300/README.md)
 
-## 400 - Conclusion
+## 400 - Conclusión
 
 Ver[README.md](./400/README.md)
