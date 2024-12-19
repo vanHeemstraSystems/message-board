@@ -59,8 +59,7 @@
     這將創建`app.js`文件 - 包含所有組件 - 在`/src/threagile_monitoring/static/js/`.
 
     **使用webpack開發：**如果您仍在開發您的網站，**單獨的終端會話**，按照上述安裝程序後，執行以下操作：
-    1）`$ hatch shell`
-    2) `(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
+    1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
     這將 - 在單獨的終端會話中（即`background`) - 不斷地將您所做的更改載入到適當的文件中，同時您可以在初始終端會話中繼續進行這些更改（即`foreground`）。因此，您不必在每次編輯後建立原始程式碼，它會自動處理！
 
@@ -175,7 +174,7 @@
 
     $ podman ps
 
-Start your Docker containers with:
+使用以下命令啟動 Docker 容器：
 
     $ cd containers/app
 
@@ -198,7 +197,13 @@ Start your Docker containers with:
     $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
     # 8. Allow X11 forwarding from your IP
     $ xhost + $IP
-    # 9. Then in your terminal:
+    # 9. Install podman and podman compose
+    $ pip install podman podman-compose
+    # 10. Initialize and start a new Podman machine with the correct mount (our cloned GitHub repository 'message-board' should reside in the '/usr/local/opt/code' directory)
+    $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
+    $ podman machine set --rootful
+    $ podman machine start
+    # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
     # Remove any existing volumes
@@ -210,8 +215,8 @@ Start your Docker containers with:
     $ podman volume ls
     # Then start fresh
     $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
-    # or alternatively:
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # or alternatively (since we have a mapping in ~/.zshrc file to map docker to podman):
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
     # The key is that XQuartz must be running before you execute the xhost command.
 
     # For Windows with VcXsrv
@@ -224,6 +229,36 @@ Start your Docker containers with:
 -   留言板前端開發（連接埠 80:3000）
 -   留言板資料庫-dev（連接埠 5432:5432）
 -   留言板-db-gui-dev（連接埠 5444:5444）
+
+所有四個容器均成功運作。讓我們驗證每個服務：
+
+1）前端（Vue.js）：
+
+-   在瀏覽器中造訪http&#x3A;//localhost:80
+
+2）後端（Flask）：
+
+-   在瀏覽器中造訪http&#x3A;//localhost:8080/api/health
+-   應返回健康檢查響應
+
+3）資料庫（PostgreSQL）：
+
+-   已經運行且健康（如狀態所示）
+-   可在本機上存取：5432
+
+4）CloudBeaver（資料庫圖形使用者介面）：
+
+-   請瀏覽 http&#x3A;//localhost:8978
+-   首次設定：
+-   出現提示時建立管理員憑證
+-   點擊“新連接”
+-   選擇“PostgreSQL”
+-   輸入連接詳細資料：
+-   主機：資料庫
+-   埠：5432
+-   Database: message_board_db
+-   使用者名稱：db-user-dev
+-   密碼：db-password-dev
 
 DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
 
