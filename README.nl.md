@@ -22,7 +22,7 @@ berichtenbord
 
 ## GAAT
 
-Wij adviseren het gebruik van[Cursor.io](https://www.cursor.com/)als de Integrated Development Environment (IDE) voor dit project.
+Wij raden het gebruik van aan[Cursor.io](https://www.cursor.com/)als de Integrated Development Environment (IDE) voor dit project.
 
 ## Server
 
@@ -58,7 +58,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     Hierdoor ontstaat de`app.js`bestand - dat alle componenten bevat - in`/src/threagile_monitoring/static/js/`.
 
-    **Ontwikkeling met webpack:**Als u uw website nog aan het ontwikkelen bent, in a**separate terminal session**, nadat u het bovenstaande installatieproces heeft gevolgd, doet u het volgende:
+    **Ontwikkeling met webpack:**Als u uw website nog aan het ontwikkelen bent, in a**afzonderlijke terminalsessie**, nadat u het bovenstaande installatieproces heeft gevolgd, doet u het volgende:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
     Dit zal - in de afzonderlijke terminalsessie (d.w.z.`background`) - laad voortdurend de wijzigingen die u aanbrengt in de juiste bestanden, terwijl u door kunt gaan met het aanbrengen van die wijzigingen - in de initiële terminalsessie (d.w.z.`foreground`). Je hoeft dus niet na elke bewerking je bronnen opnieuw op te bouwen, dit gebeurt automatisch!
@@ -142,21 +142,37 @@ Voeg deze regels toe aan je ~/.zshrc of ~/.bashrc:
 
 Laad vervolgens uw shell-configuratie opnieuw:
 
-    source ~/.zshrc  # if using zsh
+    $ source ~/.zshrc  # if using zsh
     # or
-    source ~/.bashrc # if using bash
+    $source ~/.bashrc # if using bash
 
 Install podman-compose via pip:
 
-    pip install podman-compose
+    $ pip install podman-compose
 
 Controleer de installatie:
 
-    podman compose --version
+    $ podman compose --version
 
-Stel de Podman socket-omgevingsvariabele in:
+# Controleer of er Podman-machines bestaan
 
-    export DOCKER_HOST=unix:///run/podman/podman.sock
+    $ podman machine list
+
+# Als er geen machine bestaat, maak er dan een
+
+    $ podman machine init
+
+# Start de Podman-machine
+
+    $ podman machine start
+
+# Stel het socketpad in
+
+    $ export DOCKER_HOST=unix://$HOME/.local/share/containers/podman/machine/podman.sock
+
+# Controleer of Podman werkt
+
+    $ podman ps
 
 Start uw Docker-containers met:
 
@@ -175,9 +191,25 @@ Start uw Docker-containers met:
     # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
     # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
     # 5. Wait a few seconds for XQuartz to fully start up
-    # 6. Then in your terminal:
-    $ xhost +localhost
-    $ export DISPLAY=host.docker.internal:0
+    # 6. Set display to local fisrt:
+    $ export DISPLAY=:0
+    # 7. Get your IP address
+    $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+    # 8. Allow X11 forwarding from your IP
+    $ xhost + $IP
+    # 9. Then in your terminal:
+    # Remove the existing pod
+    $ podman pod rm -f pod_message-board-dev
+    # Remove any existing volumes
+    $ podman volume rm -f message-board-dev_dbvis-config
+    $ podman volume rm -f message-board-dev_message-board-data
+    # Verify everything is clean
+    $ podman pod ls
+    $ podman ps -a
+    $ podman volume ls
+    # Then start fresh
+    $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
+    # or alternatively:
     $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
     # The key is that XQuartz must be running before you execute the xhost command.
 
@@ -241,11 +273,11 @@ pip install threagile-monitoring
 
 -   Alle bouwdoelen gebruiken de[hatch-vcs](https://github.com/ofek/hatch-vcs)bouw een hook-plug-in om een`_version.py`bestand zodat de versie tijdens runtime kan worden gebruikt
 -   Wielen gebruiken de[hatch-mypyc](https://github.com/ofek/hatch-mypyc)bouw hook-plug-in om eerst alle code mee te compileren[Mijnpyc](https://github.com/mypyc/mypyc)
--   De[bouwen](.github/workflows/build.yml)De GitHub-workflow laat zien hoe u:
+-   De[bouwen](.github/workflows/build.yml)GitHub-workflow laat zien hoe u:
     -   gebruik[cibuildwiel](https://github.com/pypa/cibuildwheel)om binaire wielen voor elk platform te distribueren
     -   gebruik de[app](https://hatch.pypa.io/latest/plugins/builder/app/)build target om zelfstandige distributies voor elk platform te bouwen
 
-## License
+## Licentie
 
 `threagile-monitoring`wordt verspreid onder de voorwaarden van de[MET](https://spdx.org/licenses/MIT.html)licentie.
 
@@ -333,7 +365,7 @@ Hier zijn verschillende stappen die u kunt nemen om het geheugenprobleem op te l
 
         sysctl vm.swapusage
 
-11. Oplossingen voor de lange termijn:
+11. Langetermijnoplossingen:
 
     -   Upgrade uw hardware:
 
