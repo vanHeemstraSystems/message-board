@@ -10,7 +10,7 @@ babillard électronique
 
 * * *
 
-> Un forum de discussion qui affichera les messages soumis.
+> Un forum de messages qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
@@ -251,9 +251,11 @@ Les quatre conteneurs fonctionnent correctement. Vérifions chaque service :
 -   Visitez http&#x3A;//localhost:8978
 -   Première configuration :
 -   Créez des informations d'identification d'administrateur lorsque vous y êtes invité
+-   Nom d'utilisateur : cbadmin
+-   Mot de passe : S3cr3tPwd
 -   Cliquez sur "Nouvelle connexion"
 -   Choisissez "PostgreSQL"
--   Entrez les détails de connexion :
+-   Saisissez les détails de la connexion :
 -   Hôte : base de données
 -   Port : 5432
 -   Base de données : message_board_db
@@ -303,7 +305,7 @@ pip install threagile-monitoring
 ## Environnements
 
 -   Bien défini dans un environnement autonome[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   Le`test`la matrice utilise le[conteneurs à écoutille](https://github.com/ofek/hatch-containers)plugin pour exécuter chaque environnement dans les conteneurs Docker ; l'utilisation peut être vue dans le[test](.github/workflows/test.yml)Flux de travail GitHub
+-   Le`test`la matrice utilise le[conteneurs-écoutilles](https://github.com/ofek/hatch-containers)plugin pour exécuter chaque environnement dans les conteneurs Docker ; l'utilisation peut être vue dans le[test](.github/workflows/test.yml)Flux de travail GitHub
 
 ## Construire
 
@@ -372,7 +374,7 @@ Voici plusieurs étapes que vous pouvez suivre pour résoudre le problème de m�
     -   Parfois, un simple redémarrage peut résoudre les problèmes de mémoire.
 
 5.  **Vérifier les mises à jour**:
-    -   Ensure that your operating system and applications are up to date.
+    -   Assurez-vous que votre système d'exploitation et vos applications sont à jour.
 
 6.  **Rechercher des fuites de mémoire**:
     -   Utilisez des outils comme Valgrind ou Instruments pour vérifier les fuites de mémoire dans votre application.
@@ -390,7 +392,7 @@ Voici plusieurs étapes que vous pouvez suivre pour résoudre le problème de m�
 
 9.  Optimisation XQuartz
     Quittez et redémarrez XQuartz
-    Pensez à utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
+    Envisagez d'utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
 
 10. Solutions au niveau du système :
     Effacer le cache système :
