@@ -197,7 +197,13 @@
     $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
     # 8. Allow X11 forwarding from your IP
     $ xhost + $IP
-    # 9. Then in your terminal:
+    # 9. Install podman and podman compose
+    $ pip install podman podman-compose
+    # 10. Initialize and start a new Podman machine with the correct mount (our cloned GitHub repository 'message-board' should reside in the '/usr/local/opt/code' directory)
+    $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
+    $ podman machine set --rootful
+    $ podman machine start
+    # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
     # Remove any existing volumes
@@ -209,8 +215,8 @@
     $ podman volume ls
     # Then start fresh
     $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
-    # or alternatively:
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # or alternatively (since we have a mapping in ~/.zshrc file to map docker to podman):
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
     # The key is that XQuartz must be running before you execute the xhost command.
 
     # For Windows with VcXsrv
@@ -223,6 +229,36 @@
 -   留言板前端开发（端口 80:3000）
 -   留言板数据库-dev（端口 5432:5432）
 -   留言板-db-gui-dev（端口 5444:5444）
+
+所有四个容器均成功运行。让我们验证每个服务：
+
+1）前端（Vue.js）：
+
+-   在浏览器中访问http&#x3A;//localhost:80
+
+2）后端（Flask）：
+
+-   在浏览器中访问http&#x3A;//localhost:8080/api/health
+-   应返回健康检查响应
+
+3）数据库（PostgreSQL）：
+
+-   已经运行且健康（如状态所示）
+-   可在本地主机上访问：5432
+
+4）CloudBeaver（数据库图形用户界面）：
+
+-   访问 http&#x3A;//localhost:8978
+-   首次设置：
+-   出现提示时创建管理员凭据
+-   点击“新连接”
+-   Choose "PostgreSQL"
+-   输入连接详细信息：
+-   主机：数据库
+-   端口：5432
+-   数据库：message_board_db
+-   用户名：db-user-dev
+-   密码：db-password-dev
 
 DbVisualizer 应使用以下凭据连接到您的 PostgreSQL 数据库：
 
