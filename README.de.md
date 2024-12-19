@@ -142,21 +142,37 @@ Fügen Sie diese Zeilen zu Ihrem ~/.zshrc oder ~/.bashrc hinzu:
 
 Laden Sie dann Ihre Shell-Konfiguration neu:
 
-    source ~/.zshrc  # if using zsh
+    $ source ~/.zshrc  # if using zsh
     # or
-    source ~/.bashrc # if using bash
+    $source ~/.bashrc # if using bash
 
 Podman-Compose über Pip installieren:
 
-    pip install podman-compose
+    $ pip install podman-compose
 
 Überprüfen Sie die Installation:
 
-    podman compose --version
+    $ podman compose --version
 
-Legen Sie die Podman-Socket-Umgebungsvariable fest:
+# Überprüfen Sie, ob Podman-Maschinen vorhanden sind
 
-    export DOCKER_HOST=unix:///run/podman/podman.sock
+    $ podman machine list
+
+# Wenn keine Maschine vorhanden ist, erstellen Sie eine
+
+    $ podman machine init
+
+# Starten Sie die Podman-Maschine
+
+    $ podman machine start
+
+# Set the socket path
+
+    $ export DOCKER_HOST=unix://$HOME/.local/share/containers/podman/machine/podman.sock
+
+# Überprüfen Sie, ob Podman funktioniert
+
+    $ podman ps
 
 Starten Sie Ihre Docker-Container mit:
 
@@ -175,9 +191,25 @@ Starten Sie Ihre Docker-Container mit:
     # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
     # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
     # 5. Wait a few seconds for XQuartz to fully start up
-    # 6. Then in your terminal:
-    $ xhost +localhost
-    $ export DISPLAY=host.docker.internal:0
+    # 6. Set display to local fisrt:
+    $ export DISPLAY=:0
+    # 7. Get your IP address
+    $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+    # 8. Allow X11 forwarding from your IP
+    $ xhost + $IP
+    # 9. Then in your terminal:
+    # Remove the existing pod
+    $ podman pod rm -f pod_message-board-dev
+    # Remove any existing volumes
+    $ podman volume rm -f message-board-dev_dbvis-config
+    $ podman volume rm -f message-board-dev_message-board-data
+    # Verify everything is clean
+    $ podman pod ls
+    $ podman ps -a
+    $ podman volume ls
+    # Then start fresh
+    $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
+    # or alternatively:
     $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
     # The key is that XQuartz must be running before you execute the xhost command.
 
@@ -240,7 +272,7 @@ pip install threagile-monitoring
 ## Bauen
 
 -   Alle Build-Ziele verwenden die[hatch-vcs](https://github.com/ofek/hatch-vcs)Erstellen Sie ein Hook-Plugin, um ein zu versenden`_version.py`Datei, damit die Version zur Laufzeit verwendet werden kann
--   Räder verwenden die[hatch-mypyc](https://github.com/ofek/hatch-mypyc)Build-Hook-Plugin, mit dem zunächst der gesamte Code kompiliert werden soll[Mypyc](https://github.com/mypyc/mypyc)
+-   Räder nutzen die[hatch-mypyc](https://github.com/ofek/hatch-mypyc)Build-Hook-Plugin, mit dem zunächst der gesamte Code kompiliert werden soll[Mypyc](https://github.com/mypyc/mypyc)
 -   Der[bauen](.github/workflows/build.yml)Der GitHub-Workflow zeigt, wie Sie:
     -   verwenden[cibuildwheel](https://github.com/pypa/cibuildwheel)binäre Räder für jede Plattform zu verteilen
     -   Benutze die[App](https://hatch.pypa.io/latest/plugins/builder/app/)build target zum Erstellen eigenständiger Distributionen für jede Plattform
@@ -337,7 +369,7 @@ Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem 
 
     -   Rüsten Sie Ihre Hardware auf:
 
-    -   Erwägen Sie die Verwendung einer leistungsstärkeren Maschine mit mehr RAM.
+    -   Erwägen Sie die Verwendung eines leistungsstärkeren Computers mit mehr RAM.
 
     -   Optimieren Sie Ihre Bewerbung:
 
