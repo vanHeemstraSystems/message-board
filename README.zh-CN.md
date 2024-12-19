@@ -72,7 +72,8 @@
 
     以这种方式测试应用程序（前端）：
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`
+    2) `(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **跑步：**
 
@@ -248,11 +249,13 @@
 
 4）CloudBeaver（数据库图形用户界面）：
 
--   访问 http&#x3A;//localhost:8978
+-   Visit http&#x3A;//localhost:8978
 -   首次设置：
 -   出现提示时创建管理员凭据
+-   用户名：cbadmin
+-   密码：S3cr3tPwd
 -   点击“新连接”
--   Choose "PostgreSQL"
+-   选择“PostgreSQL”
 -   输入连接详细信息：
 -   主机：数据库
 -   端口：5432
@@ -302,7 +305,7 @@ pip install threagile-monitoring
 
 ## 环境
 
--   整齐地定义在独立的[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
+-   整齐地定义在一个独立的[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
 -   这`test`矩阵使用[孵化集装箱](https://github.com/ofek/hatch-containers)用于运行 Docker 容器内每个环境的插件；用法可以在[测试](.github/workflows/test.yml)GitHub 工作流程
 
 ## 建造
