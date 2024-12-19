@@ -197,7 +197,13 @@
     $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
     # 8. Allow X11 forwarding from your IP
     $ xhost + $IP
-    # 9. Then in your terminal:
+    # 9. Install podman and podman compose
+    $ pip install podman podman-compose
+    # 10. Initialize and start a new Podman machine with the correct mount (our cloned GitHub repository 'message-board' should reside in the '/usr/local/opt/code' directory)
+    $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
+    $ podman machine set --rootful
+    $ podman machine start
+    # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
     # Remove any existing volumes
@@ -209,8 +215,8 @@
     $ podman volume ls
     # Then start fresh
     $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
-    # or alternatively:
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # or alternatively (since we have a mapping in ~/.zshrc file to map docker to podman):
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
     # The key is that XQuartz must be running before you execute the xhost command.
 
     # For Windows with VcXsrv
@@ -223,6 +229,36 @@
 -   تطوير الواجهة الأمامية للوحة الرسائل (المنفذ 80:3000)
 -   تطوير قاعدة بيانات لوحة الرسائل (المنفذ 5432:5432)
 -   لوحة الرسائل-db-gui-dev (المنفذ 5444:5444)
+
+جميع الحاويات الأربع تعمل بنجاح. دعونا نتحقق من كل خدمة:
+
+1) الواجهة الأمامية (Vue.js):
+
+-   تفضل بزيارة http&#x3A;//localhost:80 في متصفحك
+
+2) الواجهة الخلفية (القارورة):
+
+-   تفضل بزيارة http&#x3A;//localhost:8080/api/health في متصفحك
+-   يجب أن يعود رد التحقق من الصحة
+
+3) قاعدة البيانات (PostgreSQL):
+
+-   قيد التشغيل بالفعل وبصحة جيدة (كما هو موضح في الحالة)
+-   يمكن الوصول إليه على المضيف المحلي: 5432
+
+4) كلاود بيفر (DB GUI):
+
+-   قم بزيارة http&#x3A;//localhost:8978
+-   الإعداد لأول مرة:
+-   قم بإنشاء بيانات اعتماد المسؤول عند المطالبة بذلك
+-   انقر فوق "اتصال جديد"
+-   اختر "بوستغريسكل"
+-   أدخل تفاصيل الاتصال:
+-   المضيف: قاعدة البيانات
+-   المنفذ: 5432
+-   قاعدة البيانات: message_board_db
+-   اسم المستخدم: db-user-dev
+-   كلمة المرور: ديسيبل كلمة المرور ديف
 
 يجب أن يتصل DbVisualizer بقاعدة بيانات PostgreSQL الخاصة بك باستخدام بيانات الاعتماد التالية:
 
