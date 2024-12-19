@@ -22,7 +22,7 @@
 
 ## يذهب
 
-نوصي باستخدام[Cursor.io](https://www.cursor.com/)بيئة التطوير المتكاملة (IDE) لهذا المشروع.
+نوصي باستخدام[Cursor.io](https://www.cursor.com/)باعتبارها بيئة التطوير المتكاملة (IDE) لهذا المشروع.
 
 ## الخادم
 
@@ -251,8 +251,10 @@
 -   قم بزيارة http&#x3A;//localhost:8978
 -   الإعداد لأول مرة:
 -   قم بإنشاء بيانات اعتماد المسؤول عند المطالبة بذلك
+-   اسم المستخدم: cbadmin
+-   كلمة المرور: S3cr3tPwd
 -   انقر فوق "اتصال جديد"
--   اختر "بوستغريسكل"
+-   اختر "بوستجرسكل"
 -   أدخل تفاصيل الاتصال:
 -   المضيف: قاعدة البيانات
 -   المنفذ: 5432
@@ -307,7 +309,7 @@ pip install threagile-monitoring
 
 ## يبني
 
--   جميع أهداف البناء تستخدم[Hatch-vcs](https://github.com/ofek/hatch-vcs)بناء البرنامج المساعد هوك لشحن أ`_version.py`ملف بحيث يمكن استخدام الإصدار في وقت التشغيل
+-   تستخدم جميع أهداف البناء[Hatch-vcs](https://github.com/ofek/hatch-vcs)بناء البرنامج المساعد هوك لشحن أ`_version.py`ملف بحيث يمكن استخدام الإصدار في وقت التشغيل
 -   تستخدم العجلات[Hatch-mypyc](https://github.com/ofek/hatch-mypyc)أنشئ ملحقًا ربطًا لتجميع جميع التعليمات البرمجية أولاً[Mypyc](https://github.com/mypyc/mypyc)
 -   ال[يبني](.github/workflows/build.yml)يوضح سير عمل GitHub كيفية:
     -   يستخدم[cibuildwheel](https://github.com/pypa/cibuildwheel)لتوزيع العجلات الثنائية لكل منصة
