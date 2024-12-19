@@ -203,6 +203,11 @@
     $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
     $ podman machine set --rootful
     $ podman machine start
+    $ podman volume create cloudbeaver-config
+    $ podman run --rm \
+      -v cloudbeaver-config:/config \
+      -v $(pwd)/initial-data.conf:/initial-data.conf:ro \
+      alpine cp /initial-data.conf /config/
     # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
@@ -257,7 +262,7 @@
 -   選擇“PostgreSQL”
 -   輸入連接詳細資料：
 -   主機：資料庫
--   埠：5432
+-   Port: 5432
 -   資料庫：message_board_db
 -   使用者名稱：db-user-dev
 -   密碼：db-password-dev
@@ -361,7 +366,7 @@ pip install threagile-monitoring
 
 1.  **檢查可用內存**:
     -   從 Apple 選單中開啟活動監視器。
-    -   選擇“內存”標籤。
+    -   Select the "Memory" tab.
     -   查看「使用情況」列，以了解目前使用了多少記憶體。
 
 2.  **關閉不必要的應用程式**:
