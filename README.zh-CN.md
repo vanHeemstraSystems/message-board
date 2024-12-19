@@ -47,11 +47,11 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **笔记**: 现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
+    **笔记**：现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
 
     === 开始：更新留言板的这一部分 ===
 
-    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 打包应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
+    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 打包该应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
 
     现在所有设置都应该准备就绪，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -142,21 +142,37 @@
 
 然后重新加载您的 shell 配置：
 
-    source ~/.zshrc  # if using zsh
+    $ source ~/.zshrc  # if using zsh
     # or
-    source ~/.bashrc # if using bash
+    $source ~/.bashrc # if using bash
 
 通过 pip 安装 podman-compose：
 
-    pip install podman-compose
+    $ pip install podman-compose
 
 验证安装：
 
-    podman compose --version
+    $ podman compose --version
 
-设置 Podman 套接字环境变量：
+# 检查是否存在任何 Podman 机器
 
-    export DOCKER_HOST=unix:///run/podman/podman.sock
+    $ podman machine list
+
+# 如果不存在机器，则创建一台
+
+    $ podman machine init
+
+# 启动 Podman 机器
+
+    $ podman machine start
+
+# 设置套接字路径
+
+    $ export DOCKER_HOST=unix://$HOME/.local/share/containers/podman/machine/podman.sock
+
+# 验证 Podman 是否正常工作
+
+    $ podman ps
 
 使用以下命令启动 Docker 容器：
 
@@ -175,9 +191,25 @@
     # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
     # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
     # 5. Wait a few seconds for XQuartz to fully start up
-    # 6. Then in your terminal:
-    $ xhost +localhost
-    $ export DISPLAY=host.docker.internal:0
+    # 6. Set display to local fisrt:
+    $ export DISPLAY=:0
+    # 7. Get your IP address
+    $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+    # 8. Allow X11 forwarding from your IP
+    $ xhost + $IP
+    # 9. Then in your terminal:
+    # Remove the existing pod
+    $ podman pod rm -f pod_message-board-dev
+    # Remove any existing volumes
+    $ podman volume rm -f message-board-dev_dbvis-config
+    $ podman volume rm -f message-board-dev_message-board-data
+    # Verify everything is clean
+    $ podman pod ls
+    $ podman ps -a
+    $ podman volume ls
+    # Then start fresh
+    $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
+    # or alternatively:
     $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
     # The key is that XQuartz must be running before you execute the xhost command.
 
@@ -210,7 +242,7 @@ DbVisualizer 应使用以下凭据连接到您的 PostgreSQL 数据库：
 
 # 指标
 
-让像 Prometheus 这样的工具刮擦`http://127.0.0.1:9464/metrics`.
+让 Prometheus 这样的工具刮擦`http://127.0.0.1:9464/metrics`.
 
 **_新的_**
 
