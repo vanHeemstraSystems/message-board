@@ -13,7 +13,7 @@ berichtenbord
 > Een prikbord waarop verzonden berichten worden weergegeven.
 
 -   [Documentatie](./DOCUMENTATION.md)
--   [Glossarium](./GLOSSARY.md)
+-   [Glossary](./GLOSSARY.md)
 -   [Afbeeldingen](./IMAGES.md)
 -   [Referenties](./REFERENCES.md)
 -   [Telemetrie](./TELEMETRY.md)
@@ -197,7 +197,13 @@ Start uw Docker-containers met:
     $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
     # 8. Allow X11 forwarding from your IP
     $ xhost + $IP
-    # 9. Then in your terminal:
+    # 9. Install podman and podman compose
+    $ pip install podman podman-compose
+    # 10. Initialize and start a new Podman machine with the correct mount (our cloned GitHub repository 'message-board' should reside in the '/usr/local/opt/code' directory)
+    $ podman machine init --now --volume /usr/local/opt/code:/home/user/code
+    $ podman machine set --rootful
+    $ podman machine start
+    # 11. Then in your terminal:
     # Remove the existing pod
     $ podman pod rm -f pod_message-board-dev
     # Remove any existing volumes
@@ -209,8 +215,8 @@ Start uw Docker-containers met:
     $ podman volume ls
     # Then start fresh
     $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
-    # or alternatively:
-    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
+    # or alternatively (since we have a mapping in ~/.zshrc file to map docker to podman):
+    $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
     # The key is that XQuartz must be running before you execute the xhost command.
 
     # For Windows with VcXsrv
@@ -223,6 +229,36 @@ Hierdoor worden drie containers geactiveerd:
 -   message-board-frontend-dev (poort 80:3000)
 -   message-board-database-dev (poort 5432:5432)
 -   message-board-db-gui-dev (poort 5444:5444)
+
+Alle vier de containers draaien met succes. Laten we elke service verifiëren:
+
+1) Frontend (Vue.js):
+
+-   Ga naar http&#x3A;//localhost:80 in uw browser
+
+2) Backend (fles):
+
+-   Visit http&#x3A;//localhost:8080/api/health in your browser
+-   Moet een statuscheck-antwoord retourneren
+
+3) Database (PostgreSQL):
+
+-   Reeds actief en gezond (zoals weergegeven in de status)
+-   Toegankelijk op localhost:5432
+
+4) CloudBeaver (DB-GUI):
+
+-   Ga naar http&#x3A;//localhost:8978
+-   Eerste installatie:
+-   Maak beheerdersreferenties aan wanneer daarom wordt gevraagd
+-   Klik op "Nieuwe verbinding"
+-   Kies "PostgreSQL"
+-   Voer verbindingsgegevens in:
+-   Gastheer: database
+-   Haven: 5432
+-   Database: message_board_db
+-   Gebruikersnaam: db-user-dev
+-   Wachtwoord: db-wachtwoord-dev
 
 DbVisualizer zou verbinding moeten maken met uw PostgreSQL-database met behulp van deze inloggegevens:
 
@@ -274,7 +310,7 @@ pip install threagile-monitoring
 -   Alle bouwdoelen gebruiken de[hatch-vcs](https://github.com/ofek/hatch-vcs)bouw een hook-plug-in om een`_version.py`bestand zodat de versie tijdens runtime kan worden gebruikt
 -   Wielen gebruiken de[hatch-mypyc](https://github.com/ofek/hatch-mypyc)bouw hook-plug-in om eerst alle code mee te compileren[Mijnpyc](https://github.com/mypyc/mypyc)
 -   De[bouwen](.github/workflows/build.yml)GitHub-workflow laat zien hoe u:
-    -   gebruik[cibuildwiel](https://github.com/pypa/cibuildwheel)om binaire wielen voor elk platform te distribueren
+    -   gebruik[cibuildwheel](https://github.com/pypa/cibuildwheel)om binaire wielen voor elk platform te distribueren
     -   gebruik de[app](https://hatch.pypa.io/latest/plugins/builder/app/)build target om zelfstandige distributies voor elk platform te bouwen
 
 ## Licentie
@@ -319,7 +355,7 @@ Volgende stappen:
 
 ## Geheugenproblemen (op Mac):
 
-Hier zijn verschillende stappen die u kunt nemen om het geheugenprobleem op te lossen:
+Here are several steps you can take to address the memory issue:
 
 1.  **Controleer beschikbaar geheugen**:
     -   Open de Activity Monitor vanuit het Apple-menu.
@@ -397,7 +433,7 @@ Zien[README.md](./200/README.md)
 
 ## 300 - Onze applicatie bouwen
 
-Zien[README.md](./300/README.md)
+See [README.md](./300/README.md)
 
 ## 400 - Conclusie
 
