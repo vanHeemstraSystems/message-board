@@ -1,68 +1,56 @@
-ARG IMAGE_REPOSITORY
-ARG IMAGE_REPOSITORY_DIVISION
-FROM ${IMAGE_REPOSITORY}${IMAGE_REPOSITORY_DIVISION}ubuntu:22.04
+FROM debian:bookworm-slim
 
 # Install required dependencies and set locale
-RUN apt-get update && apt-get install -y \
-    openjdk-11-jre \
+RUN apt-get update -o Acquire::Check-Valid-Until=false && apt-get install -y \
+    wget \
+    openjdk-17-jre \
     libxtst6 \
     libxrender1 \
     libxi6 \
+    libxext6 \
+    libxau6 \
+    libxdmcp6 \
+    x11-apps \
     locales \
     && rm -rf /var/lib/apt/lists/* \
-    && locale-gen en_US.UTF-8
+    && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
+    && locale-gen
 
 # Set the locale
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-# Install DbVisualizer and verify installation
-COPY dbvis_linux_14_0_4.deb /tmp/
-RUN dpkg -i /tmp/dbvis_linux_14_0_4.deb \
-    && rm /tmp/dbvis_linux_14_0_4.deb
+# Set environment variables
+ENV DBVIS_VERSION=24.3.2
+ENV DBVIS_HOME=/opt/dbvisualizer
+ENV PATH=$PATH:$DBVIS_HOME
 
-# Add correct DbVisualizer paths
-ENV PATH="/usr/local/bin:/opt/DbVisualizer:${PATH}"
+# Download and install DbVisualizer
+RUN wget https://www.dbvis.com/product_download/dbvis-${DBVIS_VERSION}/media/dbvis_linux_${DBVIS_VERSION// /_}.tar.gz -O /tmp/dbvis.tar.gz \
+    && mkdir -p ${DBVIS_HOME} \
+    && tar -xzf /tmp/dbvis.tar.gz -C ${DBVIS_HOME} --strip-components=1 \
+    && rm /tmp/dbvis.tar.gz
 
 # Create a non-root user
-RUN useradd -ms /bin/bash dbvis
+RUN useradd -m -s /bin/bash dbvis
 USER dbvis
 WORKDIR /home/dbvis
 
-# Create startup script with configuration setup
+# Set Java environment variables
+ENV JAVA_TOOL_OPTIONS="-Dsun.java2d.xrender=false -Dawt.useSystemAAFontSettings=on"
+ENV _JAVA_AWT_WM_NONREPARENTING=1
+ENV DISPLAY=host.docker.internal:0
+
+# Create startup script
 RUN echo '#!/bin/bash\n\
 set -x\n\
-echo "=== Setting up configuration ==="\n\
-mkdir -p ~/.dbvis/config140\n\
-cat > ~/.dbvis/config140/dbvis.xml << EOL\n\
-<?xml version="1.0" encoding="UTF-8" ?>\n\
-<!DOCTYPE dbvis-config>\n\
-<dbvis-config>\n\
-    <Databases>\n\
-        <Database id="message_board_db">\n\
-            <Name>Message Board DB</Name>\n\
-            <Driver>PostgreSQL</Driver>\n\
-            <Type>postgresql</Type>\n\
-            <Url>jdbc:postgresql://database:5432/message_board_db</Url>\n\
-            <Userid>db-user-dev</Userid>\n\
-            <Password>db-password-dev</Password>\n\
-            <AutoConnect>true</AutoConnect>\n\
-            <SavePassword>true</SavePassword>\n\
-        </Database>\n\
-    </Databases>\n\
-</dbvis-config>\n\
-EOL\n\
-echo "=== Verifying configuration ==="\n\
-ls -la ~/.dbvis/config140/\n\
-echo "=== Config file contents ==="\n\
-cat ~/.dbvis/config140/dbvis.xml\n\
 echo "=== Starting DbVisualizer ==="\n\
-exec /opt/DbVisualizer/dbvisgui.sh "$@"' > /home/dbvis/start.sh && \
+exec ${DBVIS_HOME}/dbvis -nosplash "$@"' > /home/dbvis/start.sh && \
     chmod +x /home/dbvis/start.sh
 
 # Expose DbVisualizer port
-EXPOSE 5444
+EXPOSE 9999
 
 # Launch DbVisualizer GUI with setup script
 ENTRYPOINT ["/home/dbvis/start.sh"]
