@@ -47,11 +47,11 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **筆記**: 現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
+    **筆記**：現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
 
     === 開始：更新留言板的這一部分 ===
 
-    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
+    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包該應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
 
     現在所有設定都應該準備就緒，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -59,7 +59,8 @@
     這將創建`app.js`文件 - 包含所有組件 - 在`/src/threagile_monitoring/static/js/`.
 
     **使用webpack開發：**如果您仍在開發您的網站，**單獨的終端會話**，按照上述安裝程序後，執行以下操作：
-    1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
+    1）`$ hatch shell`
+    2) `(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
     這將 - 在單獨的終端會話中（即`background`) - 不斷地將您所做的更改載入到適當的文件中，同時您可以在初始終端會話中繼續進行這些更改（即`foreground`）。因此，您不必在每次編輯後建立原始程式碼，它會自動處理！
 
@@ -142,23 +143,39 @@
 
 然後重新載入您的 shell 配置：
 
-    source ~/.zshrc  # if using zsh
+    $ source ~/.zshrc  # if using zsh
     # or
-    source ~/.bashrc # if using bash
+    $source ~/.bashrc # if using bash
 
 透過 pip 安裝 podman-compose：
 
-    pip install podman-compose
+    $ pip install podman-compose
 
 驗證安裝：
 
-    podman compose --version
+    $ podman compose --version
 
-設定 Podman 套接字環境變數：
+# 檢查是否存在任何 Podman 機器
 
-    export DOCKER_HOST=unix:///run/podman/podman.sock
+    $ podman machine list
 
-使用以下命令啟動 Docker 容器：
+# 如果不存在機器，則建立一台
+
+    $ podman machine init
+
+# 啟動 Podman 機器
+
+    $ podman machine start
+
+# 設定套接字路徑
+
+    $ export DOCKER_HOST=unix://$HOME/.local/share/containers/podman/machine/podman.sock
+
+# 驗證 Podman 是否正常運作
+
+    $ podman ps
+
+Start your Docker containers with:
 
     $ cd containers/app
 
@@ -175,9 +192,25 @@
     # 3. You should see an "X" icon in your menu bar at the top of the screen. Click on it to open XQuartz preferences.
     # 4. In XQuartz preferences, go to the "Security" tab and make sure "Allow connections from network clients" is checked.
     # 5. Wait a few seconds for XQuartz to fully start up
-    # 6. Then in your terminal:
-    $ xhost +localhost
-    $ export DISPLAY=host.docker.internal:0
+    # 6. Set display to local fisrt:
+    $ export DISPLAY=:0
+    # 7. Get your IP address
+    $ export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+    # 8. Allow X11 forwarding from your IP
+    $ xhost + $IP
+    # 9. Then in your terminal:
+    # Remove the existing pod
+    $ podman pod rm -f pod_message-board-dev
+    # Remove any existing volumes
+    $ podman volume rm -f message-board-dev_dbvis-config
+    $ podman volume rm -f message-board-dev_message-board-data
+    # Verify everything is clean
+    $ podman pod ls
+    $ podman ps -a
+    $ podman volume ls
+    # Then start fresh
+    $ podman-compose --file docker-compose.dev.yml --project-name message-board-dev up -d --build
+    # or alternatively:
     $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
     # The key is that XQuartz must be running before you execute the xhost command.
 
@@ -210,7 +243,7 @@ DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
 
 # 指標
 
-讓像 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
+讓 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
 
 **_新的_**
 
@@ -234,7 +267,7 @@ pip install threagile-monitoring
 
 ## 環境
 
--   整齊地定義在一個獨立的[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
+-   整齊地定義在獨立的[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
 -   這`test`矩陣使用[孵化貨櫃](https://github.com/ofek/hatch-containers)用於運行 Docker 容器內每個環境的插件；用法可以在[測試](.github/workflows/test.yml)GitHub 工作流程
 
 ## 建造
@@ -343,7 +376,7 @@ pip install threagile-monitoring
 
     -   使用記憶體分析工具來識別和優化記憶體密集型操作。
 
-    -   監控與管理資源：
+    -   監控和管理資源：
 
     -   使用類似的工具`htop`或者`iostat`監控系統資源並有效管理它們。
 
