@@ -28,7 +28,7 @@ Wir empfehlen die Verwendung von[Cursor.io](https://www.cursor.com/)als integrie
 
 Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
-**Notiz**: Stellen Sie sicher, dass Sie die erfüllen[Anforderungen](./200/README.md).
+**Note**: Stellen Sie sicher, dass Sie die erfüllen[Anforderungen](./200/README.md).
 
 1.  **Installationsprozess:**
 
@@ -251,6 +251,8 @@ Alle vier Container laufen erfolgreich. Lassen Sie uns jeden Dienst überprüfen
 -   Besuchen Sie http&#x3A;//localhost:8978
 -   Erstmalige Einrichtung:
 -   Erstellen Sie Administratoranmeldeinformationen, wenn Sie dazu aufgefordert werden
+-   Benutzername: cbadmin
+-   Passwort: S3cr3tPwd
 -   Klicken Sie auf „Neue Verbindung“
 -   Wählen Sie „PostgreSQL“
 -   Verbindungsdetails eingeben:
@@ -298,7 +300,7 @@ pip install threagile-monitoring
 
 ## Versionsquelle
 
--   Der[hatch-vcs](https://github.com/ofek/hatch-vcs)Das Versionsquellen-Plugin bestimmt die Projektversion mithilfe von Git-Tags
+-   Der[hatch-vcs](https://github.com/ofek/hatch-vcs) version source plugin determines the project version using Git tags
 
 ## Umgebungen
 
@@ -308,7 +310,7 @@ pip install threagile-monitoring
 ## Bauen
 
 -   Alle Build-Ziele verwenden die[hatch-vcs](https://github.com/ofek/hatch-vcs)Erstellen Sie ein Hook-Plugin, um ein zu versenden`_version.py`Datei, damit die Version zur Laufzeit verwendet werden kann
--   Räder nutzen die[hatch-mypyc](https://github.com/ofek/hatch-mypyc)Build-Hook-Plugin, mit dem zunächst der gesamte Code kompiliert werden soll[Mypyc](https://github.com/mypyc/mypyc)
+-   Räder verwenden die[hatch-mypyc](https://github.com/ofek/hatch-mypyc)Build-Hook-Plugin, mit dem zunächst der gesamte Code kompiliert werden soll[Mypyc](https://github.com/mypyc/mypyc)
 -   Der[bauen](.github/workflows/build.yml)Der GitHub-Workflow zeigt, wie Sie:
     -   verwenden[cibuildwheel](https://github.com/pypa/cibuildwheel)binäre Räder für jede Plattform zu verteilen
     -   Benutze die[App](https://hatch.pypa.io/latest/plugins/builder/app/)build target zum Erstellen eigenständiger Distributionen für jede Plattform
@@ -359,7 +361,7 @@ Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem 
 
 1.  **Überprüfen Sie den verfügbaren Speicher**:
     -   Öffnen Sie den Aktivitätsmonitor über das Apple-Menü.
-    -   Wählen Sie die Registerkarte „Speicher“.
+    -   Select the "Memory" tab.
     -   Sehen Sie sich die Spalte „Nutzung“ an, um zu sehen, wie viel Speicher derzeit verwendet wird.
 
 2.  **Schließen Sie nicht benötigte Anwendungen**:
@@ -405,7 +407,7 @@ Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem 
 
     -   Rüsten Sie Ihre Hardware auf:
 
-    -   Erwägen Sie die Verwendung eines leistungsstärkeren Computers mit mehr RAM.
+    -   Erwägen Sie die Verwendung einer leistungsstärkeren Maschine mit mehr RAM.
 
     -   Optimieren Sie Ihre Bewerbung:
 
