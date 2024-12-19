@@ -273,6 +273,8 @@ All four containers are running successfully. Let's verify each service:
 - Visit http://localhost:8978
 - First-time setup:
 - Create admin credentials when prompted
+- Username: cbadmin
+- Password: S3cr3tPwd
 - Click "New Connection"
 - Choose "PostgreSQL"
 - Enter connection details:
