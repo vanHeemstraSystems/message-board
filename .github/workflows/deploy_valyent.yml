@@ -49,3 +49,4 @@ jobs:
       - name: Verify Deployment
         run: |
           valyent fleet status ${{ env.FLEET_NAME }}
+          
