@@ -1,0 +1,51 @@
+name: Deploy to Valyent Cloud
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:  # Allows manual triggering
+
+env:
+  VALYENT_API_KEY: ${{ secrets.VALYENT_API_KEY }}
+  FLEET_NAME: message-board-fleet
+  VALYENT_PROJECT: message-board  # Add your Valyent project name here
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Valyent CLI
+        run: |
+          # This is a placeholder - replace with actual installation commands
+          # from Valyent's documentation
+          curl -sL https://cli.valyent.cloud/install.sh | bash
+
+      - name: Configure Valyent CLI
+        run: |
+          valyent config set api-key ${{ secrets.VALYENT_API_KEY }}
+          valyent config set project ${{ env.VALYENT_PROJECT }}
+
+      - name: Build and Push Images
+        run: |
+          # Login to Valyent's container registry
+          valyent registry login
+
+          # Build and push images
+          docker compose -f docker-compose.dev.yml build
+          docker compose -f docker-compose.dev.yml push
+
+      - name: Deploy Fleet
+        run: |
+          # Deploy using docker-compose.dev.yml
+          valyent fleet deploy ${{ env.FLEET_NAME }} \
+            --compose docker-compose.dev.yml \
+            --env-file .env.valyent
+
+      - name: Verify Deployment
+        run: |
+          valyent fleet status ${{ env.FLEET_NAME }}
