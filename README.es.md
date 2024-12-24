@@ -47,7 +47,7 @@ Cómo poner en marcha su código en su propio sistema.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **NOTA**: La forma moderna es utilizar`pyproject.toml`para instalar dependencias, no \`\`\`requirements.txt. Por lo tanto, no debería haber un archivo de requisitos.txt.
+    **NOTA**: La forma moderna es utilizar`pyproject.toml` to install dependencies, not \`\`\`requirements.txt. Hence there should not be a requirements.txt file.
 
     === INICIO: ACTUALIZAR ESTA SECCIÓN PARA el tablero de mensajes ===
 
