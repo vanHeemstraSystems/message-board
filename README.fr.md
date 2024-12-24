@@ -228,7 +228,7 @@ Démarrez vos conteneurs Docker avec :
     $ set DISPLAY=host.docker.internal:0
     $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
-This will spin up three containers:
+Cela fera tourner trois conteneurs :
 
 -   message-board-server-dev (port 8080:5000)
 -   message-board-frontend-dev (port 80:3000)
@@ -260,7 +260,7 @@ Les quatre conteneurs fonctionnent correctement. Vérifions chaque service :
 -   Mot de passe : S3cr3tPwd
 -   Cliquez sur "Nouvelle connexion"
 -   Choisissez "PostgreSQL"
--   Saisissez les détails de la connexion :
+-   Entrez les détails de connexion :
 -   Hôte : base de données
 -   Port : 5432
 -   Base de données : message_board_db
@@ -397,7 +397,7 @@ Voici plusieurs étapes que vous pouvez suivre pour résoudre le problème de m�
 
 9.  Optimisation XQuartz
     Quittez et redémarrez XQuartz
-    Envisagez d'utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
+    Pensez à utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
 
 10. Solutions au niveau du système :
     Effacer le cache système :

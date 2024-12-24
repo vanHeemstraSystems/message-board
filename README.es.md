@@ -251,7 +251,7 @@ Los cuatro contenedores se están ejecutando correctamente. Verifiquemos cada se
 -   Ya funcionando y saludable (como se muestra en el estado)
 -   Accesible en localhost: 5432
 
-4) CloudBeaver (DB GUI):
+4) CloudBeaver (GUI de base de datos):
 
 -   Visita http&#x3A;//localhost:8978
 -   Configuración por primera vez:
@@ -267,7 +267,7 @@ Los cuatro contenedores se están ejecutando correctamente. Verifiquemos cada se
 -   Nombre de usuario: db-user-dev
 -   Contraseña: db-contraseña-dev
 
-DbVisualizer debería conectarse a su base de datos PostgreSQL utilizando estas credenciales:
+DbVisualizer debería conectarse a su base de datos PostgreSQL usando estas credenciales:
 
 Servidor: base de datos
 Puerto: 5432
