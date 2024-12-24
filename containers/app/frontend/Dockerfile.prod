@@ -32,9 +32,10 @@ WORKDIR /usr/src/app
 
 RUN pnpm fetch --prod
 
-# Now copy the rest of the application
-COPY ./ /usr/src/app/
+# Copy the entire frontend directory structure
+COPY containers/app/frontend/ /usr/src/app/
 
+# Install dependencies and build
 RUN pnpm install
 RUN pnpm run build
 
