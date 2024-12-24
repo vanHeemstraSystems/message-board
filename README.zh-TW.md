@@ -1,4 +1,4 @@
-留言板
+message-board
 
 # 留言板
 
@@ -47,11 +47,11 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **筆記**: 現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
+    **筆記**：現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
 
     === 開始：更新留言板的這一部分 ===
 
-    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
+    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包該應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
 
     現在所有設定都應該準備就緒，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -267,7 +267,7 @@
 -   使用者名稱：db-user-dev
 -   密碼：db-password-dev
 
-DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
+DbVisualizer should connect to your PostgreSQL database using these credentials:
 
 伺服器：資料庫
 埠：5432
@@ -285,7 +285,7 @@ DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
 
 # 指標
 
-讓像 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
+讓 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
 
 **_新的_**
 
@@ -418,9 +418,9 @@ pip install threagile-monitoring
 
     -   使用記憶體分析工具來識別和優化記憶體密集型操作。
 
-    -   監控與管理資源：
+    -   監控和管理資源：
 
-    -   使用類似的工具`htop`或者`iostat`監控系統資源並有效管理它們。
+    -   使用類似的工具`htop` or `iostat`監控系統資源並有效管理它們。
 
     -   為 Docker 容器和映像設定自動清理腳本。
 
