@@ -47,7 +47,7 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **筆記**: 現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
+    **筆記**：現代的方法是使用`pyproject.toml` to install dependencies, not \`\`\`requirements.txt. Hence there should not be a requirements.txt file.
 
     === 開始：更新留言板的這一部分 ===
 
@@ -56,7 +56,7 @@
     現在所有設定都應該準備就緒，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
 
-    這將創建`app.js` file - which contains all components - in `/src/threagile_monitoring/static/js/`.
+    這將創建`app.js`文件 - 包含所有組件 - 在`/src/threagile_monitoring/static/js/`.
 
     **使用webpack開發：**如果您仍在開發您的網站，**單獨的終端會話**，按照上述安裝程序後，執行以下操作：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
@@ -174,7 +174,7 @@
 
     $ podman ps
 
-Start your Docker containers with:
+使用以下命令啟動 Docker 容器：
 
     $ cd containers/app
 
@@ -322,7 +322,7 @@ pip install threagile-monitoring
 
 ## 執照
 
-`threagile-monitoring`是根據以下條款分發的[和](https://spdx.org/licenses/MIT.html)執照。
+`threagile-monitoring`是根據以下條款分發的[和](https://spdx.org/licenses/MIT.html) license.
 
     === END:  UPDATE THIS SECTION FOR message board ===
 
