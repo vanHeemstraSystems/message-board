@@ -47,16 +47,16 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **NOTIZ**: Die moderne Art ist zu verwenden`pyproject.toml`um Abhängigkeiten zu installieren, nicht „requirements.txt“. Daher sollte es keine „requirements.txt“-Datei geben.
+    **NOTIZ**: Die moderne Art ist zu verwenden`pyproject.toml`um Abhängigkeiten zu installieren, nicht „requirements.txt“. Daher sollte es keine Datei „requirements.txt“ geben.
 
-    === START:  UPDATE THIS SECTION FOR message board ===
+    === START: AKTUALISIEREN SIE DIESEN ABSCHNITT FÜR DAS Message Board ===
 
     **Verpacken Sie Ihre Website mit Webpack:**Sobald Sie eine Website haben, die für Sie gut genug ist, müssen Sie die Anwendung mit Webpack packen. Dieser Paketordner ist in aufgeführt`.gitignore`um zu vermeiden, dass man sich an Git bindet.
 
     Die gesamte Einrichtung sollte inzwischen fertig sein. Sie müssen also nur noch Folgendes tun:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
 
-    Dadurch wird das erstellt`app.js` file - which contains all components - in `/src/threagile_monitoring/static/js/`.
+    Dadurch wird das erstellt`app.js`Datei - die alle Komponenten enthält - in`/src/threagile_monitoring/static/js/`.
 
     **Entwicklung mit Webpack:**Wenn Sie Ihre Website noch entwickeln, in a**separate Terminalsitzung**, nachdem Sie den oben genannten Installationsprozess befolgt haben, gehen Sie wie folgt vor:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
@@ -412,7 +412,7 @@ Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem 
 
     -   Rüsten Sie Ihre Hardware auf:
 
-    -   Erwägen Sie die Verwendung eines leistungsstärkeren Computers mit mehr RAM.
+    -   Erwägen Sie die Verwendung einer leistungsstärkeren Maschine mit mehr RAM.
 
     -   Optimieren Sie Ihre Bewerbung:
 
