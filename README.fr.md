@@ -133,7 +133,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
 
 # Docker
 
-**NOTE**: Pour une utilisation efficace des ressources, nous utilisons**Podman**au lieu de**Docker**!
+**NOTE**: Pour une utilisation efficace des ressources, nous utilisons**Tamisé**au lieu de**Docker**!
 
 Ajoutez ces lignes à votre ~/.zshrc ou ~/.bashrc :
 
