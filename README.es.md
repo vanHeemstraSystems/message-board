@@ -18,7 +18,7 @@ tablero de mensajes
 -   [Referencias](./REFERENCES.md)
 -   [Telemetria](./TELEMETRY.md)
 
-**Executive Summary**
+**Resumen ejecutivo**
 
 ## VA
 

@@ -49,7 +49,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     **OPMERKING**: De moderne manier is om te gebruiken`pyproject.toml`om afhankelijkheden te installeren, niet \`\`\`requirements.txt. Daarom mag er geen require.txt-bestand zijn.
 
-    === START: UPDATE DEZE SECTIE VOOR message board ===
+    === START:  UPDATE THIS SECTION FOR message board ===
 
     **Verpak uw site met webpack:**Zodra u een website heeft die goed genoeg is om te gebruiken, moet u de applicatie verpakken met webpack. Deze pakketmap wordt vermeld in`.gitignore`om te voorkomen dat het aan git wordt vastgelegd.
 
@@ -72,7 +72,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     Test de applicatie (frontend) op deze manier:
 
-    1) `$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **Loop:**
 
@@ -385,7 +385,7 @@ Hier zijn verschillende stappen die u kunt nemen om het geheugenprobleem op te l
     -   Gebruik tools zoals Valgrind of Instruments om te controleren op geheugenlekken in uw applicatie.
 
 7.  Wis Docker-bronnen:
-    -   Voer de volgende opdracht uit om alle ongebruikte Docker-bronnen te verwijderen:
+    -   Run the following command to remove all unused Docker resources:
         docker system prune -a
 
 8.  Docker Desktop-geheugenlimieten
