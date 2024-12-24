@@ -34,24 +34,83 @@ jobs:
           sudo mkdir -p /usr/local/bin
           echo '#!/bin/bash
           echo "[MOCK] Valyent CLI - Executing: $@"
+          
+          # Add deployment status tracking
+          STATUS_FILE="/tmp/deployment-status"
+          
           case "$1" in
             "config")
-              echo "[MOCK] Configuring Valyent CLI"
+              if [ "$2" = "set" ]; then
+                echo "[MOCK] Setting $3 configuration..."
+                echo "✓ Configuration updated successfully"
+              else
+                echo "[MOCK] Unknown config command"
+                exit 1
+              fi
               ;;
-            "registry")
-              echo "[MOCK] Registry operation"
-              ;;
+              
             "fleet")
-              echo "[MOCK] Fleet operation"
+              case "$2" in
+                "deploy")
+                  echo "[MOCK] Starting deployment of $3..."
+                  echo "deploying" > "$STATUS_FILE"
+                  echo "⚙ Validating configuration..."
+                  sleep 1
+                  echo "✓ Configuration valid"
+                  echo "⚙ Creating deployment..."
+                  sleep 1
+                  echo "✓ Deployment created"
+                  echo "⚙ Starting containers..."
+                  sleep 1
+                  echo "running" > "$STATUS_FILE"
+                  echo "✓ Deployment successful"
+                  ;;
+                  
+                "status")
+                  if [ -f "$STATUS_FILE" ]; then
+                    STATUS=$(cat "$STATUS_FILE")
+                    case "$STATUS" in
+                      "deploying")
+                        echo "Status: DEPLOYING"
+                        echo "Fleet: $3"
+                        echo "Progress: Containers starting..."
+                        ;;
+                      "running")
+                        echo "Status: RUNNING"
+                        echo "Fleet: $3"
+                        echo "Containers: 3/3 running"
+                        echo "Health: Healthy"
+                        echo "Uptime: 2m"
+                        ;;
+                      *)
+                        echo "Status: UNKNOWN"
+                        ;;
+                    esac
+                  else
+                    echo "Status: NOT_FOUND"
+                    echo "Fleet: $3"
+                  fi
+                  ;;
+                  
+                *)
+                  echo "[MOCK] Unknown fleet command: $2"
+                  exit 1
+                  ;;
+              esac
               ;;
+              
+            "--version")
+              echo "Valyent CLI v0.1.0 (mock)"
+              ;;
+              
             *)
-              echo "[MOCK] Unknown command"
+              echo "[MOCK] Unknown command: $1"
+              exit 1
               ;;
-          esac
-          exit 0' | sudo tee /usr/local/bin/valyent
+          esac' | sudo tee /usr/local/bin/valyent
           sudo chmod +x /usr/local/bin/valyent
           which valyent
-          valyent --version || true
+          valyent --version
 
       - name: Configure Mock CLI
         run: |
@@ -62,12 +121,37 @@ jobs:
       - name: Test Mock Deployment
         run: |
           echo "Testing mock deployment..."
-          valyent fleet deploy "${{ env.FLEET_NAME }}" \
+          if ! valyent fleet deploy "${{ env.FLEET_NAME }}" \
             --compose docker-compose.dev.yml \
-            --env-file .env.valyent || true
+            --env-file .env.valyent; then
+            echo "Deployment failed!"
+            exit 1
+          fi
 
-      - name: Mock Status Check
+      - name: Verify Deployment
         run: |
-          echo "Checking mock deployment status..."
-          valyent fleet status "${{ env.FLEET_NAME }}" || true
+          echo "Verifying deployment..."
+          MAX_RETRIES=5
+          RETRY_COUNT=0
+          until valyent fleet status "${{ env.FLEET_NAME }}" | grep "RUNNING"; do
+            if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
+              echo "Deployment verification failed after $MAX_RETRIES attempts"
+              exit 1
+            fi
+            RETRY_COUNT=$((RETRY_COUNT+1))
+            echo "Waiting for deployment... Attempt $RETRY_COUNT of $MAX_RETRIES"
+            sleep 10
+          done
+          echo "✓ Deployment verified successfully!"
+
+      - name: Deployment Summary
+        if: always()
+        run: |
+          echo "=== Deployment Summary ==="
+          echo "Project: ${{ env.VALYENT_PROJECT }}"
+          echo "Fleet: ${{ env.FLEET_NAME }}"
+          echo "Status:"
+          valyent fleet status "${{ env.FLEET_NAME }}"
+          echo "Timestamp: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          echo "======================="
           
