@@ -20,9 +20,12 @@ services:
     security_opt:
       - no-new-privileges:true
     ports:
-      - "80:3000"
-    # networks:
-    #   - gateway-prod
+      - "80:5173"
+    volumes:
+      - frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - message-board-network
 
   server:
     build:
@@ -59,7 +62,7 @@ services:
     container_name: ${UNIQUE_NAMESPACE}-database-prod
     environment:
       POSTGRES_USER: "db-user-prod"
-      POSTGRES_PASSWORD: "db-password-prod"
+      POSTGRES_PASSWORD: ${secrets.DB_PASSWORD}
       POSTGRES_DB: "message_board_db"
       PGDATA: "/var/lib/postgresql/data/pgdata"
     ports:
@@ -80,120 +83,51 @@ services:
         reservations:
           cpus: '0.5'
           memory: 512M
-
-  dbvisualizer:
-    build:
-      context: ./db-gui
-      dockerfile: Dockerfile.prod
-      args:
-        IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
-        IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
-    env_file:
-      - .env
-    container_name: ${UNIQUE_NAMESPACE}-db-gui-prod
-    environment:
-      DISPLAY: ${DISPLAY:-:0}
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
-      - dbvis-config:/home/dbvis/.dbvis
     networks:
       - message-board-network
+
+  db-gui:
+    image: dbeaver/cloudbeaver:latest
+    container_name: ${UNIQUE_NAMESPACE}-db-gui-prod
+    environment:
+      CB_ADMIN_NAME: "cbadmin"
+      CB_ADMIN_PASSWORD: ${secrets.CB_ADMIN_PASSWORD}
+      CB_SERVER_NAME: "Message Board DB"
+      CB_SERVER_URL: "http://localhost:8978"
+      CB_ANONYMOUS_ACCESS_ENABLED: "false"
+      CB_DEFAULT_CONNECTION_NAME: "Message Board PostgreSQL"
+      CB_DEFAULT_CONNECTION_HOST: "database"
+      CB_DEFAULT_CONNECTION_PORT: "5432"
+      CB_DEFAULT_CONNECTION_DATABASE: "message_board_db"
+      CB_DEFAULT_CONNECTION_USER: "db-user-prod"
+      CB_DEFAULT_CONNECTION_PASSWORD: ${secrets.DB_PASSWORD}
+    ports:
+      - "8978:8978"
     depends_on:
       - database
+    volumes:
+      - cloudbeaver-data:/opt/cloudbeaver/workspace
+    networks:
+      - message-board-network
 
-  # # Optional: PostgreSQL admin interface
-  # pgadmin:
-  #   image: mirror-dhub.apps-artifactory.asml.com/dpage/pgadmin4:8.13.0
-  #   environment: # from env_file
-  #     IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
-  #     IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
-  #     PROXY_USER: ${PROXY_USER}
-  #     PROXY_PASSWORD: ${PROXY_PASSWORD}
-  #     PROXY_FQDN: ${PROXY_FQDN}
-  #     PROXY_PORT: ${PROXY_PORT}
-  #     PGADMIN_DEFAULT_EMAIL: ${PGADMIN_PASSWORD:-admin@example.com}
-  #     PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-adminpassword123}
-  #   env_file:
-  #     - .env
-  #   container_name: ${UNIQUE_NAMESPACE}-pgadmin-prod
-  #   privileged: true   
-  #   security_opt:
-  #     - no-new-privileges:false 
-  #   restart: unless-stopped
-  #   ports:
-  #     - 8088:80
-  #   depends_on:
-  #     - database
-
-  # db-gui:
-  #   build:
-  #     context: ./db-gui
-  #     dockerfile: Dockerfile.prod
-  #     args:
-  #       # from env_file
-  #       IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
-  #       IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
-  #       PROXY_USER: ${PROXY_USER}
-  #       PROXY_PASSWORD: ${PROXY_PASSWORD}
-  #       PROXY_FQDN: ${PROXY_FQDN}
-  #       PROXY_PORT: ${PROXY_PORT}
-  #       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-  #   env_file:
-  #     - .env
-  #   container_name: ${UNIQUE_NAMESPACE}-db-gui-prod
-  #   privileged: true
-  #   security_opt:
-  #     - no-new-privileges:true
-  #   restart: unless-stopped
-  #   volumes:
-  #     - ./db-gui/dbvis-home:/home/dbvis/.DbVisualizer
-  #     - ./db-gui/licenses:/home/dbvis/.DbVisualizer/licenses
-  #   environment:
-  #     - DISPLAY=${DISPLAY:-:0}
-  #   network_mode: "host"
-  #    depends_on:
-  #      - database
-
-  # gateway:
-  #   build:
-  #     context: ./gateway
-  #     dockerfile: Dockerfile.prod
-  #     args: # from env_file
-  #       IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
-  #       IMAGE_REPOSITORY_DIVISION: ${IMAGE_REPOSITORY_DIVISION}
-  #       PROXY_USER: ${PROXY_USER}
-  #       PROXY_PASSWORD: ${PROXY_PASSWORD}
-  #       PROXY_FQDN: ${PROXY_FQDN}
-  #       PROXY_PORT: ${PROXY_PORT}
-  #   env_file:
-  #     - .env     
-  #   container_name: ${UNIQUE_NAMESPACE}-gateway-prod
-  #   depends_on:
-  #     - frontend   
-  #   privileged: true   
-  #   security_opt:
-  #     - no-new-privileges:true     
-  #   restart: unless-stopped
-  #   ports:
-  #     - "80:80" 
-  #   networks:
-  #     - default
-  #     - gateway-prod
-  #   external_links:
-  #     - message-board-frontend-prod
-
-  # see https://stackoverflow.com/questions/45255066/create-networks-automatically-in-docker-compose
+# see https://stackoverflow.com/questions/45255066/create-networks-automatically-in-docker-compose
 networks:
   default:
     driver: bridge
   message-board-network:
-    driver: bridge  
-  # gateway-prod:
+    driver: bridge
+  # gateway-dev:
   #   external: true
-  #   name: gateway-prod
+  #   name: gateway-dev
 
 volumes:
   message-board-data:
     driver: local
   dbvis-config:
-    driver: local  
+    driver: local 
+  cloudbeaver-data:
+    driver: local
+  frontend:
+    driver: local
+  cloudbeaver-config:
+    driver: local

@@ -24,12 +24,17 @@ RUN corepack enable
 
 FROM base AS prod
 
-COPY ./containers/app/frontend/pnpm-lock.yaml /app
+# Copy package files first to leverage Docker cache
+COPY package.json /usr/src/app/
+COPY pnpm-lock.yaml /usr/src/app/
+
 WORKDIR /usr/src/app
+
 RUN pnpm fetch --prod
 
-COPY ./ /usr/src/app
-# RUN pnpm --proxy http://"${PROXY_USER}:${PROXY_PASSWORD}"@${PROXY_FQDN}:${PROXY_PORT} install
+# Now copy the rest of the application
+COPY . /usr/src/app/
+
 RUN pnpm install
 RUN pnpm run build
 
