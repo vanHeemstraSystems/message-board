@@ -86,7 +86,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
 4.  API-Referenzen
 
-5.  Build and Test:
+5.  Erstellen und testen:
 
     Um Ihren Code zu erstellen, verwenden Sie:
 
@@ -239,14 +239,14 @@ Alle vier Container laufen erfolgreich. Lassen Sie uns jeden Dienst überprüfen
 
 1) Frontend (Vue.js):
 
--   Besuchen Sie http&#x3A;//localhost:80 in Ihrem Browser
+-   Visit http&#x3A;//localhost:80 in your browser
 
 2) Backend (Flask):
 
 -   Besuchen Sie http&#x3A;//localhost:8080/api/health in Ihrem Browser
 -   Sollte eine Antwort zur Gesundheitsprüfung zurückgeben
 
-3) Database (PostgreSQL):
+3) Datenbank (PostgreSQL):
 
 -   Läuft bereits und ist fehlerfrei (wie im Status angezeigt)
 -   Zugänglich auf localhost:5432
