@@ -28,7 +28,7 @@
 
 在您自己的系統上啟動並運行您的程式碼。
 
-**筆記**: 確保您滿足[要求](./200/README.md).
+**筆記**: 確保您滿足[requirements](./200/README.md).
 
 1.  **安裝過程：**
 
@@ -47,11 +47,11 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **筆記**：現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
+    **筆記**: 現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
 
     === 開始：更新留言板的這一部分 ===
 
-    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包該應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
+    **使用 webpack 打包您的網站：**一旦你有了一個足夠好的網站可供你使用，你就必須使用 webpack 打包應用程式。該包資料夾列於`.gitignore`以避免它被提交給 git。
 
     現在所有設定都應該準備就緒，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -262,7 +262,7 @@
 -   選擇“PostgreSQL”
 -   輸入連接詳細資料：
 -   主機：資料庫
--   Port: 5432
+-   埠：5432
 -   資料庫：message_board_db
 -   使用者名稱：db-user-dev
 -   密碼：db-password-dev
@@ -285,7 +285,7 @@ DbVisualizer 應使用下列憑證連接到您的 PostgreSQL 資料庫：
 
 # 指標
 
-讓 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
+讓像 Prometheus 這樣的工具刮擦`http://127.0.0.1:9464/metrics`.
 
 **_新的_**
 
@@ -338,7 +338,7 @@ pip install threagile-monitoring
     Choose typography, forms, container-queries
     Choose pnpm
 
-後續步驟：
+Next steps:
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
@@ -366,7 +366,7 @@ pip install threagile-monitoring
 
 1.  **檢查可用內存**:
     -   從 Apple 選單中開啟活動監視器。
-    -   Select the "Memory" tab.
+    -   選擇“內存”標籤。
     -   查看「使用情況」列，以了解目前使用了多少記憶體。
 
 2.  **關閉不必要的應用程式**:
@@ -418,7 +418,7 @@ pip install threagile-monitoring
 
     -   使用記憶體分析工具來識別和優化記憶體密集型操作。
 
-    -   監控和管理資源：
+    -   監控與管理資源：
 
     -   使用類似的工具`htop`或者`iostat`監控系統資源並有效管理它們。
 
