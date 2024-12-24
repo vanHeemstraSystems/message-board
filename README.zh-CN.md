@@ -47,7 +47,7 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **笔记**: 现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
+    **笔记**：现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
 
     === 开始：更新留言板的这一部分 ===
 
@@ -72,8 +72,7 @@
 
     以这种方式测试应用程序（前端）：
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`
-    5) `(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **跑步：**
 
@@ -232,7 +231,7 @@
 这将启动三个容器：
 
 -   留言板服务器-dev（端口 8080:5000）
--   留言板前端开发（端口 80:3000）
+-   message-board-frontend-dev (port 80:3000)
 -   留言板数据库-dev（端口 5432:5432）
 -   留言板-db-gui-dev（端口 5444:5444）
 
