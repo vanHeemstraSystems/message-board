@@ -86,7 +86,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
 4.  API-Referenzen
 
-5.  Erstellen und testen:
+5.  Build and Test:
 
     Um Ihren Code zu erstellen, verwenden Sie:
 
@@ -246,7 +246,7 @@ Alle vier Container laufen erfolgreich. Lassen Sie uns jeden Dienst überprüfen
 -   Besuchen Sie http&#x3A;//localhost:8080/api/health in Ihrem Browser
 -   Sollte eine Antwort zur Gesundheitsprüfung zurückgeben
 
-3) Datenbank (PostgreSQL):
+3) Database (PostgreSQL):
 
 -   Läuft bereits und ist fehlerfrei (wie im Status angezeigt)
 -   Zugänglich auf localhost:5432
@@ -309,8 +309,8 @@ pip install threagile-monitoring
 
 ## Umgebungen
 
--   Defined neatly in a standalone [`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   Der`test`Matrix verwendet die[Lukencontainer](https://github.com/ofek/hatch-containers)Plugin zum Ausführen jeder Umgebung in Docker-Containern; Die Verwendung ist in der zu sehen[prüfen](.github/workflows/test.yml) GitHub workflow
+-   Ordentlich in einem Standalone definiert[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
+-   Der`test`Matrix verwendet die[Lukencontainer](https://github.com/ofek/hatch-containers)Plugin zum Ausführen jeder Umgebung in Docker-Containern; Die Verwendung ist in der zu sehen[prüfen](.github/workflows/test.yml)GitHub-Workflow
 
 ## Bauen
 
