@@ -82,13 +82,13 @@ Uw code op uw eigen systeem operationeel krijgen.
 
 2.  Software-afhankelijkheden
 
-3.  Nieuwste releases
+3.  Latest releases
 
 4.  API-referenties
 
 5.  Bouwen en testen:
 
-    To build your code, use:
+    Om uw code samen te stellen, gebruikt u:
 
     ```bash
     $ cd threagile-monitoring
@@ -133,7 +133,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
 # Dokwerker
 
-**OPMERKING**: Voor efficiënt gebruik van hulpbronnen gebruiken we**Ingetogen** instead of **Dokwerker**!
+**OPMERKING**: Voor efficiënt gebruik van hulpbronnen gebruiken we**Ingetogen**in plaats van**Dokwerker**!
 
 Voeg deze regels toe aan je ~/.zshrc of ~/.bashrc:
 
@@ -162,7 +162,7 @@ Controleer de installatie:
 
     $ podman machine init
 
-# Start the Podman machine
+# Start de Podman-machine
 
     $ podman machine start
 
