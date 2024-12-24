@@ -366,7 +366,7 @@ pip install threagile-monitoring
 
 1.  **检查可用内存**:
     -   从 Apple 菜单中打开活动监视器。
-    -   Select the "Memory" tab.
+    -   选择“内存”选项卡。
     -   查看“使用情况”列，了解当前使用了多少内存。
 
 2.  **关闭不必要的应用程序**:
