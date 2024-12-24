@@ -21,7 +21,7 @@ message-board
 
 ## IDE
 
-We recommed the use of [Cursor.io](https://www.cursor.com/) as the Integrated Development Environment (IDE) for this project.
+We recommend the use of [Cursor.io](https://www.cursor.com/) as the Integrated Development Environment (IDE) for this project.
 
 ## Server
 
