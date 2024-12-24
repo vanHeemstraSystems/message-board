@@ -10,7 +10,7 @@ babillard électronique
 
 * * *
 
-> Un forum de discussion qui affichera les messages soumis.
+> Un forum de messages qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
@@ -24,7 +24,7 @@ babillard électronique
 
 Nous recommandons l'utilisation de[Cursor.io](https://www.cursor.com/)comme environnement de développement intégré (IDE) pour ce projet.
 
-## Server
+## Serveur
 
 Faire en sorte que votre code soit opérationnel sur votre propre système.
 
@@ -133,7 +133,7 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
 
 # Docker
 
-**NOTE**: Pour une utilisation efficace des ressources, nous utilisons**Tamisé** instead of **Docker**!
+**NOTE**: Pour une utilisation efficace des ressources, nous utilisons**Tamisé**au lieu de**Docker**!
 
 Ajoutez ces lignes à votre ~/.zshrc ou ~/.bashrc :
 
@@ -230,7 +230,7 @@ Démarrez vos conteneurs Docker avec :
 
 Cela fera tourner trois conteneurs :
 
--   message-board-server-dev (port 8080 : 5000)
+-   message-board-server-dev (port 8080:5000)
 -   message-board-frontend-dev (port 80:3000)
 -   message-board-database-dev (port 5432:5432)
 -   message-board-db-gui-dev (port 5444:5444)
@@ -244,7 +244,7 @@ Les quatre conteneurs fonctionnent correctement. Vérifions chaque service :
 2) Backend (flacon) :
 
 -   Visitez http&#x3A;//localhost:8080/api/health dans votre navigateur
--   Doit renvoyer une réponse de vérification de l'état
+-   Devrait renvoyer une réponse de vérification de l'état
 
 3) Base de données (PostgreSQL) :
 
@@ -369,7 +369,7 @@ Voici plusieurs étapes que vous pouvez suivre pour résoudre le problème de m�
     -   Sélectionnez l'onglet "Mémoire".
     -   Regardez la colonne « Utilisation » pour voir la quantité de mémoire actuellement utilisée.
 
-2.  **Fermez les applications inutiles**:
+2.  **Close Unnecessary Applications**:
     -   Assurez-vous que vous n’exécutez aucune application inutile susceptible de consommer de la mémoire.
 
 3.  **Vider le cache**:
@@ -438,7 +438,7 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Construire notre application
+## 300 - Créer notre application
 
 Voir[README.md](./300/README.md)
 
