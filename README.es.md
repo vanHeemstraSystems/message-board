@@ -267,7 +267,7 @@ Los cuatro contenedores se están ejecutando correctamente. Verifiquemos cada se
 -   Nombre de usuario: db-user-dev
 -   Contraseña: db-contraseña-dev
 
-DbVisualizer debería conectarse a su base de datos PostgreSQL utilizando estas credenciales:
+DbVisualizer debería conectarse a su base de datos PostgreSQL usando estas credenciales:
 
 Servidor: base de datos
 Puerto: 5432
