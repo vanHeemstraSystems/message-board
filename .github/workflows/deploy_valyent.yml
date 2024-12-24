@@ -2,7 +2,7 @@ name: Deploy to Valyent Cloud
 
 on:
   push:
-    branches: [ main, feature/valyent-deployment ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
@@ -11,13 +11,22 @@ env:
   VALYENT_API_KEY: ${{ secrets.VALYENT_API_KEY }}
   FLEET_NAME: message-board-fleet
   VALYENT_PROJECT: message-board
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+  CB_ADMIN_PASSWORD: ${{ secrets.CB_ADMIN_PASSWORD }}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Process Environment File
+        run: |
+          # Replace secret placeholders in .env.valyent
+          sed -i "s/\${{ secrets.DB_PASSWORD }}/${{ secrets.DB_PASSWORD }}/g" .env.valyent
+          sed -i "s/\${{ secrets.CB_ADMIN_PASSWORD }}/${{ secrets.CB_ADMIN_PASSWORD }}/g" .env.valyent
 
       - name: Install Mock Valyent CLI
         run: |
