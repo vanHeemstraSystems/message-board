@@ -244,7 +244,7 @@ Les quatre conteneurs fonctionnent correctement. Vérifions chaque service :
 2) Backend (flacon) :
 
 -   Visitez http&#x3A;//localhost:8080/api/health dans votre navigateur
--   Doit renvoyer une réponse de vérification de l'état
+-   Devrait renvoyer une réponse de vérification de l'état
 
 3) Base de données (PostgreSQL) :
 
@@ -260,7 +260,7 @@ Les quatre conteneurs fonctionnent correctement. Vérifions chaque service :
 -   Mot de passe : S3cr3tPwd
 -   Cliquez sur "Nouvelle connexion"
 -   Choisissez "PostgreSQL"
--   Saisissez les détails de la connexion :
+-   Entrez les détails de connexion :
 -   Hôte : base de données
 -   Port : 5432
 -   Base de données : message_board_db
@@ -310,7 +310,7 @@ pip install threagile-monitoring
 ## Environnements
 
 -   Bien défini dans un environnement autonome[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   Le`test`la matrice utilise le[conteneurs-écoutilles](https://github.com/ofek/hatch-containers)plugin pour exécuter chaque environnement dans les conteneurs Docker ; l'utilisation peut être vue dans le[test](.github/workflows/test.yml)Flux de travail GitHub
+-   Le`test`la matrice utilise le[conteneurs à écoutille](https://github.com/ofek/hatch-containers)plugin pour exécuter chaque environnement dans les conteneurs Docker ; l'utilisation peut être vue dans le[test](.github/workflows/test.yml)Flux de travail GitHub
 
 ## Construire
 
@@ -397,7 +397,7 @@ Voici plusieurs étapes que vous pouvez suivre pour résoudre le problème de m�
 
 9.  Optimisation XQuartz
     Quittez et redémarrez XQuartz
-    Envisagez d'utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
+    Pensez à utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
 
 10. Solutions au niveau du système :
     Effacer le cache système :
@@ -438,7 +438,7 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Construire notre application
+## 300 - Créer notre application
 
 Voir[README.md](./300/README.md)
 
