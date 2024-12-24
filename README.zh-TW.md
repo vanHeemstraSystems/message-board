@@ -47,7 +47,7 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **筆記**: 現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
+    **筆記**：現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
 
     === 開始：更新留言板的這一部分 ===
 
@@ -239,7 +239,7 @@
 
 1）前端（Vue.js）：
 
--   Visit http&#x3A;//localhost:80 in your browser
+-   在瀏覽器中造訪http&#x3A;//localhost:80
 
 2）後端（Flask）：
 
