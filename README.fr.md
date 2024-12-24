@@ -10,7 +10,7 @@ babillard électronique
 
 * * *
 
-> Un forum de discussion qui affichera les messages soumis.
+> Un forum de messages qui affichera les messages soumis.
 
 -   [Documentation](./DOCUMENTATION.md)
 -   [Glossaire](./GLOSSARY.md)
@@ -58,8 +58,8 @@ Faire en sorte que votre code soit opérationnel sur votre propre système.
 
     Cela créera le`app.js`fichier - qui contient tous les composants - dans`/src/threagile_monitoring/static/js/`.
 
-    **Développement avec webpack :**Si vous développez encore votre site Web, dans un**session terminale séparée**, après avoir suivi le processus d'installation ci-dessus, faites ceci :
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
+    **Développement avec webpack :**Si vous développez encore votre site Web, dans un**session terminale séparée**, after having followed the above installation process, do this:
+    1) `$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
     Cela sera - dans la session de terminal séparée (c'est-à-dire`background`) - chargez constamment les modifications que vous apportez dans les fichiers appropriés, tandis que vous pouvez continuer à apporter ces modifications - lors de la session initiale du terminal (c'est-à-dire`foreground`). Vous n’avez donc pas besoin de construire vos sources après chaque édition, cela est pris en charge automatiquement !
 
@@ -230,7 +230,7 @@ Démarrez vos conteneurs Docker avec :
 
 Cela fera tourner trois conteneurs :
 
--   message-board-server-dev (port 8080 : 5000)
+-   message-board-server-dev (port 8080:5000)
 -   message-board-frontend-dev (port 80:3000)
 -   message-board-database-dev (port 5432:5432)
 -   message-board-db-gui-dev (port 5444:5444)
@@ -244,7 +244,7 @@ Les quatre conteneurs fonctionnent correctement. Vérifions chaque service :
 2) Backend (flacon) :
 
 -   Visitez http&#x3A;//localhost:8080/api/health dans votre navigateur
--   Doit renvoyer une réponse de vérification de l'état
+-   Devrait renvoyer une réponse de vérification de l'état
 
 3) Base de données (PostgreSQL) :
 
@@ -260,7 +260,7 @@ Les quatre conteneurs fonctionnent correctement. Vérifions chaque service :
 -   Mot de passe : S3cr3tPwd
 -   Cliquez sur "Nouvelle connexion"
 -   Choisissez "PostgreSQL"
--   Saisissez les détails de la connexion :
+-   Entrez les détails de connexion :
 -   Hôte : base de données
 -   Port : 5432
 -   Base de données : message_board_db
@@ -397,7 +397,7 @@ Voici plusieurs étapes que vous pouvez suivre pour résoudre le problème de m�
 
 9.  Optimisation XQuartz
     Quittez et redémarrez XQuartz
-    Envisagez d'utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
+    Pensez à utiliser XQuartz uniquement en cas de besoin plutôt que de le laisser fonctionner
 
 10. Solutions au niveau du système :
     Effacer le cache système :
@@ -438,7 +438,7 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Construire notre application
+## 300 - Créer notre application
 
 Voir[README.md](./300/README.md)
 
