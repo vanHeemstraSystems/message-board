@@ -22,7 +22,7 @@
 
 ## GOES
 
-我们建议使用[Cursor.io](https://www.cursor.com/)作为该项目的集成开发环境（IDE）。
+我们建议使用[Cursor.io](https://www.cursor.com/) as the Integrated Development Environment (IDE) for this project.
 
 ## 服务器
 
@@ -47,11 +47,11 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **笔记**：现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
+    **笔记**: 现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
 
     === 开始：更新留言板的这一部分 ===
 
-    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 打包该应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
+    **使用 webpack 打包您的网站：**一旦你有了一个足够好的网站可供你使用，你就必须使用 webpack 打包应用程序。该包文件夹列于`.gitignore`以避免它被提交给 git。
 
     现在所有设置都应该准备就绪，因此您需要做的就是：
     1）`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -131,7 +131,7 @@
     $ pytest tests/
     ```
 
-# 码头工人
+# Docker
 
 **笔记**：为了有效利用资源，我们使用**柔和的**而不是**码头工人**!
 
@@ -285,7 +285,7 @@ DbVisualizer 应使用以下凭据连接到您的 PostgreSQL 数据库：
 
 # 指标
 
-让 Prometheus 这样的工具刮擦`http://127.0.0.1:9464/metrics`.
+让像 Prometheus 这样的工具刮擦`http://127.0.0.1:9464/metrics`.
 
 **_新的_**
 
@@ -295,7 +295,7 @@ DbVisualizer 应使用以下凭据连接到您的 PostgreSQL 数据库：
 -   [版本来源](#version-source)
 -   [环境](#environments)
 -   [建造](#build)
--   [执照](#license)
+-   [License](#license)
 
 ## 安装
 
@@ -305,7 +305,7 @@ pip install threagile-monitoring
 
 ## 版本来源
 
--   这[孵化VCS](https://github.com/ofek/hatch-vcs) version source plugin determines the project version using Git tags
+-   这[孵化VCS](https://github.com/ofek/hatch-vcs)版本源插件使用 Git 标签确定项目版本
 
 ## 环境
 
@@ -317,7 +317,7 @@ pip install threagile-monitoring
 -   所有构建目标都使用[孵化VCS](https://github.com/ofek/hatch-vcs)构建钩子插件来发送`_version.py`文件，以便可以在运行时使用该版本
 -   轮子使用[孵化 mypyc](https://github.com/ofek/hatch-mypyc)构建钩子插件以首先编译所有代码[Mypyc](https://github.com/mypyc/mypyc)
 -   这[建造](.github/workflows/build.yml)GitHub 工作流程展示了如何：
-    -   使用[cibuildwheel](https://github.com/pypa/cibuildwheel)为每个平台分发二进制轮子
+    -   使用[cibuildwheel](https://github.com/pypa/cibuildwheel) to distribute binary wheels for every platform
     -   使用[应用程序](https://hatch.pypa.io/latest/plugins/builder/app/)构建目标为每个平台构建独立发行版
 
 ## 执照
