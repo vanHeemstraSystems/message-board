@@ -22,13 +22,13 @@ Message-Board
 
 ## GEHT
 
-Wir empfehlen die Verwendung von[Cursor.io](https://www.cursor.com/) as the Integrated Development Environment (IDE) for this project.
+Wir empfehlen die Verwendung von[Cursor.io](https://www.cursor.com/)als integrierte Entwicklungsumgebung (IDE) für dieses Projekt.
 
 ## Server
 
 Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
-**Notiz**: Stellen Sie sicher, dass Sie die erfüllen[Anforderungen](./200/README.md).
+**Notiz**: Stellen Sie sicher, dass Sie die erfüllen[requirements](./200/README.md).
 
 1.  **Installationsprozess:**
 
@@ -70,7 +70,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
     **Prüfen**
 
-    Test the application (frontend) this way:
+    Testen Sie die Anwendung (Frontend) auf diese Weise:
 
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
