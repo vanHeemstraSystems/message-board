@@ -47,7 +47,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **NOTIZ**: Die moderne Art ist zu verwenden`pyproject.toml`um Abhängigkeiten zu installieren, nicht „requirements.txt“. Daher sollte es keine Datei „requirements.txt“ geben.
+    **NOTIZ**: Die moderne Art ist zu verwenden`pyproject.toml`um Abhängigkeiten zu installieren, nicht „requirements.txt“. Daher sollte es keine „requirements.txt“-Datei geben.
 
     === START: AKTUALISIEREN SIE DIESEN ABSCHNITT FÜR DAS Message Board ===
 
@@ -412,7 +412,7 @@ Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem 
 
     -   Rüsten Sie Ihre Hardware auf:
 
-    -   Erwägen Sie die Verwendung einer leistungsstärkeren Maschine mit mehr RAM.
+    -   Erwägen Sie die Verwendung eines leistungsstärkeren Computers mit mehr RAM.
 
     -   Optimieren Sie Ihre Bewerbung:
 
