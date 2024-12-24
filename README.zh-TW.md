@@ -72,8 +72,7 @@
 
     以這種方式測試應用程式（前端）：
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`
-    3) `(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **跑步：**
 
@@ -134,7 +133,7 @@
 
 # 碼頭工人
 
-**筆記**：為了有效利用資源，我們使用**柔和的**而不是**Docker**!
+**筆記**：為了有效利用資源，我們使用**柔和的**而不是**碼頭工人**!
 
 將這些行加入 ~/.zshrc 或 ~/.bashrc 中：
 
