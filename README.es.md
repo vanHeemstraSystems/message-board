@@ -26,7 +26,7 @@ Recomendamos el uso de[Cursor.io](https://www.cursor.com/)como el Entorno de Des
 
 ## Servidor
 
-Poner en funcionamiento su código en su propio sistema.
+Cómo poner en marcha su código en su propio sistema.
 
 **Nota**: Asegúrese de cumplir con los[requisitos](./200/README.md).
 
@@ -241,7 +241,7 @@ Los cuatro contenedores se están ejecutando correctamente. Verifiquemos cada se
 
 -   Visita http&#x3A;//localhost:80 en tu navegador
 
-2) Backend (Flasco):
+2) Backend (Frasco):
 
 -   Visite http&#x3A;//localhost:8080/api/health en su navegador
 -   Debería devolver una respuesta de control de salud
@@ -370,7 +370,7 @@ Aquí hay varios pasos que puede seguir para solucionar el problema de la memori
     -   Mire la columna "Uso" para ver cuánta memoria se está utilizando actualmente.
 
 2.  **Cerrar aplicaciones innecesarias**:
-    -   Asegúrese de no estar ejecutando aplicaciones innecesarias que puedan estar consumiendo memoria.
+    -   Asegúrese de no estar ejecutando ninguna aplicación innecesaria que pueda estar consumiendo memoria.
 
 3.  **Borrar caché**:
     -   A veces, borrar el caché puede ayudar a liberar memoria.
