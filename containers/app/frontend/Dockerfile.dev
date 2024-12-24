@@ -19,14 +19,14 @@ RUN npm install -g npm@10.2.4 && \
 WORKDIR /usr/src/app
 
 # Copy package files
-COPY package.json ./
-COPY pnpm-lock.yaml ./
+COPY ./package.json ./
+COPY ./pnpm-lock.yaml ./
 
 # Install dependencies with increased timeout
 RUN pnpm install --fetch-timeout 100000
 
 # Copy source files
-COPY . .
+COPY ./ /usr/src/app/
 
 # Expose port
 EXPOSE 3000
