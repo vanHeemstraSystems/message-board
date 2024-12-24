@@ -408,7 +408,7 @@ Hier zijn verschillende stappen die u kunt nemen om het geheugenprobleem op te l
 
         sysctl vm.swapusage
 
-11. Oplossingen voor de lange termijn:
+11. Langetermijnoplossingen:
 
     -   Upgrade uw hardware:
 
