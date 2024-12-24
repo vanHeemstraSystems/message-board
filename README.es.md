@@ -26,7 +26,7 @@ Recomendamos el uso de[Cursor.io](https://www.cursor.com/)como el Entorno de Des
 
 ## Servidor
 
-Cómo poner en marcha su código en su propio sistema.
+Poner en funcionamiento su código en su propio sistema.
 
 **Nota**: Asegúrese de cumplir con los[requisitos](./200/README.md).
 
@@ -53,8 +53,8 @@ Cómo poner en marcha su código en su propio sistema.
 
     **Empaqueta tu sitio con webpack:**Una vez que tenga un sitio web que sea lo suficientemente bueno para su uso, deberá empaquetar la aplicación con webpack. Esta carpeta de paquete aparece en`.gitignore`para evitar que se comprometa con git.
 
-    All of the setup should be ready by now so all you have to do:
-    1) `$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
+    Toda la configuración ya debería estar lista, así que todo lo que tienes que hacer:
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
 
     Esto creará el`app.js`archivo, que contiene todos los componentes, en`/src/threagile_monitoring/static/js/`.
 
@@ -232,7 +232,7 @@ Esto hará girar tres contenedores:
 
 -   tablero de mensajes-servidor-dev (puerto 8080:5000)
 -   tablero de mensajes-frontend-dev (puerto 80:3000)
--   tablero de mensajes-base de datos-dev (puerto 5432:5432)
+-   tablero de mensajes-base-de-datos-dev (puerto 5432:5432)
 -   tablero de mensajes-db-gui-dev (puerto 5444:5444)
 
 Los cuatro contenedores se están ejecutando correctamente. Verifiquemos cada servicio:
@@ -241,7 +241,7 @@ Los cuatro contenedores se están ejecutando correctamente. Verifiquemos cada se
 
 -   Visita http&#x3A;//localhost:80 en tu navegador
 
-2) Backend (Frasco):
+2) Backend (Flasco):
 
 -   Visite http&#x3A;//localhost:8080/api/health en su navegador
 -   Debería devolver una respuesta de control de salud
@@ -310,7 +310,7 @@ pip install threagile-monitoring
 ## Ambientes
 
 -   Definido claramente de forma independiente[`hatch.toml`](https://hatch.pypa.io/latest/intro/#configuration)
--   El`test`La matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
+-   El`test`la matriz utiliza el[contenedores-escotilla](https://github.com/ofek/hatch-containers)complemento para ejecutar cada entorno dentro de contenedores Docker; El uso se puede ver en el[prueba](.github/workflows/test.yml)flujo de trabajo de GitHub
 
 ## Construir
 
@@ -370,7 +370,7 @@ Aquí hay varios pasos que puede seguir para solucionar el problema de la memori
     -   Mire la columna "Uso" para ver cuánta memoria se está utilizando actualmente.
 
 2.  **Cerrar aplicaciones innecesarias**:
-    -   Asegúrese de no estar ejecutando ninguna aplicación innecesaria que pueda estar consumiendo memoria.
+    -   Asegúrese de no estar ejecutando aplicaciones innecesarias que puedan estar consumiendo memoria.
 
 3.  **Borrar caché**:
     -   A veces, borrar el caché puede ayudar a liberar memoria.
