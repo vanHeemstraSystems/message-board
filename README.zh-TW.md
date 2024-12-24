@@ -28,7 +28,7 @@
 
 在您自己的系統上啟動並運行您的程式碼。
 
-**筆記**: 確保您滿足[requirements](./200/README.md).
+**筆記**: 確保您滿足[要求](./200/README.md).
 
 1.  **安裝過程：**
 
@@ -47,7 +47,7 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **筆記**: 現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
+    **筆記**：現代的方法是使用`pyproject.toml`安裝依賴項，而不是\`\`\`requirements.txt。因此不應該有requirements.txt 檔案。
 
     === 開始：更新留言板的這一部分 ===
 
@@ -338,7 +338,7 @@ pip install threagile-monitoring
     Choose typography, forms, container-queries
     Choose pnpm
 
-Next steps:
+後續步驟：
 
     │  1: cd frontend                                                          │
     |  2: pnpm install @sveltejs/adapter-node --save-dev                       |
