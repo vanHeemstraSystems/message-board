@@ -51,7 +51,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     === START: UPDATE DEZE SECTIE VOOR message board ===
 
-    **Package your site with webpack:**Zodra u een website heeft die goed genoeg is om te gebruiken, moet u de applicatie verpakken met webpack. Deze pakketmap wordt vermeld in`.gitignore`om te voorkomen dat het aan git wordt vastgelegd.
+    **Verpak uw site met webpack:**Zodra u een website heeft die goed genoeg is om te gebruiken, moet u de applicatie verpakken met webpack. Deze pakketmap wordt vermeld in`.gitignore`om te voorkomen dat het aan git wordt vastgelegd.
 
     Alle instellingen zouden nu klaar moeten zijn, dus alles wat je hoeft te doen:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -88,7 +88,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
 5.  Bouwen en testen:
 
-    Om uw code samen te stellen, gebruikt u:
+    To build your code, use:
 
     ```bash
     $ cd threagile-monitoring
@@ -133,7 +133,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
 # Dokwerker
 
-**OPMERKING**: Voor efficiënt gebruik van hulpbronnen gebruiken we**Ingetogen**in plaats van**Dokwerker**!
+**OPMERKING**: Voor efficiënt gebruik van hulpbronnen gebruiken we**Ingetogen** instead of **Dokwerker**!
 
 Voeg deze regels toe aan je ~/.zshrc of ~/.bashrc:
 
@@ -162,7 +162,7 @@ Controleer de installatie:
 
     $ podman machine init
 
-# Start de Podman-machine
+# Start the Podman machine
 
     $ podman machine start
 
@@ -235,7 +235,7 @@ Hierdoor worden drie containers geactiveerd:
 -   message-board-database-dev (poort 5432:5432)
 -   message-board-db-gui-dev (poort 5444:5444)
 
-All four containers are running successfully. Let's verify each service:
+Alle vier de containers draaien met succes. Laten we elke service verifiëren:
 
 1) Frontend (Vue.js):
 
@@ -294,7 +294,7 @@ Laat een stuk gereedschap als Prometheus schrapen`http://127.0.0.1:9464/metrics`
 -   [Installatie](#installation)
 -   [Versiebron](#version-source)
 -   [Omgevingen](#environments)
--   [Build](#build)
+-   [Bouwen](#build)
 -   [Licentie](#license)
 
 ## Installatie
