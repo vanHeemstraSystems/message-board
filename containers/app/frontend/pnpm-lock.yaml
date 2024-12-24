@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  cross-spawn: ^7.0.5
+  cross-spawn: ^7.0.6
 
 importers:
 
