@@ -14,7 +14,7 @@ tablero de mensajes
 
 -   [Documentación](./DOCUMENTATION.md)
 -   [Glosario](./GLOSSARY.md)
--   [Imágenes](./IMAGES.md)
+-   [Images](./IMAGES.md)
 -   [Referencias](./REFERENCES.md)
 -   [Telemetria](./TELEMETRY.md)
 
@@ -26,7 +26,7 @@ Recomendamos el uso de[Cursor.io](https://www.cursor.com/)como el Entorno de Des
 
 ## Servidor
 
-Cómo poner en marcha su código en su propio sistema.
+Poner en funcionamiento su código en su propio sistema.
 
 **Nota**: Asegúrese de cumplir con los[requisitos](./200/README.md).
 
@@ -47,7 +47,7 @@ Cómo poner en marcha su código en su propio sistema.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **NOTA**: La forma moderna es utilizar`pyproject.toml` to install dependencies, not \`\`\`requirements.txt. Hence there should not be a requirements.txt file.
+    **NOTA**: La forma moderna es utilizar`pyproject.toml`para instalar dependencias, no \`\`\`requirements.txt. Por lo tanto, no debería haber un archivo de requisitos.txt.
 
     === INICIO: ACTUALIZAR ESTA SECCIÓN PARA el tablero de mensajes ===
 
@@ -61,7 +61,7 @@ Cómo poner en marcha su código en su propio sistema.
     **Desarrollo con paquete web:**Si todavía estás desarrollando tu sitio web, en un**sesión terminal separada**, después de haber seguido el proceso de instalación anterior, haga esto:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
-    Esto, en la sesión de terminal separada (es decir,`background`) - cargue constantemente los cambios que realice en los archivos apropiados, mientras puede continuar realizando esos cambios - en la sesión inicial del terminal (es decir,`foreground`). Así que no tienes que crear tus fuentes después de cada edición, ¡se encargan automáticamente!
+    This will - in the separate terminal session (i.e. `background`) - cargue constantemente los cambios que realice en los archivos apropiados, mientras puede continuar realizando esos cambios - en la sesión inicial del terminal (es decir,`foreground`). Así que no tienes que crear tus fuentes después de cada edición, ¡se encargan automáticamente!
 
     Para ver los cambios simplemente guarda y recarga tu navegador (normalmente con F5).
 
@@ -241,7 +241,7 @@ Los cuatro contenedores se están ejecutando correctamente. Verifiquemos cada se
 
 -   Visita http&#x3A;//localhost:80 en tu navegador
 
-2) Backend (Frasco):
+2) Backend (Flasco):
 
 -   Visite http&#x3A;//localhost:8080/api/health en su navegador
 -   Debería devolver una respuesta de control de salud
@@ -370,7 +370,7 @@ Aquí hay varios pasos que puede seguir para solucionar el problema de la memori
     -   Mire la columna "Uso" para ver cuánta memoria se está utilizando actualmente.
 
 2.  **Cerrar aplicaciones innecesarias**:
-    -   Asegúrese de no estar ejecutando ninguna aplicación innecesaria que pueda estar consumiendo memoria.
+    -   Asegúrese de no estar ejecutando aplicaciones innecesarias que puedan estar consumiendo memoria.
 
 3.  **Borrar caché**:
     -   A veces, borrar el caché puede ayudar a liberar memoria.
@@ -436,7 +436,7 @@ Ver[README.md](./100/README.md)
 
 ## 200 - Requisitos
 
-Ver[README.md](./200/README.md)
+See [README.md](./200/README.md)
 
 ## 300 - Construyendo nuestra aplicación
 

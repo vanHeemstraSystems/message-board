@@ -47,7 +47,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **NOTIZ**: Die moderne Art ist zu verwenden`pyproject.toml`um Abhängigkeiten zu installieren, nicht „requirements.txt“. Daher sollte es keine Datei „requirements.txt“ geben.
+    **NOTIZ**: Die moderne Art ist zu verwenden`pyproject.toml`um Abhängigkeiten zu installieren, nicht „requirements.txt“. Daher sollte es keine „requirements.txt“-Datei geben.
 
     === START: AKTUALISIEREN SIE DIESEN ABSCHNITT FÜR DAS Message Board ===
 
@@ -61,7 +61,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     **Entwicklung mit Webpack:**Wenn Sie Ihre Website noch entwickeln, in a**separate Terminalsitzung**, nachdem Sie den oben genannten Installationsprozess befolgt haben, gehen Sie wie folgt vor:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
-    Dies wird - in der separaten Terminalsitzung (d. h.`background`) – lädt die von Ihnen vorgenommenen Änderungen ständig in die entsprechenden Dateien, während Sie diese Änderungen weiterhin vornehmen können – in der ersten Terminalsitzung (d. h.`foreground`). Sie müssen Ihre Quellen also nicht nach jeder Bearbeitung neu erstellen, dies geschieht automatisch!
+    Dies wird - in der separaten Terminalsitzung (d. h.`background`) - constantly load the changes you make into the appropriate files, whilst you can can continue make those changes - in the initial terminal session (i.e. `foreground`). Sie müssen Ihre Quellen also nicht nach jeder Bearbeitung neu erstellen, dies geschieht automatisch!
 
     Um die Änderungen zu sehen, speichern Sie einfach Ihren Navigator und laden Sie ihn neu (normalerweise mit F5).
 
@@ -239,7 +239,7 @@ Alle vier Container laufen erfolgreich. Lassen Sie uns jeden Dienst überprüfen
 
 1) Frontend (Vue.js):
 
--   Visit http&#x3A;//localhost:80 in your browser
+-   Besuchen Sie http&#x3A;//localhost:80 in Ihrem Browser
 
 2) Backend (Flask):
 
@@ -412,7 +412,7 @@ Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem 
 
     -   Rüsten Sie Ihre Hardware auf:
 
-    -   Erwägen Sie die Verwendung einer leistungsstärkeren Maschine mit mehr RAM.
+    -   Erwägen Sie die Verwendung eines leistungsstärkeren Computers mit mehr RAM.
 
     -   Optimieren Sie Ihre Bewerbung:
 
@@ -444,4 +444,4 @@ Sehen[README.md](./300/README.md)
 
 ## 400 – Fazit
 
-Sehen[README.md](./400/README.md)
+See [README.md](./400/README.md)
