@@ -420,7 +420,7 @@ pip install threagile-monitoring
 
     -   संसाधनों की निगरानी और प्रबंधन करें:
 
-    -   जैसे टूल का उपयोग करें`htop`या`iostat` to monitor system resources and manage them effectively.    
+    -   जैसे टूल का उपयोग करें`htop`या`iostat`सिस्टम संसाधनों की निगरानी करना और उन्हें प्रभावी ढंग से प्रबंधित करना।
 
     -   डॉकर कंटेनरों और छवियों के लिए स्वचालित सफाई स्क्रिप्ट सेट करें।
 
