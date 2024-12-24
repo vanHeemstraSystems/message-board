@@ -22,7 +22,7 @@ Message-Board
 
 ## GEHT
 
-Wir empfehlen die Verwendung von[Cursor.io](https://www.cursor.com/)als integrierte Entwicklungsumgebung (IDE) für dieses Projekt.
+Wir empfehlen die Verwendung von[Cursor.io](https://www.cursor.com/) as the Integrated Development Environment (IDE) for this project.
 
 ## Server
 
@@ -47,7 +47,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **NOTIZ**: Die moderne Art ist zu verwenden`pyproject.toml`um Abhängigkeiten zu installieren, nicht „requirements.txt“. Daher sollte es keine „requirements.txt“-Datei geben.
+    **NOTIZ**: Die moderne Art ist zu verwenden`pyproject.toml`um Abhängigkeiten zu installieren, nicht „requirements.txt“. Daher sollte es keine Datei „requirements.txt“ geben.
 
     === START: AKTUALISIEREN SIE DIESEN ABSCHNITT FÜR DAS Message Board ===
 
@@ -70,7 +70,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
 
     **Prüfen**
 
-    Testen Sie die Anwendung (Frontend) auf diese Weise:
+    Test the application (frontend) this way:
 
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
@@ -255,7 +255,7 @@ Alle vier Container laufen erfolgreich. Lassen Sie uns jeden Dienst überprüfen
 
 -   Besuchen Sie http&#x3A;//localhost:8978
 -   Erstmalige Einrichtung:
--   Create admin credentials when prompted
+-   Erstellen Sie Administratoranmeldeinformationen, wenn Sie dazu aufgefordert werden
 -   Benutzername: cbadmin
 -   Passwort: S3cr3tPwd
 -   Klicken Sie auf „Neue Verbindung“
@@ -412,7 +412,7 @@ Hier sind mehrere Schritte, die Sie unternehmen können, um das Speicherproblem 
 
     -   Rüsten Sie Ihre Hardware auf:
 
-    -   Erwägen Sie die Verwendung eines leistungsstärkeren Computers mit mehr RAM.
+    -   Erwägen Sie die Verwendung einer leistungsstärkeren Maschine mit mehr RAM.
 
     -   Optimieren Sie Ihre Bewerbung:
 

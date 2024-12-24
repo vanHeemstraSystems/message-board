@@ -68,7 +68,7 @@
     सुनिश्चित करें कि बैकएंड फ़ंक्शंस के साथ परीक्षण करते समय अपना वेबपेज निम्नानुसार चलाएं:
     1)`(threagile-monitoring) $ cd src/threagile_monitoring`2)`(threagile-monitoring) $ python app.py`
 
-    **परीक्षा**
+    **Test**
 
     एप्लिकेशन (फ़्रंटएंड) का इस प्रकार परीक्षण करें:
 
