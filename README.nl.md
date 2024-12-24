@@ -49,9 +49,9 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     **OPMERKING**: De moderne manier is om te gebruiken`pyproject.toml`om afhankelijkheden te installeren, niet \`\`\`requirements.txt. Daarom mag er geen require.txt-bestand zijn.
 
-    === START:  UPDATE THIS SECTION FOR message board ===
+    === START: UPDATE DEZE SECTIE VOOR message board ===
 
-    **Verpak uw site met webpack:**Zodra u een website heeft die goed genoeg is om te gebruiken, moet u de applicatie verpakken met webpack. Deze pakketmap wordt vermeld in`.gitignore`om te voorkomen dat het aan git wordt vastgelegd.
+    **Package your site with webpack:**Zodra u een website heeft die goed genoeg is om te gebruiken, moet u de applicatie verpakken met webpack. Deze pakketmap wordt vermeld in`.gitignore`om te voorkomen dat het aan git wordt vastgelegd.
 
     Alle instellingen zouden nu klaar moeten zijn, dus alles wat je hoeft te doen:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -235,7 +235,7 @@ Hierdoor worden drie containers geactiveerd:
 -   message-board-database-dev (poort 5432:5432)
 -   message-board-db-gui-dev (poort 5444:5444)
 
-Alle vier de containers draaien met succes. Laten we elke service verifiëren:
+All four containers are running successfully. Let's verify each service:
 
 1) Frontend (Vue.js):
 
@@ -294,7 +294,7 @@ Laat een stuk gereedschap als Prometheus schrapen`http://127.0.0.1:9464/metrics`
 -   [Installatie](#installation)
 -   [Versiebron](#version-source)
 -   [Omgevingen](#environments)
--   [Bouwen](#build)
+-   [Build](#build)
 -   [Licentie](#license)
 
 ## Installatie
@@ -385,7 +385,7 @@ Hier zijn verschillende stappen die u kunt nemen om het geheugenprobleem op te l
     -   Gebruik tools zoals Valgrind of Instruments om te controleren op geheugenlekken in uw applicatie.
 
 7.  Wis Docker-bronnen:
-    -   Run the following command to remove all unused Docker resources:
+    -   Voer de volgende opdracht uit om alle ongebruikte Docker-bronnen te verwijderen:
         docker system prune -a
 
 8.  Docker Desktop-geheugenlimieten
