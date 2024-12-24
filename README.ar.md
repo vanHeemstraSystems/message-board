@@ -53,8 +53,8 @@
 
     **حزم موقعك باستخدام حزمة الويب:**بمجرد أن يكون لديك موقع ويب جيد بما يكفي لاستخدامه، يجب عليك حزم التطبيق مع حزمة الويب. تم إدراج مجلد الحزمة هذا في`.gitignore`لتجنب ذلك يجب الالتزام بـ git.
 
-    All of the setup should be ready by now so all you have to do:
-    1) `$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
+    يجب أن تكون جميع الإعدادات جاهزة الآن، لذا كل ما عليك فعله:
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
 
     سيؤدي هذا إلى إنشاء`app.js`الملف - الذي يحتوي على جميع المكونات - في`/src/threagile_monitoring/static/js/`.
 
@@ -72,7 +72,8 @@
 
     اختبر التطبيق (الواجهة الأمامية) بهذه الطريقة:
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`
+    3) `(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **يجري:**
 
@@ -133,7 +134,7 @@
 
 # عامل ميناء
 
-**ملحوظة**: للاستخدام الفعال للموارد، نستخدمها**Podman**بدلاً من**عامل ميناء**!
+**ملحوظة**: للاستخدام الفعال للموارد، نستخدمها**مهزوما**بدلاً من**عامل ميناء**!
 
 أضف هذه السطور إلى ~/.zshrc أو ~/.bashrc:
 
@@ -174,7 +175,7 @@
 
     $ podman ps
 
-ابدأ تشغيل حاويات Docker الخاصة بك باستخدام:
+Start your Docker containers with:
 
     $ cd containers/app
 
@@ -259,7 +260,7 @@
 -   اسم المستخدم: cbadmin
 -   كلمة المرور: S3cr3tPwd
 -   انقر فوق "اتصال جديد"
--   اختر "بوستغريسكل"
+-   اختر "بوستجرسكل"
 -   أدخل تفاصيل الاتصال:
 -   المضيف: قاعدة البيانات
 -   المنفذ: 5432
@@ -314,7 +315,7 @@ pip install threagile-monitoring
 
 ## يبني
 
--   جميع أهداف البناء تستخدم[Hatch-vcs](https://github.com/ofek/hatch-vcs)بناء البرنامج المساعد هوك لشحن أ`_version.py`ملف بحيث يمكن استخدام الإصدار في وقت التشغيل
+-   تستخدم جميع أهداف البناء[Hatch-vcs](https://github.com/ofek/hatch-vcs)بناء البرنامج المساعد هوك لشحن أ`_version.py`ملف بحيث يمكن استخدام الإصدار في وقت التشغيل
 -   تستخدم العجلات[Hatch-mypyc](https://github.com/ofek/hatch-mypyc)أنشئ ملحقًا ربطًا لتجميع جميع التعليمات البرمجية أولاً[Mypyc](https://github.com/mypyc/mypyc)
 -   ال[يبني](.github/workflows/build.yml)يوضح سير عمل GitHub كيفية:
     -   يستخدم[cibuildwheel](https://github.com/pypa/cibuildwheel)لتوزيع العجلات الثنائية لكل منصة
@@ -416,7 +417,7 @@ pip install threagile-monitoring
 
     -   تحسين التطبيق الخاص بك:
 
-    -   استخدم أدوات تحديد مواصفات الذاكرة لتحديد العمليات كثيفة الاستهلاك للذاكرة وتحسينها.
+    -   استخدم أدوات ملفات تعريف الذاكرة لتحديد العمليات كثيفة الاستهلاك للذاكرة وتحسينها.
 
     -   مراقبة وإدارة الموارد:
 
