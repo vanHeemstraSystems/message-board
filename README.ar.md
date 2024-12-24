@@ -269,11 +269,11 @@
 
 يجب أن يتصل DbVisualizer بقاعدة بيانات PostgreSQL الخاصة بك باستخدام بيانات الاعتماد التالية:
 
-Server: database
-Port: 5432
-Database: message_board_db
-Username: db-user-dev
-Password: db-password-dev
+الخادم: قاعدة البيانات
+المنفذ: 5432
+قاعدة البيانات: message_board_db
+اسم المستخدم: db-user-dev
+كلمة المرور: ديسيبل كلمة المرور ديف
 
 إذا لم يتم تشغيل DbVisualizer تلقائيًا، فيمكنك التحقق من سجلات الحاوية:
 
