@@ -294,8 +294,8 @@ Laat een stuk gereedschap als Prometheus schrapen`http://127.0.0.1:9464/metrics`
 -   [Installatie](#installation)
 -   [Versiebron](#version-source)
 -   [Omgevingen](#environments)
--   [Build](#build)
--   [Licentie](#license)
+-   [Bouwen](#build)
+-   [License](#license)
 
 ## Installatie
 
@@ -442,6 +442,6 @@ Zien[README.md](./200/README.md)
 
 Zien[README.md](./300/README.md)
 
-## 400 - Conclusie
+## 400 - Conclusion
 
 Zien[README.md](./400/README.md)
