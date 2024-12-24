@@ -61,7 +61,7 @@ Bringen Sie Ihren Code auf Ihrem eigenen System zum Laufen.
     **Entwicklung mit Webpack:**Wenn Sie Ihre Website noch entwickeln, in a**separate Terminalsitzung**, nachdem Sie den oben genannten Installationsprozess befolgt haben, gehen Sie wie folgt vor:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run watch`
 
-    Dies wird - in der separaten Terminalsitzung (d. h.`background`) - constantly load the changes you make into the appropriate files, whilst you can can continue make those changes - in the initial terminal session (i.e. `foreground`). Sie müssen Ihre Quellen also nicht nach jeder Bearbeitung neu erstellen, dies geschieht automatisch!
+    Dies wird - in der separaten Terminalsitzung (d. h.`background`) – lädt die von Ihnen vorgenommenen Änderungen ständig in die entsprechenden Dateien, während Sie diese Änderungen weiterhin vornehmen können – in der ersten Terminalsitzung (d. h.`foreground`). Sie müssen Ihre Quellen also nicht nach jeder Bearbeitung neu erstellen, dies geschieht automatisch!
 
     Um die Änderungen zu sehen, speichern Sie einfach Ihren Navigator und laden Sie ihn neu (normalerweise mit F5).
 
@@ -255,7 +255,7 @@ Alle vier Container laufen erfolgreich. Lassen Sie uns jeden Dienst überprüfen
 
 -   Besuchen Sie http&#x3A;//localhost:8978
 -   Erstmalige Einrichtung:
--   Erstellen Sie Administratoranmeldeinformationen, wenn Sie dazu aufgefordert werden
+-   Create admin credentials when prompted
 -   Benutzername: cbadmin
 -   Passwort: S3cr3tPwd
 -   Klicken Sie auf „Neue Verbindung“
@@ -444,4 +444,4 @@ Sehen[README.md](./300/README.md)
 
 ## 400 – Fazit
 
-See [README.md](./400/README.md)
+Sehen[README.md](./400/README.md)
