@@ -26,7 +26,7 @@ Recomendamos el uso de[Cursor.io](https://www.cursor.com/)como el Entorno de Des
 
 ## Servidor
 
-Poner en funcionamiento su código en su propio sistema.
+Cómo poner en marcha su código en su propio sistema.
 
 **Nota**: Asegúrese de cumplir con los[requisitos](./200/README.md).
 
@@ -51,8 +51,7 @@ Poner en funcionamiento su código en su propio sistema.
 
     === INICIO: ACTUALIZAR ESTA SECCIÓN PARA el tablero de mensajes ===
 
-    **Empaqueta tu sitio con webpack:**
-    Once you have a website that is good enough for you to use, you have to package the application with webpack. This package folder is listed in `.gitignore`para evitar que se comprometa con git.
+    **Empaqueta tu sitio con webpack:**Una vez que tenga un sitio web que sea lo suficientemente bueno para su uso, deberá empaquetar la aplicación con webpack. Esta carpeta de paquete aparece en`.gitignore`para evitar que se comprometa con git.
 
     Toda la configuración ya debería estar lista, así que todo lo que tienes que hacer:
     1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm run build`
@@ -229,7 +228,7 @@ Inicie sus contenedores Docker con:
     $ set DISPLAY=host.docker.internal:0
     $ docker compose --file docker-compose.dev.yml --project-name message-board-dev up --build -d
 
-Esto hará girar tres contenedores:
+This will spin up three containers:
 
 -   tablero de mensajes-servidor-dev (puerto 8080:5000)
 -   tablero de mensajes-frontend-dev (puerto 80:3000)
@@ -242,7 +241,7 @@ Los cuatro contenedores se están ejecutando correctamente. Verifiquemos cada se
 
 -   Visita http&#x3A;//localhost:80 en tu navegador
 
-2) Backend (Flasco):
+2) Backend (Frasco):
 
 -   Visite http&#x3A;//localhost:8080/api/health en su navegador
 -   Debería devolver una respuesta de control de salud
@@ -371,9 +370,9 @@ Aquí hay varios pasos que puede seguir para solucionar el problema de la memori
     -   Mire la columna "Uso" para ver cuánta memoria se está utilizando actualmente.
 
 2.  **Cerrar aplicaciones innecesarias**:
-    -   Asegúrese de no estar ejecutando aplicaciones innecesarias que puedan estar consumiendo memoria.
+    -   Asegúrese de no estar ejecutando ninguna aplicación innecesaria que pueda estar consumiendo memoria.
 
-3.  **Borrar caché**:
+3.  **Clear Cache**:
     -   A veces, borrar el caché puede ayudar a liberar memoria.
 
 4.  **Reinicie su computadora**:
