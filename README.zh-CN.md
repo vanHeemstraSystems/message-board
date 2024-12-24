@@ -47,7 +47,7 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **笔记**: 现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
+    **笔记**：现代的方法是使用`pyproject.toml`安装依赖项，而不是\`\`\`requirements.txt。因此不应该有requirements.txt 文件。
 
     === 开始：更新留言板的这一部分 ===
 
@@ -366,7 +366,7 @@ pip install threagile-monitoring
 
 1.  **检查可用内存**:
     -   从 Apple 菜单中打开活动监视器。
-    -   选择“内存”选项卡。
+    -   Select the "Memory" tab.
     -   查看“使用情况”列，了解当前使用了多少内存。
 
 2.  **关闭不必要的应用程序**:
