@@ -82,7 +82,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
 2.  Software-afhankelijkheden
 
-3.  Latest releases
+3.  Nieuwste releases
 
 4.  API-referenties
 
@@ -294,7 +294,7 @@ Laat een stuk gereedschap als Prometheus schrapen`http://127.0.0.1:9464/metrics`
 -   [Installatie](#installation)
 -   [Versiebron](#version-source)
 -   [Omgevingen](#environments)
--   [Bouwen](#build)
+-   [Build](#build)
 -   [Licentie](#license)
 
 ## Installatie
