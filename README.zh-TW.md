@@ -239,7 +239,7 @@
 
 1）前端（Vue.js）：
 
--   在瀏覽器中造訪http&#x3A;//localhost:80
+-   Visit http&#x3A;//localhost:80 in your browser
 
 2）後端（Flask）：
 
