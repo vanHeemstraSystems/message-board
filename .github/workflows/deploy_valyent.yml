@@ -1,0 +1,64 @@
+name: Deploy to Valyent Cloud
+
+on:
+  push:
+    branches: [ main, feature/valyent-deployment ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  VALYENT_API_KEY: ${{ secrets.VALYENT_API_KEY }}
+  FLEET_NAME: message-board-fleet
+  VALYENT_PROJECT: message-board
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Mock Valyent CLI
+        run: |
+          echo "Creating mock Valyent CLI..."
+          sudo mkdir -p /usr/local/bin
+          echo '#!/bin/bash
+          echo "[MOCK] Valyent CLI - Executing: $@"
+          case "$1" in
+            "config")
+              echo "[MOCK] Configuring Valyent CLI"
+              ;;
+            "registry")
+              echo "[MOCK] Registry operation"
+              ;;
+            "fleet")
+              echo "[MOCK] Fleet operation"
+              ;;
+            *)
+              echo "[MOCK] Unknown command"
+              ;;
+          esac
+          exit 0' | sudo tee /usr/local/bin/valyent
+          sudo chmod +x /usr/local/bin/valyent
+          which valyent
+          valyent --version || true
+
+      - name: Configure Mock CLI
+        run: |
+          echo "Testing mock CLI configuration..."
+          valyent config set api-key "${{ secrets.VALYENT_API_KEY }}"
+          valyent config set project "${{ env.VALYENT_PROJECT }}"
+
+      - name: Test Mock Deployment
+        run: |
+          echo "Testing mock deployment..."
+          valyent fleet deploy "${{ env.FLEET_NAME }}" \
+            --compose docker-compose.dev.yml \
+            --env-file .env.valyent || true
+
+      - name: Mock Status Check
+        run: |
+          echo "Checking mock deployment status..."
+          valyent fleet status "${{ env.FLEET_NAME }}" || true
+          
