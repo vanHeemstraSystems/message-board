@@ -1,4 +1,4 @@
-message-board
+berichtenbord
 
 # Berichtenbord
 
@@ -49,7 +49,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     **OPMERKING**: De moderne manier is om te gebruiken`pyproject.toml`om afhankelijkheden te installeren, niet \`\`\`requirements.txt. Daarom mag er geen require.txt-bestand zijn.
 
-    === START:  UPDATE THIS SECTION FOR message board ===
+    === START: UPDATE DEZE SECTIE VOOR message board ===
 
     **Verpak uw site met webpack:**Zodra u een website heeft die goed genoeg is om te gebruiken, moet u de applicatie verpakken met webpack. Deze pakketmap wordt vermeld in`.gitignore`om te voorkomen dat het aan git wordt vastgelegd.
 
@@ -72,8 +72,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
     Test de applicatie (frontend) op deze manier:
 
-    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`
-    4) `(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
+    1)`$ hatch shell`2)`(threagile-monitoring) $ cd src/threagile_monitoring`3)`(threagile-monitoring) $ npm install`4)`(threagile-monitoring) $ npm test`5)`(threagile-monitoring) $ npm test -- --coverage`
 
     **Loop:**
 
@@ -134,7 +133,7 @@ Uw code op uw eigen systeem operationeel krijgen.
 
 # Dokwerker
 
-**OPMERKING**: Voor efficiënt gebruik van hulpbronnen gebruiken we**Podman**in plaats van**Dokwerker**!
+**OPMERKING**: Voor efficiënt gebruik van hulpbronnen gebruiken we**Ingetogen**in plaats van**Dokwerker**!
 
 Voeg deze regels toe aan je ~/.zshrc of ~/.bashrc:
 
@@ -260,7 +259,7 @@ Alle vier de containers draaien met succes. Laten we elke service verifiëren:
 -   Gebruikersnaam: cbadmin
 -   Wachtwoord: S3cr3tPwd
 -   Klik op "Nieuwe verbinding"
--   Kies "PostgreSQL"
+-   Choose "PostgreSQL"
 -   Voer verbindingsgegevens in:
 -   Gastheer: database
 -   Haven: 5432
@@ -288,7 +287,7 @@ Navigeer naar`http://127.0.0.1:5000/docs`in uw webbrowser, of download de openap
 
 Laat een stuk gereedschap als Prometheus schrapen`http://127.0.0.1:9464/metrics`.
 
-**_ NEW _**
+**_NIEUW_**
 
 **Inhoudsopgave**
 
