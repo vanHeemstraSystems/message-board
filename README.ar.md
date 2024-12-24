@@ -47,7 +47,7 @@
     (server) $ exit # optional, type `exit` to leave the environment
     ```
 
-    **ملحوظة**: The modern way is to use `pyproject.toml`لتثبيت التبعيات، وليس \`\`\`requirements.txt. ومن ثم لا ينبغي أن يكون هناك ملف require.txt.
+    **ملحوظة**: الطريقة الحديثة هي الاستخدام`pyproject.toml`لتثبيت التبعيات، وليس \`\`\`requirements.txt. ومن ثم لا ينبغي أن يكون هناك ملف require.txt.
 
     === البدء: قم بتحديث هذا القسم للوحة الرسائل ===
 
@@ -315,7 +315,7 @@ pip install threagile-monitoring
 ## يبني
 
 -   تستخدم جميع أهداف البناء[Hatch-vcs](https://github.com/ofek/hatch-vcs)بناء البرنامج المساعد هوك لشحن أ`_version.py`ملف بحيث يمكن استخدام الإصدار في وقت التشغيل
--   تستخدم العجلات[Hatch-mypyc](https://github.com/ofek/hatch-mypyc)أنشئ ملحقًا ربطًا لتجميع جميع التعليمات البرمجية أولاً[Mypyc](https://github.com/mypyc/mypyc)
+-   تستخدم العجلات[hatch-mypyc](https://github.com/ofek/hatch-mypyc)أنشئ ملحقًا ربطًا لتجميع جميع التعليمات البرمجية أولاً[Mypyc](https://github.com/mypyc/mypyc)
 -   ال[يبني](.github/workflows/build.yml)يوضح سير عمل GitHub كيفية:
     -   يستخدم[cibuildwheel](https://github.com/pypa/cibuildwheel)لتوزيع العجلات الثنائية لكل منصة
     -   استخدم[برنامج](https://hatch.pypa.io/latest/plugins/builder/app/)بناء الهدف لبناء توزيعات مستقلة لكل منصة
